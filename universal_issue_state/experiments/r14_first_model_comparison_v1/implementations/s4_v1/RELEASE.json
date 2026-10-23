@@ -1,0 +1,19 @@
+{
+  "files": {
+    "README.md": "016d1ae5cb021d34401676a439edff8f0ecdf69c0460acc915a0b06dff5f70f6",
+    "S4 Launcher.command": "b46dcdf74cd585c821d2d205b54227e4b19a50ab1401ec9a9428b125dfcf39af",
+    "config.json": "cabd67044c80facc14b8259fcdda8aac671032018f3e25917bace02863bff7ea",
+    "engine.py": "d942cbfe7a57f418a2f3099f1c4a40a10607473813d7b7bac05ef031ae61779a",
+    "rehearse.py": "dc7282a550af98f6f4f22b960610e7bf23065e93f8c526f424f1358afcfd3c8b",
+    "reports/BOUNDED_RUN.json": "6aaade1d8b7f5944467b5692d89fbaf3d9bffa63d020e104abaa9a9790888510",
+    "reports/REHEARSAL.json": "4fd5ec8ccb606d127fd1c3a8ffe49128ceade63096ce65b0d38852db36600691",
+    "reports/S4_IMPLEMENTATION_REPORT.md": "0ede068c8d51d768904e4b8b4b6096dc4b6f324edfc3382f7fbfeaa536f3c2ab",
+    "reports/TESTS.txt": "2dba6214fcd9779bfd787ace841ffa481176021fedb87fce51d5a1bbe00e2bfc",
+    "s4.py": "1bdc14ccbb694051c9776d42e322d755c91c439c827a0f33153be0a08da20ef9",
+    "seal.py": "906afbd6951425cb5615063e2d55e45881a168f80cb552e3382d46fad516aebb",
+    "tests/test_s4.py": "c3f2f0f322adebf034de3300a63f6251c566fcd503754006eaa6b7fda391c607"
+  },
+  "full_historical_run_performed": false,
+  "record_sha256": "7350d2660d55465d95c2be03d60b091e732776078ee908601df0b19ae8791a41",
+  "schema": "R14_S4_IMPLEMENTATION_RELEASE_V1"
+}

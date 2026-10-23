@@ -1,0 +1,10 @@
+{
+  "schema": "R14_CR1_CONFIG_V1",
+  "parents": {
+    "implementations/s6_v1/RELEASE.json": "e2fd642f9f4d7cb6c71320e2d3a7a738af0ee06a0a5570caf9a0517d559d9f88",
+    "implementations/s5_v1/RELEASE.json": "71faf9560d56429170bdcbb7f64a548b536e3e21d6c90db2263a49e7c5b93e81",
+    "manifests/S1_RELEASE.json": "cc514cd24a12e5506024c650a89072d744628b39c7efa9c5ff61f4eec9a13e1d"
+  },
+  "score_binary_log_floor": 1e-06,
+  "probe": "120 chronological 2023 training days, no skill scoring; six engineering fits"
+}

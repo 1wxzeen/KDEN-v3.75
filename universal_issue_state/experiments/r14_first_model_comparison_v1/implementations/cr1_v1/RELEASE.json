@@ -1,0 +1,16 @@
+{
+  "schema": "R14_CR1_IMPLEMENTATION_RELEASE_V1",
+  "status": "IMPLEMENTED",
+  "files": {
+    "CR1 Launcher.command": "3e87d346ba3e66eb7bf06dbc48b3f2107277cd103d6e1266d3e25c494489527f",
+    "README.md": "ebce6715c72278758da7dda9a8ef201178d64cb07c266352fa7aaf47acdec1db",
+    "config.json": "3f9d7d429b7510c2c99f20caaff1f1da50f12ad5c92fdded5b7f0b4426be25de",
+    "cr1.py": "403d7c725b117dc5d5d2e9f5a8687ebf9819784a843b9485c80021466e0113f8",
+    "data.py": "32516c0ede6c1a0b1b3285bad0dbf26f7585736ba0fd9a363fbe2f0fb1b0a1c9",
+    "model.py": "690234ba0b8c46c07ff71931efab95769dd90957360cf34f7fb589120dfa0419",
+    "report.py": "3ceb5458cfc77f4cfbdac706903793f18964cf736a8728e06f2c6f1144837d69",
+    "runner.py": "e3451511603b3bef9de1f8783d1f720f64122a5a93d9891ddf5f8ffec74eddab",
+    "tests/test_model.py": "b114aaa6d718345e1caadbc80d7c2576540c3ff97390cccc805443888b093675",
+    "tests/test_workflow.py": "03dec5b1bd0bf8fba5400cc8b5274b3664f04048d872bd9784d438e344986e41"
+  }
+}

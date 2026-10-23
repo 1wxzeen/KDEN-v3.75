@@ -1,0 +1,93 @@
+{
+  "schema_version": "KDEN_V375_R14_SPATIAL_CONTRACT_V1",
+  "contract_id": "KDEN_V375_R14_REGIONAL_SPATIAL_V1",
+  "status": "SEALED_FOR_R14_CONFIRMATION_PILOT",
+  "confirmation_pilot_authorized": true,
+  "full_history_authorized": false,
+  "full_history_blocker": "STEP_04_R14_PASS_REQUIRED",
+  "baseline_contracts_are_preserved_from": "config/r14_acquisition_v375.json",
+  "coordinate_basis": {
+    "method": "SPHERICAL_GEODESIC_DESTINATION_THEN_HRRR_LAMBERT_PROJECTION",
+    "earth_radius_m": 6371229.0,
+    "bearing_reference": "degrees_clockwise_from_true_north",
+    "distance_reference": "great_circle_distance_on_HRRR_shape_6_sphere",
+    "anchor": "station_coordinate_era_latitude_longitude",
+    "grid_geometry_id": "HRRR_CONUS_NATIVE_LAMBERT_V4"
+  },
+  "support_order": [
+    "WEST_FOOTHILL_D030",
+    "WEST_FOOTHILL_D060",
+    "NNE_PLAINS_D030",
+    "NNE_PLAINS_D060",
+    "EAST_PLAINS_D030",
+    "EAST_PLAINS_D060",
+    "SSE_PALMER_D030",
+    "SSE_PALMER_D060"
+  ],
+  "sectors": [
+    {
+      "sector_id": "west_foothill",
+      "support_prefix": "WEST_FOOTHILL",
+      "bearing_degrees": 270.0,
+      "distances_km": [30, 60]
+    },
+    {
+      "sector_id": "north_northeast_plains",
+      "support_prefix": "NNE_PLAINS",
+      "bearing_degrees": 22.5,
+      "distances_km": [30, 60]
+    },
+    {
+      "sector_id": "east_plains",
+      "support_prefix": "EAST_PLAINS",
+      "bearing_degrees": 90.0,
+      "distances_km": [30, 60]
+    },
+    {
+      "sector_id": "south_southeast_palmer_divide",
+      "support_prefix": "SSE_PALMER",
+      "bearing_degrees": 157.5,
+      "distances_km": [30, 60]
+    }
+  ],
+  "field_operators": {
+    "BILINEAR_AT_EIGHT_SUPPORTS": [
+      "H16", "H17", "H18", "H19", "H24", "H26", "H28", "H31", "Q05"
+    ],
+    "NEAREST_AT_EIGHT_SUPPORTS": ["H36", "H38"],
+    "STATIC_TERRAIN_BILINEAR_AT_EIGHT_SUPPORTS": ["H14"],
+    "LOCAL_BASELINE_ONLY_NO_REGIONAL_SUPPORT": ["H02", "H07"]
+  },
+  "terrain_and_validity": {
+    "h14_required_at_every_regional_support": true,
+    "dynamic_support_requires_finite_corresponding_h14": true,
+    "isobaric_regional_sampling": "FORBIDDEN_V1",
+    "isobaric_fields_kept_on_existing_local_tile_only": ["H02", "H07"],
+    "lapse_rate_correction": "NONE",
+    "missing_bilinear_node_policy": "REGIONAL_SUPPORT_MISSING_FAIL_CLOSED",
+    "missing_nearest_node_policy": "REGIONAL_SUPPORT_MISSING_FAIL_CLOSED",
+    "reflectivity_interpolation_policy": "NEAREST_TO_AVOID_LINEAR_AVERAGING_OF_DBZ",
+    "accumulation_interpolation_policy": "NEAREST_MATCHES_BASELINE_H38_CONTRACT"
+  },
+  "storage": {
+    "schema_path": "schemas/hrrr_field_state_r14_v375.json",
+    "layout": "one_field_state_row_with_eight_positionally_bound_nullable_values",
+    "support_value_columns": [
+      "regional_value_00", "regional_value_01", "regional_value_02", "regional_value_03",
+      "regional_value_04", "regional_value_05", "regional_value_06", "regional_value_07"
+    ],
+    "coverage_mask_column": "regional_coverage_mask",
+    "support_count_column": "regional_support_count",
+    "support_order_is_contract_order": true,
+    "no_row_per_support_expansion": true
+  },
+  "validation": {
+    "required_coordinate_eras": ["KDEN_COORD_20040105", "KDEN_COORD_20211122"],
+    "expected_support_count_per_era": 8,
+    "distance_absolute_tolerance_m": 0.01,
+    "bilinear_weight_sum_tolerance": 1e-10,
+    "all_nodes_must_be_inside_operational_grid": true,
+    "resolved_geometry_artifact": "registries/r14_spatial_geometry_v375.json",
+    "pilot_must_measure_output_and_extraction_cost": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "KDEN_V375_PARQUET_SCHEMA_V1",
+  "schema_id": "KDEN_V375_HRRR_FIELD_STATE_V1",
+  "format": "parquet",
+  "compression": "zstd",
+  "primary_key": ["target_day", "cycle_init_utc", "product", "forecast_lead_min", "field_registry_id", "station_coord_era"],
+  "sort_order": ["target_day", "cycle_init_utc", "product", "forecast_lead_min", "field_registry_id", "station_coord_era"],
+  "columns": [
+    {"name": "target_day", "arrow_type": "date32", "nullable": false},
+    {"name": "cycle_init_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "cycle_init_local", "arrow_type": "timestamp[us,America/Denver]", "nullable": false},
+    {"name": "product", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "hrrr_version", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "forecast_lead_min", "arrow_type": "int16", "nullable": false},
+    {"name": "valid_time_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "valid_time_local", "arrow_type": "timestamp[us,America/Denver]", "nullable": false},
+    {"name": "field_registry_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "parameter", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "level", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "step_type", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "interval_start_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "interval_end_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "native_unit", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "canonical_unit", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "station_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "station_coord_era", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "grid_geometry_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "bi_value", "arrow_type": "float64", "nullable": true},
+    {"name": "nn_value", "arrow_type": "float64", "nullable": true},
+    {"name": "tile_shape", "arrow_type": "list<int16>", "nullable": true},
+    {"name": "tile_values", "arrow_type": "list<float64>", "nullable": true},
+    {"name": "coverage_flag", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "missing_reason", "arrow_type": "string", "nullable": true},
+    {"name": "selector_identity", "arrow_type": "string", "nullable": false},
+    {"name": "source_idx_hash", "arrow_type": "fixed_size_binary[32]", "nullable": false},
+    {"name": "payload_hash", "arrow_type": "fixed_size_binary[32]", "nullable": true},
+    {"name": "byte_start", "arrow_type": "int64", "nullable": true},
+    {"name": "byte_end", "arrow_type": "int64", "nullable": true},
+    {"name": "decoded_grib_identity", "arrow_type": "string", "nullable": true},
+    {"name": "retrieval_run_id", "arrow_type": "string", "nullable": false},
+    {"name": "derivation_version", "arrow_type": "string", "nullable": false}
+  ],
+  "row_rules": {
+    "compact_tile": {
+      "allowed_shapes": [[3, 3], [9, 9]],
+      "length_rule": "len(tile_values)=tile_shape[0]*tile_shape[1]",
+      "layout": "row-major with j south-to-north and i west-to-east",
+      "null_rule": "tile_shape and tile_values are both null or both non-null"
+    },
+    "precision_policy": "float64 is the conservative pre-pilot physical type; Step 04 may amend and reseal this schema only after measured Float32 parity",
+    "missingness": "a missing field-state row retains request identity and coverage reason while values and payload identity remain null"
+  }
+}

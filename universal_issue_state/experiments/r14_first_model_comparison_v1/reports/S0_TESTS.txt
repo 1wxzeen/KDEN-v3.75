@@ -1,0 +1,18 @@
+test_changed_lag_rejected_by_frozen_schema (test_s0.S0Tests.test_changed_lag_rejected_by_frozen_schema) ... ok
+test_edge_categories_and_inclusive_pair (test_s0.S0Tests.test_edge_categories_and_inclusive_pair) ... ok
+test_fitting_authorization_rejected (test_s0.S0Tests.test_fitting_authorization_rejected) ... ok
+test_frozen_configuration_accepts (test_s0.S0Tests.test_frozen_configuration_accepts) ... ok
+test_injected_truth_predictor_rejected (test_s0.S0Tests.test_injected_truth_predictor_rejected) ... ok
+test_missing_feature_rejected (test_s0.S0Tests.test_missing_feature_rejected) ... ok
+test_partition_gap_rejected (test_s0.S0Tests.test_partition_gap_rejected) ... ok
+test_partition_overlap_rejected (test_s0.S0Tests.test_partition_overlap_rejected) ... ok
+test_path_escape_and_symlink_rejected (test_s0.S0Tests.test_path_escape_and_symlink_rejected) ... ok
+test_record_tampering_rejected (test_s0.S0Tests.test_record_tampering_rejected) ... ok
+test_reserved_outcome_access_rejected (test_s0.S0Tests.test_reserved_outcome_access_rejected) ... ok
+test_unknown_schema_keywords_fail_closed (test_s0.S0Tests.test_unknown_schema_keywords_fail_closed) ... ok
+test_unregistered_configuration_rejected (test_s0.S0Tests.test_unregistered_configuration_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.011s
+
+OK

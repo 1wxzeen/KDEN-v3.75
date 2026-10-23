@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T01 experiment configuration; planning proposals remain explicitly unlocked",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "experiment_id", "stage", "study_start", "study_end", "initial_context_end", "development_emissions_start", "development_end", "holdout_start", "holdout_end", "additional_trusted_start", "label_embargo_calendar_days", "label_cutoff_operator", "issue_timezone", "issue_grid_start_minutes", "issue_grid_end_minutes", "issue_grid_step_minutes", "climate_day_start_utc_hour", "hrrr_availability_lag_minutes", "holdout_access", "additional_truth_requires_maturity_wait", "expected_counts", "planning_proposals_not_locked", "trusted_record_pins"],
+  "properties": {
+    "schema_version": {"const": "R14_TABULAR_EXPERIMENT_CONFIG_V1"},
+    "experiment_id": {"const": "R14_TABULAR_PRETRAINED_V1"},
+    "stage": {"const": "T01"},
+    "study_start": {"const": "2021-01-01"}, "study_end": {"const": "2026-09-11"},
+    "initial_context_end": {"const": "2021-12-31"},
+    "development_emissions_start": {"const": "2022-01-01"}, "development_end": {"const": "2025-09-06"},
+    "holdout_start": {"const": "2025-09-07"}, "holdout_end": {"const": "2026-09-06"},
+    "additional_trusted_start": {"const": "2026-09-07"},
+    "label_embargo_calendar_days": {"type": "integer", "const": 7},
+    "label_cutoff_operator": {"const": "STRICTLY_BEFORE"},
+    "issue_timezone": {"const": "America/Denver"},
+    "issue_grid_start_minutes": {"const": 120}, "issue_grid_end_minutes": {"const": 960}, "issue_grid_step_minutes": {"const": 15},
+    "climate_day_start_utc_hour": {"const": 7}, "hrrr_availability_lag_minutes": {"const": 105},
+    "holdout_access": {"const": "CLOSED_UNTIL_RECIPE_LOCK_AND_ROLLING_REPLAY"},
+    "additional_truth_requires_maturity_wait": {"type": "boolean", "const": false},
+    "expected_counts": {"const": {"target_days": 2080, "issue_states": 118536, "holdout_days": 365, "development_days_including_initial": 1710, "development_labels": 1707, "development_unresolved": 3, "additional_trusted_days": 5, "development_blocks": 45, "holdout_blocks": 13}},
+    "planning_proposals_not_locked": {"type": "object", "required": ["primary_issue_window", "modal_hit_rate_min", "mean_mae_f_max", "mean_rmse_f_max", "integer_nll_nats_max", "scored_holdout_days_min", "supported_forecast_fraction_min"]},
+    "trusted_record_pins": {"type": "object", "required": ["state/PREFIT_P02_PASS.json", "state/PREFIT_P06_PASS.json", "state/PREFIT_P07_PASS.json", "state/KDEN_V375_MODELING_BOUNDARY_PASS.json", "universal_issue_state/v1/manifests/p06_substrate_freeze_manifest.json"], "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "KDEN_V375_R14_CONFIRMATION_PILOT_DESIGN_V1",
+  "scope_id": "KDEN_V375_R14_V1",
+  "pilot_id": "KDEN_V375_R14_BOUNDED_CONFIRMATION_PILOT_V1",
+  "network_authority": "BOUNDED_SELECTED_REQUESTS_ONLY",
+  "lead_policy": "TARGET_WINDOW_RIGHT_OPEN",
+  "historical_engineering_evidence": {
+    "pass_record": "state/STEP_04_PASS.json",
+    "report": "reports/step_04_pilot_report_v375.json",
+    "authorization": "EVIDENCE_ONLY_NOT_R14_PASS"
+  },
+  "weeks": [
+    {
+      "week_id": "WINTER_EARLY_MST_2021",
+      "season": "winter",
+      "archive_stratum": "early",
+      "start_date": "2021-01-10",
+      "end_date": "2021-01-16",
+      "coordinate_era": "KDEN_COORD_20040105",
+      "dst_regime": "MST"
+    },
+    {
+      "week_id": "FALL_EARLY_FALLBACK_2021",
+      "season": "fall",
+      "archive_stratum": "early",
+      "start_date": "2021-11-07",
+      "end_date": "2021-11-13",
+      "coordinate_era": "KDEN_COORD_20040105",
+      "dst_regime": "MST_MDT_TRANSITION",
+      "required_transition": "fall_back"
+    },
+    {
+      "week_id": "SPRING_MIDDLE_SPRINGFORWARD_2023",
+      "season": "spring",
+      "archive_stratum": "middle",
+      "start_date": "2023-03-12",
+      "end_date": "2023-03-18",
+      "coordinate_era": "KDEN_COORD_20211122",
+      "dst_regime": "MST_MDT_TRANSITION",
+      "required_transition": "spring_forward"
+    },
+    {
+      "week_id": "SUMMER_LATE_MDT_2025",
+      "season": "summer",
+      "archive_stratum": "late",
+      "start_date": "2025-07-13",
+      "end_date": "2025-07-19",
+      "coordinate_era": "KDEN_COORD_20211122",
+      "dst_regime": "MDT"
+    }
+  ],
+  "selection": {
+    "daily_cycle_roles": ["c23", "c00", "c14"],
+    "daily_lead_roles": ["first", "middle", "final"],
+    "select_all_r14_fields_for_daily_state": true,
+    "q15_repeated_block_anchor": "first_day_of_each_week_c00_f01",
+    "q15_repeated_block_leads_min": [15, 30, 45, 60],
+    "parity_anchor": "first_day_of_each_week_c00",
+    "parity_leads_min": [0, 60, 360, 1080],
+    "parity_fields": {"wrfsfcf": "H16", "wrfsubhf": "Q05"},
+    "include_static_H14_once": true
+  },
+  "runtime": {
+    "profiles": {
+      "eight_worker": {
+        "wrfsfcf": "config/wrfsfcf_8w.toml",
+        "wrfsubhf": "config/wrfsubhf_8w.toml"
+      }
+    },
+    "primary_workers": 8,
+    "rebuild_workers": 8,
+    "optional_four_worker_diagnostic": false,
+    "cache_policy": "retain_until_hash_verified_rebuild_then_discard",
+    "full_history_raw_retention_decision": "discard_after_verified_atomic_work_unit",
+    "parquet_compression": "zstd",
+    "parquet_row_group_rows": 10000
+  },
+  "gates": {
+    "float32_absolute_tolerance": 0.01,
+    "float32_relative_tolerance": 0.000001,
+    "h16_q05_absolute_tolerance": 0.00001,
+    "minimum_h16_q05_pairs": 8,
+    "disk_safety_margin_fraction": 0.25,
+    "selected_precision": "float64",
+    "selected_compression": "zstd",
+    "required_primary_workers": 8,
+    "required_regional_coverage_mask": 255
+  },
+  "physical_ranges": {
+    "H02": [170.0, 340.0],
+    "H07": [170.0, 340.0],
+    "H14": [-1000.0, 10000.0],
+    "H16": [170.0, 340.0],
+    "H17": [150.0, 330.0],
+    "H18": [-150.0, 150.0],
+    "H19": [-150.0, 150.0],
+    "H24": [0.0, 10000.0],
+    "H26": [0.0, 100.0],
+    "H28": [0.0, 100.0],
+    "H31": [-50.0, 2000.0],
+    "H36": [-50.0, 100.0],
+    "H38": [0.0, 500.0],
+    "Q05": [170.0, 340.0]
+  }
+}

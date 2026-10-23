@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_MONITOR_SNAPSHOT_V1",
+  "title": "KDEN v3.75 read-only live monitor snapshot",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "observed_at_utc",
+    "run_id",
+    "step_id",
+    "run_status",
+    "progress",
+    "recent_performance",
+    "eta"
+  ],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_MONITOR_SNAPSHOT_V1"},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "run_id": {"type": "string"},
+    "step_id": {"type": "string", "pattern": "^STEP_0[0-8]$"},
+    "run_status": {
+      "enum": ["INITIALIZED", "RUNNING", "PAUSE_REQUESTED", "PAUSED", "PASS", "FAILED"]
+    },
+    "run_message": {"type": ["string", "null"]},
+    "progress_source": {"type": ["string", "null"]},
+    "completion_journals": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "progress": {"type": "object"},
+    "recent_performance": {"type": "object"},
+    "eta": {"type": "object"}
+  },
+  "additionalProperties": false,
+  "x-contract": {
+    "mutation": "none; monitoring is read-only",
+    "eta_preference": "logical requests, then atomic work units",
+    "pause_resume": "only the current RUN_STARTED/RUN_RESUMED segment contributes",
+    "stall_handling": "time since the most recent commit remains in the active-window denominator",
+    "terminal_rendering": "live-status emits append-only lines and never clears the terminal"
+  }
+}

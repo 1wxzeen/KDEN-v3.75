@@ -1,0 +1,42 @@
+{
+  "$id": "KDEN_V375_ISSUE_SPINE_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Logical row contract for one causal KDEN issue state. The physical Parquet schema is enforced by p03_issue_spine.py.",
+  "properties": {
+    "issue_state_id": {"pattern": "^ISSUE_[0-9a-f]{64}$", "type": "string"},
+    "target_date": {"format": "date", "type": "string"},
+    "statistical_group_id": {"pattern": "^KDEN_DAY_[0-9]{4}-[0-9]{2}-[0-9]{2}$", "type": "string"},
+    "issue_time_utc": {"type": "string"},
+    "issue_time_local": {"type": "string"},
+    "local_timezone": {"const": "America/Denver"},
+    "local_utc_offset_minutes": {"type": "integer"},
+    "local_dst_flag": {"type": "boolean"},
+    "local_fold": {"enum": [0, 1]},
+    "local_issue_hour": {"maximum": 16, "minimum": 2, "type": "integer"},
+    "local_issue_minute": {"enum": [0, 15, 30, 45]},
+    "local_minutes_since_0200": {"maximum": 840, "minimum": 0, "type": "integer"},
+    "issue_ordinal_in_target_day": {"maximum": 56, "minimum": 0, "type": "integer"},
+    "issue_count_for_target_day": {"enum": [53, 57]},
+    "target_window_start_utc": {"type": "string"},
+    "target_window_end_utc": {"type": "string"},
+    "target_year": {"type": "integer"},
+    "target_month": {"maximum": 12, "minimum": 1, "type": "integer"},
+    "target_day_of_month": {"maximum": 31, "minimum": 1, "type": "integer"},
+    "target_day_of_year": {"maximum": 366, "minimum": 1, "type": "integer"},
+    "target_day_of_week": {"maximum": 6, "minimum": 0, "type": "integer"},
+    "issue_grid_contract_id": {"const": "KDEN_V375_ISSUE_GRID_0200_1600_MT_Q15_V1"},
+    "issue_state_eligible": {"const": true}
+  },
+  "required": [
+    "issue_state_id", "target_date", "statistical_group_id", "issue_time_utc",
+    "issue_time_local", "local_timezone", "local_utc_offset_minutes",
+    "local_dst_flag", "local_fold", "local_issue_hour", "local_issue_minute",
+    "local_minutes_since_0200", "issue_ordinal_in_target_day",
+    "issue_count_for_target_day", "target_window_start_utc",
+    "target_window_end_utc", "target_year", "target_month",
+    "target_day_of_month", "target_day_of_year", "target_day_of_week",
+    "issue_grid_contract_id", "issue_state_eligible"
+  ],
+  "type": "object"
+}

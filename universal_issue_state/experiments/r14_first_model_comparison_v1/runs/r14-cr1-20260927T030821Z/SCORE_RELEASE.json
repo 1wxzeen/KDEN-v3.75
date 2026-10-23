@@ -1,0 +1,13 @@
+{
+  "files": {
+    "PRIMARY_COMPARISONS.json": "c955ea45b61bf4788c81bf05440f11fadf26de35da5fe51e665988628531ba21",
+    "READINESS.json": "89f8747c659a900cef421fdcf6b571e9216d37fcec0fdaf30bd989027d6b4920",
+    "RELIABILITY_SCORES.json": "d59dd63718e01aef56700c12f1393f2497032cac51fdfad98d9ea5b979b7be21",
+    "REPORT.md": "f7ff1dacb3b2350b6d4a88800ec602f85ad7efb92d6f9ae9dbb80b8f1de07a27",
+    "SELECTION.json": "b6f48cb327de2be8b046afdd253734da7b724c2a2d9fb40b3c04fd17d59f897a"
+  },
+  "historical_not_blind": true,
+  "prediction_release_sha256": "66cf56c8c77cf7509b08a2a2a8a3d173a5e113debb647797fed6378180da71e7",
+  "record_sha256": "1f19f096411ad7c85178ab3e38a6c5f1b53bce9c33428d23cd354eaea463eee0",
+  "status": "COMPLETE"
+}

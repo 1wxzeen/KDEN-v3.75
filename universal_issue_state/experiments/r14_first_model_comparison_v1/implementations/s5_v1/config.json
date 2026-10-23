@@ -1,0 +1,26 @@
+{
+  "analog_quartile_operationalization": "At S5 after outcome exposure: selected inner candidate kth-distance and ESS quartiles at exact issue, training expected-day weights. Descriptive only.",
+  "authority": "User requested implementation of S5 after inspecting limited S4 results. Full descriptive scorecard authorized; no refits or learned gates.",
+  "bootstrap": "Frozen S0 7/14-calendar-day noncircular, fold-stratified 5000 replicates, seed3750925. Original eligible fold masses retained. Primary five NLL intervals quantiles .005/.995; other intervals .025/.975 descriptive.",
+  "no_formal_promotion": true,
+  "no_learned_gate": true,
+  "no_market_bands": true,
+  "no_observations": true,
+  "parents": {
+    "config/experiment.json": "6f87897d65ccc307059bb806555cfe54ed159766b7184625779484d9a828934b",
+    "config/features.json": "a8b45be74bc849085bfa7e22be40c442c8083a1462ee6989083ff993ef682b9f",
+    "config/scorecard.json": "530be13531398a68de60294e6eea777f0de06bf9c84c2000b4e67b21aed47e49",
+    "diagnostics/s4_model_review_v1/MANIFEST.json": "3e68b23369bd5dd9d801df0da60a37851f1165b9e105c8aa640b9b933f6bcd0e",
+    "implementations/s3_v1/RELEASE.json": "b082ab81ed8ae8843a43c2f868f5e9949336ab8419ed9d98689e5e1a0be5573d",
+    "implementations/s4_v1/RELEASE.json": "14b1168d410069aa11a4e9e8a675faca3220e593b3741fe0ee712e4b25b132a1",
+    "runs/r14-s2-20260925T185129Z/BASELINE_RELEASE.json": "62d432d81b6dd3aa6d330d109a3a82b9b14b5e6236ad40db2a9a0b66f88d6d03",
+    "runs/r14-s4-20260926T054027789377Z/COMPARISON_RELEASE.json": "6fcebf7ef1e3b91d6d8c2d2bcfac0caf342a75995c3e9fc7a780fdfefca1291e"
+  },
+  "prior_outcome_exposure": true,
+  "s2_run": "runs/r14-s2-20260925T185129Z",
+  "s4_run": "runs/r14-s4-20260926T054027789377Z",
+  "scale_boundary_resolution": "Report original scorecard sigma<=.26 or>=19.9 alongside S3 stored diagnostics using .275/18; never silently conflate thresholds.",
+  "schema": "R14_S5_SPEC_V1",
+  "sparse_rules": "Slices under60 days exploratory; reliability bins under30 days sparse per sealed scorecard; small-bin uncertainty retained, no formal claims.",
+  "timing_audit": "Detect inner selection outcomes later than outer two-day-lag cutoff; recompute selection sensitivity excluding them without modifying forecasts. Disclose nonconformance even if choices unchanged."
+}

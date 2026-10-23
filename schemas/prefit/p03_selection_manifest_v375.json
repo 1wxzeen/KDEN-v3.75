@@ -1,0 +1,25 @@
+{
+  "$id": "KDEN_V375_PREFIT_P03_SELECTION_MANIFEST_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Integrity and coverage manifest for the P03 issue spine and legal-cycle selection tables.",
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_PREFIT_P03_SELECTION_MANIFEST_V1"},
+    "status": {"const": "PASS_CANDIDATE"},
+    "run_id": {"type": "string"},
+    "scope_id": {"const": "KDEN_V375_R14_V1"},
+    "substrate_release_id": {"const": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1"},
+    "target_day_count": {"const": 2080},
+    "truth_or_weather_values_materialized": {"const": false}
+  },
+  "required": [
+    "schema_version", "status", "run_id", "scope_id", "substrate_release_id",
+    "predecessor_p02_record_sha256", "issue_grid_contract_id",
+    "availability_policy_id", "product_selection_policy", "source_schedule",
+    "issue_spine", "selected_cycles", "target_day_count",
+    "issue_rows_by_target_year", "issue_count_per_target_day_distribution",
+    "spring_forward_target_days", "selection_status_counts",
+    "current_cycle_missing_count", "previous_cycle_missing_count",
+    "trajectory_bundle_missing_count", "truth_or_weather_values_materialized"
+  ],
+  "type": "object"
+}

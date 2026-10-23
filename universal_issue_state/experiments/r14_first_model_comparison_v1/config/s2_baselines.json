@@ -1,0 +1,18 @@
+{
+  "schema_version": "R14_S2_BASELINE_IMPLEMENTATION_V1",
+  "parent_contract": "config/experiment.json",
+  "candidate_registry": "config/candidates.json",
+  "models": ["B0_H", "B0_Q"],
+  "parameter_changes_from_s0": false,
+  "parameter_rationale": "Seasonal windows 45/60/90 balance relevance and sample support; sigma 0.75/1.25/2/3F spans narrow to conservative smoothing. Inner chronological day-weighted NLL selects one setting per model/vintage, on identical feasible cases. Wider window then wider kernel resolves numerical ties. Boundary selections are reported, not used to expand the grid after evaluation.",
+  "point_f": "continuous translated-mixture mean = query raw center + average training residual; PMF median/mean/mode remain separately derivable",
+  "full_run_engine": "scipy 1.15.3 scipy.special.ndtr with stable survival differences",
+  "reference_engine": "S1 math.erfc integer integration; test/reference alternative must start a separate run",
+  "unit": "one candidate/fold fit plus complete assessment-key forecast partition, committed together",
+  "expected_inner_units": 360,
+  "expected_outer_units": 6,
+  "outer_scoring": "forbidden; defer until S4 comparison prediction seal",
+  "training_artifact": "per-day/exact-issue residuals; training data, not OOF forecasts",
+  "probe": {"train_dates": ["2021-01-01", "2021-03-31"], "assessment_dates": ["2022-01-20", "2022-02-20", "2022-03-13"], "outer": "OUTER_01", "inner": "INNER_02", "seasonal_half_width_days": 45, "kernel_sigma_f": 1.25, "assessment_outcomes": false},
+  "execution": "owner-run full history; bounded implementation probes first"
+}

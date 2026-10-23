@@ -1,0 +1,10 @@
+schema_version = "KDEN_V375_WORKER_PROFILE_V1"
+profile_id = "WRFSFCF_8W_V1"
+product = "wrfsfcf"
+max_workers = 8
+pool_connections_per_session = 8
+pool_maxsize_per_host = 1
+max_attempts = 4
+timeout_seconds = 120.0
+initial_backoff_seconds = 1.0
+

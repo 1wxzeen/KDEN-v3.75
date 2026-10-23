@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "stage_id", "status", "run_id", "completed_at_utc", "predecessor_records", "code_identity", "artifact_hashes", "gate_evidence", "record_sha256"],
+  "$defs": {"hashmap": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+  "properties": {
+    "schema_version": {"const": "R14_TABULAR_T01_PASS_V1"}, "stage_id": {"const": "T01"}, "status": {"const": "PASS"},
+    "run_id": {"type": "string", "pattern": "^kden-r14-t01-[0-9]{8}T[0-9]{6}Z-[a-z0-9][a-z0-9-]{0,31}$"}, "completed_at_utc": {"type": "string"},
+    "predecessor_records": {"$ref": "#/$defs/hashmap"}, "code_identity": {"$ref": "#/$defs/hashmap"}, "artifact_hashes": {"$ref": "#/$defs/hashmap"},
+    "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "gate_evidence": {"type": "object", "required": ["trusted_rows", "development_labels", "development_unresolved", "additional_trusted_labels", "holdout_days", "input_bindings_hashed", "holdout_value_pages_read", "network_requests_made", "model_fits_performed", "holdout_content_audit_performed", "runtime_isolation"], "additionalProperties": false, "properties": {
+      "trusted_rows": {"const": 1715}, "development_labels": {"const": 1707}, "development_unresolved": {"const": 3}, "additional_trusted_labels": {"const": 5}, "holdout_days": {"const": 365},
+      "input_bindings_hashed": {"type": "integer", "minimum": 1}, "holdout_value_pages_read": {"const": 0}, "network_requests_made": {"const": 0}, "model_fits_performed": {"const": 0},
+      "holdout_content_audit_performed": {"type": "boolean", "const": false}, "runtime_isolation": {"type": "object"}
+    }}
+  }
+}

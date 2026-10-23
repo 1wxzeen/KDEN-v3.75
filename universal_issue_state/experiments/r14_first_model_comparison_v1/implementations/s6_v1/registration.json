@@ -1,0 +1,287 @@
+{
+  "schema": "R14_S6_REGISTRATION_V1",
+  "experiment_id": "R14_CONDITIONAL_RELIABILITY_V1",
+  "status": "REGISTERED_NOT_FITTED",
+  "stage": "S6",
+  "created_utc": "2026-09-27",
+  "decision": "Conditional exact-integer reliability before another Tmax model",
+  "scope": {
+    "registration_complete": true,
+    "model_fits_performed": false,
+    "new_labels_opened": false,
+    "trading": false,
+    "runtime_implemented": false,
+    "boundary_primitive_implemented": true
+  },
+  "parents": {
+    "config/experiment.json": "6f87897d65ccc307059bb806555cfe54ed159766b7184625779484d9a828934b",
+    "config/evidence_exposure.json": "0e62d4f843a1394010e43cc3cb957c243703d6511e086b73f3d821216c6c6845",
+    "implementations/s3_v1/RELEASE.json": "b082ab81ed8ae8843a43c2f868f5e9949336ab8419ed9d98689e5e1a0be5573d",
+    "implementations/s4_v1/RELEASE.json": "14b1168d410069aa11a4e9e8a675faca3220e593b3741fe0ee712e4b25b132a1",
+    "implementations/s5_v1/RELEASE.json": "71faf9560d56429170bdcbb7f64a548b536e3e21d6c90db2263a49e7c5b93e81",
+    "runs/r14-s5-20260927T024658Z/SCORECARD_RELEASE.json": "00beec63317cf8a651b82ed79c8506da06e99f0f4d55979e79c090dbb12b8585",
+    "reports/s5_v1/INTERPRETATION.md": "3d942f3ed740b5d0b68aedf16168daf56fe64b3b09df12bc36823f0bab5d9343"
+  },
+  "base_models": [
+    "ANEN",
+    "GAM_LS_NORMAL"
+  ],
+  "target": {
+    "event": "1 iff audited integer Tmax equals frozen base PMF smallest-argmax integer",
+    "negative_cases": "all eligible misses retained",
+    "probability": "P(base integer hit | issuance-time predictors)",
+    "pmf_recalibration": false,
+    "cross_base_model_selection": false
+  },
+  "evidence": {
+    "historical_allowed": [
+      "2021-01-01",
+      "2025-09-06"
+    ],
+    "meta_rows": [
+      "2023-01-01",
+      "2025-09-06"
+    ],
+    "historical_blind": false,
+    "reserved_forbidden": [
+      "2025-09-07",
+      "2026-09-06"
+    ],
+    "tail_forbidden": [
+      "2026-09-07",
+      "2026-09-11"
+    ],
+    "new_outcome_access": false,
+    "historical_experiment_budget": "one registered six-model family; amendments append to ledger; no unseen-claim reset"
+  },
+  "models": [
+    {
+      "id": "R0",
+      "terms": [
+        "intercept",
+        "logit_native_max_integer_probability"
+      ]
+    },
+    {
+      "id": "R1",
+      "terms": [
+        "intercept",
+        "logit_native_max_integer_probability",
+        "issue_fraction",
+        "issue_fraction_squared",
+        "season_sin1",
+        "season_cos1",
+        "season_sin2",
+        "season_cos2"
+      ]
+    },
+    {
+      "id": "R2",
+      "terms": [
+        "all_R1_terms",
+        "revision_h16_remaining_max_abs",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_h31_remaining_trapezoid_mj_m2",
+        "h24_local_remaining_max",
+        "derived_wind_speed_remaining_max_m_s",
+        "derived_t850_minus_t2m_future_first_k"
+      ]
+    }
+  ],
+  "raw_reference": "native max integer probability, unfitted",
+  "weather_features": [
+    {
+      "column": "revision_h16_remaining_max_abs",
+      "transform": "log1p",
+      "rationale": "Forecast instability; not observed forecast error"
+    },
+    {
+      "column": "derived_q05_minus_h16_common_remaining_mean_k",
+      "transform": "absolute",
+      "rationale": "Related-product disagreement; not independent ensemble spread"
+    },
+    {
+      "column": "derived_h31_remaining_trapezoid_mj_m2",
+      "transform": "log1p",
+      "rationale": "Remaining solar forcing and daylight; forecast proxy"
+    },
+    {
+      "column": "h24_local_remaining_max",
+      "transform": "log1p",
+      "rationale": "Modeled mixing depth"
+    },
+    {
+      "column": "derived_wind_speed_remaining_max_m_s",
+      "transform": "log1p",
+      "rationale": "Ventilation strength, not signed advection"
+    },
+    {
+      "column": "derived_t850_minus_t2m_future_first_k",
+      "transform": "identity",
+      "rationale": "Low-level thermal contrast; not asserted above-ground lapse rate"
+    }
+  ],
+  "feature_exclusions": [
+    "future or same-day realized weather",
+    "audited truth as predictor",
+    "post-issuance observations",
+    "calendar year indicator",
+    "all-R14 search",
+    "model-specific support diagnostics in this first shared comparison",
+    "cloud duplicated with solar",
+    "learned interactions",
+    "market features"
+  ],
+  "estimator": {
+    "family": "ridge logistic regression",
+    "objective": "mean day-weighted binary NLL + 0.01/2 * sum(nonintercept coefficients squared)",
+    "ridge_lambda": 0.01,
+    "hyperparameter_search": false,
+    "logit_clip": [
+      1e-06,
+      0.999999
+    ],
+    "season": "two Fourier harmonics using frozen clock sin/cos, second harmonic algebraically derived",
+    "issue": "minutes since 0200 / 840, then square",
+    "standardization": "training-only day-weighted mean and population SD per nonintercept term; drop training constants; no assessment clipping",
+    "missing": "common complete-case support across R0/R1/R2 and both base forecasts; explicit abstentions count against expected coverage",
+    "invalid_nonnegative_feature": "abstain if negative before log1p; no absolute-value repair",
+    "class_weighting": "none; equal total weight per target day; equal eligible issues within day",
+    "solver": "scipy L-BFGS-B analytic gradient; zero start; maxiter 2000; gtol 1e-6; ftol 1e-12; require success and max absolute gradient <=1e-4; no silent fallback"
+  },
+  "historical_blocks": [
+    {
+      "id": "REL_DEV_2024",
+      "fit": [
+        "2023-01-01",
+        "2023-06-29"
+      ],
+      "threshold": [
+        "2023-07-01",
+        "2023-12-30"
+      ],
+      "assessment": [
+        "2024-01-01",
+        "2024-12-31"
+      ]
+    },
+    {
+      "id": "REL_DEV_2025_PARTIAL",
+      "fit": [
+        "2023-01-01",
+        "2024-06-29"
+      ],
+      "threshold": [
+        "2024-07-01",
+        "2024-12-30"
+      ],
+      "assessment": [
+        "2025-01-01",
+        "2025-09-06"
+      ]
+    }
+  ],
+  "chronology": {
+    "lag_days": 2,
+    "all_label_consuming_stages": [
+      "base_fit",
+      "base_selection",
+      "preprocessing",
+      "reliability_fit",
+      "threshold_fit"
+    ],
+    "group": "whole target date",
+    "freeze": "reliability model fitted before threshold block; same unchanged model scores threshold and assessment; no refit after threshold calibration",
+    "base_versions": "use each row historical base vintage, never final model fitted using future labels; report version drift",
+    "base_reuse": "only after successor certificate recomputes lag-correct selections and verifies fit/forecast lineage; S5 sensitivity is supporting evidence, not sufficient runtime certificate",
+    "threshold_dates": "feature-only thresholds need no hit labels; exclude final day anyway for common conservative boundary",
+    "minimum_fit_days": 120,
+    "minimum_fit_hits": 100,
+    "minimum_fit_misses": 100,
+    "minimum_threshold_days": 120,
+    "failure": "INSUFFICIENT_SUPPORT, no scope relaxation"
+  },
+  "selection": {
+    "primary_target_coverage": 0.25,
+    "secondary_target_coverages": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "threshold": "smallest score with training-threshold-block weighted CDF >= 1-coverage; all ties admitted; threshold fixed throughout assessment",
+    "weights": "original expected-issue day weights; missing predictions excluded from quantile but counted against reported coverage",
+    "abstention": "no output if required predictors unavailable; no fallback",
+    "comparisons": "R0/R1/R2 selectors may choose different cases; also score B0_H and B0_Q integer decisions on R2 identical cases; do not call same-base integer hits a R2-versus-R1 same-case advantage"
+  },
+  "inference": {
+    "primary_metric": "day-weighted binary Brier on all common-supported assessment checkpoints",
+    "primary_contrasts": [
+      "ANEN:R2-R1",
+      "GAM_LS_NORMAL:R2-R1"
+    ],
+    "replicates": 5000,
+    "seed": 3750927,
+    "calendar_block_days": 7,
+    "sensitivity_block_days": 14,
+    "bootstrap": "reuse S5 paired noncircular calendar-block implementation within assessment blocks; all checkpoints of a day together; original fold mass",
+    "primary_interval_quantiles": [
+      0.0125,
+      0.9875
+    ],
+    "meaning": "two Bonferroni-adjusted nominal approximate familywise 95% intervals; historical inference remains exploratory after exposure",
+    "secondary": [
+      "binary NLL",
+      "calibration intercept/slope",
+      "fixed decile reliability",
+      "exact hit and coverage by fold/season/issue",
+      "same-case baseline hits",
+      "selected expected minus actual hit",
+      "tail error of unchanged base forecast"
+    ],
+    "undefined": "null; report undefined bootstrap fraction; interval unavailable if <95% finite"
+  },
+  "research_readiness": {
+    "meaning": "explicit engineering/research targets, not economic break-even or retrospective formal promotion",
+    "primary_brier_improvement_min": 0.002,
+    "primary_requirement": "upper adjusted R2-R1 Brier difference <= -0.002; both blocks point differences <0; assess each base separately, no best-model-only report",
+    "binary_nll_degradation_max": 0.01,
+    "binary_nll_requirement": "pooled and each block R2-R1 point difference <=0.01",
+    "primary_selector_actual_coverage_min": 0.1,
+    "primary_selector_admitted_days_min_per_block": 60,
+    "primary_selector_absolute_calibration_gap_max": 0.03,
+    "primary_selector_same_case_Q_hit_lift_min": 0.02,
+    "gate_requirement": "each block must meet coverage, days, gap and same-case Q point lift targets; report descriptive uncertainty and sparse bins; fail or inconclusive cannot be converted to pass by trying another cutoff",
+    "failure_policy": "publish negative/inconclusive result; no automatic extra candidates or retuning"
+  },
+  "prospective_reservation": {
+    "status": "RESERVED_NOT_ACTIVATED",
+    "target_start": "2026-11-01",
+    "target_end": "2027-10-31",
+    "timezone": "America/Denver",
+    "readiness_deadline": "2026-10-25",
+    "activate_only_if": [
+      "successor runtime and scoring code sealed before deadline",
+      "live feature availability independently verified against R14 definitions",
+      "base and reliability artifact identities and training dates frozen",
+      "one evidence-aware final protocol specifies operational schedule and permitted training data",
+      "forecast archive writes before issuance/outcome; append-only hashes",
+      "exposure audit confirms no outcomes from reserved future period used in decisions"
+    ],
+    "if_not_ready": "do not backfill or claim prospective validation; amend reservation before outcomes are accessed, with reason and new dates",
+    "collection_authorized_by_S6": false,
+    "retraining": "none during reserved year in initial protocol; any operational change logged and changes comparison identity",
+    "minimum_complete_target_days": 250,
+    "interim": "operational checks only; no outcome-driven model/threshold changes or early success stopping",
+    "commercial_bridge": "only after prospective scientific assessment and separate market-data/execution registration"
+  },
+  "deferred": [
+    "distributional tree challenger",
+    "richer GAM",
+    "ordinal/distribution-shape challenger",
+    "RAFM or seasonal experts",
+    "observation adapter",
+    "reliability-to-full-PMF redistribution",
+    "actual-band calibration and market PnL"
+  ],
+  "next_implementation": "CR1: forward-lineage certificate, reliability estimator, honest threshold blocks, bounded synthetic checks, forecast-only freeze then scoring; no CR1 fitting performed in S6"
+}

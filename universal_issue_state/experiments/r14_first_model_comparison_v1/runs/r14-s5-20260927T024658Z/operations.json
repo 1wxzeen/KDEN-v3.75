@@ -1,0 +1,140 @@
+{
+  "ANEN": {
+    "abstentions": 0,
+    "fallback": "NONE",
+    "fit_vs_predict_time": "Only combined unit wall time was recorded; separate timings unavailable.",
+    "historical_peak_memory": "NOT_RECORDED",
+    "outer_units": {
+      "OUTER_01": {
+        "combined_seconds": 95.0863037079107,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      },
+      "OUTER_02": {
+        "combined_seconds": 133.23038449999876,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      },
+      "OUTER_03": {
+        "combined_seconds": 124.74317162507214,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      }
+    }
+  },
+  "B0_H": {
+    "abstentions": 0,
+    "fallback": "NONE",
+    "fit_vs_predict_time": "Only combined unit wall time was recorded; separate timings unavailable.",
+    "historical_peak_memory": "NOT_RECORDED",
+    "outer_units": {
+      "OUTER_01": {
+        "combined_seconds": 105.13367458386347,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      },
+      "OUTER_02": {
+        "combined_seconds": 156.6359883749392,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      },
+      "OUTER_03": {
+        "combined_seconds": 164.14677979191765,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      }
+    }
+  },
+  "B0_Q": {
+    "abstentions": 0,
+    "fallback": "NONE",
+    "fit_vs_predict_time": "Only combined unit wall time was recorded; separate timings unavailable.",
+    "historical_peak_memory": "NOT_RECORDED",
+    "outer_units": {
+      "OUTER_01": {
+        "combined_seconds": 105.6627113330178,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      },
+      "OUTER_02": {
+        "combined_seconds": 157.44502658303827,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      },
+      "OUTER_03": {
+        "combined_seconds": 154.37935333396308,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": null
+      }
+    }
+  },
+  "GAM_LOCATION_NORMAL": {
+    "abstentions": 0,
+    "fallback": "NONE",
+    "fit_vs_predict_time": "Only combined unit wall time was recorded; separate timings unavailable.",
+    "historical_peak_memory": "NOT_RECORDED",
+    "outer_units": {
+      "OUTER_01": {
+        "combined_seconds": 76.70201929099858,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      },
+      "OUTER_02": {
+        "combined_seconds": 119.05604762490839,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      },
+      "OUTER_03": {
+        "combined_seconds": 116.79487379197963,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      }
+    }
+  },
+  "GAM_LS_NORMAL": {
+    "abstentions": 0,
+    "fallback": "NONE",
+    "fit_vs_predict_time": "Only combined unit wall time was recorded; separate timings unavailable.",
+    "historical_peak_memory": "NOT_RECORDED",
+    "outer_units": {
+      "OUTER_01": {
+        "combined_seconds": 77.97134062508121,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      },
+      "OUTER_02": {
+        "combined_seconds": 117.52556362492032,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      },
+      "OUTER_03": {
+        "combined_seconds": 112.82861279183999,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      }
+    }
+  },
+  "GAM_LS_T5": {
+    "abstentions": 0,
+    "fallback": "NONE",
+    "fit_vs_predict_time": "Only combined unit wall time was recorded; separate timings unavailable.",
+    "historical_peak_memory": "NOT_RECORDED",
+    "outer_units": {
+      "OUTER_01": {
+        "combined_seconds": 85.62267695809714,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      },
+      "OUTER_02": {
+        "combined_seconds": 129.16803454095498,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      },
+      "OUTER_03": {
+        "combined_seconds": 130.514542541001,
+        "fit_state": "frozen",
+        "scale_near_bounds_contract_fraction": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "ANEN": {
+    "difference": 0.0019302179223926188,
+    "fourteen_day": {
+      "lower": 0.001034564549823335,
+      "quantiles": [
+        0.0125,
+        0.9875
+      ],
+      "undefined_fraction": 0.0,
+      "upper": 0.0028096236242804505
+    },
+    "seven_day": {
+      "lower": 0.0010639883007479837,
+      "quantiles": [
+        0.0125,
+        0.9875
+      ],
+      "undefined_fraction": 0.0,
+      "upper": 0.0028917890585896276
+    }
+  },
+  "GAM_LS_NORMAL": {
+    "difference": -0.00048607034697968393,
+    "fourteen_day": {
+      "lower": -0.001916901199981643,
+      "quantiles": [
+        0.0125,
+        0.9875
+      ],
+      "undefined_fraction": 0.0,
+      "upper": 0.0007762586223256981
+    },
+    "seven_day": {
+      "lower": -0.001749803782351949,
+      "quantiles": [
+        0.0125,
+        0.9875
+      ],
+      "undefined_fraction": 0.0,
+      "upper": 0.000703597997802695
+    }
+  }
+}

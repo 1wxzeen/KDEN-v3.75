@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_PREFIT_P05_RUN_STATE_SCHEMA_V1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "stage_id",
+    "run_id",
+    "status",
+    "phase",
+    "expected_target_days",
+    "completed_target_days",
+    "expected_feature_rows",
+    "completed_feature_rows",
+    "expected_total_trajectory_rows",
+    "completed_total_trajectory_rows"
+  ],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_PREFIT_P05_RUN_V1"},
+    "stage_id": {"const": "PREFIT_P05"},
+    "run_id": {"type": "string"},
+    "status": {"enum": ["INITIALIZED", "RUNNING", "PAUSE_REQUESTED", "PAUSED", "FAILED", "PASS"]},
+    "phase": {"type": "string"},
+    "expected_target_days": {"const": 2080},
+    "completed_target_days": {"type": "integer", "minimum": 0, "maximum": 2080},
+    "expected_feature_rows": {"const": 118536},
+    "completed_feature_rows": {"type": "integer", "minimum": 0, "maximum": 118536},
+    "expected_total_trajectory_rows": {"const": 8919598},
+    "completed_total_trajectory_rows": {"type": "integer", "minimum": 0, "maximum": 8919598}
+  },
+  "additionalProperties": true
+}

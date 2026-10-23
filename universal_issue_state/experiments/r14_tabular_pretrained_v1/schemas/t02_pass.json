@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "stage",
+    "run_id",
+    "t01_record_sha256",
+    "code_identity",
+    "source_bindings",
+    "runtime_identity",
+    "probe_sha256",
+    "partitions",
+    "report_path",
+    "report_sha256",
+    "feature_columns",
+    "rows",
+    "record_sha256",
+    "holdout_value_pages_read",
+    "network_requests_made",
+    "study_model_fits_performed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "R14_TABULAR_T02_PASS_V1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "stage": {
+      "const": "T02"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "t01_record_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "code_identity": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "source_bindings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "runtime_identity": {
+      "type": "object"
+    },
+    "probe_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "report_path": {
+      "type": "string"
+    },
+    "report_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "partitions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object"
+      }
+    },
+    "feature_columns": {
+      "const": 71
+    },
+    "rows": {
+      "const": 118536
+    },
+    "record_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "holdout_value_pages_read": {
+      "const": 0
+    },
+    "network_requests_made": {
+      "const": 0
+    },
+    "study_model_fits_performed": {
+      "const": 0
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "files": {
+    "ANEN_intraday.json": "d81f73567feabf58c34b0faf112f1751409adaa0a7da86ee18e5edff39d9ff6f",
+    "ANEN_row_scores.parquet": "c8fc39b37a085743fedabbdc6116f9753c69a73d0237523252d13d11a0629305",
+    "B0_H_intraday.json": "9eed4a553ba333b7a25de49c6e41ff203b0b2ff3f83a04ef5d0833714192018f",
+    "B0_H_row_scores.parquet": "cc13a97da287fbc67a30e00e992436261d46926747cd40fd0b2ae4dc3ff2b482",
+    "B0_Q_intraday.json": "7b9f2a570aa8a7b4e0258a93334e293cf4631a34746e56140be685e045d262c6",
+    "B0_Q_row_scores.parquet": "c453891bc38f0bdf191ca46f9f148584b8456e324620c2c06374240b451781f0",
+    "GAM_LOCATION_NORMAL_intraday.json": "d995ead7760eec1a74004af4f91362e9efca09810926083d3ad2ca55c0383d80",
+    "GAM_LOCATION_NORMAL_row_scores.parquet": "fd88cec48da6ae0105ce3af3cfd52525872b624cd1b15bc325d6599b6dc7e8a6",
+    "GAM_LS_NORMAL_intraday.json": "efda94a27cb222963e036769bb6ecd22bbc6087aeaea3b577abeea49a442b14d",
+    "GAM_LS_NORMAL_row_scores.parquet": "c81d4c486fd1980cd2f13b9e20b83ec1cd712ada7d1e0a400682aa69613d1451",
+    "GAM_LS_T5_intraday.json": "717c477ade262be52ef61ec80d4813e4948173303ffff522be584cb62d4e219b",
+    "GAM_LS_T5_row_scores.parquet": "f098b5eeec929b29b3276c54a26a58c1e786e50a0302fceb5186d37b744fed8d",
+    "calibration.json": "89e56084b06d15f0d47aace7effa6ebf04181f2348c8e67c23440bf60d902266",
+    "cases.json": "7e9f6fe95384e934e3d802eff3ccf70079b873d469af423dcb07a2268835b0fa",
+    "confidence_thresholds.json": "250cdb9148e277bae33f8fb486eb18004baa5089bdafb0aaecd41c1740e16900",
+    "fold_issue.json": "f77728f3755e9df69eb04b8d5eb9d3b32c0ff59e13c14ebc68177ff8fcc1b84a",
+    "gam_effects.json": "ec526a24abfa3ef2de5d46d13fd7ddf1bbbe3d5c252c1aa6b2c4a60931874275",
+    "histograms.json": "4b844b2c9ccd90f19b750f24d0432d0f396ac92bfa057abdb10ddabee2136259",
+    "operations.json": "0e6e63eddfdb3b212e36ce3f6fe71c1afe0847f1c2126f4f6688b8c94144c9d6",
+    "paired_inference.json": "5c71e1b94226491c945028ede9913bcb8ce771bee761d1fb75b2f6e74c823541",
+    "population.json": "63a97b18003df21ab40311d2cf945e2b088b0fac855b59e8ba54e6e6a42292cb",
+    "provenance.json": "d3519e772ae8bf8715259ca46e291ffa9bb329b94645c1082789d9706862767c",
+    "regime_thresholds.json": "e0627fb036d47c70f0cf8cd8e8cc4ee77b1a8e28b9d1017705da98f5da539cfd",
+    "scorecards.json": "3c91f222ada6881e734e12e769086c9bca6e45cd4616f2b89f2b1aaf0dc912e9",
+    "selection.json": "57a196b857ed5f7b233ae9f4370f519f7e385370c4842fc52b83d86f90c67251",
+    "timing_audit.json": "f3069cfc4a9060d61dfb327d597f25e7c31e4002b3931a2219b5933e5a24bf3f"
+  },
+  "record_sha256": "254f55d2964f890bc0efb1d21baee927d70c49954d349f893328ea1c075c9679",
+  "result": {
+    "days": 980,
+    "models": 6,
+    "rows_per_model": 55848,
+    "timing_audit": "TIMING_NONCONFORMANCE"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$id": "KDEN_V375_TRUTH_CATALOG_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Logical row contract for the one-row-per-R14-day KDEN truth catalog.",
+  "properties": {
+    "exclusion_reason": {"type": ["string", "null"]},
+    "label_available_for_final_scoring": {"type": "boolean"},
+    "label_available_for_supervised_use": {"type": "boolean"},
+    "source_artifact_path": {"type": "string"},
+    "source_artifact_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "source_followup_window_open_at_freeze": {"type": ["boolean", "null"]},
+    "target_date": {"format": "date", "type": "string"},
+    "truth_evidence_cutoff_utc": {"type": ["string", "null"]},
+    "truth_evidence_status": {
+      "enum": [
+        "audited",
+        "audited_guarded_exception",
+        "unresolved",
+        "sealed_holdout",
+        "tail_audited",
+        "tail_unresolved",
+        "source_unavailable"
+      ]
+    },
+    "truth_group": {
+      "enum": ["development", "sealed_final_holdout", "post_holdout_tail"]
+    },
+    "truth_qc_status": {"type": "string"},
+    "truth_release_id": {"const": "KDEN_V375_TRUTH_EVIDENCE_V1"},
+    "y_audited_f": {"type": ["integer", "null"]}
+  },
+  "required": [
+    "target_date",
+    "truth_release_id",
+    "truth_group",
+    "truth_evidence_status",
+    "label_available_for_supervised_use",
+    "label_available_for_final_scoring",
+    "y_audited_f",
+    "truth_qc_status",
+    "source_artifact_path",
+    "source_artifact_sha256",
+    "truth_evidence_cutoff_utc",
+    "source_followup_window_open_at_freeze",
+    "exclusion_reason"
+  ],
+  "type": "object"
+}

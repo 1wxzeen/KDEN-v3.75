@@ -1,0 +1,18 @@
+{
+  "$id": "KDEN_V375_PREFIT_P06_RUN_STATE_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_PREFIT_P06_RUN_V1"},
+    "stage_id": {"const": "PREFIT_P06"},
+    "run_id": {"pattern": "^kdenv375-p06-owner-full-[0-9]{8}T[0-9]{6}Z-[a-z0-9][a-z0-9-]{0,31}$", "type": "string"},
+    "status": {"enum": ["INITIALIZED", "RUNNING", "PAUSE_REQUESTED", "PAUSED", "PASS", "FAILED"]},
+    "phase": {"type": "string"},
+    "completed_acceptance_units": {"minimum": 0, "type": "integer"},
+    "expected_acceptance_units": {"minimum": 1, "type": "integer"},
+    "completed_feature_rows": {"minimum": 0, "type": "integer"},
+    "completed_trajectory_rows": {"minimum": 0, "type": "integer"}
+  },
+  "required": ["schema_version", "stage_id", "run_id", "status", "phase", "completed_acceptance_units", "expected_acceptance_units"],
+  "type": "object"
+}

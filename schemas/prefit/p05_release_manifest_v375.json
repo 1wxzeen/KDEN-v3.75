@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_P05_RELEASE_MANIFEST_SCHEMA_V1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "release_id",
+    "run_id",
+    "predecessor_p04_record_sha256",
+    "issue_spine",
+    "selected_cycles",
+    "feature_registry",
+    "trajectory_catalog",
+    "deterministic_features",
+    "partitioning",
+    "resumability",
+    "isolation"
+  ],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_P05_RELEASE_MANIFEST_V1"},
+    "status": {"const": "PASS_CANDIDATE"},
+    "release_id": {"const": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1"},
+    "run_id": {"type": "string"},
+    "predecessor_p04_record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "issue_spine": {"type": "object"},
+    "selected_cycles": {"type": "object"},
+    "feature_registry": {"type": "object"},
+    "trajectory_catalog": {"type": "object"},
+    "deterministic_features": {"type": "object"},
+    "partitioning": {"type": "object"},
+    "resumability": {"type": "object"},
+    "isolation": {"type": "object"}
+  },
+  "additionalProperties": true
+}

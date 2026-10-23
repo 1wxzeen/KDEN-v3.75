@@ -1,0 +1,55 @@
+{
+  "schema_version": "KDEN_V375_R14_ACQUISITION_RUNTIME_V1",
+  "scope_id": "KDEN_V375_R14_V1",
+  "phase_order": ["WRFSFCF_R14", "WRFSUBHF_Q05_R14"],
+  "products": {
+    "wrfsfcf": {
+      "phase_id": "WRFSFCF_R14",
+      "worker_profile": "config/wrfsfcf_8w.toml",
+      "expected_request_count": 6762997,
+      "expected_dynamic_field_ids": [
+        "H02", "H07", "H16", "H17", "H18", "H19",
+        "H24", "H26", "H28", "H31", "H36", "H38"
+      ],
+      "expected_static_field_ids": ["H14"],
+      "static_first": true
+    },
+    "wrfsubhf": {
+      "phase_id": "WRFSUBHF_Q05_R14",
+      "worker_profile": "config/wrfsubhf_8w.toml",
+      "expected_request_count": 2156601,
+      "expected_dynamic_field_ids": ["Q05"],
+      "expected_static_field_ids": [],
+      "static_first": false
+    }
+  },
+  "max_total_download_workers": 8,
+  "work_unit": "product_target_day",
+  "static_work_unit": "wrfsfcf_h14_once_per_grid",
+  "source_concurrency_unit": "unique_source_object",
+  "publication": {
+    "compression": "zstd",
+    "canonical_partition_order": [
+      "target_year", "target_month", "target_day", "cycle_init_utc"
+    ],
+    "manifest_commit_order": "artifact_then_manifest_then_progress",
+    "coordinator_only_progress_writer": true
+  },
+  "cache": {
+    "policy": "retain_incomplete_target_day_then_discard_after_verified_publication",
+    "partial_or_invalid_pair": "quarantine",
+    "full_domain_grib_retention": false
+  },
+  "terminal_policy": {
+    "confirmed_remote_404_is_missing": true,
+    "selector_or_decode_failure_is_quarantine_and_fails_work_unit": true,
+    "quarantine_count_required_for_product_pass": 0,
+    "confirmed_remote_missing_allowed_with_explicit_coverage": true
+  },
+  "monitoring": {
+    "live_status_minimum_interval_seconds": 5,
+    "expected_combined_request_count": 8919598,
+    "non_clearing_live_feed": true,
+    "separate_eta_command": true
+  }
+}

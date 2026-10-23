@@ -1,0 +1,106 @@
+{
+  "schema_version": "KDEN_V375_GRID_GEOMETRY_V1",
+  "operational_grid": {
+    "grid_geometry_id": "HRRR_CONUS_NATIVE_LAMBERT_V4",
+    "model": "HRRR",
+    "model_version": "v4",
+    "products": ["wrfsfcf", "wrfsubhf"],
+    "grid_type": "lambert",
+    "nx": 1799,
+    "ny": 1059,
+    "latitude_first_deg": 21.138123,
+    "longitude_first_deg_east": 237.280472,
+    "lov_deg_east": 262.5,
+    "latin1_deg": 38.5,
+    "latin2_deg": 38.5,
+    "lad_deg": 38.5,
+    "dx_m": 3000,
+    "dy_m": 3000,
+    "earth_shape_code": 6,
+    "earth_radius_m": 6371229,
+    "scanning_mode": 64,
+    "status": "FROZEN_VERIFIED_TWO_OPERATIONAL_MESSAGES"
+  },
+  "projection": {
+    "projection_id": "HRRR_LCC_SPHERE_V1",
+    "method": "spherical_lambert_conformal",
+    "central_meridian_deg": -97.5,
+    "standard_parallel_1_deg": 38.5,
+    "standard_parallel_2_deg": 38.5,
+    "latitude_of_projection_origin_deg": 38.5,
+    "anchor_rule": "forward-project decoded first grid point; station offset is relative to that anchor",
+    "index_rule": "i=(x-x_first)/dx; j=(y-y_first)/dy; positive-i/positive-j row-major scanning only",
+    "implementation_id": "KDEN_L12_INTERNAL_LCC_V1"
+  },
+  "node_order": ["SW", "SE", "NW", "NE"],
+  "methods": {
+    "nearest_node": {
+      "method_id": "KDEN_NEAREST_NODE_V1",
+      "designation": "control",
+      "coordinate_space": "native_HRRR_projected_grid",
+      "rule": "floor(index_fraction+0.5) independently for i and j; deterministic half-up tie",
+      "node_count": 1,
+      "weight_rule": "single weight exactly 1",
+      "lapse_rate_correction": "none",
+      "learned_component": false
+    },
+    "bilinear_projected": {
+      "method_id": "KDEN_BILINEAR_PROJECTED_V1",
+      "designation": "primary_candidate",
+      "coordinate_space": "native_HRRR_projected_grid",
+      "rule": "(1-u)(1-v)SW+u(1-v)SE+(1-u)vNW+uvNE",
+      "node_count": 4,
+      "weight_rule": "finite; nonnegative; absolute sum error at most 1e-10",
+      "lapse_rate_correction": "none",
+      "learned_component": false
+    }
+  },
+  "coordinate_era_extractions": {
+    "KDEN_COORD_20040105": {
+      "fractional_i": 695.593260887534,
+      "fractional_j": 586.428273330210,
+      "nearest_node": {"i": 696, "j": 586},
+      "bilinear_nodes": [
+        {"order": "SW", "i": 695, "j": 586, "weight": 0.232543598243471},
+        {"order": "SE", "i": 696, "j": 586, "weight": 0.339183071546753},
+        {"order": "NW", "i": 695, "j": 587, "weight": 0.174195514222273},
+        {"order": "NE", "i": 696, "j": 587, "weight": 0.254077815987504}
+      ]
+    },
+    "KDEN_COORD_20211122": {
+      "fractional_i": 695.668966317026,
+      "fractional_j": 586.934465544861,
+      "nearest_node": {"i": 696, "j": 587},
+      "bilinear_nodes": [
+        {"order": "SW", "i": 695, "j": 586, "weight": 0.021694112046333},
+        {"order": "SE", "i": 696, "j": 586, "weight": 0.043840343092512},
+        {"order": "NW", "i": 695, "j": 587, "weight": 0.309339570928074},
+        {"order": "NE", "i": 696, "j": 587, "weight": 0.625125973933080}
+      ]
+    }
+  },
+  "spatial_contracts": {
+    "POINT_BI_V1": {"point_outputs": ["BI"], "tile_shape": null, "derive_centered_3x3": false},
+    "POINT_BI_NN_V1": {"point_outputs": ["BI", "NN"], "tile_shape": null, "derive_centered_3x3": false},
+    "POINT_BI_TILE3_V1": {"point_outputs": ["BI"], "tile_shape": [3, 3], "derive_centered_3x3": false},
+    "POINT_BI_TILE9_V1": {"point_outputs": ["BI"], "tile_shape": [9, 9], "derive_centered_3x3": false},
+    "POINT_NN_TILE9_V1": {"point_outputs": ["NN"], "tile_shape": [9, 9], "derive_centered_3x3": false},
+    "POINT_BI_TILE9_DERIVE3_V1": {"point_outputs": ["BI"], "tile_shape": [9, 9], "derive_centered_3x3": true},
+    "GRID_STATIC_ONCE_V1": {"point_outputs": ["BI"], "tile_shape": null, "derive_centered_3x3": false, "acquisition_frequency": "once_per_grid_geometry_id"}
+  },
+  "tile_contract": {
+    "layout": "one row per field-state with row-major compact values array",
+    "center_rule": "nearest node is the odd-dimension tile center",
+    "axis_order": ["j_south_to_north", "i_west_to_east"],
+    "allowed_shapes": [[3, 3], [9, 9]],
+    "derived_3x3_slice": [3, 6, 3, 6]
+  },
+  "source_artifact_sha256": {
+    "station_coordinate_era_registry": "3a1656d6d714928789445b085ec15ef93cf301dbbf1da7410d30f1abf0b7c8cf",
+    "hrrr_grid_registry": "d1e679856827d4ecaae6664e73043c66e3565e60b6ff6acfebe11a9dd25d99c1",
+    "projection_registry": "80c666a43279a139b742aa5817f47fcd4eda22b6ad08cb01c0928933d8aaec8b",
+    "spatial_method_registry": "4e530f6e8c16753dd1ce49f167e7f9d458697264edad651e48e1fd02e503312d",
+    "spatial_weight_registry": "78dd9b7aedc319c465cb79a4bb1a9d18d94bdbd0d4a693269329cdca6a13001c"
+  },
+  "source_policy": "hashes preserve audit provenance; active extraction uses only this registry"
+}

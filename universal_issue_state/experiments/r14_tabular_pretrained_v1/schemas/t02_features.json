@@ -1,0 +1,83 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "features",
+    "input_columns",
+    "primary_anchor",
+    "minimum_context_days",
+    "trend"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "R14_TABULAR_FEATURE_CONFIG_V1"
+    },
+    "features": {
+      "type": "array",
+      "minItems": 34,
+      "maxItems": 34,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "source",
+          "source_unit",
+          "transform"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "source_unit": {
+            "type": "string"
+          },
+          "transform": {
+            "enum": [
+              "IDENTITY",
+              "K_TO_F",
+              "DELTA_K_TO_F",
+              "PERCENT_TO_FRACTION"
+            ]
+          }
+        }
+      }
+    },
+    "input_columns": {
+      "type": "array",
+      "minItems": 71,
+      "maxItems": 71,
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_anchor": {
+      "const": "anchor_q_f"
+    },
+    "minimum_context_days": {
+      "const": 180
+    },
+    "trend": {
+      "type": "object",
+      "required": [
+        "window_calendar_days",
+        "minimum_valid_days",
+        "neural_input"
+      ],
+      "properties": {
+        "window_calendar_days": {
+          "const": 14
+        },
+        "minimum_valid_days": {
+          "const": 7
+        },
+        "neural_input": {
+          "const": false
+        }
+      }
+    }
+  }
+}

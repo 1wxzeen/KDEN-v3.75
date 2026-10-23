@@ -1,0 +1,44 @@
+{
+  "schema_version": "KDEN_V375_STEP08_ACCEPTANCE_SCHEMA_V1",
+  "checkpoint": {
+    "format": "sqlite3",
+    "primary_key": "unit_id",
+    "ordering_key": "sequence",
+    "rules": [
+      "sequences are contiguous from zero",
+      "one immutable result digest exists per archive work unit",
+      "checkpoint metadata binds the run, contract, R14 PASS, and Step 07 PASS"
+    ]
+  },
+  "journal": {
+    "format": "canonical JSON Lines",
+    "hash_chain": "previous_record_sha256",
+    "rules": [
+      "journal is regenerated from committed checkpoint rows on resume",
+      "each record carries logical request count for live ETA",
+      "only the coordinator appends committed results"
+    ]
+  },
+  "unit_result": {
+    "required": [
+      "unit_id", "sequence", "product", "target_day", "artifact_sha256",
+      "manifest_sha256", "request_count", "field_state_row_count",
+      "success_count", "confirmed_remote_missing_count", "local_size_bytes",
+      "cycle_count", "field_ids", "maximum_valid_time_utc", "field_value_ranges"
+    ],
+    "status": "PASS only; failed units are never committed"
+  },
+  "freeze_manifest": {
+    "digest_categories": [
+      "registry", "schema", "plan", "code", "environment", "archive",
+      "acquisition_progress", "acceptance_checkpoint"
+    ],
+    "archive_digest": "canonical digest over all deeply verified unit identities and hashes"
+  },
+  "final_pass": {
+    "schema_version": "KDEN_V375_ACQUISITION_PASS_V1",
+    "record_id": "KDEN_V375_ACQUISITION",
+    "status": "PASS",
+    "verification": "shallow content-addressed verification after the one-time deep scan"
+  }
+}

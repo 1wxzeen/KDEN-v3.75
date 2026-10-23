@@ -1,0 +1,204 @@
+{
+  "schema_version": "KDEN_V375_R14_ACQUISITION_SCOPE_V1",
+  "scope_id": "KDEN_V375_R14_V1",
+  "status": "IMPLEMENTATION_TARGET_NOT_READY_FOR_OWNER_RUN",
+  "decision_date": "2026-09-14",
+  "project_specification": {
+    "path": "PROJECT.md",
+    "version": "1.1"
+  },
+  "scientific_decision": {
+    "path": "reports/STEP_04_5_R14_ACQUISITION_HANDOFF.md",
+    "selection": "R14=R13-H33+H02+H38",
+    "is_source_field_contract_not_model_column_contract": true
+  },
+  "field_universe": {
+    "retained_identity_count_including_static": 14,
+    "wrfsfcf": {
+      "dynamic": [
+        "H02",
+        "H07",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H24",
+        "H26",
+        "H28",
+        "H31",
+        "H36",
+        "H38"
+      ],
+      "static": [
+        "H14"
+      ],
+      "excluded": [
+        "H01",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H08",
+        "H09",
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H15",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H25",
+        "H27",
+        "H29",
+        "H30",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H37",
+        "H39",
+        "H40",
+        "H41",
+        "H42",
+        "H43",
+        "H44"
+      ]
+    },
+    "wrfsubhf": {
+      "dynamic": [
+        "Q05"
+      ],
+      "static": [],
+      "excluded": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10",
+        "Q11",
+        "Q12",
+        "Q13",
+        "Q14"
+      ]
+    },
+    "preserve_original_ids_without_renumbering": true,
+    "selector_source_catalogs": [
+      "registries/hrrr_hourly_v375.csv",
+      "registries/hrrr_subhourly_v375.csv"
+    ],
+    "preserve_exact_selector_unit_interval_and_decoded_identity_contracts": true
+  },
+  "baseline_spatial_contract_by_field": {
+    "H02": "POINT_BI_TILE3_V1",
+    "H07": "POINT_BI_TILE3_V1",
+    "H14": "GRID_STATIC_ONCE_V1",
+    "H16": "POINT_BI_NN_V1",
+    "H17": "POINT_BI_V1",
+    "H18": "POINT_BI_V1",
+    "H19": "POINT_BI_V1",
+    "H24": "POINT_BI_V1",
+    "H26": "POINT_BI_V1",
+    "H28": "POINT_BI_TILE9_V1",
+    "H31": "POINT_BI_TILE9_V1",
+    "H36": "POINT_BI_TILE9_DERIVE3_V1",
+    "H38": "POINT_NN_TILE9_V1",
+    "Q05": "POINT_BI_NN_V1"
+  },
+  "regional_spatial_context": {
+    "status": "SEALED_FOR_R14_CONFIRMATION_PILOT",
+    "target_sectors": [
+      "west_foothill",
+      "north_northeast_plains",
+      "east_plains",
+      "south_southeast_palmer_divide"
+    ],
+    "nominal_distances_km": [
+      30,
+      60
+    ],
+    "required_contract_path": "config/r14_spatial_contract_v375.json",
+    "resolved_geometry_path": "registries/r14_spatial_geometry_v375.json",
+    "support_count_per_coordinate_era": 8,
+    "full_history_authorized": false,
+    "full_history_blocker": "STEP_04_R14_PASS_REQUIRED"
+  },
+  "schedule": {
+    "historical_start": "2021-01-01",
+    "historical_end": "2026-09-11",
+    "target_day_count": 2080,
+    "cycle_roles": [
+      "previous_local_c23",
+      "target_local_c00_through_c14"
+    ],
+    "timezone": "America/Denver",
+    "target_window": "[07Z_d,07Z_d_plus_1)",
+    "lead_policy": "TARGET_WINDOW",
+    "include_fh00": true,
+    "window_end_is_exclusive": true,
+    "historical_step_02_schedule_is_evidence_not_active_r14_schedule": true,
+    "r14_schedule_rebuild_required": true
+  },
+  "request_accounting_expectation": {
+    "wrfsfcf_dynamic_native_state_count": 563583,
+    "wrfsfcf_dynamic_identity_count": 12,
+    "wrfsfcf_static_request_count": 1,
+    "wrfsfcf_logical_request_count": 6762997,
+    "wrfsubhf_q05_native_state_count": 2156601,
+    "wrfsubhf_dynamic_identity_count": 1,
+    "wrfsubhf_logical_request_count": 2156601,
+    "combined_logical_request_count": 8919598,
+    "counts_must_be_reconciled_against_successor_plans": true
+  },
+  "execution": {
+    "owner_facing_step": 5,
+    "owner_facing_workflow_id": "R14_FULL_ACQUISITION_V1",
+    "phase_order": [
+      "WRFSFCF_R14",
+      "WRFSUBHF_Q05_R14"
+    ],
+    "automatic_phase_transition": true,
+    "shared_max_download_workers": 8,
+    "one_coordinator": true,
+    "one_run_id": true,
+    "independent_product_archives": true,
+    "independent_product_manifests_ledgers_coverage_and_pass": true,
+    "overall_pass_requires_both_product_passes": true,
+    "step_06_behavior": "DEPRECATED_Q05_COMPATIBILITY_ALIAS",
+    "implementation_agents_must_not_launch_long_running_pilot_or_full_history": true
+  },
+  "successor_lineage": {
+    "reusable_after_verification": [
+      "state/STEP_00_PASS.json",
+      "state/STEP_02_PASS.json"
+    ],
+    "historical_not_r14_authorization": [
+      "state/STEP_01_PASS.json",
+      "registries/registry_bundle_v375.json",
+      "state/STEP_03_PASS.json",
+      "state/STEP_03_WRFSFCF_PASS.json",
+      "state/STEP_03_WRFSUBHF_PASS.json",
+      "state/STEP_04_PASS.json",
+      "hrrr_v4_local_archive/common/cycle_schedule/cycle_schedule_v375_manifest.json"
+    ],
+    "required_before_owner_full_run": [
+      "state/STEP_01_R14_PASS.json",
+      "state/STEP_02_R14_ATTESTATION.json",
+      "hrrr_v4_local_archive/common/cycle_schedule_r14/cycle_schedule_r14_v375_manifest.json",
+      "state/STEP_03_R14_WRFSFCF_PASS.json",
+      "state/STEP_03_R14_WRFSUBHF_PASS.json",
+      "state/STEP_03_R14_PASS.json",
+      "state/STEP_04_R14_PASS.json",
+      "state/R14_READY_FOR_OWNER_RUN.json"
+    ],
+    "successor_plan_manifests": {
+      "wrfsfcf": "hrrr_v4_local_archive/wrfsfcf/manifests/plan_wrfsfcf_r14_v375_manifest.json",
+      "wrfsubhf": "hrrr_v4_local_archive/wrfsubhf/manifests/plan_wrfsubhf_q05_r14_v375_manifest.json"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "assessment_labels_read": false,
+  "first_checkpoint_unchanged_on_resume": true,
+  "last_status": {
+    "completed_candidate_decisions": 182,
+    "current": null,
+    "elapsed_this_invocation_seconds": 62.373986250022426,
+    "new_units_this_invocation": 1,
+    "outer_scores_computed": false,
+    "pid": 49795,
+    "progress_note": "Counts include target-free excluded candidates; resumed checkpoints are counted as verified.",
+    "recent_unit_seconds_by_model": {
+      "ANEN": 23.059036874910817
+    },
+    "state": "PAUSED",
+    "total_candidate_decisions": 1468,
+    "updated_utc": "2026-09-26T05:02:06.718135+00:00"
+  },
+  "note": "Disposable probes bind the pre-report implementation seal. Final hardening adds independent candidate-registry enforcement at the inner-label accessor, moves completion-count validation before release publication, excludes empty complete training populations, and preserves nonfinite failed-optimizer diagnostics as explicit strings. Final source tested separately. These /tmp probes are not production runs and must not be resumed using the final seal.",
+  "outer_predictions_created": false,
+  "prerelease_binding": {
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "numpy": "2.0.2",
+      "platform": "macOS-15.1.1-arm64-arm-64bit",
+      "pyarrow": "23.0.0",
+      "python": "3.12.12",
+      "scipy": "1.15.3"
+    },
+    "parents": {
+      "diagnostics/s2_baseline_review_v1/EXPOSURE.json": "d18c2a47d6edc2276f033d9783fc62b00d79f8f314b9c144097c3f2a19b057c3",
+      "implementations/s3_v1/RELEASE.json": "b082ab81ed8ae8843a43c2f868f5e9949336ab8419ed9d98689e5e1a0be5573d",
+      "implementations/s3_v1/candidates.json": "2690b71f9aa1f8423036776368a5c83419a3fd01b1c390332ece9985f22ad49a",
+      "runs/r14-s2-20260925T185129Z/BASELINE_RELEASE.json": "62d432d81b6dd3aa6d330d109a3a82b9b14b5e6236ad40db2a9a0b66f88d6d03"
+    },
+    "s4_release_sha256": "5483fe2b62c3bc5a23a1ddc7a93fd49666da68d2a8b365c3118a3a1b583a3263",
+    "schema": "R14_S4_RUN_V1"
+  },
+  "scope": "Two invocations, each capped at one new full-population candidate; no full historical run.",
+  "shared_training_hardlinks_confirmed": true,
+  "status": "PASS",
+  "supports": {
+    "INNER_01_ANEN": {
+      "available_rows": 0,
+      "dayweighted_coverage": 0.0,
+      "eligible_days": 0,
+      "expected_days": 184,
+      "expected_rows": 10488,
+      "included": false
+    },
+    "INNER_02_ANEN": {
+      "available_rows": 10248,
+      "dayweighted_coverage": 0.9992202729044835,
+      "eligible_days": 180,
+      "expected_days": 180,
+      "expected_rows": 10256,
+      "included": true
+    }
+  },
+  "unit_results": [
+    {
+      "candidate": {
+        "candidate_id": "ANEN_34101c16795f",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 0.75,
+          "neighbors": 15,
+          "seasonal_half_width_days": 45
+        }
+      },
+      "prediction_bytes": 20790083,
+      "record_sha256": "fbba9c4b9d86e79904f6065841804025ff7cb39dd995d644162c7ae28e7e3d7f",
+      "rows": 10256,
+      "seconds": 25.53500841697678,
+      "status": "PREDICTIONS_FROZEN"
+    },
+    {
+      "candidate": {
+        "candidate_id": "ANEN_40665a19a50c",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 1.25,
+          "neighbors": 15,
+          "seasonal_half_width_days": 45
+        }
+      },
+      "prediction_bytes": 23464100,
+      "record_sha256": "cf4d28298dd824e748400e622c330ce34adb17b000f8f427acf90b7aab2ed1dc",
+      "rows": 10256,
+      "seconds": 23.059036874910817,
+      "status": "PREDICTIONS_FROZEN"
+    }
+  ]
+}

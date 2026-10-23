@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_STEP_PASS_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "step_id", "status", "completed_at_utc", "run_id", "predecessor_hashes", "artifact_hashes", "gate_evidence", "record_sha256"],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_STEP_PASS_V1"},
+    "step_id": {"type": "string", "pattern": "^STEP_0[0-8]$"},
+    "status": {"const": "PASS"},
+    "completed_at_utc": {"type": "string", "format": "date-time"},
+    "run_id": {"type": "string"},
+    "predecessor_hashes": {"type": "object"},
+    "artifact_hashes": {"type": "object"},
+    "gate_evidence": {"type": "object"},
+    "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
+

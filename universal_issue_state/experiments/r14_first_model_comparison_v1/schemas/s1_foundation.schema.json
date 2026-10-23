@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "const": {
+    "implementation_dependencies": [
+      "numpy==2.0.2",
+      "pyarrow==23.0.0"
+    ],
+    "market_data_reads_allowed": false,
+    "model_fitting_allowed": false,
+    "outer_assessment_outcome_API": "not exposed in S1; outcome-bearing evaluation requires future S4 prediction lock",
+    "parent_s0_release_sha256": "cfb2e60562bfce9decdc81fc570fdfb4eea0e5b2e33eba4dbe0f36e78219ed02",
+    "probe_dates": [
+      "2021-01-20",
+      "2022-04-18",
+      "2023-03-12",
+      "2024-11-03"
+    ],
+    "probe_limit_days": 8,
+    "schema_version": "R14_S1_FOUNDATION_V1",
+    "scipy_needed_for_s1": false,
+    "source_catalog_builder": "src/kden_v375/prefit/p02_truth.py",
+    "source_catalog_builder_sha256": "3aeb3f5923c602aaacbdff50787486951ca7ba43716a5073d92832428b0314fc",
+    "stage": "S1",
+    "synthetic_band_policy": {
+      "alignment_inference_allowed": false,
+      "future_market_bridge": "must consume actual as-of listed contract boundaries and rules; no reconstruction from outcomes or parity",
+      "names_prefix": "synthetic_",
+      "note": "fixed pair partitions are weather diagnostics only; an integer such as 92 never determines whether an actual listing is 91-92 or 92-93",
+      "outcome_determines_market_band": false
+    },
+    "truth_accessor": {
+      "catalog": "truth/kden_tmax/v1/catalog/kden_truth_catalog.parquet",
+      "catalog_authorization_columns": [
+        "target_date",
+        "truth_group",
+        "label_available_for_supervised_use",
+        "source_artifact_path",
+        "source_artifact_sha256"
+      ],
+      "catalog_value_column_read_allowed": false,
+      "justification": "P02 copied source y_audited_f unchanged into canonical development catalog; use identical audited field through its hash-bound provenance to avoid mixed catalog outcome-page decode",
+      "source_max_date": "2025-09-06",
+      "source_path": "truth/kden_tmax/v1/adopted_stage5r1/development/kden_truth_ledger.parquet",
+      "source_physical_scope": "source ledger includes 2017-2025 development-era rows in one group; Arrow may decode that group internally, but returns only requested authorized 2021-2025 dates; no reserved or tail outcomes in source",
+      "source_sha256": "8e720bc58c1b31f63ba207a26fa50b9e49b5582850b2304ea2c0df1d008634ca",
+      "source_target": "y_audited_f"
+    }
+  },
+  "title": "R14 S1 scope and access supplement",
+  "type": "object"
+}

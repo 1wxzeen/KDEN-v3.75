@@ -1,0 +1,118 @@
+{
+  "schema_version": "R14_S1_FORECAST_V1",
+  "encoding": "Arrow Parquet",
+  "fields": [
+    {
+      "name": "issue_state_id",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "target_date",
+      "arrow_type": "date32[day]",
+      "nullable": false
+    },
+    {
+      "name": "statistical_group_id",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "issue_time_utc",
+      "arrow_type": "timestamp[us, tz=UTC]",
+      "nullable": false
+    },
+    {
+      "name": "local_minutes_since_0200",
+      "arrow_type": "int16",
+      "nullable": false
+    },
+    {
+      "name": "issue_count_for_target_day",
+      "arrow_type": "int16",
+      "nullable": false
+    },
+    {
+      "name": "model_id",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "outer_fold_id",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "inner_fold_id",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "status",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "abstention_reason",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "probabilities",
+      "arrow_type": "list<item: double>",
+      "nullable": true
+    },
+    {
+      "name": "point_f",
+      "arrow_type": "double",
+      "nullable": true
+    },
+    {
+      "name": "baseline_center_f",
+      "arrow_type": "double",
+      "nullable": true
+    },
+    {
+      "name": "training_start",
+      "arrow_type": "date32[day]",
+      "nullable": false
+    },
+    {
+      "name": "training_end",
+      "arrow_type": "date32[day]",
+      "nullable": false
+    },
+    {
+      "name": "label_cutoff",
+      "arrow_type": "date32[day]",
+      "nullable": false
+    },
+    {
+      "name": "configuration_sha256",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "code_sha256",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "input_hashes_json",
+      "arrow_type": "string",
+      "nullable": false
+    },
+    {
+      "name": "diagnostics_json",
+      "arrow_type": "string",
+      "nullable": false
+    }
+  ],
+  "additional_columns_allowed": false,
+  "available_probabilities_length": 161,
+  "available_probability_sum_tolerance": 1e-10,
+  "abstention_probabilities": "null",
+  "truth_columns_allowed": false,
+  "market_bands_inferred": false,
+  "validation_authority": "src/r14_s1/forecast.py::validate_record and publish_partition"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_MODELING_BOUNDARY_PASS_V1",
+  "title": "KDEN v3.75 modeling-boundary PASS",
+  "type": "object",
+  "required": ["schema_version", "release_id", "status", "p06_record_sha256", "p07_contract_sha256", "p07_freeze_record_sha256", "holdout_opened", "sealed_holdout_values_read", "model_fits_performed", "record_sha256"],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_MODELING_BOUNDARY_PASS_V1"},
+    "release_id": {"const": "KDEN_V375_RAFM_EXPERIMENT_V1"},
+    "status": {"const": "PREFIT_COMPLETE_MODEL_FITTING_AUTHORIZED"},
+    "p06_record_sha256": {"const": "9f420b8625b428a8663d190a332a0958bf72e5565c37c4543f5b78808a7f4b72"},
+    "p07_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "p07_freeze_record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "holdout_opened": {"const": false},
+    "sealed_holdout_values_read": {"const": false},
+    "model_fits_performed": {"const": 0},
+    "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "KDEN_V375_PARQUET_SCHEMA_V1",
+  "schema_id": "KDEN_V375_REQUEST_PLAN_V1",
+  "format": "parquet",
+  "compression": "zstd",
+  "primary_key": ["request_id"],
+  "sort_order": ["target_day", "product", "cycle_init_utc", "forecast_lead_min", "field_registry_id"],
+  "columns": [
+    {"name": "request_id", "arrow_type": "string", "nullable": false},
+    {"name": "target_day", "arrow_type": "date32", "nullable": false},
+    {"name": "product", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "cycle_init_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "source_object_identity", "arrow_type": "string", "nullable": false},
+    {"name": "index_object_identity", "arrow_type": "string", "nullable": false},
+    {"name": "forecast_lead_min", "arrow_type": "int16", "nullable": false},
+    {"name": "valid_time_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "field_registry_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "selector_identity", "arrow_type": "string", "nullable": false},
+    {"name": "step_type", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "interval_start_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "interval_end_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "spatial_contract_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "request_action", "arrow_type": "dictionary<string>", "nullable": false}
+  ],
+  "row_rules": {
+    "selector": "selector identity includes product, parameter, level, step type, interval semantics, duration, and valid time",
+    "network": "every dynamic field request uses ARCHIVE_NETWORK_RANGE_V1; H14 is the only once-per-grid acquisition"
+  }
+}

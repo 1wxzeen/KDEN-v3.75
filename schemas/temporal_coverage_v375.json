@@ -1,0 +1,27 @@
+{
+  "schema_version": "KDEN_V375_PARQUET_SCHEMA_V1",
+  "schema_id": "KDEN_V375_TEMPORAL_COVERAGE_V1",
+  "format": "parquet",
+  "compression": "zstd",
+  "primary_key": ["target_day", "product", "cycle_init_utc", "field_registry_id"],
+  "sort_order": ["target_day", "product", "cycle_init_utc", "field_registry_id"],
+  "columns": [
+    {"name": "target_day", "arrow_type": "date32", "nullable": false},
+    {"name": "product", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "cycle_init_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "field_registry_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "expected_valid_count", "arrow_type": "int32", "nullable": false},
+    {"name": "present_valid_count", "arrow_type": "int32", "nullable": false},
+    {"name": "missing_valid_count", "arrow_type": "int32", "nullable": false},
+    {"name": "quarantined_valid_count", "arrow_type": "int32", "nullable": false},
+    {"name": "first_valid_time_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "last_valid_time_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "gap_intervals", "arrow_type": "list<struct<start:timestamp[us,UTC],end:timestamp[us,UTC],reason:string>>", "nullable": false},
+    {"name": "complete_flag", "arrow_type": "bool", "nullable": false},
+    {"name": "retrieval_run_id", "arrow_type": "string", "nullable": false}
+  ],
+  "row_rules": {
+    "count_reconciliation": "expected_valid_count=present_valid_count+missing_valid_count+quarantined_valid_count",
+    "completeness": "complete_flag is true only when missing and quarantined counts are both zero"
+  }
+}

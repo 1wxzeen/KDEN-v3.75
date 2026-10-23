@@ -1,0 +1,61 @@
+{
+  "schema_version": "KDEN_V375_DECODED_GRIB_IDENTITIES_V1",
+  "match_rule": "normalized decoded shortName or name must be in aliases_normalized; a listed GRIB2 discipline/category/number triple is an additional allowed identity",
+  "normalization": "lowercase ASCII alphanumeric characters only",
+  "parameters": {
+    "HGT": {"aliases_normalized": ["gh", "z", "hgt", "geopotential", "geopotentialheight"], "grib2_codes": []},
+    "TMP": {"aliases_normalized": ["t", "2t", "skt", "tmp", "temperature", "airtemperature", "2metretemperature", "skintemperature"], "grib2_codes": []},
+    "DPT": {"aliases_normalized": ["dpt", "2d", "dewpoint", "dewpointtemperature", "2metredewpointtemperature"], "grib2_codes": []},
+    "UGRD": {"aliases_normalized": ["u", "10u", "ugrd", "avg10u", "ucomponentofwind", "timemean10metreuwindcomponent"], "grib2_codes": []},
+    "VGRD": {"aliases_normalized": ["v", "10v", "vgrd", "avg10v", "vcomponentofwind", "timemean10metrevwindcomponent"], "grib2_codes": []},
+    "GUST": {"aliases_normalized": ["gust", "windgust", "windgustatsurface"], "grib2_codes": []},
+    "MSLMA": {"aliases_normalized": ["mslma", "msl", "meansealevelpressure", "meansealevelpressureetareduction"], "grib2_codes": []},
+    "PRES": {"aliases_normalized": ["pres", "sp", "surfacepressure"], "grib2_codes": []},
+    "MSTAV": {"aliases_normalized": ["mstav", "soilw", "soilmoistureavailability"], "grib2_codes": []},
+    "SHTFL": {"aliases_normalized": ["shtfl", "sshf", "ishf", "surfacesensibleheatflux", "instantaneoussurfacesensibleheatnetflux"], "grib2_codes": []},
+    "LHTFL": {"aliases_normalized": ["lhtfl", "slhf", "slhtf", "surfacelatentheatflux", "surfacelatentheatnetflux"], "grib2_codes": []},
+    "GFLUX": {"aliases_normalized": ["gflux", "groundheatflux"], "grib2_codes": []},
+    "HPBL": {"aliases_normalized": ["hpbl", "blh", "planetaryboundarylayerheight"], "grib2_codes": []},
+    "WEASD": {"aliases_normalized": ["weasd", "sdwe", "waterequivalentofaccumulatedsnowdepth"], "grib2_codes": []},
+    "SNOWC": {"aliases_normalized": ["snowc", "snowcover"], "grib2_codes": []},
+    "SNOD": {"aliases_normalized": ["snod", "sde", "snowdepth"], "grib2_codes": []},
+    "TCDC": {"aliases_normalized": ["tcdc", "tcc", "totalcloudcover"], "grib2_codes": []},
+    "LCDC": {"aliases_normalized": ["lcdc", "lcc", "lowcloudcover"], "grib2_codes": []},
+    "DSWRF": {"aliases_normalized": ["dswrf", "ssrd", "sdswrf", "avgsdswrf", "downwardshortwaveradiationflux", "surfacedownwardshortwaveradiationflux", "timemeansurfacedownwardshortwaveradiationflux"], "grib2_codes": []},
+    "DLWRF": {"aliases_normalized": ["dlwrf", "strd", "sdlwrf", "downwardlongwaveradiationflux", "surfacedownwardlongwaveradiationflux"], "grib2_codes": []},
+    "USWRF": {"aliases_normalized": ["uswrf", "ssru", "suswrf", "upwardshortwaveradiationflux", "surfaceupwardshortwaveradiationflux"], "grib2_codes": []},
+    "ULWRF": {"aliases_normalized": ["ulwrf", "stru", "sulwrf", "upwardlongwaveradiationflux", "surfaceupwardlongwaveradiationflux"], "grib2_codes": []},
+    "CFNSF": {"aliases_normalized": ["cfnsf", "cloudforcingshortwaveflux"], "grib2_codes": []},
+    "REFC": {"aliases_normalized": ["refc", "compositereflectivity"], "grib2_codes": []},
+    "PRATE": {"aliases_normalized": ["prate", "precipitationrate"], "grib2_codes": []},
+    "APCP": {"aliases_normalized": ["apcp", "tp", "totalprecipitation"], "grib2_codes": []},
+    "PWAT": {"aliases_normalized": ["pwat", "tcwv", "precipitablewater"], "grib2_codes": []},
+    "VIS": {"aliases_normalized": ["vis", "visibility"], "grib2_codes": []},
+    "AOTK": {"aliases_normalized": ["aotk", "aerosolopticalthickness"], "grib2_codes": [{"discipline": 0, "parameter_category": 20, "parameter_number": 102}]},
+    "CAPE": {"aliases_normalized": ["cape", "convectiveavailablepotentialenergy"], "grib2_codes": []},
+    "CIN": {"aliases_normalized": ["cin", "convectiveinhibition"], "grib2_codes": []}
+  },
+  "levels": {
+    "L700MB": {"selector_text": "700 mb", "allowed": [{"type_of_level_normalized": "isobaricinhpa", "level": 700}]},
+    "L850MB": {"selector_text": "850 mb", "allowed": [{"type_of_level_normalized": "isobaricinhpa", "level": 850}]},
+    "LSURFACE": {"selector_text": "surface", "allowed": [{"type_of_level_normalized": "surface", "level": 0}, {"type_of_level_normalized": "heightaboveground", "level": 0}]},
+    "LMEANSEA": {"selector_text": "mean sea level", "allowed": [{"type_of_level_normalized": "meansea", "level": 0}]},
+    "L2MAGL": {"selector_text": "2 m above ground", "allowed": [{"type_of_level_normalized": "heightaboveground", "level": 2}]},
+    "L10MAGL": {"selector_text": "10 m above ground", "allowed": [{"type_of_level_normalized": "heightaboveground", "level": 10}]},
+    "L0MUNDERGROUND": {"selector_text": "0 m underground", "allowed": [{"type_of_level_normalized": "depthbelowland", "level": 0}, {"type_of_level_normalized": "depthbelowlandlayer", "level": 0}]},
+    "LBOUNDARYCLOUD": {"selector_text": "boundary-layer cloud", "allowed": [{"type_of_level_normalized": "atmospheresinglelayer", "level": 0}, {"type_of_level_normalized": "boundarylayercloudlayer", "level": 0}]},
+    "LLOWCLOUD": {"selector_text": "low cloud", "allowed": [{"type_of_level_normalized": "lowcloudlayer", "level": 0}, {"type_of_level_normalized": "lowcloud", "level": 0}]},
+    "LENTIREATMOSPHERE": {"selector_text": "entire atmosphere", "allowed": [{"type_of_level_normalized": "entireatmosphere", "level": 0}, {"type_of_level_normalized": "atmospheresinglelayer", "level": 0}, {"type_of_level_normalized": "atmosphere", "level": 0}]},
+    "LCLOUDCEILING": {"selector_text": "cloud ceiling", "allowed": [{"type_of_level_normalized": "cloudceiling", "level": 0}]}
+  },
+  "step_types": {
+    "instant": {"aliases_normalized": ["instant"]},
+    "avg": {"aliases_normalized": ["avg", "average"]},
+    "accum": {"aliases_normalized": ["accum", "accumulation"]}
+  },
+  "source_artifact_sha256": {
+    "hourly_field_registry_reference": "a1d0555df3688a640722194c6a01c5692a327cb5424e8ae54fcdca4df912da85",
+    "subhourly_field_registry_reference": "92a439e4c0deb003ef5056dff586f7796fd628cd89ecccbf6dc4993bf5571630"
+  },
+  "source_policy": "reference hashes are provenance only and are never opened by the active package"
+}

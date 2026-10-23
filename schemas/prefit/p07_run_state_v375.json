@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_PREFIT_P07_RUN_V1",
+  "title": "KDEN v3.75 P07 run state",
+  "type": "object",
+  "required": ["schema_version", "stage_id", "run_id", "approved_contract_sha256", "status", "phase", "expected_units", "completed_units"],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_PREFIT_P07_RUN_V1"},
+    "stage_id": {"const": "PREFIT_P07"},
+    "run_id": {"type": "string"},
+    "approved_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "status": {"enum": ["INITIALIZED", "RUNNING", "PAUSE_REQUESTED", "PAUSED", "FAILED", "PASS"]},
+    "phase": {"type": "string"},
+    "expected_units": {"const": 3},
+    "completed_units": {"type": "array", "items": {"enum": ["authorities", "folds", "adapters"]}, "uniqueItems": true}
+  },
+  "additionalProperties": true
+}

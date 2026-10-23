@@ -1,0 +1,117 @@
+[
+  {
+    "difference": -0.07874880048670672,
+    "fourteen_day_adjusted": {
+      "lower": -0.12164484271651015,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.0440427064214845
+    },
+    "model": "XGB_QUANTILE",
+    "reference": "B0_H",
+    "seven_day_adjusted": {
+      "lower": -0.1155360392505624,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.042089116412376656
+    }
+  },
+  {
+    "difference": -0.07983700499783085,
+    "fourteen_day_adjusted": {
+      "lower": -0.12250422796825905,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.04645808591960783
+    },
+    "model": "XGB_QUANTILE",
+    "reference": "B0_Q",
+    "seven_day_adjusted": {
+      "lower": -0.11615643937571836,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.043653620582035924
+    }
+  },
+  {
+    "difference": -0.05993062116627725,
+    "fourteen_day_adjusted": {
+      "lower": -0.10667778908648025,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.025247662345092632
+    },
+    "model": "NGB_NORMAL",
+    "reference": "B0_H",
+    "seven_day_adjusted": {
+      "lower": -0.10187811654215038,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.021749542559193057
+    }
+  },
+  {
+    "difference": -0.061018825677401384,
+    "fourteen_day_adjusted": {
+      "lower": -0.1094174033126196,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.02507130951316387
+    },
+    "model": "NGB_NORMAL",
+    "reference": "B0_Q",
+    "seven_day_adjusted": {
+      "lower": -0.10378064442091729,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": -0.022540638139775738
+    }
+  },
+  {
+    "difference": -0.018818179320429465,
+    "fourteen_day_adjusted": {
+      "lower": -0.04843596865704545,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": 0.014528551606772685
+    },
+    "model": "XGB_QUANTILE",
+    "reference": "NGB_NORMAL",
+    "seven_day_adjusted": {
+      "lower": -0.04644904947912592,
+      "quantiles": [
+        0.005,
+        0.995
+      ],
+      "undefined_fraction": 0.0,
+      "upper": 0.011715540814847405
+    }
+  }
+]

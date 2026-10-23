@@ -1,0 +1,1921 @@
+{
+  "schema_version": "KDEN_PUBLICATION_ISSUE_TIME_DEVELOPMENT_V1",
+  "source_run": "universal_issue_state/experiments/r14_first_model_comparison_v1/runs/r14-s5-20260927T024658Z",
+  "source_files": {
+    "scorecards.json": {
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/runs/r14-s5-20260927T024658Z/scorecards.json",
+      "sha256": "3c91f222ada6881e734e12e769086c9bca6e45cd4616f2b89f2b1aaf0dc912e9"
+    },
+    "population.json": {
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/runs/r14-s5-20260927T024658Z/population.json",
+      "sha256": "63a97b18003df21ab40311d2cf945e2b088b0fac855b59e8ba54e6e6a42292cb"
+    },
+    "fold_issue.json": {
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/runs/r14-s5-20260927T024658Z/fold_issue.json",
+      "sha256": "f77728f3755e9df69eb04b8d5eb9d3b32c0ff59e13c14ebc68177ff8fcc1b84a"
+    }
+  },
+  "assessment": {
+    "start": "2023-01-01",
+    "end": "2025-09-06",
+    "unique_days": 980,
+    "rows_per_model": 55848,
+    "issue_count": 57,
+    "timezone": "America/Denver",
+    "cadence_minutes": 15,
+    "support": "Identical model cases at each exact issue time in the saved accepted scorecard.",
+    "support_check": "Matched saved support counts and reconstructed summaries from fold_issue.json; original prediction keys were not reread.",
+    "spring_forward_dates_without_0200_hour": [
+      "2023-03-12",
+      "2024-03-10",
+      "2025-03-09"
+    ]
+  },
+  "metrics": {
+    "mae": {
+      "label": "MAE",
+      "units": "degF",
+      "point_definition": "Integer predictive median",
+      "lower_is_better": true
+    },
+    "modal_integer_hit": {
+      "label": "Exact-integer hit",
+      "units": "proportion",
+      "point_definition": "Modal integer",
+      "lower_is_better": false
+    },
+    "negative_log_score": {
+      "label": "Reported log loss",
+      "units": "nats",
+      "probability_convention": "Finite support; 1e-6 floor and renormalization for scoring, not fitting.",
+      "lower_is_better": true
+    }
+  },
+  "plot_semantics": {
+    "smoothing": "none",
+    "connections": "Straight segments between saved 15-minute aggregate point estimates, not interpolation of forecasts.",
+    "uncertainty_bands_shown": false,
+    "qualification": "Descriptive historical development results, not a causal estimate of information value or a pointwise significance claim. Disclosed selection-timing nonconformance still applies.",
+    "fitting_performed": false,
+    "holdout_outcomes_read": false,
+    "raw_data_or_prediction_pages_read": false
+  },
+  "models": [
+    {
+      "model_id": "B0_H",
+      "label": "Hourly baseline",
+      "color": "#e15759",
+      "line_style": "dashed",
+      "points": [
+        {
+          "issue_time": "02:00",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2210849539406348,
+          "modal_integer_hit": 0.1586489252814739,
+          "negative_log_score": 2.4791303628874415
+        },
+        {
+          "issue_time": "02:15",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2210849539406348,
+          "modal_integer_hit": 0.1586489252814739,
+          "negative_log_score": 2.4791303628874415
+        },
+        {
+          "issue_time": "02:30",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2210849539406348,
+          "modal_integer_hit": 0.1586489252814739,
+          "negative_log_score": 2.4791303628874415
+        },
+        {
+          "issue_time": "02:45",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.241555783009212,
+          "modal_integer_hit": 0.16888433981576256,
+          "negative_log_score": 2.4881829265186237
+        },
+        {
+          "issue_time": "03:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2510204081632654,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.4894048059531224
+        },
+        {
+          "issue_time": "03:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2510204081632654,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.4894048059531224
+        },
+        {
+          "issue_time": "03:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2510204081632654,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.4894048059531224
+        },
+        {
+          "issue_time": "03:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.231632653061225,
+          "modal_integer_hit": 0.15306122448979592,
+          "negative_log_score": 2.4810796788690097
+        },
+        {
+          "issue_time": "04:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.231632653061225,
+          "modal_integer_hit": 0.15306122448979592,
+          "negative_log_score": 2.4810796788690097
+        },
+        {
+          "issue_time": "04:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.231632653061225,
+          "modal_integer_hit": 0.15306122448979592,
+          "negative_log_score": 2.4810796788690097
+        },
+        {
+          "issue_time": "04:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.231632653061225,
+          "modal_integer_hit": 0.15306122448979592,
+          "negative_log_score": 2.4810796788690097
+        },
+        {
+          "issue_time": "04:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.240816326530612,
+          "modal_integer_hit": 0.1520408163265306,
+          "negative_log_score": 2.4819745789819176
+        },
+        {
+          "issue_time": "05:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.240816326530612,
+          "modal_integer_hit": 0.1520408163265306,
+          "negative_log_score": 2.4819745789819176
+        },
+        {
+          "issue_time": "05:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.240816326530612,
+          "modal_integer_hit": 0.1520408163265306,
+          "negative_log_score": 2.4819745789819176
+        },
+        {
+          "issue_time": "05:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.240816326530612,
+          "modal_integer_hit": 0.1520408163265306,
+          "negative_log_score": 2.4819745789819176
+        },
+        {
+          "issue_time": "05:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2193877551020407,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.4573168723857295
+        },
+        {
+          "issue_time": "06:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2193877551020407,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.4573168723857295
+        },
+        {
+          "issue_time": "06:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2193877551020407,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.4573168723857295
+        },
+        {
+          "issue_time": "06:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2193877551020407,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.4573168723857295
+        },
+        {
+          "issue_time": "06:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.166326530612245,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.4648829122728397
+        },
+        {
+          "issue_time": "07:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.166326530612245,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.4648829122728397
+        },
+        {
+          "issue_time": "07:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.166326530612245,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.46488291227284
+        },
+        {
+          "issue_time": "07:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.166326530612245,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.46488291227284
+        },
+        {
+          "issue_time": "07:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1255102040816327,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4260975961004942
+        },
+        {
+          "issue_time": "08:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1255102040816327,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4260975961004942
+        },
+        {
+          "issue_time": "08:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1255102040816327,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4260975961004942
+        },
+        {
+          "issue_time": "08:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1255102040816327,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4260975961004942
+        },
+        {
+          "issue_time": "08:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1336734693877553,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.438350632153766
+        },
+        {
+          "issue_time": "09:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1336734693877553,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.438350632153766
+        },
+        {
+          "issue_time": "09:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1336734693877553,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.438350632153766
+        },
+        {
+          "issue_time": "09:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1336734693877553,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.438350632153766
+        },
+        {
+          "issue_time": "09:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.086734693877551,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4276445433448117
+        },
+        {
+          "issue_time": "10:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.086734693877551,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4276445433448117
+        },
+        {
+          "issue_time": "10:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.086734693877551,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4276445433448117
+        },
+        {
+          "issue_time": "10:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.086734693877551,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.4276445433448117
+        },
+        {
+          "issue_time": "10:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.01734693877551,
+          "modal_integer_hit": 0.163265306122449,
+          "negative_log_score": 2.3845396070696827
+        },
+        {
+          "issue_time": "11:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.01734693877551,
+          "modal_integer_hit": 0.163265306122449,
+          "negative_log_score": 2.3845396070696827
+        },
+        {
+          "issue_time": "11:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.01734693877551,
+          "modal_integer_hit": 0.163265306122449,
+          "negative_log_score": 2.3845396070696827
+        },
+        {
+          "issue_time": "11:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.01734693877551,
+          "modal_integer_hit": 0.163265306122449,
+          "negative_log_score": 2.3845396070696827
+        },
+        {
+          "issue_time": "11:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9214285714285715,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.3506270382434087
+        },
+        {
+          "issue_time": "12:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9214285714285715,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.3506270382434087
+        },
+        {
+          "issue_time": "12:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9214285714285715,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.3506270382434087
+        },
+        {
+          "issue_time": "12:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9214285714285715,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.3506270382434087
+        },
+        {
+          "issue_time": "12:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8204081632653062,
+          "modal_integer_hit": 0.18877551020408165,
+          "negative_log_score": 2.29833509183685
+        },
+        {
+          "issue_time": "13:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8204081632653062,
+          "modal_integer_hit": 0.18877551020408165,
+          "negative_log_score": 2.29833509183685
+        },
+        {
+          "issue_time": "13:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8204081632653062,
+          "modal_integer_hit": 0.18877551020408165,
+          "negative_log_score": 2.29833509183685
+        },
+        {
+          "issue_time": "13:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8204081632653062,
+          "modal_integer_hit": 0.18877551020408165,
+          "negative_log_score": 2.29833509183685
+        },
+        {
+          "issue_time": "13:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7336734693877551,
+          "modal_integer_hit": 0.18877551020408162,
+          "negative_log_score": 2.246658556701628
+        },
+        {
+          "issue_time": "14:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7336734693877551,
+          "modal_integer_hit": 0.18877551020408162,
+          "negative_log_score": 2.246658556701628
+        },
+        {
+          "issue_time": "14:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7336734693877551,
+          "modal_integer_hit": 0.18877551020408162,
+          "negative_log_score": 2.246658556701628
+        },
+        {
+          "issue_time": "14:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7336734693877551,
+          "modal_integer_hit": 0.18877551020408162,
+          "negative_log_score": 2.246658556701628
+        },
+        {
+          "issue_time": "14:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6204081632653062,
+          "modal_integer_hit": 0.213265306122449,
+          "negative_log_score": 2.1889854993022153
+        },
+        {
+          "issue_time": "15:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6204081632653062,
+          "modal_integer_hit": 0.213265306122449,
+          "negative_log_score": 2.1889854993022153
+        },
+        {
+          "issue_time": "15:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6204081632653062,
+          "modal_integer_hit": 0.213265306122449,
+          "negative_log_score": 2.1889854993022153
+        },
+        {
+          "issue_time": "15:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.620408163265306,
+          "modal_integer_hit": 0.213265306122449,
+          "negative_log_score": 2.1889854993022153
+        },
+        {
+          "issue_time": "15:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5326530612244897,
+          "modal_integer_hit": 0.25,
+          "negative_log_score": 2.126262045422675
+        },
+        {
+          "issue_time": "16:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5326530612244897,
+          "modal_integer_hit": 0.25,
+          "negative_log_score": 2.126262045422675
+        }
+      ]
+    },
+    {
+      "model_id": "B0_Q",
+      "label": "Subhourly baseline",
+      "color": "#2474a4",
+      "line_style": "dotted",
+      "points": [
+        {
+          "issue_time": "02:00",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2292732855680657,
+          "modal_integer_hit": 0.1617195496417605,
+          "negative_log_score": 2.483811264630437
+        },
+        {
+          "issue_time": "02:15",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2292732855680657,
+          "modal_integer_hit": 0.1617195496417605,
+          "negative_log_score": 2.483811264630437
+        },
+        {
+          "issue_time": "02:30",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2292732855680657,
+          "modal_integer_hit": 0.1617195496417605,
+          "negative_log_score": 2.483811264630437
+        },
+        {
+          "issue_time": "02:45",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.256908904810645,
+          "modal_integer_hit": 0.15967246673490276,
+          "negative_log_score": 2.488913839447613
+        },
+        {
+          "issue_time": "03:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2642857142857142,
+          "modal_integer_hit": 0.15918367346938778,
+          "negative_log_score": 2.4901398104683445
+        },
+        {
+          "issue_time": "03:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2642857142857142,
+          "modal_integer_hit": 0.15918367346938778,
+          "negative_log_score": 2.4901398104683445
+        },
+        {
+          "issue_time": "03:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2642857142857142,
+          "modal_integer_hit": 0.15918367346938778,
+          "negative_log_score": 2.4901398104683445
+        },
+        {
+          "issue_time": "03:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2357142857142858,
+          "modal_integer_hit": 0.15816326530612246,
+          "negative_log_score": 2.4799902297629606
+        },
+        {
+          "issue_time": "04:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2357142857142858,
+          "modal_integer_hit": 0.15816326530612246,
+          "negative_log_score": 2.4799902297629606
+        },
+        {
+          "issue_time": "04:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2357142857142858,
+          "modal_integer_hit": 0.15816326530612246,
+          "negative_log_score": 2.4799902297629606
+        },
+        {
+          "issue_time": "04:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2357142857142858,
+          "modal_integer_hit": 0.15816326530612246,
+          "negative_log_score": 2.4799902297629606
+        },
+        {
+          "issue_time": "04:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2581632653061225,
+          "modal_integer_hit": 0.15102040816326534,
+          "negative_log_score": 2.488088358150956
+        },
+        {
+          "issue_time": "05:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2581632653061225,
+          "modal_integer_hit": 0.15102040816326534,
+          "negative_log_score": 2.488088358150956
+        },
+        {
+          "issue_time": "05:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2581632653061225,
+          "modal_integer_hit": 0.15102040816326534,
+          "negative_log_score": 2.488088358150956
+        },
+        {
+          "issue_time": "05:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2581632653061225,
+          "modal_integer_hit": 0.15102040816326534,
+          "negative_log_score": 2.488088358150956
+        },
+        {
+          "issue_time": "05:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2265306122448982,
+          "modal_integer_hit": 0.14387755102040817,
+          "negative_log_score": 2.4596922032364006
+        },
+        {
+          "issue_time": "06:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2265306122448982,
+          "modal_integer_hit": 0.14387755102040817,
+          "negative_log_score": 2.4596922032364006
+        },
+        {
+          "issue_time": "06:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2265306122448982,
+          "modal_integer_hit": 0.14387755102040817,
+          "negative_log_score": 2.4596922032364006
+        },
+        {
+          "issue_time": "06:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2265306122448982,
+          "modal_integer_hit": 0.14387755102040817,
+          "negative_log_score": 2.4596922032364006
+        },
+        {
+          "issue_time": "06:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.164285714285714,
+          "modal_integer_hit": 0.17755102040816328,
+          "negative_log_score": 2.4612765287501954
+        },
+        {
+          "issue_time": "07:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.164285714285714,
+          "modal_integer_hit": 0.17755102040816328,
+          "negative_log_score": 2.4612765287501954
+        },
+        {
+          "issue_time": "07:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.164285714285714,
+          "modal_integer_hit": 0.17755102040816328,
+          "negative_log_score": 2.4612765287501954
+        },
+        {
+          "issue_time": "07:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.164285714285714,
+          "modal_integer_hit": 0.17755102040816328,
+          "negative_log_score": 2.4612765287501954
+        },
+        {
+          "issue_time": "07:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.108163265306122,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.433464712157827
+        },
+        {
+          "issue_time": "08:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.108163265306122,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.433464712157827
+        },
+        {
+          "issue_time": "08:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.108163265306122,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.433464712157827
+        },
+        {
+          "issue_time": "08:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.108163265306122,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.433464712157827
+        },
+        {
+          "issue_time": "08:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1510204081632653,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.4443149182831925
+        },
+        {
+          "issue_time": "09:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1510204081632653,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.4443149182831925
+        },
+        {
+          "issue_time": "09:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1510204081632653,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.4443149182831925
+        },
+        {
+          "issue_time": "09:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1510204081632653,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.4443149182831925
+        },
+        {
+          "issue_time": "09:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.094897959183674,
+          "modal_integer_hit": 0.16938775510204082,
+          "negative_log_score": 2.4371287078615653
+        },
+        {
+          "issue_time": "10:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.094897959183674,
+          "modal_integer_hit": 0.16938775510204082,
+          "negative_log_score": 2.4371287078615658
+        },
+        {
+          "issue_time": "10:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.094897959183674,
+          "modal_integer_hit": 0.16938775510204082,
+          "negative_log_score": 2.4371287078615658
+        },
+        {
+          "issue_time": "10:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.094897959183674,
+          "modal_integer_hit": 0.16938775510204082,
+          "negative_log_score": 2.4371287078615658
+        },
+        {
+          "issue_time": "10:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0183673469387755,
+          "modal_integer_hit": 0.17040816326530614,
+          "negative_log_score": 2.3853114570523983
+        },
+        {
+          "issue_time": "11:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0183673469387755,
+          "modal_integer_hit": 0.17040816326530614,
+          "negative_log_score": 2.3853114570523983
+        },
+        {
+          "issue_time": "11:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0183673469387755,
+          "modal_integer_hit": 0.17040816326530614,
+          "negative_log_score": 2.3853114570523983
+        },
+        {
+          "issue_time": "11:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0183673469387755,
+          "modal_integer_hit": 0.17040816326530614,
+          "negative_log_score": 2.3853114570523983
+        },
+        {
+          "issue_time": "11:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9224489795918367,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.351162754735864
+        },
+        {
+          "issue_time": "12:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9224489795918367,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.3511627547358644
+        },
+        {
+          "issue_time": "12:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9224489795918367,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.3511627547358644
+        },
+        {
+          "issue_time": "12:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9224489795918367,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.3511627547358644
+        },
+        {
+          "issue_time": "12:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8193877551020408,
+          "modal_integer_hit": 0.18673469387755104,
+          "negative_log_score": 2.2903163369379818
+        },
+        {
+          "issue_time": "13:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8193877551020408,
+          "modal_integer_hit": 0.18673469387755104,
+          "negative_log_score": 2.2903163369379818
+        },
+        {
+          "issue_time": "13:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8193877551020408,
+          "modal_integer_hit": 0.18673469387755104,
+          "negative_log_score": 2.2903163369379818
+        },
+        {
+          "issue_time": "13:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.819387755102041,
+          "modal_integer_hit": 0.18673469387755104,
+          "negative_log_score": 2.2903163369379818
+        },
+        {
+          "issue_time": "13:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7153061224489796,
+          "modal_integer_hit": 0.19285714285714287,
+          "negative_log_score": 2.244597554519193
+        },
+        {
+          "issue_time": "14:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7153061224489796,
+          "modal_integer_hit": 0.19285714285714287,
+          "negative_log_score": 2.244597554519193
+        },
+        {
+          "issue_time": "14:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7153061224489796,
+          "modal_integer_hit": 0.19285714285714287,
+          "negative_log_score": 2.244597554519193
+        },
+        {
+          "issue_time": "14:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7153061224489796,
+          "modal_integer_hit": 0.19285714285714287,
+          "negative_log_score": 2.244597554519193
+        },
+        {
+          "issue_time": "14:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6173469387755102,
+          "modal_integer_hit": 0.2163265306122449,
+          "negative_log_score": 2.1858770903161684
+        },
+        {
+          "issue_time": "15:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6173469387755102,
+          "modal_integer_hit": 0.2163265306122449,
+          "negative_log_score": 2.1858770903161684
+        },
+        {
+          "issue_time": "15:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6173469387755102,
+          "modal_integer_hit": 0.2163265306122449,
+          "negative_log_score": 2.1858770903161684
+        },
+        {
+          "issue_time": "15:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6173469387755102,
+          "modal_integer_hit": 0.2163265306122449,
+          "negative_log_score": 2.1858770903161684
+        },
+        {
+          "issue_time": "15:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5275510204081635,
+          "modal_integer_hit": 0.23979591836734696,
+          "negative_log_score": 2.1191960188694225
+        },
+        {
+          "issue_time": "16:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5275510204081635,
+          "modal_integer_hit": 0.23979591836734696,
+          "negative_log_score": 2.1191960188694225
+        }
+      ]
+    },
+    {
+      "model_id": "ANEN",
+      "label": "AnEn",
+      "color": "#777777",
+      "line_style": "solid",
+      "points": [
+        {
+          "issue_time": "02:00",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.156601842374616,
+          "modal_integer_hit": 0.16581371545547594,
+          "negative_log_score": 2.4388907804458118
+        },
+        {
+          "issue_time": "02:15",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.165813715455476,
+          "modal_integer_hit": 0.1647901740020471,
+          "negative_log_score": 2.4362686014766712
+        },
+        {
+          "issue_time": "02:30",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.1566018423746165,
+          "modal_integer_hit": 0.16786079836233367,
+          "negative_log_score": 2.437102148676942
+        },
+        {
+          "issue_time": "02:45",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.1473899692937564,
+          "modal_integer_hit": 0.18014329580348004,
+          "negative_log_score": 2.4302332161120903
+        },
+        {
+          "issue_time": "03:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.15,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.4300161162725615
+        },
+        {
+          "issue_time": "03:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1581632653061225,
+          "modal_integer_hit": 0.18877551020408162,
+          "negative_log_score": 2.4289033473067128
+        },
+        {
+          "issue_time": "03:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.157142857142857,
+          "modal_integer_hit": 0.18775510204081633,
+          "negative_log_score": 2.42930378613834
+        },
+        {
+          "issue_time": "03:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1387755102040815,
+          "modal_integer_hit": 0.16938775510204082,
+          "negative_log_score": 2.434190955899358
+        },
+        {
+          "issue_time": "04:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.136734693877551,
+          "modal_integer_hit": 0.17244897959183675,
+          "negative_log_score": 2.434385250472266
+        },
+        {
+          "issue_time": "04:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.136734693877551,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.430538714648529
+        },
+        {
+          "issue_time": "04:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.136734693877551,
+          "modal_integer_hit": 0.1653061224489796,
+          "negative_log_score": 2.430755565763014
+        },
+        {
+          "issue_time": "04:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1346938775510207,
+          "modal_integer_hit": 0.16632653061224492,
+          "negative_log_score": 2.436096615795331
+        },
+        {
+          "issue_time": "05:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1448979591836737,
+          "modal_integer_hit": 0.163265306122449,
+          "negative_log_score": 2.434632423063479
+        },
+        {
+          "issue_time": "05:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.13265306122449,
+          "modal_integer_hit": 0.15612244897959185,
+          "negative_log_score": 2.421971070109545
+        },
+        {
+          "issue_time": "05:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.13265306122449,
+          "modal_integer_hit": 0.15714285714285717,
+          "negative_log_score": 2.4241525738419885
+        },
+        {
+          "issue_time": "05:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1214285714285714,
+          "modal_integer_hit": 0.17448979591836739,
+          "negative_log_score": 2.3994819878208613
+        },
+        {
+          "issue_time": "06:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.119387755102041,
+          "modal_integer_hit": 0.17346938775510207,
+          "negative_log_score": 2.399885753666749
+        },
+        {
+          "issue_time": "06:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0948979591836734,
+          "modal_integer_hit": 0.16530612244897963,
+          "negative_log_score": 2.3955984191782687
+        },
+        {
+          "issue_time": "06:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.098979591836735,
+          "modal_integer_hit": 0.16428571428571428,
+          "negative_log_score": 2.3967952523970584
+        },
+        {
+          "issue_time": "06:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0408163265306127,
+          "modal_integer_hit": 0.17448979591836739,
+          "negative_log_score": 2.382955405656852
+        },
+        {
+          "issue_time": "07:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.029591836734694,
+          "modal_integer_hit": 0.17448979591836739,
+          "negative_log_score": 2.3819534541248357
+        },
+        {
+          "issue_time": "07:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0551020408163265,
+          "modal_integer_hit": 0.16020408163265307,
+          "negative_log_score": 2.383893023218505
+        },
+        {
+          "issue_time": "07:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.056122448979592,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.3836467175030283
+        },
+        {
+          "issue_time": "07:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9918367346938775,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.36469926669331
+        },
+        {
+          "issue_time": "08:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9836734693877551,
+          "modal_integer_hit": 0.16224489795918368,
+          "negative_log_score": 2.3632600946143643
+        },
+        {
+          "issue_time": "08:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9887755102040816,
+          "modal_integer_hit": 0.16938775510204085,
+          "negative_log_score": 2.36011532567839
+        },
+        {
+          "issue_time": "08:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9938775510204083,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.360401701083177
+        },
+        {
+          "issue_time": "08:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.048979591836735,
+          "modal_integer_hit": 0.15816326530612246,
+          "negative_log_score": 2.3839793444111574
+        },
+        {
+          "issue_time": "09:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0469387755102044,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.382171511133148
+        },
+        {
+          "issue_time": "09:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0102040816326534,
+          "modal_integer_hit": 0.1653061224489796,
+          "negative_log_score": 2.370503581724415
+        },
+        {
+          "issue_time": "09:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0102040816326534,
+          "modal_integer_hit": 0.163265306122449,
+          "negative_log_score": 2.3654828618049546
+        },
+        {
+          "issue_time": "09:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9704081632653059,
+          "modal_integer_hit": 0.1642857142857143,
+          "negative_log_score": 2.3455804374752454
+        },
+        {
+          "issue_time": "10:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9744897959183674,
+          "modal_integer_hit": 0.16224489795918368,
+          "negative_log_score": 2.345305397237273
+        },
+        {
+          "issue_time": "10:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9806122448979593,
+          "modal_integer_hit": 0.1663265306122449,
+          "negative_log_score": 2.3419911286325887
+        },
+        {
+          "issue_time": "10:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.986734693877551,
+          "modal_integer_hit": 0.16938775510204085,
+          "negative_log_score": 2.343272099263393
+        },
+        {
+          "issue_time": "10:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9142857142857144,
+          "modal_integer_hit": 0.17142857142857143,
+          "negative_log_score": 2.298886110651773
+        },
+        {
+          "issue_time": "11:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9244897959183673,
+          "modal_integer_hit": 0.17142857142857143,
+          "negative_log_score": 2.2990754291915323
+        },
+        {
+          "issue_time": "11:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9234693877551021,
+          "modal_integer_hit": 0.17244897959183675,
+          "negative_log_score": 2.300740263756401
+        },
+        {
+          "issue_time": "11:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.933673469387755,
+          "modal_integer_hit": 0.17142857142857143,
+          "negative_log_score": 2.301269540098901
+        },
+        {
+          "issue_time": "11:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8275510204081633,
+          "modal_integer_hit": 0.1785714285714286,
+          "negative_log_score": 2.2655450753077355
+        },
+        {
+          "issue_time": "12:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8367346938775508,
+          "modal_integer_hit": 0.1785714285714286,
+          "negative_log_score": 2.2675799232798823
+        },
+        {
+          "issue_time": "12:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8418367346938773,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.271054130185857
+        },
+        {
+          "issue_time": "12:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8346938775510204,
+          "modal_integer_hit": 0.1816326530612245,
+          "negative_log_score": 2.2751935351587287
+        },
+        {
+          "issue_time": "12:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7520408163265304,
+          "modal_integer_hit": 0.19183673469387755,
+          "negative_log_score": 2.2153562256033226
+        },
+        {
+          "issue_time": "13:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.763265306122449,
+          "modal_integer_hit": 0.18877551020408162,
+          "negative_log_score": 2.218034901751661
+        },
+        {
+          "issue_time": "13:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.76734693877551,
+          "modal_integer_hit": 0.19081632653061226,
+          "negative_log_score": 2.2239290528281237
+        },
+        {
+          "issue_time": "13:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7632653061224488,
+          "modal_integer_hit": 0.1948979591836735,
+          "negative_log_score": 2.225611432289962
+        },
+        {
+          "issue_time": "13:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6979591836734693,
+          "modal_integer_hit": 0.21632653061224488,
+          "negative_log_score": 2.1769848270087317
+        },
+        {
+          "issue_time": "14:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7010204081632654,
+          "modal_integer_hit": 0.21836734693877552,
+          "negative_log_score": 2.1774918430443875
+        },
+        {
+          "issue_time": "14:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.685714285714286,
+          "modal_integer_hit": 0.21836734693877552,
+          "negative_log_score": 2.1789552768819584
+        },
+        {
+          "issue_time": "14:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6928571428571428,
+          "modal_integer_hit": 0.21020408163265308,
+          "negative_log_score": 2.180257453784721
+        },
+        {
+          "issue_time": "14:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5979591836734695,
+          "modal_integer_hit": 0.23877551020408166,
+          "negative_log_score": 2.1313202140900165
+        },
+        {
+          "issue_time": "15:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5857142857142859,
+          "modal_integer_hit": 0.2326530612244898,
+          "negative_log_score": 2.1341829713765996
+        },
+        {
+          "issue_time": "15:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.592857142857143,
+          "modal_integer_hit": 0.2295918367346939,
+          "negative_log_score": 2.1390752748730817
+        },
+        {
+          "issue_time": "15:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6173469387755102,
+          "modal_integer_hit": 0.2295918367346939,
+          "negative_log_score": 2.143593586907505
+        },
+        {
+          "issue_time": "15:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.4836734693877551,
+          "modal_integer_hit": 0.24795918367346942,
+          "negative_log_score": 2.093917286889427
+        },
+        {
+          "issue_time": "16:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.4979591836734694,
+          "modal_integer_hit": 0.2540816326530613,
+          "negative_log_score": 2.0988476552763786
+        }
+      ]
+    },
+    {
+      "model_id": "GAM_LS_NORMAL",
+      "label": "Location–scale normal GAM",
+      "color": "#9774ad",
+      "line_style": "dashdot",
+      "points": [
+        {
+          "issue_time": "02:00",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2067553735926304,
+          "modal_integer_hit": 0.15148413510747183,
+          "negative_log_score": 2.4585314053500102
+        },
+        {
+          "issue_time": "02:15",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.196519959058342,
+          "modal_integer_hit": 0.1586489252814739,
+          "negative_log_score": 2.4527829609132215
+        },
+        {
+          "issue_time": "02:30",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.1883316274309106,
+          "modal_integer_hit": 0.1647901740020471,
+          "negative_log_score": 2.452035068707308
+        },
+        {
+          "issue_time": "02:45",
+          "days": 977,
+          "rows": 977,
+          "mae": 2.2210849539406343,
+          "modal_integer_hit": 0.1647901740020471,
+          "negative_log_score": 2.4653012301515336
+        },
+        {
+          "issue_time": "03:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.222448979591837,
+          "modal_integer_hit": 0.16632653061224492,
+          "negative_log_score": 2.4647779606914977
+        },
+        {
+          "issue_time": "03:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2183673469387757,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.463488448722176
+        },
+        {
+          "issue_time": "03:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.2142857142857144,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.4632482287355884
+        },
+        {
+          "issue_time": "03:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.154081632653061,
+          "modal_integer_hit": 0.1653061224489796,
+          "negative_log_score": 2.4322128401972076
+        },
+        {
+          "issue_time": "04:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.148979591836735,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.432463303179101
+        },
+        {
+          "issue_time": "04:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.144897959183673,
+          "modal_integer_hit": 0.1673469387755102,
+          "negative_log_score": 2.4307810405554013
+        },
+        {
+          "issue_time": "04:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.1520408163265308,
+          "modal_integer_hit": 0.16836734693877553,
+          "negative_log_score": 2.4315314990164145
+        },
+        {
+          "issue_time": "04:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.176530612244898,
+          "modal_integer_hit": 0.15714285714285717,
+          "negative_log_score": 2.446453080103748
+        },
+        {
+          "issue_time": "05:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.179591836734694,
+          "modal_integer_hit": 0.15714285714285717,
+          "negative_log_score": 2.447266098896808
+        },
+        {
+          "issue_time": "05:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.164285714285714,
+          "modal_integer_hit": 0.163265306122449,
+          "negative_log_score": 2.4450351619369712
+        },
+        {
+          "issue_time": "05:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.163265306122449,
+          "modal_integer_hit": 0.1653061224489796,
+          "negative_log_score": 2.445642688500296
+        },
+        {
+          "issue_time": "05:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.144897959183673,
+          "modal_integer_hit": 0.15816326530612246,
+          "negative_log_score": 2.4100487169918727
+        },
+        {
+          "issue_time": "06:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.148979591836735,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.4095890530544746
+        },
+        {
+          "issue_time": "06:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.122448979591837,
+          "modal_integer_hit": 0.16428571428571428,
+          "negative_log_score": 2.397151967946444
+        },
+        {
+          "issue_time": "06:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.122448979591837,
+          "modal_integer_hit": 0.1622448979591837,
+          "negative_log_score": 2.3963304459345043
+        },
+        {
+          "issue_time": "06:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.053061224489796,
+          "modal_integer_hit": 0.18673469387755104,
+          "negative_log_score": 2.3833493405520865
+        },
+        {
+          "issue_time": "07:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.053061224489796,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.3814547545772546
+        },
+        {
+          "issue_time": "07:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.056122448979592,
+          "modal_integer_hit": 0.1785714285714286,
+          "negative_log_score": 2.372402152707802
+        },
+        {
+          "issue_time": "07:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.059183673469388,
+          "modal_integer_hit": 0.18061224489795918,
+          "negative_log_score": 2.370813179054162
+        },
+        {
+          "issue_time": "07:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0040816326530613,
+          "modal_integer_hit": 0.18061224489795918,
+          "negative_log_score": 2.359431977118114
+        },
+        {
+          "issue_time": "08:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0030612244897963,
+          "modal_integer_hit": 0.1806122448979592,
+          "negative_log_score": 2.356568939533317
+        },
+        {
+          "issue_time": "08:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0183673469387755,
+          "modal_integer_hit": 0.1785714285714286,
+          "negative_log_score": 2.3583482497820203
+        },
+        {
+          "issue_time": "08:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0204081632653064,
+          "modal_integer_hit": 0.17755102040816328,
+          "negative_log_score": 2.3562329007914906
+        },
+        {
+          "issue_time": "08:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0653061224489795,
+          "modal_integer_hit": 0.16428571428571428,
+          "negative_log_score": 2.3613518031886436
+        },
+        {
+          "issue_time": "09:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.059183673469388,
+          "modal_integer_hit": 0.16428571428571428,
+          "negative_log_score": 2.3582669303426096
+        },
+        {
+          "issue_time": "09:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0673469387755103,
+          "modal_integer_hit": 0.15510204081632656,
+          "negative_log_score": 2.3587564585573855
+        },
+        {
+          "issue_time": "09:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0561224489795924,
+          "modal_integer_hit": 0.15714285714285714,
+          "negative_log_score": 2.356362144402262
+        },
+        {
+          "issue_time": "09:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.0040816326530613,
+          "modal_integer_hit": 0.17244897959183675,
+          "negative_log_score": 2.325084041416238
+        },
+        {
+          "issue_time": "10:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 2.002040816326531,
+          "modal_integer_hit": 0.17040816326530614,
+          "negative_log_score": 2.324080763873193
+        },
+        {
+          "issue_time": "10:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9959183673469387,
+          "modal_integer_hit": 0.17653061224489797,
+          "negative_log_score": 2.323677509388709
+        },
+        {
+          "issue_time": "10:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9928571428571429,
+          "modal_integer_hit": 0.17551020408163265,
+          "negative_log_score": 2.323763482156677
+        },
+        {
+          "issue_time": "10:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.9061224489795918,
+          "modal_integer_hit": 0.18265306122448982,
+          "negative_log_score": 2.3001221590302836
+        },
+        {
+          "issue_time": "11:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8959183673469386,
+          "modal_integer_hit": 0.18571428571428572,
+          "negative_log_score": 2.3002233478222873
+        },
+        {
+          "issue_time": "11:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8979591836734693,
+          "modal_integer_hit": 0.18979591836734697,
+          "negative_log_score": 2.30122382277578
+        },
+        {
+          "issue_time": "11:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.898979591836735,
+          "modal_integer_hit": 0.19081632653061226,
+          "negative_log_score": 2.3015482218925385
+        },
+        {
+          "issue_time": "11:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8081632653061224,
+          "modal_integer_hit": 0.1989795918367347,
+          "negative_log_score": 2.245476885819037
+        },
+        {
+          "issue_time": "12:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.8122448979591836,
+          "modal_integer_hit": 0.19693877551020408,
+          "negative_log_score": 2.245815527290472
+        },
+        {
+          "issue_time": "12:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.813265306122449,
+          "modal_integer_hit": 0.1989795918367347,
+          "negative_log_score": 2.249190724060917
+        },
+        {
+          "issue_time": "12:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.816326530612245,
+          "modal_integer_hit": 0.1979591836734694,
+          "negative_log_score": 2.251281259121633
+        },
+        {
+          "issue_time": "12:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7255102040816328,
+          "modal_integer_hit": 0.20612244897959187,
+          "negative_log_score": 2.2061690219303456
+        },
+        {
+          "issue_time": "13:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7408163265306122,
+          "modal_integer_hit": 0.20306122448979597,
+          "negative_log_score": 2.2086145385902434
+        },
+        {
+          "issue_time": "13:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7377551020408164,
+          "modal_integer_hit": 0.20918367346938777,
+          "negative_log_score": 2.2182906748607603
+        },
+        {
+          "issue_time": "13:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.7571428571428571,
+          "modal_integer_hit": 0.21020408163265308,
+          "negative_log_score": 2.221364746303111
+        },
+        {
+          "issue_time": "13:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6448979591836737,
+          "modal_integer_hit": 0.22040816326530616,
+          "negative_log_score": 2.1736989926108063
+        },
+        {
+          "issue_time": "14:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6448979591836734,
+          "modal_integer_hit": 0.22346938775510208,
+          "negative_log_score": 2.176955844542382
+        },
+        {
+          "issue_time": "14:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6612244897959183,
+          "modal_integer_hit": 0.21836734693877552,
+          "negative_log_score": 2.1900931571727273
+        },
+        {
+          "issue_time": "14:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.6642857142857144,
+          "modal_integer_hit": 0.22142857142857142,
+          "negative_log_score": 2.193177207479967
+        },
+        {
+          "issue_time": "14:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.576530612244898,
+          "modal_integer_hit": 0.2561224489795919,
+          "negative_log_score": 2.137221272892469
+        },
+        {
+          "issue_time": "15:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5775510204081633,
+          "modal_integer_hit": 0.25918367346938775,
+          "negative_log_score": 2.140748502745881
+        },
+        {
+          "issue_time": "15:15",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5785714285714285,
+          "modal_integer_hit": 0.25306122448979596,
+          "negative_log_score": 2.163291248847166
+        },
+        {
+          "issue_time": "15:30",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5857142857142856,
+          "modal_integer_hit": 0.2510204081632653,
+          "negative_log_score": 2.167637697737145
+        },
+        {
+          "issue_time": "15:45",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5397959183673469,
+          "modal_integer_hit": 0.25204081632653064,
+          "negative_log_score": 2.165412070727279
+        },
+        {
+          "issue_time": "16:00",
+          "days": 980,
+          "rows": 980,
+          "mae": 1.5520408163265307,
+          "modal_integer_hit": 0.24591836734693878,
+          "negative_log_score": 2.1716311866625144
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "R14_S6_EVIDENCE_LEDGER_V1",
+  "new_label_values_read": 0,
+  "source": "S5 interpretation and sealed outputs",
+  "choices": [
+    {
+      "choice": "reliability first",
+      "evidence": "Pooled confidence gains coexist with partial-2025 overconfidence and coverage loss",
+      "cost": "Choice informed by inspected 2023-2025 outcomes; those years cannot validate this hypothesis blindly"
+    },
+    {
+      "choice": "two bases, three reliability models each, fixed ridge",
+      "evidence": "Need conditional information beyond native confidence and calendar with a bounded comparison",
+      "cost": "Six new historical reliability fits per block, twelve across two blocks; not independent tests for every checkpoint"
+    },
+    {
+      "choice": "six shared physical coordinates",
+      "evidence": "Prior R14/S3 physical rationale; forecast instability, forcing, ventilation and thermal structure",
+      "cost": "Feature selection is research judgment after exposure, not a data-proven gate"
+    },
+    {
+      "choice": "reserve future full year",
+      "evidence": "Period instability and seasonal composition require genuinely later evidence",
+      "cost": "365 calendar days reserved, activation prerequisites and no automatic collection"
+    },
+    {
+      "choice": "defer tree challenger",
+      "evidence": "Avoid changing temperature model and reliability model simultaneously",
+      "cost": "No challenger candidates consumed in this stage"
+    }
+  ]
+}

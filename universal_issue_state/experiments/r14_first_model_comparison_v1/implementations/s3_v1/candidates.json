@@ -1,0 +1,2026 @@
+[
+  {
+    "candidate_id": "ANEN_34101c16795f",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_40665a19a50c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_c9bfc50888bc",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_bd49f01a7758",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_f295d4d192b6",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_7ae242750eaf",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_f7a6434a3fc1",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_d31ef45290a2",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_8622c5ca6b8b",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_d8465fd6725a",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_510bbb7a545a",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_54c76160a16d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_164a55df08ff",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_025209ef32bb",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_338bfaff4f29",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_67e192e81a2f",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_e9f95d915900",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_8cde37408238",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_540cbc464cec",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_144531798893",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_e0d01ee34ee4",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_79158c7cf840",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_162a619f22ae",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_4e61d5c5b121",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_a5287a851420",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_90db0706421f",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_6b359ea032ec",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_360d05305aaf",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_bfb84bdcc51e",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_9cd6a52eb39d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_a618599783fd",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_0bdd139facc0",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_2e799860931e",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_a965071d2740",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_a91a29c1daed",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_a9c10761a887",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_affebe866e31",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_3c99ea3803b9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_71da0ce9d550",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_4de9ca7d1fe6",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_8c4b69753859",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_8e2c8c6b1411",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_05bf3582de51",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_94bcb6aa1cfb",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_180ec996ed12",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_4d385e860198",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_f247a342f660",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_50cb79767a10",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_9d33f7a2be44",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_5043b4c40541",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_80da34cd881a",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_5c5c129c94ed",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_bf3be41b6789",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_7c582bad8453",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_7f1c25e231ca",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_5160938b4db5",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_d6276a6913ad",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_1018fc23aa5d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_3adb32501bab",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_e6d70a53c378",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 45
+    }
+  },
+  {
+    "candidate_id": "ANEN_39ad49363c3c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_034f3308a0f9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_1729b421bae6",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_a95456574aa5",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_171ca32f2346",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_afb3bfcc9450",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_0b1b4942f65f",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_5b162b74c3a3",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_307d6599004a",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_5e891554157e",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_a8efbebb223d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_dfeb2bb043c9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_479c990723aa",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_f32d590ebe85",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_19dafdbb142d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_02bb29c087a2",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_3a7281158616",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_847a589f2bc3",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_caca345ba854",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_1e000a866518",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_1197aa4ebfa3",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_659b74497ea9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_e4e0684bca8b",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_1971260b498f",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_f7cb06b0ae15",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_68489deb4ed9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_1ab17234ed03",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_7509b83b60bd",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_541bc65b625d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_b6273ba9dea3",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_499f43c13496",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_845aa265c844",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_2299d4378515",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_70a65eaf3c1c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_ad77ba57b7cd",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_96304140c1bb",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_6a5f7ae28ba6",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_4cd614553434",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_ce597e6b8fd7",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_03be3c93da69",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_7fe5e923f626",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_0a89f5d9b88d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_a34ae52a32f6",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_50b9c2c9c263",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_51ab213a50d5",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_733f05961ce9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_e490037b9406",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_0e1a136f67ec",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_5265430f82e7",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_a2656798cf44",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_d03552107d27",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_db5c527805dd",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_a7db4baded86",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_c377c5b78b67",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_0f49856b0fa0",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_21ced71e50a3",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_8cb5cd8c3179",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_1b1ad8894873",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_2a5e46462d00",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_024b0ddb6dd8",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 60
+    }
+  },
+  {
+    "candidate_id": "ANEN_d23be51dcf81",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_1951b3158c6a",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_559c3e496b1b",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_04822c87ea19",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_ab86898944a1",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_916837f8f35f",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_8e6e15ffe8e4",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_af699446164d",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_10eab101558b",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_ccd6ca6c4394",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_4d30a21c18a4",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_130a1f821181",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_a7476e6032b3",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_eaef171f0d8b",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_018805f660ac",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_386421326cac",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_971569fd3f93",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_b7b7e625ced2",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_d6ff00be47ce",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_0dca2d8142c7",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_3ad4474461f1",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_33c128c0e8e0",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_561087106572",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_3cacd0422a4a",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 20,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_bcd4f73c7580",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_76c18c84598c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_485511629ec1",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_7981fbc9ee10",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_f43f71ee3997",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_4870d405cd98",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_4f0f2d47375b",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_38d6646b69e4",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_fbc41cb948cc",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_8b22eec98e1c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_ddce2f8cec17",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_2c7b98a3bf70",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 30,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_91622603382b",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_ab135a24a71c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_05f6fee53e13",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_04b835669a54",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_1752d46e9719",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_1e4c90c570c8",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_8f4a130fe5eb",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_9e56112d64b7",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_9eeb498584ab",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_94985374b8d9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_f5cc505a0f3c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_cd6fab5f830e",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 40,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_185ad394792e",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_fbcf778bc4fe",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_af28975574b9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_67ea05a159f2",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 0.5,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_4178ceb165ef",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_92587e1f2d86",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_95e63c6a5a5e",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_4def2c993c17",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_e119256cd2a9",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 0.75,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_afd355a36342",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_919c2958c373",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 2.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "ANEN_9c2097a89c4c",
+    "model_id": "ANEN",
+    "parameters": {
+      "bandwidth_multiplier": 2.0,
+      "kernel_sigma_f": 3.0,
+      "neighbors": 60,
+      "seasonal_half_width_days": 90
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_b8b0a16252d2",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.001,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_775cdc6d8de7",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.001,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_c2527c3f15df",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.001,
+      "lambda_scale": 1.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_8d9a5f5f4a01",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_29319c72a1e1",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_cdf9406195b0",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 1.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_b8a4caf44c7e",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.1,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_9ce691aa7b74",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.1,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_94160f97ede4",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.1,
+      "lambda_scale": 1.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_77d5ce434044",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 1.0,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_60f67bec195f",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 1.0,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_NORMAL_ea5e48d8ca39",
+    "model_id": "GAM_LS_NORMAL",
+    "parameters": {
+      "lambda_mu": 1.0,
+      "lambda_scale": 1.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LOCATION_NORMAL_997cbdab0ff8",
+    "model_id": "GAM_LOCATION_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.001,
+      "lambda_scale": 0.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LOCATION_NORMAL_a215749e2298",
+    "model_id": "GAM_LOCATION_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 0.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LOCATION_NORMAL_758b84c7f8cf",
+    "model_id": "GAM_LOCATION_NORMAL",
+    "parameters": {
+      "lambda_mu": 0.1,
+      "lambda_scale": 0.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LOCATION_NORMAL_2d6ee259fadd",
+    "model_id": "GAM_LOCATION_NORMAL",
+    "parameters": {
+      "lambda_mu": 1.0,
+      "lambda_scale": 0.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_58373ff2d92c",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.001,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_6831d7ac88d4",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.001,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_b550c6df8ef9",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.001,
+      "lambda_scale": 1.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_869aa6979e9a",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_a29db0b776da",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_83ed469d2015",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 1.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_33137ec1d1b4",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.1,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_74b63d7e0729",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.1,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_e853be30750d",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 0.1,
+      "lambda_scale": 1.0
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_3ed84d97e01c",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 1.0,
+      "lambda_scale": 0.01
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_89cee12c793e",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 1.0,
+      "lambda_scale": 0.1
+    }
+  },
+  {
+    "candidate_id": "GAM_LS_T5_5b5cb2e78a25",
+    "model_id": "GAM_LS_T5",
+    "parameters": {
+      "lambda_mu": 1.0,
+      "lambda_scale": 1.0
+    }
+  }
+]

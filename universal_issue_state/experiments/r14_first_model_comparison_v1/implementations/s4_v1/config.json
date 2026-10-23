@@ -1,0 +1,30 @@
+{
+  "assessment_labels": "Only authorized development source for included inner blocks after every family candidate is sealed or has a sealed solver failure. No outer score accessor.",
+  "candidate_decisions": 1468,
+  "diagnostic_models": [
+    "GAM_LOCATION_NORMAL",
+    "GAM_LS_T5"
+  ],
+  "evidence": "Baseline outer outcomes already inspected. S4 output is chronological development evidence, not a new blind test.",
+  "excluded_blocks": "Feature-only common support fixed before labels; excluded candidates have a sealed block-level exclusion, no fit, no assessment loss.",
+  "owner_execution": "Implementation and bounded rehearsals first; full historical run owner-launched.",
+  "parents": {
+    "diagnostics/s2_baseline_review_v1/EXPOSURE.json": "d18c2a47d6edc2276f033d9783fc62b00d79f8f314b9c144097c3f2a19b057c3",
+    "implementations/s3_v1/RELEASE.json": "b082ab81ed8ae8843a43c2f868f5e9949336ab8419ed9d98689e5e1a0be5573d",
+    "implementations/s3_v1/candidates.json": "2690b71f9aa1f8423036776368a5c83419a3fd01b1c390332ece9985f22ad49a",
+    "runs/r14-s2-20260925T185129Z/BASELINE_RELEASE.json": "62d432d81b6dd3aa6d330d109a3a82b9b14b5e6236ad40db2a9a0b66f88d6d03"
+  },
+  "primary_models": [
+    "B0_H",
+    "B0_Q",
+    "ANEN",
+    "GAM_LS_NORMAL"
+  ],
+  "resume": "Atomic directory publication; immutable run binding; verify committed file hashes; ignore uncommitted scratch; no overwrite of completed units.",
+  "reuse": "Identical inner TRAIN and ASSESS date populations are checked for every consuming outer vintage. Canonical outer ID is the earliest containing vintage. Forecasts are stored once; selections explicitly reference shared block score hashes.",
+  "schema": "R14_S4_WORKFLOW_V1",
+  "selection": "S3 registered loss, day weighting, minimum two blocks, score tolerance and descending tie policy unchanged. Diagnostics tuned separately.",
+  "solver_failure": "All S3 starts fail: invalidate entire candidate across all included inner blocks for that outer vintage. Never shrink common support. Unexpected errors stop resumably.",
+  "unique_inner_blocks": 7,
+  "unsupported_outer": "No selectable model, insufficient support, or selected refit failure yields one explicit abstention per expected issue; release marked FROZEN_WITH_UNSUPPORTED_MODELS. No fallback or retuning."
+}

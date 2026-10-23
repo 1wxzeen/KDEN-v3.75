@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "year",
+    "path",
+    "sha256",
+    "rows",
+    "source_path",
+    "source_sha256",
+    "identity_sha256",
+    "native_status_counts",
+    "record_sha256"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "R14_TABULAR_T02_PARTITION_V1"
+    },
+    "year": {
+      "type": "integer",
+      "enum": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "path": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "rows": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_path": {
+      "type": "string"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "identity_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "native_status_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "record_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

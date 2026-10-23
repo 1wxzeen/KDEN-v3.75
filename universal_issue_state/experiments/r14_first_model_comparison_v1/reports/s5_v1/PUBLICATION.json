@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE_WITH_DISCLOSED_TIMING_NONCONFORMANCE",
+  "implementation": "implementations/s5_v1",
+  "run": "runs/r14-s5-20260927T024658Z",
+  "implementation_release_sha256": "71faf9560d56429170bdcbb7f64a548b536e3e21d6c90db2263a49e7c5b93e81",
+  "scorecard_release_sha256": "00beec63317cf8a651b82ed79c8506da06e99f0f4d55979e79c090dbb12b8585",
+  "interpretation_sha256": "3d942f3ed740b5d0b68aedf16168daf56fe64b3b09df12bc36823f0bab5d9343",
+  "focused_tests_passed": 12,
+  "verified_report_artifacts": 152,
+  "figures": 122,
+  "earlier_artifacts_modified": false
+}

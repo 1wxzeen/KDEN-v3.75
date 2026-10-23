@@ -1,0 +1,3 @@
+# Figure reproduction only; no training or archive dependencies.
+numpy==2.0.2
+matplotlib==3.10.6

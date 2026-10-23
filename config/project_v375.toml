@@ -1,0 +1,48 @@
+schema_version = "KDEN_V375_PROJECT_CONFIG_V1"
+
+[project]
+project_id = "KDEN_V375"
+station_id = "KDEN"
+historical_start = "2021-01-01"
+historical_end = "2026-09-11"
+timezone = "America/Denver"
+target_window_start_utc_hour = 7
+target_window_end_utc_hour = 7
+availability_policy_id = "KDEN_HIST_COMPLETE_L105_V1"
+active_acquisition_scope_id = "KDEN_V375_R14_V1"
+active_acquisition_scope = "config/r14_acquisition_v375.json"
+
+[source]
+primary_root = "https://noaa-hrrr-bdp-pds.s3.amazonaws.com"
+hourly_product = "wrfsfcf"
+subhourly_product = "wrfsubhf"
+
+[paths]
+registries = "registries"
+schemas = "schemas"
+archive = "hrrr_v4_local_archive"
+runs = "runs"
+reports = "reports"
+state = "state"
+
+[execution]
+owner_controlled_steps = [5, 6]
+owner_facing_acquisition_step = 5
+step_06_behavior = "deprecated_q05_compatibility_alias"
+phase_order = ["WRFSFCF_R14", "WRFSUBHF_Q05_R14"]
+max_total_download_workers = 8
+coordinator_is_only_progress_writer = true
+full_history_requires_owner_scope = true
+
+[isolation]
+fossil_reference_directory = "previous codebases"
+runtime_access_allowed = false
+runtime_import_prefixes_denied = ["kden_panel", "kden35"]
+absolute_project_paths_allowed = false
+
+[contracts]
+run_id_pattern = "^kdenv375-s(0[0-8])-(ordinary|diagnostic|owner-full|validation|synthetic)-[0-9]{8}T[0-9]{6}Z-[a-z0-9][a-z0-9-]{0,31}$"
+log_schema = "schemas/log_event_v375.json"
+run_state_schema = "schemas/run_state_v375.json"
+pass_schema = "schemas/step_pass_v375.json"
+atomic_publication_rule = "write-fsync-hash-replace-fsync-parent"

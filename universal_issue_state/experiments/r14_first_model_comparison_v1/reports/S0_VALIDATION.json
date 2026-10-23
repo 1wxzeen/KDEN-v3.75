@@ -1,0 +1,246 @@
+{
+  "experiment_id": "R14_FIRST_MODEL_COMPARISON_V1",
+  "feature_columns": 433,
+  "feature_rows": 118536,
+  "fold_metadata": {
+    "columns_decoded": {
+      "date_roles": [
+        "target_date",
+        "statistical_group_id",
+        "evidence_role",
+        "supervised_eligible"
+      ],
+      "inner": [
+        "inner_fold_id",
+        "outer_fold_id",
+        "target_date",
+        "statistical_group_id",
+        "assignment",
+        "supervised_assignment"
+      ],
+      "outer": [
+        "outer_fold_id",
+        "target_date",
+        "statistical_group_id",
+        "assignment",
+        "supervised_assignment"
+      ]
+    },
+    "folds": [
+      {
+        "assessment_days": 365,
+        "fold_id": "OUTER_01",
+        "label_lag_cutoff": "2022-12-30",
+        "lag_eligible_train_days": 726,
+        "lag_excluded_dates": [
+          "2022-12-31"
+        ],
+        "nominal_train_days": 727,
+        "type": "outer"
+      },
+      {
+        "assessment_days": 366,
+        "fold_id": "OUTER_02",
+        "label_lag_cutoff": "2023-12-30",
+        "lag_eligible_train_days": 1091,
+        "lag_excluded_dates": [
+          "2023-12-31"
+        ],
+        "nominal_train_days": 1092,
+        "type": "outer"
+      },
+      {
+        "assessment_days": 249,
+        "fold_id": "OUTER_03",
+        "label_lag_cutoff": "2024-12-30",
+        "lag_eligible_train_days": 1457,
+        "lag_excluded_dates": [
+          "2024-12-31"
+        ],
+        "nominal_train_days": 1458,
+        "type": "outer"
+      },
+      {
+        "assessment_days": 184,
+        "fold_id": "OUTER_01/INNER_01",
+        "label_lag_cutoff": "2021-06-29",
+        "lag_eligible_train_days": 179,
+        "lag_excluded_dates": [
+          "2021-06-30"
+        ],
+        "nominal_train_days": 180,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 180,
+        "fold_id": "OUTER_01/INNER_02",
+        "label_lag_cutoff": "2021-12-30",
+        "lag_eligible_train_days": 363,
+        "lag_excluded_dates": [
+          "2021-12-31"
+        ],
+        "nominal_train_days": 364,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 183,
+        "fold_id": "OUTER_01/INNER_03",
+        "label_lag_cutoff": "2022-06-29",
+        "lag_eligible_train_days": 543,
+        "lag_excluded_dates": [
+          "2022-06-30"
+        ],
+        "nominal_train_days": 544,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 184,
+        "fold_id": "OUTER_02/INNER_01",
+        "label_lag_cutoff": "2021-06-29",
+        "lag_eligible_train_days": 179,
+        "lag_excluded_dates": [
+          "2021-06-30"
+        ],
+        "nominal_train_days": 180,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 180,
+        "fold_id": "OUTER_02/INNER_02",
+        "label_lag_cutoff": "2021-12-30",
+        "lag_eligible_train_days": 363,
+        "lag_excluded_dates": [
+          "2021-12-31"
+        ],
+        "nominal_train_days": 364,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 183,
+        "fold_id": "OUTER_02/INNER_03",
+        "label_lag_cutoff": "2022-06-29",
+        "lag_eligible_train_days": 543,
+        "lag_excluded_dates": [
+          "2022-06-30"
+        ],
+        "nominal_train_days": 544,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 181,
+        "fold_id": "OUTER_02/INNER_04",
+        "label_lag_cutoff": "2022-12-30",
+        "lag_eligible_train_days": 726,
+        "lag_excluded_dates": [
+          "2022-12-31"
+        ],
+        "nominal_train_days": 727,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 184,
+        "fold_id": "OUTER_02/INNER_05",
+        "label_lag_cutoff": "2023-06-29",
+        "lag_eligible_train_days": 907,
+        "lag_excluded_dates": [
+          "2023-06-30"
+        ],
+        "nominal_train_days": 908,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 184,
+        "fold_id": "OUTER_03/INNER_01",
+        "label_lag_cutoff": "2021-06-29",
+        "lag_eligible_train_days": 179,
+        "lag_excluded_dates": [
+          "2021-06-30"
+        ],
+        "nominal_train_days": 180,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 180,
+        "fold_id": "OUTER_03/INNER_02",
+        "label_lag_cutoff": "2021-12-30",
+        "lag_eligible_train_days": 363,
+        "lag_excluded_dates": [
+          "2021-12-31"
+        ],
+        "nominal_train_days": 364,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 183,
+        "fold_id": "OUTER_03/INNER_03",
+        "label_lag_cutoff": "2022-06-29",
+        "lag_eligible_train_days": 543,
+        "lag_excluded_dates": [
+          "2022-06-30"
+        ],
+        "nominal_train_days": 544,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 181,
+        "fold_id": "OUTER_03/INNER_04",
+        "label_lag_cutoff": "2022-12-30",
+        "lag_eligible_train_days": 726,
+        "lag_excluded_dates": [
+          "2022-12-31"
+        ],
+        "nominal_train_days": 727,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 184,
+        "fold_id": "OUTER_03/INNER_05",
+        "label_lag_cutoff": "2023-06-29",
+        "lag_eligible_train_days": 907,
+        "lag_excluded_dates": [
+          "2023-06-30"
+        ],
+        "nominal_train_days": 908,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 182,
+        "fold_id": "OUTER_03/INNER_06",
+        "label_lag_cutoff": "2023-12-30",
+        "lag_eligible_train_days": 1091,
+        "lag_excluded_dates": [
+          "2023-12-31"
+        ],
+        "nominal_train_days": 1092,
+        "type": "inner"
+      },
+      {
+        "assessment_days": 184,
+        "fold_id": "OUTER_03/INNER_07",
+        "label_lag_cutoff": "2024-06-29",
+        "lag_eligible_train_days": 1273,
+        "lag_excluded_dates": [
+          "2024-06-30"
+        ],
+        "nominal_train_days": 1274,
+        "type": "inner"
+      }
+    ],
+    "outcome_values_decoded": 0,
+    "role_counts": {
+      "DEVELOPMENT_SUPERVISED": 1707,
+      "DEVELOPMENT_UNRESOLVED": 3,
+      "POST_HOLDOUT_TAIL": 5,
+      "SEALED_HOLDOUT": 365
+    }
+  },
+  "input_files_verified": 29,
+  "model_fits_performed": 0,
+  "outcome_values_decoded": 0,
+  "registered_configurations": 232,
+  "reserved_outcomes_opened": false,
+  "status": "VALID",
+  "truth_file_handling": "opaque byte hash plus schema/row-count metadata; no truth data pages or outcome values decoded",
+  "validation_scope": "selected_model_inputs_not_full_archive_reaudit",
+  "weather_data_pages_decoded": 0
+}

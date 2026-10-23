@@ -1,0 +1,49 @@
+{
+  "schema_version": "R14_TABULAR_CHECKPOINT_CONFIG_V1",
+  "seed": 42,
+  "ensemble_views": 8,
+  "precision": "float32_no_amp",
+  "threads": 4,
+  "models": [
+    {
+      "name": "tabicl",
+      "package": "tabicl",
+      "version": "2.2.0",
+      "repo": "jingang/TabICL",
+      "filename": "tabicl-regressor-v2-20260212.ckpt",
+      "revision": "4dcd344ece2c00be9e831fdd35bed57b5ad83e19",
+      "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a",
+      "license_card": "BSD-3-Clause",
+      "license_reference": "https://huggingface.co/jingang/TabICL",
+      "recipe": {
+        "norm_methods": [
+          "none",
+          "power"
+        ],
+        "feat_shuffle_method": "latin",
+        "outlier_threshold": 4,
+        "output_type": "raw_quantiles",
+        "use_amp": false
+      }
+    },
+    {
+      "name": "tabdpt",
+      "package": "tabdpt",
+      "version": "1.3.1",
+      "repo": "Layer6/TabDPT",
+      "filename": "tabdpt1_3.safetensors",
+      "revision": "a5ca6e01c0fa09ec68c73e958e5199d1932abb3a",
+      "sha256": "97dc3b60bfad6b42ec1a07b7e121d86b0fc7c9fd67c8d2eaac3d815da197eacb",
+      "license_card": "Apache-2.0",
+      "license_reference": "https://huggingface.co/Layer6/TabDPT",
+      "recipe": {
+        "normalizer": "standard",
+        "clip_sigma": 8,
+        "context_size": null,
+        "output_type": "full",
+        "feature_reduction_ever_used": false,
+        "context_reduction_ever_used": false
+      }
+    }
+  ]
+}

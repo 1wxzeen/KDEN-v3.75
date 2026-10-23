@@ -1,0 +1,16 @@
+{
+  "$id": "KDEN_V375_PREFIT_P02_RUN_STATE_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Durable, resumable owner-run state for truth-package adoption and tail acquisition.",
+  "properties": {
+    "phase": {"type": "string"},
+    "run_id": {"type": "string"},
+    "schema_version": {"const": "KDEN_V375_PREFIT_P02_RUN_V1"},
+    "stage_id": {"const": "PREFIT_P02"},
+    "status": {
+      "enum": ["INITIALIZED", "RUNNING", "PAUSE_REQUESTED", "PAUSED", "PASS", "FAILED"]
+    }
+  },
+  "required": ["schema_version", "stage_id", "run_id", "status", "phase"],
+  "type": "object"
+}

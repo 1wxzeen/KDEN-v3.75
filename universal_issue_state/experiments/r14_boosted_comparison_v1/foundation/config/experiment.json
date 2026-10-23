@@ -1,0 +1,495 @@
+{
+  "access": {
+    "network_data_acquisition_allowed": false,
+    "reserved_outcomes_allowed": false,
+    "s0_metadata_tables_allowed": [
+      "date_roles",
+      "outer_folds",
+      "inner_folds"
+    ],
+    "s0_truth_columns_allowed": [],
+    "s0_truth_parquet_mode": "OPAQUE_HASH_PLUS_SCHEMA_METADATA_NO_DATA_PAGES",
+    "s0_weather_data_pages_allowed": false,
+    "tail_outcomes_allowed": false
+  },
+  "anen": {
+    "all_zero_distances": "uniform among selected k; retain deterministic tie order",
+    "bandwidth_multiplier": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "center": "q05_local_retained_max",
+    "distance": "sqrt(mean_j((scaled_query_j-scaled_candidate_j)^2)) over active coordinates",
+    "distance_concentration": "(kth-nearest)/max(kth,1e-12)",
+    "distance_quantile": "fraction of valid reference kth-distances <= query kth-distance; null if fewer than 40 valid reference queries",
+    "effective_sample_size": "1/sum(w_i^2)",
+    "features": [
+      "h16_local_asof_value",
+      "h16_local_remaining_max",
+      "q05_local_asof_value",
+      "q05_local_remaining_max",
+      "derived_q05_minus_h16_common_remaining_mean_k",
+      "derived_t850_minus_t2m_future_first_k",
+      "derived_t700_minus_t850_future_first_k",
+      "revision_h16_remaining_max_abs"
+    ],
+    "infeasible_k": "abstain; never shrink k",
+    "kernel_sigma_f": [
+      0.75,
+      1.25,
+      2.0,
+      3.0
+    ],
+    "kernel_weights": "h=max(kth_distance*bandwidth_multiplier,1e-12); logw=-0.5*(distance/h)^2; normalize using logsumexp",
+    "minimum_pool": 40,
+    "neighbor_order": [
+      "distance ascending",
+      "target_date ascending",
+      "issue_state_id ascending"
+    ],
+    "neighbors": [
+      15,
+      20,
+      30,
+      40,
+      60
+    ],
+    "one_neighbor_per_day": true,
+    "ood": "kth-distance > training-reference 95th percentile OR >25% active coordinates outside training min/max; diagnostic only",
+    "quantile_method": "linear empirical quantile q*(n-1)",
+    "residual_spread": "1.4826 * weighted median absolute deviation from weighted median residual",
+    "residual_translation": "query raw Q center + neighbor (y_audited_f - neighbor raw Q center)",
+    "scaler_scope": "complete eligible training vectors at exact issue minute; all seasons; never assessment",
+    "scaling": "median, IQR; if zero use 1.4826*MAD; if zero use population standard deviation; if zero drop coordinate; if all dropped abstain",
+    "seasonal_half_width_days": [
+      45,
+      60,
+      90
+    ],
+    "tie_order": [
+      "larger seasonal_half_width_days",
+      "larger neighbors",
+      "larger bandwidth_multiplier",
+      "larger kernel_sigma_f"
+    ],
+    "training_reference": "leave-one-day-out candidate neighborhoods within training only, same exact issue and seasonal window; scaler fixed from training; not a forecast validation set"
+  },
+  "baselines": {
+    "B0_H_center": "h16_local_retained_max",
+    "B0_Q_center": "q05_local_retained_max",
+    "abstention": "missing center or pool<40",
+    "circular_calendar": "map month/day to year 2000 index0; distance=min(abs(a-b),366-abs(a-b))",
+    "kernel": "Gaussian; integer CDF integration",
+    "kernel_sigma_f": [
+      0.75,
+      1.25,
+      2.0,
+      3.0
+    ],
+    "minimum_pool": 40,
+    "pool": "complete center and eligible training truth; exact local issue; circular calendar distance <= half_width",
+    "seasonal_half_width_days": [
+      45,
+      60,
+      90
+    ],
+    "target": "training y_audited_f - training raw center in F",
+    "tie_order": [
+      "larger seasonal_half_width_days",
+      "larger kernel_sigma_f"
+    ],
+    "translation": "query raw center + training residual",
+    "weights": "uniform over eligible historical days"
+  },
+  "environment": "environment/environment.json",
+  "evidence": {
+    "blind_holdout_claim_allowed": false,
+    "development": [
+      "2021-01-01",
+      "2025-09-06"
+    ],
+    "prospective": "DEFERRED_TO_SEPARATE_REGISTRATION; no date selected; no automatic use of future truth",
+    "reserved_historical": [
+      "2025-09-07",
+      "2026-09-06"
+    ],
+    "tail": [
+      "2026-09-07",
+      "2026-09-11"
+    ]
+  },
+  "execution": {
+    "full_runs": "owner-run after S1/S3 bounded validation and prediction-contract freeze",
+    "future_run_id": "r14-first-v1-UTCSTAMP-shortlabel",
+    "must_provide_before_long_run": [
+      "install",
+      "start",
+      "status",
+      "live-status",
+      "eta",
+      "pause",
+      "resume",
+      "stop-recovery",
+      "validate",
+      "output-locations"
+    ],
+    "pause_unit": "between fit/configuration or prediction partition; atomic completions only",
+    "resume": "same input/code/config hashes; mismatches fail closed",
+    "s0_model_fits_allowed": false,
+    "s0_next_action": "implement S1 only when requested"
+  },
+  "experiment_id": "R14_FIRST_MODEL_COMPARISON_V1",
+  "folds": {
+    "calendar_assignment": "inherit nominal P07 dates; apply lag and missingness filters; record all exclusions",
+    "fit_weight": "1/(number_of_training_days * available_required_input_rows_for_that_training_day)",
+    "group": "target_date",
+    "inner": [
+      {
+        "assessment_end": "2021-12-31",
+        "assessment_start": "2021-07-01",
+        "inner_fold_id": "INNER_01",
+        "train_end": "2021-06-30",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2022-06-30",
+        "assessment_start": "2022-01-01",
+        "inner_fold_id": "INNER_02",
+        "train_end": "2021-12-31",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2022-12-31",
+        "assessment_start": "2022-07-01",
+        "inner_fold_id": "INNER_03",
+        "train_end": "2022-06-30",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2023-06-30",
+        "assessment_start": "2023-01-01",
+        "inner_fold_id": "INNER_04",
+        "train_end": "2022-12-31",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2023-12-31",
+        "assessment_start": "2023-07-01",
+        "inner_fold_id": "INNER_05",
+        "train_end": "2023-06-30",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2024-06-30",
+        "assessment_start": "2024-01-01",
+        "inner_fold_id": "INNER_06",
+        "train_end": "2023-12-31",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2024-12-31",
+        "assessment_start": "2024-07-01",
+        "inner_fold_id": "INNER_07",
+        "train_end": "2024-06-30",
+        "train_start": "2021-01-01"
+      }
+    ],
+    "outer": [
+      {
+        "assessment_end": "2023-12-31",
+        "assessment_start": "2023-01-01",
+        "outer_fold_id": "OUTER_01",
+        "train_end": "2022-12-31",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2024-12-31",
+        "assessment_start": "2024-01-01",
+        "outer_fold_id": "OUTER_02",
+        "train_end": "2023-12-31",
+        "train_start": "2021-01-01"
+      },
+      {
+        "assessment_end": "2025-09-06",
+        "assessment_start": "2025-01-01",
+        "outer_fold_id": "OUTER_03",
+        "train_end": "2024-12-31",
+        "train_start": "2021-01-01"
+      }
+    ],
+    "source_root": "folds/kden_v375/v1",
+    "training_start": "2021-01-01"
+  },
+  "gam": {
+    "constant_scale_ablation": "eta_scale is intercept only; location unchanged",
+    "interaction": "NONE; deferred",
+    "lambda_mu": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "lambda_scale": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "location_issue_smooth": "clock_issue_minutes_since_0200",
+    "location_linear": [
+      "clock_wrfsfcf_cycle_age_minutes",
+      "clock_wrfsubhf_cycle_age_minutes",
+      "clock_local_dst_flag"
+    ],
+    "location_link": "mu=raw_Q+intercept+additive_terms",
+    "location_weather_smooths": [
+      "h16_local_asof_value",
+      "h16_local_remaining_max",
+      "q05_local_asof_value",
+      "q05_local_remaining_max",
+      "derived_q05_minus_h16_common_remaining_mean_k",
+      "derived_t850_minus_t2m_future_first_k",
+      "derived_t700_minus_t850_future_first_k",
+      "revision_h16_remaining_max_abs"
+    ],
+    "offset": "q05_local_retained_max converted to F",
+    "penalty": "lambda_mu*sum(location nonintercept beta^2)/2 + lambda_scale*sum(scale nonintercept gamma^2)/2; average day-weighted NLL; ridge on centered low-rank spline basis; intercepts unpenalized",
+    "required_features": [
+      "clock_issue_minutes_since_0200",
+      "clock_local_dst_flag",
+      "clock_target_doy_cos",
+      "clock_target_doy_sin",
+      "clock_wrfsfcf_cycle_age_minutes",
+      "clock_wrfsubhf_cycle_age_minutes",
+      "derived_q05_minus_h16_common_remaining_mean_k",
+      "derived_t700_minus_t850_future_first_k",
+      "derived_t850_minus_t2m_future_first_k",
+      "h16_local_asof_value",
+      "h16_local_remaining_max",
+      "q05_local_asof_value",
+      "q05_local_remaining_max",
+      "q05_local_retained_max",
+      "revision_h16_remaining_max_abs"
+    ],
+    "scale_bound_note": "smooth bounded log-scale link resolves numerical guardrails; deliberate refinement of unbounded log-scale sketch in plan; boundary-near frequency reported",
+    "scale_bounds_f": [
+      0.25,
+      20.0
+    ],
+    "scale_issue_smooth": "clock_issue_minutes_since_0200",
+    "scale_linear": [],
+    "scale_link": "log_sigma=log(0.25)+(log(20)-log(0.25))*expit(eta_scale)",
+    "scale_season": "same four Fourier harmonics",
+    "scale_weather_smooths": [
+      "revision_h16_remaining_max_abs",
+      "derived_q05_minus_h16_common_remaining_mean_k"
+    ],
+    "season": "4 Fourier harmonics (8 columns), angle=atan2(clock_target_doy_sin,clock_target_doy_cos); shared additive cyclic term, no calendar split",
+    "solver": {
+      "acceptance": "finite objective and coefficients; solver success; infinity norm gradient <=1e-4; choose lowest penalized objective among valid starts, tie lowest start index",
+      "analytic_gradient_required": true,
+      "failure": "configuration invalid; all starts and reasons recorded; no solver change after outer results",
+      "ftol": 1e-12,
+      "gradient_verification": "central finite differences on synthetic fixtures; max scaled discrepancy <=1e-5",
+      "gtol": 1e-06,
+      "implementation_status": "specified for S3; not implemented or numerically validated in S0",
+      "initial_location": "weighted mean training residual intercept; all other coefficients zero",
+      "initial_scale": "inverse bounded-log-scale link for each start; other coefficients zero",
+      "library": "scipy.optimize.minimize",
+      "maxfun": 20000,
+      "maxiter": 2000,
+      "maxls": 50,
+      "method": "L-BFGS-B",
+      "starts_sigma_f": [
+        1.0,
+        3.0,
+        6.0
+      ]
+    },
+    "spline": {
+      "degree": 3,
+      "extrapolation": "clip weather inputs to training min/max for spline evaluation; flag out-of-range; linear cycle ages robust-scale then clip to training min/max; retain raw Q offset without clipping",
+      "identifiability": "center each basis column by training day-weighted mean, discard last column of each spline block; global intercept remains",
+      "issue_basis_count": 6,
+      "issue_knots": "fixed open clamped [0,0,0,0,280,560,840,840,840,840]",
+      "scaling": "scale retained centered design columns to training day-weighted RMS 1; constants dropped",
+      "weather_basis_count": 5,
+      "weather_knots": "open clamped endpoints at training min/max repeated four times; one internal weighted median; if duplicate endpoint or <5 distinct values use standardized linear term; constant input dropped"
+    },
+    "t_ablation": "Student t CDF with nu=5; sigma is t scale, standard deviation=sigma*sqrt(5/3)",
+    "tie_order": [
+      "larger lambda_mu",
+      "larger lambda_scale"
+    ]
+  },
+  "inference": {
+    "confidence_level": 0.95,
+    "fold_handling": "within each assessment fold sample starts uniformly from full consecutive calendar grid with complete L-day windows; concatenate blocks and truncate to original calendar length; preserve each sampled day all models/issues and missing slots; recompute estimand; pool folds with original target-day counts",
+    "formal_promotion": "DISABLED; effect estimates, uncertainty and conditional hypotheses only",
+    "method": "paired_non_circular_calendar_moving_block_bootstrap",
+    "primary_block_days": 7,
+    "primary_contrasts": [
+      [
+        "ANEN",
+        "B0_H"
+      ],
+      [
+        "ANEN",
+        "B0_Q"
+      ],
+      [
+        "GAM_LS_NORMAL",
+        "B0_H"
+      ],
+      [
+        "GAM_LS_NORMAL",
+        "B0_Q"
+      ],
+      [
+        "GAM_LS_NORMAL",
+        "ANEN"
+      ]
+    ],
+    "primary_metric": "negative_log_score",
+    "replicates": 5000,
+    "secondary": "unadjusted 2.5/97.5 percentile intervals; descriptive; no significance claims across slice search",
+    "seed": 3750925,
+    "sensitivity_block_days": 14,
+    "simultaneous_rule": "five Bonferroni-adjusted two-sided percentile intervals: bootstrap quantiles 0.005 and 0.995 for each contrast; report as nominal approximate familywise 95% coverage, not a finite-sample guarantee",
+    "undefined_replicates": "report fraction; interval null if <95% replicates finite; quantiles on finite draws otherwise"
+  },
+  "missingness": {
+    "common_support": "four primary models intersection for primary contrasts; pairwise and native supports secondary and named",
+    "operational_fallback": "DEFERRED; no blended identity in primary scores",
+    "primary": "required-input complete cases only; explicit abstentions",
+    "primary_fallback": "NONE"
+  },
+  "probability": {
+    "fit_likelihood": "native discrete likelihood with stable log-CDF/log-survival differences; no score floor in objective",
+    "interior_mass": "CDF(k+0.5)-CDF(k-0.5)",
+    "interval_rule": "equal-tail inverse-CDF; lower quantile (1-level)/2, upper (1+level)/2; width=upper-lower",
+    "intervals": [
+      0.5,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "lower_endpoint_mass": "CDF(-39.5)",
+    "mean": "sum k*p_k",
+    "median": "smallest integer with CDF>=0.5",
+    "mode": "smallest integer attaining maximum p",
+    "native_store": true,
+    "pmf_sum_tolerance": 1e-10,
+    "rounding": "nearest integer; halves away from zero",
+    "scoring_floor": 1e-06,
+    "scoring_floor_rule": "max(p,epsilon) then normalize; NLL reporting only",
+    "step_f": 1,
+    "support_max": 120,
+    "support_min": -40,
+    "truth_outside_support": "FAIL_SCORING_CONTRACT; report count; do not clip truth",
+    "upper_endpoint_mass": "1-CDF(119.5)"
+  },
+  "registry_files": {
+    "candidates": "config/candidates.json",
+    "decisions": "config/decisions.json",
+    "exposure": "config/evidence_exposure.json",
+    "features": "config/features.json",
+    "scorecard": "config/scorecard.json"
+  },
+  "schema_version": "R14_EXPERIMENT_CONTRACT_V1",
+  "scope": {
+    "diagnostic_models": [
+      "GAM_LOCATION_NORMAL",
+      "GAM_LS_T5"
+    ],
+    "formal_promotion": false,
+    "learned_gate": false,
+    "next_stage": "S1",
+    "observations": false,
+    "posthoc_calibration": false,
+    "primary_models": [
+      "B0_H",
+      "B0_Q",
+      "ANEN",
+      "GAM_LS_NORMAL"
+    ],
+    "specialists": false,
+    "trading": false
+  },
+  "selection": {
+    "coverages": [
+      1.0,
+      0.75,
+      0.5,
+      0.25,
+      0.1
+    ],
+    "no_admission": "conditional metrics null; coverage zero",
+    "primary_confidence": "native max integer mass; separately native max band mass per partition",
+    "report": [
+      "expected_checkpoint_coverage",
+      "available_checkpoint_coverage",
+      "dayweighted_coverage",
+      "days_with_any_admission",
+      "admitted_issues_per_day",
+      "hit_rate",
+      "mean_predicted_hit",
+      "calibration_gap",
+      "tail_rates",
+      "common_case_baselines",
+      "actual_coverage"
+    ],
+    "secondary_rankings": [
+      "negative_entropy",
+      "negative_central80_width"
+    ],
+    "test_threshold_updates": false,
+    "threshold": "smallest value with weighted CDF >= 1-target_coverage; admit score>=threshold; all ties admitted; coverage 1 uses -infinity",
+    "threshold_source": "chosen model inner OOF predictions on included tuning blocks; tuning evidence only",
+    "weights": "one total weight per date over expected legal issues; exclude missing forecasts from threshold quantile then renormalize, but count them against expected outer coverage"
+  },
+  "stage": "S0",
+  "status": "SPECIFIED_NOT_FITTED",
+  "time": {
+    "availability_lag_minutes": 105,
+    "cycle_selection": "consume frozen independently selected hourly and subhourly cycles; never reselect or stitch",
+    "dst": "consume frozen spine; do not fabricate nonexistent spring times",
+    "issue_grid_local_end": "16:00",
+    "issue_grid_local_start": "02:00",
+    "issue_spine_path": "universal_issue_state/v1/issue_spine/issue_spine.parquet",
+    "issue_step_minutes": 15,
+    "issue_timezone": "America/Denver",
+    "selected_cycles_path": "universal_issue_state/v1/selected_cycles/selected_cycles.parquet",
+    "target_window": "[07:00Z_target_date,07:00Z_next_date)"
+  },
+  "truth": {
+    "corrections": "retain audited truth, disclose retrospective corrections; no source retrieval timestamps as publication timestamps",
+    "cutoff_formula": "target_date <= first_assessment_target_date - 2 calendar days AND nominal TRAIN assignment",
+    "filters": {
+      "label_available_for_supervised_use": true,
+      "truth_group": "development"
+    },
+    "interpretation": "retrospectively audited final truth under assumed two-day reporting lag; not exact first-seen replay",
+    "non_null_required": true,
+    "path": "truth/kden_tmax/v1/catalog/kden_truth_catalog.parquet",
+    "publication_lag_target_days": 2,
+    "target": "y_audited_f",
+    "unresolved_imputation": false,
+    "vintage_update": "fixed for complete assessment block"
+  },
+  "tuning": {
+    "ablation_tuning": "same procedure separately; descriptive only",
+    "block_inclusion": "feasibility-only; before reading losses; report excluded blocks including seasonally unsupported initial half-year",
+    "fail_policy": "INSUFFICIENT_TUNING_SUPPORT; no selected model; do not relax criteria",
+    "loss_weight": "equal target days over included inner blocks, equal scored issues per day",
+    "minimum_eligible_inner_blocks": 2,
+    "minimum_inner_block_day_count": 60,
+    "minimum_inner_block_expected_dayweighted_coverage": 0.5,
+    "objective": "negative_log_score",
+    "score_tie_tolerance_nats": 1e-10,
+    "selection_level": "one setting per model per outer vintage; pooled all exact issues; no per-season/per-issue hyperparameter search",
+    "settings_frozen_before_outer_scoring": true,
+    "support": "within each model family, intersection of target-free feasibility masks across every registered configuration; solver failure invalidates whole configuration rather than dropping cases",
+    "tie_policy": "all settings within tolerance of minimum; apply declared descending parameter order"
+  }
+}

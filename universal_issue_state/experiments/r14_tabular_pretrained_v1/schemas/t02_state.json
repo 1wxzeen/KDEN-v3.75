@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "status",
+    "pid",
+    "phase",
+    "completed_partitions",
+    "total_partitions",
+    "completed_rows",
+    "total_rows",
+    "inflight_rows",
+    "active_seconds",
+    "updated_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "R14_TABULAR_T02_STATE_V1"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "RUNNING",
+        "PAUSED",
+        "FAILED",
+        "PASS"
+      ]
+    },
+    "pid": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "phase": {
+      "type": "string"
+    },
+    "completed_partitions": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_partitions": {
+      "const": 6
+    },
+    "completed_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_rows": {
+      "const": 118536
+    },
+    "inflight_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "active_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "updated_at_utc": {
+      "type": "string"
+    }
+  }
+}

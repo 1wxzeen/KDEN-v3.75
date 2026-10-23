@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" role="img" aria-labelledby="title description">
+  <title id="title">KDEN: from source archives to model evaluation</title>
+  <desc id="description">Five weather-workflow stages connect the historical HRRR archive to selective downloads, R14 weather features, a frozen weather-only modeling dataset, and chronological model evaluation. A separate branch connects NWS CLI and CF6 climate reports to an audited daily maximum-temperature ledger. Only that ledger connects to model fitting and scoring, through an authorized target-date join; it never enters the forecast predictors. R14 includes twelve dynamic hourly fields, static terrain, and one native subhourly temperature field, Q05. The accepted weather release covers 2,080 target days from January 1, 2021 through September 11, 2026, with 118,536 issue states and 433 deterministic features per state. These are weather-release counts, not a claim that every date has an available training label. This is a workflow schematic, not a validation result.</desc>
+  <defs>
+    <marker id="weather-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#286b9e"/>
+    </marker>
+    <marker id="truth-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#287764"/>
+    </marker>
+    <style>
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill: #17263a; }
+      .title { font-size: 32px; font-weight: 700; }
+      .subtitle { font-size: 19px; fill: #46576b; }
+      .lane { font-size: 14px; font-weight: 700; letter-spacing: 1.8px; }
+      .weather-label { fill: #286b9e; }
+      .truth-label { fill: #287764; }
+      .card { fill: #f4f7fa; stroke: #d8e0e8; stroke-width: 1.25; }
+      .frozen-card { fill: #edf4fa; stroke: #286b9e; stroke-width: 1.5; }
+      .truth-card { fill: #eff7f3; stroke: #c6ded4; stroke-width: 1.25; }
+      .heading { font-size: 23px; font-weight: 700; }
+      .detail { font-size: 17px; fill: #3f5062; }
+      .truth-detail { font-size: 17px; fill: #31594d; }
+      .join-label { font-size: 18px; font-weight: 700; fill: #287764; }
+      .join-detail { font-size: 17px; fill: #31594d; }
+      .footer { font-size: 17px; fill: #46576b; }
+      .weather-flow { fill: none; stroke: #286b9e; stroke-width: 2.5; marker-end: url(#weather-arrow); }
+      .truth-flow { fill: none; stroke: #287764; stroke-width: 2.5; marker-end: url(#truth-arrow); }
+    </style>
+  </defs>
+
+  <rect width="1180" height="720" fill="#ffffff"/>
+  <text class="title" x="44" y="55">From source archives to model evaluation</text>
+  <text class="subtitle" x="44" y="90">Forecast inputs and observed outcomes follow separate paths.</text>
+
+  <text class="lane weather-label" x="44" y="146">WEATHER INPUTS</text>
+
+  <g id="hrrr-archive">
+    <rect class="card" x="44" y="174" width="196" height="230" rx="10"/>
+    <text class="heading" x="62" y="217">HRRR archive</text>
+    <text class="detail" x="62" y="286">NOAA historical</text>
+    <text class="detail" x="62" y="312">forecast products</text>
+    <text class="detail" x="62" y="351">Hourly + subhourly</text>
+  </g>
+  <path id="archive-to-downloads" class="weather-flow" d="M 243 289 H 260"/>
+
+  <g id="selective-downloads">
+    <rect class="card" x="268" y="174" width="196" height="230" rx="10"/>
+    <text class="heading" x="286" y="217">Selective</text>
+    <text class="heading" x="286" y="245">downloads</text>
+    <text class="detail" x="286" y="286">Indexed byte ranges</text>
+    <text class="detail" x="286" y="312">8-worker pool</text>
+    <text class="detail" x="286" y="351">Resume + gap checks</text>
+  </g>
+  <path id="downloads-to-r14" class="weather-flow" d="M 467 289 H 484"/>
+
+  <g id="r14-weather-features">
+    <rect class="card" x="492" y="174" width="196" height="230" rx="10"/>
+    <text class="heading" x="510" y="217">R14 weather</text>
+    <text class="heading" x="510" y="245">features</text>
+    <text class="detail" x="510" y="286">12 hourly + terrain</text>
+    <text class="detail" x="510" y="312">Subhourly Q05</text>
+    <text class="detail" x="510" y="351">Local + regional</text>
+  </g>
+  <path id="r14-to-frozen" class="weather-flow" d="M 691 289 H 708"/>
+
+  <g id="frozen-modeling-dataset">
+    <rect class="frozen-card" x="716" y="174" width="196" height="230" rx="10"/>
+    <text class="heading" x="734" y="217">Frozen</text>
+    <text class="heading" x="734" y="245">dataset</text>
+    <text class="detail" x="734" y="286">118,536 states</text>
+    <text class="detail" x="734" y="312">433 features / state</text>
+    <text class="detail" x="734" y="351">Weather only</text>
+  </g>
+  <path id="frozen-to-evaluation" class="weather-flow" d="M 915 289 H 932"/>
+
+  <g id="chronological-model-evaluation">
+    <rect class="card" x="940" y="174" width="196" height="230" rx="10"/>
+    <text class="heading" x="958" y="217">Chronological</text>
+    <text class="heading" x="958" y="245">evaluation</text>
+    <text class="detail" x="958" y="286">Date-grouped folds</text>
+    <text class="detail" x="958" y="312">Earlier labels for fit</text>
+    <text class="detail" x="958" y="351">Later dates scored</text>
+  </g>
+
+  <text class="lane truth-label" x="44" y="453">OBSERVED OUTCOMES — NOT FORECAST INPUTS</text>
+
+  <g id="climate-reports">
+    <rect class="truth-card" x="44" y="480" width="300" height="150" rx="10"/>
+    <text class="heading" x="64" y="520">NWS CLI / CF6 reports</text>
+    <text class="truth-detail" x="64" y="556">Daily / monthly climate reports</text>
+    <text class="truth-detail" x="64" y="586">IEM archive + report chronology</text>
+  </g>
+  <path id="reports-to-truth" class="truth-flow" d="M 348 555 H 372"/>
+
+  <g id="audited-temperature-ledger">
+    <rect class="truth-card" x="380" y="480" width="335" height="150" rx="10"/>
+    <text class="heading" x="400" y="520">Audited daily Tmax ledger</text>
+    <text class="truth-detail" x="400" y="556">Adopted audit + five-date extension</text>
+    <text class="truth-detail" x="400" y="586">Corrections / unresolved dates kept</text>
+    <text class="truth-detail" x="400" y="612">Physically separate from features</text>
+  </g>
+
+  <path id="truth-to-fitting-and-scoring" class="truth-flow" d="M 719 555 H 1038 V 412"/>
+  <text class="join-label" x="747" y="504">Labels for fitting / scoring</text>
+  <text class="join-detail" x="747" y="531">Authorized join by target date</text>
+  <text class="join-detail" x="747" y="588">Never predictor columns</text>
+
+  <text class="footer" x="44" y="676">Weather release: 2,080 target days · January 1, 2021–September 11, 2026</text>
+  <text class="footer" x="44" y="703">Workflow schematic; timing qualifications accompany the reported model results.</text>
+</svg>

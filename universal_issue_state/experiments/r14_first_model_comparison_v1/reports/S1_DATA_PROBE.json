@@ -1,0 +1,583 @@
+{
+  "access_log": [
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "local_minutes_since_0200",
+        "issue_count_for_target_day",
+        "target_window_start_utc",
+        "target_window_end_utc"
+      ],
+      "path": "universal_issue_state/v1/issue_spine/issue_spine.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "issue_time_utc",
+        "product",
+        "selection_status",
+        "cycle_init_utc",
+        "emulated_complete_time_utc",
+        "previous_cycle_init_utc",
+        "previous_emulated_complete_time_utc"
+      ],
+      "path": "universal_issue_state/v1/selected_cycles/selected_cycles.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "h16_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2021/part-2021.parquet",
+      "requested_dates": [
+        "2021-01-20"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "h16_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2022/part-2022.parquet",
+      "requested_dates": [
+        "2022-04-18"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "h16_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2023/part-2023.parquet",
+      "requested_dates": [
+        "2023-03-12"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "h16_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2024/part-2024.parquet",
+      "requested_dates": [
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "local_minutes_since_0200",
+        "issue_count_for_target_day",
+        "target_window_start_utc",
+        "target_window_end_utc"
+      ],
+      "path": "universal_issue_state/v1/issue_spine/issue_spine.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "issue_time_utc",
+        "product",
+        "selection_status",
+        "cycle_init_utc",
+        "emulated_complete_time_utc",
+        "previous_cycle_init_utc",
+        "previous_emulated_complete_time_utc"
+      ],
+      "path": "universal_issue_state/v1/selected_cycles/selected_cycles.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "q05_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2021/part-2021.parquet",
+      "requested_dates": [
+        "2021-01-20"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "q05_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2022/part-2022.parquet",
+      "requested_dates": [
+        "2022-04-18"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "q05_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2023/part-2023.parquet",
+      "requested_dates": [
+        "2023-03-12"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "q05_local_retained_max"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2024/part-2024.parquet",
+      "requested_dates": [
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "local_minutes_since_0200",
+        "issue_count_for_target_day",
+        "target_window_start_utc",
+        "target_window_end_utc"
+      ],
+      "path": "universal_issue_state/v1/issue_spine/issue_spine.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "issue_time_utc",
+        "product",
+        "selection_status",
+        "cycle_init_utc",
+        "emulated_complete_time_utc",
+        "previous_cycle_init_utc",
+        "previous_emulated_complete_time_utc"
+      ],
+      "path": "universal_issue_state/v1/selected_cycles/selected_cycles.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2021/part-2021.parquet",
+      "requested_dates": [
+        "2021-01-20"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2022/part-2022.parquet",
+      "requested_dates": [
+        "2022-04-18"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2023/part-2023.parquet",
+      "requested_dates": [
+        "2023-03-12"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2024/part-2024.parquet",
+      "requested_dates": [
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "local_minutes_since_0200",
+        "issue_count_for_target_day",
+        "target_window_start_utc",
+        "target_window_end_utc"
+      ],
+      "path": "universal_issue_state/v1/issue_spine/issue_spine.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "issue_time_utc",
+        "product",
+        "selection_status",
+        "cycle_init_utc",
+        "emulated_complete_time_utc",
+        "previous_cycle_init_utc",
+        "previous_emulated_complete_time_utc"
+      ],
+      "path": "universal_issue_state/v1/selected_cycles/selected_cycles.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "clock_issue_minutes_since_0200",
+        "clock_local_dst_flag",
+        "clock_target_doy_cos",
+        "clock_target_doy_sin",
+        "clock_wrfsfcf_cycle_age_minutes",
+        "clock_wrfsubhf_cycle_age_minutes",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2021/part-2021.parquet",
+      "requested_dates": [
+        "2021-01-20"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "clock_issue_minutes_since_0200",
+        "clock_local_dst_flag",
+        "clock_target_doy_cos",
+        "clock_target_doy_sin",
+        "clock_wrfsfcf_cycle_age_minutes",
+        "clock_wrfsubhf_cycle_age_minutes",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2022/part-2022.parquet",
+      "requested_dates": [
+        "2022-04-18"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "clock_issue_minutes_since_0200",
+        "clock_local_dst_flag",
+        "clock_target_doy_cos",
+        "clock_target_doy_sin",
+        "clock_wrfsfcf_cycle_age_minutes",
+        "clock_wrfsubhf_cycle_age_minutes",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2023/part-2023.parquet",
+      "requested_dates": [
+        "2023-03-12"
+      ]
+    },
+    {
+      "columns": [
+        "issue_state_id",
+        "target_date",
+        "statistical_group_id",
+        "issue_time_utc",
+        "wrfsfcf_cycle_init_utc",
+        "wrfsubhf_cycle_init_utc",
+        "clock_issue_minutes_since_0200",
+        "clock_local_dst_flag",
+        "clock_target_doy_cos",
+        "clock_target_doy_sin",
+        "clock_wrfsfcf_cycle_age_minutes",
+        "clock_wrfsubhf_cycle_age_minutes",
+        "derived_q05_minus_h16_common_remaining_mean_k",
+        "derived_t700_minus_t850_future_first_k",
+        "derived_t850_minus_t2m_future_first_k",
+        "h16_local_asof_value",
+        "h16_local_remaining_max",
+        "q05_local_asof_value",
+        "q05_local_remaining_max",
+        "q05_local_retained_max",
+        "revision_h16_remaining_max_abs"
+      ],
+      "path": "universal_issue_state/v1/deterministic_features/target_year=2024/part-2024.parquet",
+      "requested_dates": [
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "target_date",
+        "truth_group",
+        "label_available_for_supervised_use",
+        "source_artifact_path",
+        "source_artifact_sha256"
+      ],
+      "path": "truth/kden_tmax/v1/catalog/kden_truth_catalog.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    },
+    {
+      "columns": [
+        "target_date",
+        "y_audited_f"
+      ],
+      "path": "truth/kden_tmax/v1/adopted_stage5r1/development/kden_truth_ledger.parquet",
+      "requested_dates": [
+        "2021-01-20",
+        "2022-04-18",
+        "2023-03-12",
+        "2024-11-03"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "available_rows": 224,
+      "columns": 1,
+      "missing_rows": 0,
+      "model_id": "B0_H",
+      "rows": 224,
+      "rows_by_day": {
+        "2021-01-20": 57,
+        "2022-04-18": 57,
+        "2023-03-12": 53,
+        "2024-11-03": 57
+      }
+    },
+    {
+      "available_rows": 224,
+      "columns": 1,
+      "missing_rows": 0,
+      "model_id": "B0_Q",
+      "rows": 224,
+      "rows_by_day": {
+        "2021-01-20": 57,
+        "2022-04-18": 57,
+        "2023-03-12": 53,
+        "2024-11-03": 57
+      }
+    },
+    {
+      "available_rows": 224,
+      "columns": 9,
+      "missing_rows": 0,
+      "model_id": "ANEN",
+      "rows": 224,
+      "rows_by_day": {
+        "2021-01-20": 57,
+        "2022-04-18": 57,
+        "2023-03-12": 53,
+        "2024-11-03": 57
+      }
+    },
+    {
+      "available_rows": 224,
+      "columns": 15,
+      "missing_rows": 0,
+      "model_id": "GAM_LS_NORMAL",
+      "rows": 224,
+      "rows_by_day": {
+        "2021-01-20": 57,
+        "2022-04-18": 57,
+        "2023-03-12": 53,
+        "2024-11-03": 57
+      }
+    }
+  ],
+  "catalog_outcome_column_read": false,
+  "days": 4,
+  "model_fits_performed": 0,
+  "model_scores_computed": 0,
+  "probe_type": "bounded_loader_check_not_model_evaluation",
+  "reserved_or_tail_outcome_source_reads": 0,
+  "returned_label_values_printed_or_persisted": false,
+  "returned_training_label_rows": 224,
+  "source_physical_decode_note": "source ledger includes 2017-2025 development-era rows in one group; Arrow may decode that group internally, but returns only requested authorized 2021-2025 dates; no reserved or tail outcomes in source",
+  "stage": "S1",
+  "status": "PASS",
+  "unique_audited_training_labels_returned": 4
+}

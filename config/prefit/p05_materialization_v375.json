@@ -1,0 +1,49 @@
+{
+  "schema_version": "KDEN_V375_PREFIT_P05_CONFIG_V1",
+  "substrate_release_id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1",
+  "source_scope_id": "KDEN_V375_R14_V1",
+  "trajectory_schema_id": "KDEN_V375_TRAJECTORY_CATALOG_V1",
+  "feature_panel_schema_id": "KDEN_V375_DETERMINISTIC_FEATURE_PANEL_V1",
+  "feature_registry_id": "KDEN_V375_UNIVERSAL_FEATURE_REGISTRY_V1",
+  "predecessor_p04_record_sha256": "70515a2e73fbe0cef9775d01a566fbbd03f10e81978de3d96a728e4615227dc2",
+  "study_start_date": "2021-01-01",
+  "study_end_date": "2026-09-11",
+  "expected_target_days": 2080,
+  "expected_feature_rows": 118536,
+  "expected_dynamic_trajectory_rows": 8919597,
+  "expected_dynamic_missing_trajectory_rows": 12,
+  "expected_static_trajectory_rows": 1,
+  "expected_total_trajectory_rows": 8919598,
+  "minimum_free_bytes_at_start": 8589934592,
+  "partitioning": {
+    "atomic_checkpoint_key": "target_date",
+    "final_partition_key": "target_year",
+    "parquet_compression": "zstd",
+    "row_group_size": 65536,
+    "scratch_day_checkpoints_removed_after_hashed_year_publication": true
+  },
+  "trajectory_catalog": {
+    "reference_only": true,
+    "canonical_weather_values_duplicated": false,
+    "source_locator_columns": [
+      "canonical_archive_path",
+      "canonical_archive_row_ordinal",
+      "canonical_archive_sha256"
+    ],
+    "local_value_locator_column": "local_value_column",
+    "static_h14_referenced_once": true
+  },
+  "publication": {
+    "target_day_checkpoint_manifest_published_last": true,
+    "year_partition_published_atomically": true,
+    "release_manifest_published_after_all_years": true,
+    "pause_boundary": "complete target day",
+    "resume_revalidates_hashes": true
+  },
+  "execution": {
+    "network_allowed": false,
+    "truth_reads_allowed": false,
+    "model_fitting_allowed": false,
+    "owner_run_required": true
+  }
+}

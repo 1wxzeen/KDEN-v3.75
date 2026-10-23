@@ -1,0 +1,806 @@
+{
+  "schema": "R14_BOOSTED_COMPARISON_V1",
+  "created": "2026-09-27",
+  "seed": 3750928,
+  "features": {
+    "thermal": [
+      "q05_local_retained_max",
+      "h16_local_retained_max",
+      "q05_local_asof_value",
+      "q05_local_remaining_max",
+      "q05_local_remaining_endpoint_slope_per_hour",
+      "h07_local_future_first_value",
+      "derived_t850_minus_t2m_future_first_k",
+      "derived_t700_minus_t850_future_first_k"
+    ],
+    "forcing_surface": [
+      "derived_h31_remaining_trapezoid_mj_m2",
+      "h28_local_remaining_mean",
+      "h26_local_asof_value"
+    ],
+    "mixing_moisture": [
+      "h24_local_remaining_max",
+      "derived_wind_speed_remaining_mean_m_s",
+      "derived_wind_speed_remaining_max_m_s",
+      "derived_dewpoint_depression_future_first_k",
+      "h38_local_remaining_wet_fraction",
+      "derived_h36_remaining_ge20_fraction"
+    ],
+    "spatial": [
+      "q05_regional_future_first_range",
+      "q05_regional_future_first_west_minus_east_mean",
+      "h28_tile_future_first_stddev"
+    ],
+    "consistency": [
+      "derived_q05_minus_h16_common_remaining_mean_k",
+      "revision_h16_remaining_max_abs"
+    ],
+    "clock": [
+      "clock_issue_minutes_since_0200",
+      "clock_target_doy_sin",
+      "clock_target_doy_cos",
+      "clock_wrfsfcf_cycle_age_minutes",
+      "clock_wrfsubhf_cycle_age_minutes"
+    ]
+  },
+  "feature_entries": {
+    "q05_local_retained_max": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Maximum across the selected cycle's retained target-window path.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_d9932c14179620c3e47b7792af1bd1874c18823960a956af62be05a48f25030e",
+      "name": "q05_local_retained_max",
+      "null_policy": "NULL_UNLESS_ALL_DECLARED_WINDOW_ROWS_PRESENT",
+      "operator": "MAX",
+      "physical_range": [
+        180.0,
+        340.0
+      ],
+      "product": "wrfsubhf",
+      "source_fields": [
+        "Q05"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "RETAINED"
+    },
+    "h16_local_retained_max": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Maximum across the selected cycle's retained target-window path.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_2d03fdf97eebf18118e03629e84ce9f3b813d77624ee37bd9219e7975157c305",
+      "name": "h16_local_retained_max",
+      "null_policy": "NULL_UNLESS_ALL_DECLARED_WINDOW_ROWS_PRESENT",
+      "operator": "MAX",
+      "physical_range": [
+        180.0,
+        340.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H16"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "RETAINED"
+    },
+    "q05_local_asof_value": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Latest non-interpolated retained snapshot at or before issue time.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_cfc2ac09adb5db5f14d8bbe0b3464c43736285ffa8b286b7333d41ceb333ead7",
+      "name": "q05_local_asof_value",
+      "null_policy": "NULL_IF_SELECTED_ROW_MISSING",
+      "operator": "LAST_AT_OR_BEFORE",
+      "physical_range": [
+        180.0,
+        340.0
+      ],
+      "product": "wrfsubhf",
+      "source_fields": [
+        "Q05"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "ASOF"
+    },
+    "q05_local_remaining_max": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Maximum over retained snapshots not earlier than issue time.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_c7f01970efe409ada1782edfcbb86c8d642df699c93c0b7b7310ba5c6a6a54cb",
+      "name": "q05_local_remaining_max",
+      "null_policy": "NULL_UNLESS_ALL_DECLARED_WINDOW_ROWS_PRESENT",
+      "operator": "MAX",
+      "physical_range": [
+        180.0,
+        340.0
+      ],
+      "product": "wrfsubhf",
+      "source_fields": [
+        "Q05"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "REMAINING"
+    },
+    "q05_local_remaining_endpoint_slope_per_hour": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Last minus first remaining snapshot divided by elapsed hours.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_2feac241ee3d7dc2db0711bc150c1df7f512c5070ba5ca6423a0b11613d2b3ab",
+      "name": "q05_local_remaining_endpoint_slope_per_hour",
+      "null_policy": "NULL_UNLESS_ALL_DECLARED_WINDOW_ROWS_PRESENT",
+      "operator": "ENDPOINT_SLOPE",
+      "physical_range": [
+        -160.0,
+        160.0
+      ],
+      "product": "wrfsubhf",
+      "source_fields": [
+        "Q05"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "REMAINING"
+    },
+    "h07_local_future_first_value": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "First non-interpolated retained snapshot at or after issue time.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_6961551b684e1e82d6bba8a83bfdc7137af294b79e521d1675eb175a689d281d",
+      "name": "h07_local_future_first_value",
+      "null_policy": "NULL_IF_SELECTED_ROW_MISSING",
+      "operator": "FIRST_AT_OR_AFTER",
+      "physical_range": [
+        180.0,
+        340.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H07"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "FUTURE_FIRST"
+    },
+    "derived_t850_minus_t2m_future_first_k": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Same-cycle 850-mb temperature minus 2-m temperature at earliest common future valid time.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_6c9e02bad0a4b6e3dba20a08dc3ce26def9615f0640b7f5b7c5130c280a1ebc0",
+      "name": "derived_t850_minus_t2m_future_first_k",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "DIFFERENCE",
+      "physical_range": [
+        -80.0,
+        80.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H07",
+        "H16"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "FUTURE_FIRST"
+    },
+    "derived_t700_minus_t850_future_first_k": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Same-cycle 700-mb temperature minus 850-mb temperature at earliest common future valid time.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_6290fce7565a6f2443e24f326039a37eeed345154baf3881a53df25c04a292c5",
+      "name": "derived_t700_minus_t850_future_first_k",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "DIFFERENCE",
+      "physical_range": [
+        -80.0,
+        80.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H02",
+        "H07"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "FUTURE_FIRST"
+    },
+    "derived_h31_remaining_trapezoid_mj_m2": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Trapezoidal integral of remaining downwelling shortwave flux.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_03f46a22ddaf07c8376368727a293666a552d618e944e000837d6c2f461f74fd",
+      "name": "derived_h31_remaining_trapezoid_mj_m2",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "TRAPEZOID_INTEGRAL",
+      "physical_range": [
+        0.0,
+        100.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H31"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "MJ m-2",
+      "window_id": "COMMON_REMAINING"
+    },
+    "h28_local_remaining_mean": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Arithmetic mean over retained snapshots not earlier than issue time.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_2b33dd28fff247ae904d14904c47c7d404c2fdbc649051a07b6cf4560f6354e4",
+      "name": "h28_local_remaining_mean",
+      "null_policy": "NULL_UNLESS_ALL_DECLARED_WINDOW_ROWS_PRESENT",
+      "operator": "MEAN",
+      "physical_range": [
+        0.0,
+        100.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H28"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "%",
+      "window_id": "REMAINING"
+    },
+    "h26_local_asof_value": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Latest non-interpolated retained snapshot at or before issue time.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_57037fef7a3e5227935f452bf3b7fb2f500b0e9eaa1d09e772a76b8e69ebcc0e",
+      "name": "h26_local_asof_value",
+      "null_policy": "NULL_IF_SELECTED_ROW_MISSING",
+      "operator": "LAST_AT_OR_BEFORE",
+      "physical_range": [
+        0.0,
+        100.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H26"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "%",
+      "window_id": "ASOF"
+    },
+    "h24_local_remaining_max": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Maximum over retained snapshots not earlier than issue time.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_df6153a4d65aeaf467d5c8205215f2f9dc90be6ff07ccfd8ed1048d27686d0b7",
+      "name": "h24_local_remaining_max",
+      "null_policy": "NULL_UNLESS_ALL_DECLARED_WINDOW_ROWS_PRESENT",
+      "operator": "MAX",
+      "physical_range": [
+        0.0,
+        10000.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H24"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "m",
+      "window_id": "REMAINING"
+    },
+    "derived_wind_speed_remaining_mean_m_s": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Mean wind-vector magnitude over exact common remaining support.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_c0b2a88cbb7bed06b2ee0e11148aaba0c78272f9560d60227bdb88a905ebeab3",
+      "name": "derived_wind_speed_remaining_mean_m_s",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "VECTOR_MAGNITUDE_MEAN",
+      "physical_range": [
+        0.0,
+        150.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H18",
+        "H19"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "m s-1",
+      "window_id": "COMMON_REMAINING"
+    },
+    "derived_wind_speed_remaining_max_m_s": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Maximum wind-vector magnitude over exact common remaining support.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_9e3b0ad4d66183007b0e5699bb9ef70a71144ee2efe5afef46d96b71d248bd38",
+      "name": "derived_wind_speed_remaining_max_m_s",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "VECTOR_MAGNITUDE_MAX",
+      "physical_range": [
+        0.0,
+        150.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H18",
+        "H19"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "m s-1",
+      "window_id": "COMMON_REMAINING"
+    },
+    "derived_dewpoint_depression_future_first_k": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Same-cycle 2-m temperature minus dewpoint at earliest common future valid time.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_7c14c7aab52a4a1c01c039a7e244a79c273c3dc50b89e5c9826dfeca6740ee70",
+      "name": "derived_dewpoint_depression_future_first_k",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "DIFFERENCE",
+      "physical_range": [
+        0.0,
+        100.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H16",
+        "H17"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "FUTURE_FIRST"
+    },
+    "h38_local_remaining_wet_fraction": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Fraction of complete remaining native intervals with precipitation above zero.",
+      "dtype": "float64",
+      "family": "trajectory",
+      "feature_id": "FEATURE_a0076cc9b1fb52b30416f9cb7f1373ebc6acffa99371545cbf9b81177605760b",
+      "name": "h38_local_remaining_wet_fraction",
+      "null_policy": "NULL_UNLESS_ALL_NATIVE_INTERVALS_PRESENT_AND_NONOVERLAPPING",
+      "operator": "FRACTION_ABOVE_ZERO",
+      "physical_range": [
+        0.0,
+        1.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H38"
+      ],
+      "spatial_support": "KDEN_LOCAL_NEAREST",
+      "unit": "1",
+      "window_id": "REMAINING"
+    },
+    "derived_h36_remaining_ge20_fraction": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Fraction of complete remaining reflectivity snapshots at or above 20 dBZ.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_e7f7613af16c3adce7f1a266835ad0d07c963c7762568fc87f68b4d390d84adb",
+      "name": "derived_h36_remaining_ge20_fraction",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "FRACTION_AT_OR_ABOVE",
+      "physical_range": [
+        0.0,
+        1.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H36"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "1",
+      "window_id": "COMMON_REMAINING"
+    },
+    "q05_regional_future_first_range": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Deterministic regional summary at the first future native snapshot.",
+      "dtype": "float64",
+      "family": "spatial",
+      "feature_id": "FEATURE_7441c2a1598d87b7050c705362337e68ea0b98508d7a9572850c04fc8a0d4d77",
+      "name": "q05_regional_future_first_range",
+      "null_policy": "NULL_UNLESS_ALL_EIGHT_SUPPORTS_PRESENT",
+      "operator": "RANGE",
+      "physical_range": [
+        0.0,
+        160.0
+      ],
+      "product": "wrfsubhf",
+      "source_fields": [
+        "Q05"
+      ],
+      "spatial_support": "EIGHT_REGISTERED_REGIONAL_SUPPORTS",
+      "unit": "K",
+      "window_id": "FUTURE_FIRST"
+    },
+    "q05_regional_future_first_west_minus_east_mean": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Deterministic regional summary at the first future native snapshot.",
+      "dtype": "float64",
+      "family": "spatial",
+      "feature_id": "FEATURE_4f6012b6bf319c50e564bb881fb2167a0191ecd5816177910461ab664a2a1dac",
+      "name": "q05_regional_future_first_west_minus_east_mean",
+      "null_policy": "NULL_UNLESS_ALL_EIGHT_SUPPORTS_PRESENT",
+      "operator": "SECTOR_CONTRAST",
+      "physical_range": [
+        -160.0,
+        160.0
+      ],
+      "product": "wrfsubhf",
+      "source_fields": [
+        "Q05"
+      ],
+      "spatial_support": "EIGHT_REGISTERED_REGIONAL_SUPPORTS",
+      "unit": "K",
+      "window_id": "FUTURE_FIRST"
+    },
+    "h28_tile_future_first_stddev": {
+      "alignment_id": "ONE_SELECTED_CYCLE",
+      "description": "Deterministic acquired-tile summary at the first future native snapshot.",
+      "dtype": "float64",
+      "family": "spatial",
+      "feature_id": "FEATURE_dfaed9b327346b1e21efaae60474ec997bce9e6faf17df07f7bd42554ba8f2da",
+      "name": "h28_tile_future_first_stddev",
+      "null_policy": "NULL_UNLESS_TILE_SHAPE_AND_ALL_NODES_ARE_PRESENT",
+      "operator": "POPULATION_STDDEV",
+      "physical_range": [
+        0.0,
+        100.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H28"
+      ],
+      "spatial_support": "ACQUIRED_NATIVE_TILE",
+      "unit": "%",
+      "window_id": "FUTURE_FIRST"
+    },
+    "derived_q05_minus_h16_common_remaining_mean_k": {
+      "alignment_id": "SAME_VALID_TIME_INDEPENDENT_LEGAL_CYCLES",
+      "description": "Q05 minus H16 over exact shared valid times from independently legal cycles.",
+      "dtype": "float64",
+      "family": "derived",
+      "feature_id": "FEATURE_66a4b8dd4ec6c26c1e0e72d2f065475a72e9dc324538c986e65e0e108b9e98b5",
+      "name": "derived_q05_minus_h16_common_remaining_mean_k",
+      "null_policy": "NULL_UNLESS_ALL_EXACT_TIME_INPUTS_AND_DECLARED_WINDOW_ROWS_ARE_PRESENT",
+      "operator": "MEAN_DIFFERENCE",
+      "physical_range": [
+        -80.0,
+        80.0
+      ],
+      "product": null,
+      "source_fields": [
+        "Q05",
+        "H16"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "COMMON_REMAINING"
+    },
+    "revision_h16_remaining_max_abs": {
+      "alignment_id": "CURRENT_MINUS_IMMEDIATE_PREVIOUS_IDENTICAL_VALID_TIME",
+      "description": "Current minus immediately previous legal same-product cycle on exact remaining overlap.",
+      "dtype": "float64",
+      "family": "revision",
+      "feature_id": "FEATURE_bc4ab21bc4bf55f8ea92be8f1900026f5381e845cb7a9f808edd99713dd09cf2",
+      "name": "revision_h16_remaining_max_abs",
+      "null_policy": "NULL_UNLESS_ALL_OVERLAP_ROWS_PRESENT",
+      "operator": "MAX_ABS_REVISION",
+      "physical_range": [
+        0.0,
+        160.0
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [
+        "H16"
+      ],
+      "spatial_support": "KDEN_LOCAL_CONTRACT_VALUE",
+      "unit": "K",
+      "window_id": "REVISION_OVERLAP"
+    },
+    "clock_issue_minutes_since_0200": {
+      "alignment_id": "P03_ISSUE_STATE",
+      "description": "Deterministic issue-state clock encoding.",
+      "dtype": "int16",
+      "family": "clock",
+      "feature_id": "FEATURE_1a5e89b7ad280750e8da0a6e1997aec533e48c7aae8ed26e9ea98d88111cb55f",
+      "name": "clock_issue_minutes_since_0200",
+      "null_policy": "NEVER_NULL_FROM_P03_ISSUE_SPINE",
+      "operator": "IDENTITY",
+      "physical_range": [
+        0,
+        840
+      ],
+      "product": null,
+      "source_fields": [],
+      "spatial_support": "NONE",
+      "unit": "min",
+      "window_id": "ASOF"
+    },
+    "clock_target_doy_sin": {
+      "alignment_id": "P03_ISSUE_STATE",
+      "description": "Deterministic issue-state clock encoding.",
+      "dtype": "float64",
+      "family": "clock",
+      "feature_id": "FEATURE_06c7d07e55d66fae39735c8363d9387cb8d7fdcb9157b100646514ee78e220d7",
+      "name": "clock_target_doy_sin",
+      "null_policy": "NEVER_NULL_FROM_P03_ISSUE_SPINE",
+      "operator": "CYCLIC_SIN",
+      "physical_range": [
+        -1.0,
+        1.0
+      ],
+      "product": null,
+      "source_fields": [],
+      "spatial_support": "NONE",
+      "unit": "1",
+      "window_id": "ASOF"
+    },
+    "clock_target_doy_cos": {
+      "alignment_id": "P03_ISSUE_STATE",
+      "description": "Deterministic issue-state clock encoding.",
+      "dtype": "float64",
+      "family": "clock",
+      "feature_id": "FEATURE_0d713e6c36a71d1bd4cf3cec6b68b6f5e3bd4ba9dcad3a7fa88093a6201f5117",
+      "name": "clock_target_doy_cos",
+      "null_policy": "NEVER_NULL_FROM_P03_ISSUE_SPINE",
+      "operator": "CYCLIC_COS",
+      "physical_range": [
+        -1.0,
+        1.0
+      ],
+      "product": null,
+      "source_fields": [],
+      "spatial_support": "NONE",
+      "unit": "1",
+      "window_id": "ASOF"
+    },
+    "clock_wrfsfcf_cycle_age_minutes": {
+      "alignment_id": "P03_SELECTED_CYCLE",
+      "description": "Age of the independently selected legal product cycle.",
+      "dtype": "int32",
+      "family": "clock",
+      "feature_id": "FEATURE_d49025ca7f892f4c1df362cb01e0c5076d9d50dde6721e9f088cdf5b7a7f6136",
+      "name": "clock_wrfsfcf_cycle_age_minutes",
+      "null_policy": "NULL_IF_P03_SELECTION_IS_ABSENT",
+      "operator": "IDENTITY",
+      "physical_range": [
+        0,
+        2880
+      ],
+      "product": "wrfsfcf",
+      "source_fields": [],
+      "spatial_support": "NONE",
+      "unit": "min",
+      "window_id": "ASOF"
+    },
+    "clock_wrfsubhf_cycle_age_minutes": {
+      "alignment_id": "P03_SELECTED_CYCLE",
+      "description": "Age of the independently selected legal product cycle.",
+      "dtype": "int32",
+      "family": "clock",
+      "feature_id": "FEATURE_cae052c0339b291bb3b6731a176d4a3dff93cfd1f83943c21b1f5506eea4a7c9",
+      "name": "clock_wrfsubhf_cycle_age_minutes",
+      "null_policy": "NULL_IF_P03_SELECTION_IS_ABSENT",
+      "operator": "IDENTITY",
+      "physical_range": [
+        0,
+        2880
+      ],
+      "product": "wrfsubhf",
+      "source_fields": [],
+      "spatial_support": "NONE",
+      "unit": "min",
+      "window_id": "ASOF"
+    }
+  },
+  "derived_features": {
+    "heating_potential": [
+      "q05_local_remaining_max",
+      "q05_local_asof_value"
+    ]
+  },
+  "offset": "q05_local_retained_max",
+  "target": "audited integer Tmax F minus raw Q center F",
+  "missing": "required raw Q missing => abstain; other predictors training day-weighted median imputation plus fixed missing indicator for every input; training-all-missing predictor stays zero with indicator; no truth imputation",
+  "units": "raw registry units except Q offset K to F; physical differences in K",
+  "xgb": {
+    "quantiles": [
+      0.01,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.95,
+      0.99
+    ],
+    "learning_rate": 0.03,
+    "min_child_weight": 10.0,
+    "reg_lambda": 10.0,
+    "reg_alpha": 0.0,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0,
+    "max_bin": 128,
+    "n_jobs": 2,
+    "tree_method": "hist"
+  },
+  "ngb": {
+    "learning_rate": 0.03,
+    "distribution": "Normal",
+    "score": "LogScore",
+    "natural_gradient": true,
+    "minibatch_frac": 1.0,
+    "col_sample": 1.0,
+    "min_samples_leaf": 40,
+    "min_weight_fraction_leaf": 0.01,
+    "tol": 1e-05,
+    "scale_output_floor_f": 0.25,
+    "scale_output_ceiling_f": 30.0
+  },
+  "pmf": {
+    "support": [
+      -40,
+      120
+    ],
+    "half_bin_integration": true,
+    "quantile_repair": "sort nine predictions; symmetrically expand adjacent gaps to >=0.05 F around median; record crossings and mean/max repair",
+    "minimum_quantile_gap_f": 0.05,
+    "cdf": "linear between repaired quantiles; exponential tails anchored at .01/.99 with scales derived from adjacent .05/.95 quantiles, floored at .25 F",
+    "log_score_floor": 1e-06
+  },
+  "selection": {
+    "metric": "day-mean integer negative log score",
+    "minimum_training_days": 300,
+    "minimum_inner_days": 60,
+    "minimum_inner_blocks": 2,
+    "tie_tolerance": 1e-10,
+    "tie_order": "shallower depth, then fewer rounds, then candidate id",
+    "inner_blocks": [
+      "INNER_02",
+      "INNER_03",
+      "INNER_04",
+      "INNER_05",
+      "INNER_06",
+      "INNER_07"
+    ],
+    "early_stopping": false,
+    "label_lag_days": 2,
+    "selection_cutoff": "discard inner loss dates later than outer start minus two days before averaging; recompute every outer vintage",
+    "failed_candidate": "exclude whole candidate from that outer selection if any eligible included block failed; record reason; never drop difficult rows based on losses"
+  },
+  "scoring": {
+    "forecast_freeze_before_outer_comparison": true,
+    "primary_contrasts": [
+      [
+        "XGB_QUANTILE",
+        "B0_H"
+      ],
+      [
+        "XGB_QUANTILE",
+        "B0_Q"
+      ],
+      [
+        "NGB_NORMAL",
+        "B0_H"
+      ],
+      [
+        "NGB_NORMAL",
+        "B0_Q"
+      ],
+      [
+        "XGB_QUANTILE",
+        "NGB_NORMAL"
+      ]
+    ],
+    "bootstrap_replicates": 5000,
+    "block_days": 7,
+    "sensitivity_block_days": 14,
+    "primary_interval_quantiles": [
+      0.005,
+      0.995
+    ],
+    "formal_promotion": false,
+    "selectivity": "descriptive native-confidence reliability bins with coverage; no learned gates or threshold optimization"
+  },
+  "evidence": {
+    "development": [
+      "2021-01-01",
+      "2025-09-06"
+    ],
+    "outer": "2023, 2024, 2025-01-01 through 2025-09-06",
+    "historical_not_blind": true,
+    "reserved_or_tail_labels_allowed": false,
+    "prior_exposure": "S2-S6 and CR1 outcomes informed this design; all assessment periods development evidence",
+    "legacy_baseline_timing": "S2 tuning included one late date per vintage; S5 exclusion sensitivity selected identical settings; retain disclosure, no clean-original-procedure claim"
+  },
+  "storage": {
+    "candidate_models": "memory only, never persisted",
+    "inner_predictions": "temporary memory only; compact daily losses and confidence histograms retained",
+    "shared_features": "load once per process; no per-candidate training arrays",
+    "outer": "six winning model artifacts and PMFs; baseline snapshots copied once",
+    "minimum_free_gib": 2
+  },
+  "sources": [
+    "https://xgboost.readthedocs.io/en/latest/python/examples/prediction_intervals.html",
+    "https://stanfordmlgroup.github.io/ngboost/1-useage.html",
+    "https://stanfordmlgroup.github.io/ngboost/2-tuning.html"
+  ],
+  "candidates": [
+    {
+      "id": "XGB_d2_n200",
+      "family": "XGB_QUANTILE",
+      "depth": 2,
+      "rounds": 200
+    },
+    {
+      "id": "XGB_d2_n600",
+      "family": "XGB_QUANTILE",
+      "depth": 2,
+      "rounds": 600
+    },
+    {
+      "id": "XGB_d3_n200",
+      "family": "XGB_QUANTILE",
+      "depth": 3,
+      "rounds": 200
+    },
+    {
+      "id": "XGB_d3_n600",
+      "family": "XGB_QUANTILE",
+      "depth": 3,
+      "rounds": 600
+    },
+    {
+      "id": "XGB_d4_n200",
+      "family": "XGB_QUANTILE",
+      "depth": 4,
+      "rounds": 200
+    },
+    {
+      "id": "XGB_d4_n600",
+      "family": "XGB_QUANTILE",
+      "depth": 4,
+      "rounds": 600
+    },
+    {
+      "id": "NGB_d2_n200",
+      "family": "NGB_NORMAL",
+      "depth": 2,
+      "rounds": 200
+    },
+    {
+      "id": "NGB_d2_n600",
+      "family": "NGB_NORMAL",
+      "depth": 2,
+      "rounds": 600
+    },
+    {
+      "id": "NGB_d3_n200",
+      "family": "NGB_NORMAL",
+      "depth": 3,
+      "rounds": 200
+    },
+    {
+      "id": "NGB_d3_n600",
+      "family": "NGB_NORMAL",
+      "depth": 3,
+      "rounds": 600
+    }
+  ]
+}

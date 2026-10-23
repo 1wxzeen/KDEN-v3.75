@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_R14_STEP03_PASS_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_id", "scope_id", "status", "completed_at_utc",
+    "run_id", "predecessor_hashes", "artifact_hashes", "gate_evidence",
+    "record_sha256"
+  ],
+  "properties": {
+    "schema_version": {"enum": ["KDEN_V375_R14_PRODUCT_PLAN_PASS_V1", "KDEN_V375_R14_STEP03_PASS_V1"]},
+    "record_id": {"enum": ["STEP_03_R14_WRFSFCF", "STEP_03_R14_WRFSUBHF", "STEP_03_R14"]},
+    "scope_id": {"const": "KDEN_V375_R14_V1"},
+    "product": {"enum": ["wrfsfcf", "wrfsubhf"]},
+    "status": {"const": "PASS"},
+    "completed_at_utc": {"type": "string", "format": "date-time"},
+    "run_id": {"type": "string"},
+    "predecessor_hashes": {"type": "object"},
+    "artifact_hashes": {"type": "object"},
+    "gate_evidence": {"type": "object"},
+    "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

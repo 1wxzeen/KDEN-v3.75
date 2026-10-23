@@ -1,0 +1,229 @@
+{
+  "assessment_labels_read": false,
+  "models": [
+    {
+      "feature_nonmissing_fraction": {
+        "dryness": 1.0,
+        "forecast_revision": 1.0,
+        "heating_potential": 1.0,
+        "mixing_depth": 1.0,
+        "product_difference": 1.0,
+        "q05_local_retained_max": 1.0,
+        "solar_energy": 1.0,
+        "thermal_850": 1.0,
+        "thermal_contrast": 1.0,
+        "thermal_state": 1.0,
+        "wind_speed": 1.0
+      },
+      "model": "ANEN",
+      "parameters": {
+        "bandwidth_multiplier": 1.0,
+        "kernel_sigma_f": 1.25,
+        "neighbors": 15,
+        "seasonal_half_width_days": 90
+      },
+      "query_rows": 167,
+      "seconds": 6.651507166912779,
+      "solver_starts": [],
+      "statuses": {
+        "AVAILABLE": 167
+      },
+      "train_complete": 6950,
+      "train_days": 122,
+      "train_rows": 6950
+    },
+    {
+      "feature_nonmissing_fraction": {
+        "clock_issue_minutes_since_0200": 1.0,
+        "clock_local_dst_flag": 1.0,
+        "clock_target_doy_cos": 1.0,
+        "clock_target_doy_sin": 1.0,
+        "clock_wrfsfcf_cycle_age_minutes": 1.0,
+        "clock_wrfsubhf_cycle_age_minutes": 1.0,
+        "dryness": 1.0,
+        "forecast_revision": 1.0,
+        "heating_potential": 1.0,
+        "mixing_depth": 1.0,
+        "product_difference": 1.0,
+        "q05_local_retained_max": 1.0,
+        "solar_energy": 1.0,
+        "thermal_850": 1.0,
+        "thermal_contrast": 1.0,
+        "thermal_state": 1.0,
+        "wind_speed": 1.0
+      },
+      "model": "GAM_LS_NORMAL",
+      "parameters": {
+        "lambda_mu": 0.01,
+        "lambda_scale": 0.1
+      },
+      "query_rows": 167,
+      "seconds": 7.118746333057061,
+      "solver_starts": [
+        {
+          "accepted": true,
+          "gradient_inf": 7.5753287923086e-07,
+          "initial_sigma_f": 1.0,
+          "iterations": 148,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.170866258465375,
+          "start": 0
+        },
+        {
+          "accepted": true,
+          "gradient_inf": 8.512301641143936e-07,
+          "initial_sigma_f": 3.0,
+          "iterations": 140,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.170866258474959,
+          "start": 1
+        },
+        {
+          "accepted": true,
+          "gradient_inf": 9.260142340792449e-07,
+          "initial_sigma_f": 6.0,
+          "iterations": 143,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.17086625847122,
+          "start": 2
+        }
+      ],
+      "statuses": {
+        "AVAILABLE": 167
+      },
+      "train_complete": 6950,
+      "train_days": 122,
+      "train_rows": 6950
+    },
+    {
+      "feature_nonmissing_fraction": {
+        "clock_issue_minutes_since_0200": 1.0,
+        "clock_local_dst_flag": 1.0,
+        "clock_target_doy_cos": 1.0,
+        "clock_target_doy_sin": 1.0,
+        "clock_wrfsfcf_cycle_age_minutes": 1.0,
+        "clock_wrfsubhf_cycle_age_minutes": 1.0,
+        "dryness": 1.0,
+        "forecast_revision": 1.0,
+        "heating_potential": 1.0,
+        "mixing_depth": 1.0,
+        "product_difference": 1.0,
+        "q05_local_retained_max": 1.0,
+        "solar_energy": 1.0,
+        "thermal_850": 1.0,
+        "thermal_contrast": 1.0,
+        "thermal_state": 1.0,
+        "wind_speed": 1.0
+      },
+      "model": "GAM_LOCATION_NORMAL",
+      "parameters": {
+        "lambda_mu": 0.01,
+        "lambda_scale": 0.0
+      },
+      "query_rows": 167,
+      "seconds": 6.3579131660517305,
+      "solver_starts": [
+        {
+          "accepted": true,
+          "gradient_inf": 9.611260379043494e-07,
+          "initial_sigma_f": 1.0,
+          "iterations": 59,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.388598103952249,
+          "start": 0
+        },
+        {
+          "accepted": true,
+          "gradient_inf": 4.900415676817142e-07,
+          "initial_sigma_f": 3.0,
+          "iterations": 66,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.38859810390816,
+          "start": 1
+        },
+        {
+          "accepted": true,
+          "gradient_inf": 6.630997424704715e-07,
+          "initial_sigma_f": 6.0,
+          "iterations": 70,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.3885981039178414,
+          "start": 2
+        }
+      ],
+      "statuses": {
+        "AVAILABLE": 167
+      },
+      "train_complete": 6950,
+      "train_days": 122,
+      "train_rows": 6950
+    },
+    {
+      "feature_nonmissing_fraction": {
+        "clock_issue_minutes_since_0200": 1.0,
+        "clock_local_dst_flag": 1.0,
+        "clock_target_doy_cos": 1.0,
+        "clock_target_doy_sin": 1.0,
+        "clock_wrfsfcf_cycle_age_minutes": 1.0,
+        "clock_wrfsubhf_cycle_age_minutes": 1.0,
+        "dryness": 1.0,
+        "forecast_revision": 1.0,
+        "heating_potential": 1.0,
+        "mixing_depth": 1.0,
+        "product_difference": 1.0,
+        "q05_local_retained_max": 1.0,
+        "solar_energy": 1.0,
+        "thermal_850": 1.0,
+        "thermal_contrast": 1.0,
+        "thermal_state": 1.0,
+        "wind_speed": 1.0
+      },
+      "model": "GAM_LS_T5",
+      "parameters": {
+        "lambda_mu": 0.01,
+        "lambda_scale": 0.1
+      },
+      "query_rows": 167,
+      "seconds": 10.745265874778852,
+      "solver_starts": [
+        {
+          "accepted": true,
+          "gradient_inf": 5.195618025307519e-07,
+          "initial_sigma_f": 1.0,
+          "iterations": 122,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.157063709257191,
+          "start": 0
+        },
+        {
+          "accepted": true,
+          "gradient_inf": 7.985535461535638e-07,
+          "initial_sigma_f": 3.0,
+          "iterations": 120,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.157063709282753,
+          "start": 1
+        },
+        {
+          "accepted": true,
+          "gradient_inf": 9.146518885781371e-07,
+          "initial_sigma_f": 6.0,
+          "iterations": 121,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "objective": 2.157063709281759,
+          "start": 2
+        }
+      ],
+      "statuses": {
+        "AVAILABLE": 167
+      },
+      "train_complete": 6950,
+      "train_days": 122,
+      "train_rows": 6950
+    }
+  ],
+  "note": "Sparse-in-calendar bounded engineering fits; not production model performance.",
+  "parameter_selection_performed": false,
+  "scores_computed": false,
+  "status": "PASS"
+}

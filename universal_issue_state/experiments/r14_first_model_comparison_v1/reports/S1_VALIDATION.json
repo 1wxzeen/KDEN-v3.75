@@ -1,0 +1,10 @@
+{
+  "model_fits_performed": 0,
+  "parent_s0_unchanged": true,
+  "s0_status": "VALID",
+  "source_ledger_identity_verified": true,
+  "stage": "S1",
+  "status": "VALID",
+  "synthetic_bands_are_market_listings": false,
+  "validation_outcome_values_read": 0
+}

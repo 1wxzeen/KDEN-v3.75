@@ -1,0 +1,16 @@
+{
+  "files": {
+    "CALIBRATION.json": "c6a7d457adb4105b4853d52d940f83ef6ce489cfd3680952de4ca18ee687f36d",
+    "EXACT_ISSUE.json": "55e4bb540a8cc3e1d543f19ecdaccfb484ec69c1032048fabe7b19b0cf1195c8",
+    "NGB_NORMAL_row_scores.parquet": "54ff2b006e33c920f7fdb1c253713ea67206a7a0215e939ccd159884806c012d",
+    "PRIMARY_COMPARISONS.json": "cd59e1f5041c32a110c9ca778fd97e1e64eb750cc876db81edc227c264f7726e",
+    "REPORT.md": "7d0834ea247b37a4932b185e75cb535058083890b7eb5f7a712df2e2159a0c17",
+    "SCORECARDS.json": "08395037ce73c39c7148339cee0ca93a4a733c0b39c4899a7b68883d95aafe75",
+    "SUPPORT.json": "737b341bff56b348dc0f41564d0113f3e07e484ca81751effd4822f9db912398",
+    "XGB_QUANTILE_row_scores.parquet": "0d99b1dd8de610453bec918beefe61b48b7ab4a8f438038bca1113172f6fed9c"
+  },
+  "prediction_release_sha256": "e0bd05070c9c0830edee5ac06a91c4e86754b195e419df229a61a0226c82b83c",
+  "record_sha256": "e585bfd2469a048c50aa9614e329b90be106fff3fccdb75c9297dd64bca094f9",
+  "reserved_labels_read": false,
+  "status": "COMPLETE"
+}

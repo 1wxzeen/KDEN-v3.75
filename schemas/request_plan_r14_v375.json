@@ -1,0 +1,35 @@
+{
+  "schema_version": "KDEN_V375_PARQUET_SCHEMA_V1",
+  "schema_id": "KDEN_V375_REQUEST_PLAN_R14_V1",
+  "format": "parquet",
+  "compression": "zstd",
+  "primary_key": ["request_id"],
+  "sort_order": ["target_day", "product", "cycle_init_utc", "forecast_lead_min", "field_registry_id"],
+  "columns": [
+    {"name": "request_id", "arrow_type": "string", "nullable": false},
+    {"name": "target_day", "arrow_type": "date32", "nullable": false},
+    {"name": "product", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "cycle_init_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "source_object_identity", "arrow_type": "string", "nullable": false},
+    {"name": "index_object_identity", "arrow_type": "string", "nullable": false},
+    {"name": "forecast_lead_min", "arrow_type": "int16", "nullable": false},
+    {"name": "valid_time_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "field_registry_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "selector_identity", "arrow_type": "string", "nullable": false},
+    {"name": "step_type", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "interval_start_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "interval_end_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "baseline_spatial_contract_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "regional_spatial_contract_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "regional_operator_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "regional_support_count", "arrow_type": "int8", "nullable": false},
+    {"name": "request_action", "arrow_type": "dictionary<string>", "nullable": false}
+  ],
+  "row_rules": {
+    "selector": "selector identity preserves the R14 field catalog contract, valid time, and interval duration",
+    "network": "all dynamic rows use ARCHIVE_NETWORK_RANGE_V1; H14 is one source-message request for HRRR v4",
+    "regional": "regional operator and support count are resolved from KDEN_V375_R14_REGIONAL_SPATIAL_V1",
+    "local_only": "H02 and H07 use LOCAL_BASELINE_ONLY_NO_REGIONAL_SUPPORT and regional_support_count=0",
+    "static_terrain": "H14 extracts KDEN BI plus eight terrain supports; the transient full decoded grid is not persisted"
+  }
+}

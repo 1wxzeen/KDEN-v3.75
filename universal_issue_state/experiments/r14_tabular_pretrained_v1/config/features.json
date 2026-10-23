@@ -1,0 +1,295 @@
+{
+  "schema_version": "R14_TABULAR_FEATURE_CONFIG_V1",
+  "features": [
+    {
+      "name": "anchor_q_f",
+      "source": "q05_local_retained_max",
+      "source_unit": "K",
+      "transform": "K_TO_F"
+    },
+    {
+      "name": "anchor_h_f",
+      "source": "h16_local_retained_max",
+      "source_unit": "K",
+      "transform": "K_TO_F"
+    },
+    {
+      "name": "q_asof_f",
+      "source": "q05_local_asof_value",
+      "source_unit": "K",
+      "transform": "K_TO_F"
+    },
+    {
+      "name": "q_remaining_max_f",
+      "source": "q05_local_remaining_max",
+      "source_unit": "K",
+      "transform": "K_TO_F"
+    },
+    {
+      "name": "q_remaining_slope_f_h",
+      "source": "q05_local_remaining_endpoint_slope_per_hour",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "q_remaining_range_f",
+      "source": "q05_local_remaining_range",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "h_asof_f",
+      "source": "h16_local_asof_value",
+      "source_unit": "K",
+      "transform": "K_TO_F"
+    },
+    {
+      "name": "h_remaining_max_f",
+      "source": "h16_local_remaining_max",
+      "source_unit": "K",
+      "transform": "K_TO_F"
+    },
+    {
+      "name": "q_minus_h_common_f",
+      "source": "derived_q05_minus_h16_common_remaining_mean_k",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "q_revision_abs_f",
+      "source": "revision_q05_remaining_max_abs",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "h_revision_abs_f",
+      "source": "revision_h16_remaining_max_abs",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "dewpoint_deficit_first_f",
+      "source": "derived_dewpoint_depression_future_first_k",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "dewpoint_deficit_remaining_f",
+      "source": "derived_dewpoint_depression_remaining_mean_k",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "solar_remaining_mj_m2",
+      "source": "derived_h31_remaining_trapezoid_mj_m2",
+      "source_unit": "MJ m-2",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "solar_remaining_w_m2",
+      "source": "h31_local_remaining_mean",
+      "source_unit": "W m-2",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "cloud_remaining_fraction",
+      "source": "h28_local_remaining_mean",
+      "source_unit": "%",
+      "transform": "PERCENT_TO_FRACTION"
+    },
+    {
+      "name": "west_minus_east_thermal_f",
+      "source": "h16_regional_future_first_west_minus_east_mean",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "regional_q_range_f",
+      "source": "q05_regional_future_first_range",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "wind_u_first_m_s",
+      "source": "h18_local_future_first_value",
+      "source_unit": "m s-1",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "wind_v_first_m_s",
+      "source": "h19_local_future_first_value",
+      "source_unit": "m s-1",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "wind_remaining_mean_m_s",
+      "source": "derived_wind_speed_remaining_mean_m_s",
+      "source_unit": "m s-1",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "wind_remaining_max_m_s",
+      "source": "derived_wind_speed_remaining_max_m_s",
+      "source_unit": "m s-1",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "pbl_remaining_max_m",
+      "source": "h24_local_remaining_max",
+      "source_unit": "m",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "pbl_remaining_slope_m_h",
+      "source": "h24_local_remaining_endpoint_slope_per_hour",
+      "source_unit": "m",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "t850_minus_t2m_f",
+      "source": "derived_t850_minus_t2m_future_first_k",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "t700_minus_t850_f",
+      "source": "derived_t700_minus_t850_future_first_k",
+      "source_unit": "K",
+      "transform": "DELTA_K_TO_F"
+    },
+    {
+      "name": "snow_asof_fraction",
+      "source": "h26_local_asof_value",
+      "source_unit": "%",
+      "transform": "PERCENT_TO_FRACTION"
+    },
+    {
+      "name": "reflectivity_ge20_fraction",
+      "source": "derived_h36_remaining_ge20_fraction",
+      "source_unit": "1",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "precip_remaining_mm",
+      "source": "h38_local_remaining_sum",
+      "source_unit": "kg m-2",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "precip_wet_fraction",
+      "source": "h38_local_remaining_wet_fraction",
+      "source_unit": "1",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "hourly_cycle_age_minutes",
+      "source": "clock_wrfsfcf_cycle_age_minutes",
+      "source_unit": "min",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "subhourly_cycle_age_minutes",
+      "source": "clock_wrfsubhf_cycle_age_minutes",
+      "source_unit": "min",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "hourly_remaining_horizon_minutes",
+      "source": "support_wrfsfcf_remaining_horizon_minutes",
+      "source_unit": "min",
+      "transform": "IDENTITY"
+    },
+    {
+      "name": "subhourly_remaining_horizon_minutes",
+      "source": "support_wrfsubhf_remaining_horizon_minutes",
+      "source_unit": "min",
+      "transform": "IDENTITY"
+    }
+  ],
+  "input_columns": [
+    "anchor_q_f",
+    "anchor_h_f",
+    "q_asof_f",
+    "q_remaining_max_f",
+    "q_remaining_slope_f_h",
+    "q_remaining_range_f",
+    "h_asof_f",
+    "h_remaining_max_f",
+    "q_minus_h_common_f",
+    "q_revision_abs_f",
+    "h_revision_abs_f",
+    "dewpoint_deficit_first_f",
+    "dewpoint_deficit_remaining_f",
+    "solar_remaining_mj_m2",
+    "solar_remaining_w_m2",
+    "cloud_remaining_fraction",
+    "west_minus_east_thermal_f",
+    "regional_q_range_f",
+    "wind_u_first_m_s",
+    "wind_v_first_m_s",
+    "wind_remaining_mean_m_s",
+    "wind_remaining_max_m_s",
+    "pbl_remaining_max_m",
+    "pbl_remaining_slope_m_h",
+    "t850_minus_t2m_f",
+    "t700_minus_t850_f",
+    "snow_asof_fraction",
+    "reflectivity_ge20_fraction",
+    "precip_remaining_mm",
+    "precip_wet_fraction",
+    "hourly_cycle_age_minutes",
+    "subhourly_cycle_age_minutes",
+    "hourly_remaining_horizon_minutes",
+    "subhourly_remaining_horizon_minutes",
+    "anchor_q_f_missing",
+    "anchor_h_f_missing",
+    "q_asof_f_missing",
+    "q_remaining_max_f_missing",
+    "q_remaining_slope_f_h_missing",
+    "q_remaining_range_f_missing",
+    "h_asof_f_missing",
+    "h_remaining_max_f_missing",
+    "q_minus_h_common_f_missing",
+    "q_revision_abs_f_missing",
+    "h_revision_abs_f_missing",
+    "dewpoint_deficit_first_f_missing",
+    "dewpoint_deficit_remaining_f_missing",
+    "solar_remaining_mj_m2_missing",
+    "solar_remaining_w_m2_missing",
+    "cloud_remaining_fraction_missing",
+    "west_minus_east_thermal_f_missing",
+    "regional_q_range_f_missing",
+    "wind_u_first_m_s_missing",
+    "wind_v_first_m_s_missing",
+    "wind_remaining_mean_m_s_missing",
+    "wind_remaining_max_m_s_missing",
+    "pbl_remaining_max_m_missing",
+    "pbl_remaining_slope_m_h_missing",
+    "t850_minus_t2m_f_missing",
+    "t700_minus_t850_f_missing",
+    "snow_asof_fraction_missing",
+    "reflectivity_ge20_fraction_missing",
+    "precip_remaining_mm_missing",
+    "precip_wet_fraction_missing",
+    "hourly_cycle_age_minutes_missing",
+    "subhourly_cycle_age_minutes_missing",
+    "hourly_remaining_horizon_minutes_missing",
+    "subhourly_remaining_horizon_minutes_missing",
+    "season_sin",
+    "season_cos",
+    "local_dst_flag"
+  ],
+  "primary_anchor": "anchor_q_f",
+  "minimum_context_days": 180,
+  "context_imputation": "EARLIER_ELIGIBLE_CONTEXT_MEDIAN_ELSE_ZERO_WITH_FLAG",
+  "label_cutoff": "STRICTLY_BEFORE_UPDATE_DATE_MINUS_7_CALENDAR_DAYS",
+  "trend": {
+    "window_calendar_days": 14,
+    "minimum_valid_days": 7,
+    "feature": "anchor_q_f",
+    "neural_input": false
+  },
+  "slope_unit_note": "Frozen registry labels endpoint slopes K or m; P04 ENDPOINT_SLOPE divides by elapsed hours. Conversion changes temperature differences only.",
+  "calendar": "2*pi*(day_of_year-1)/(365_or_366)",
+  "source_registry": "universal_issue_state/v1/registries/universal_feature_registry_v1.json"
+}

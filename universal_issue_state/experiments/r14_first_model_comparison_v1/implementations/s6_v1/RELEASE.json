@@ -1,0 +1,13 @@
+{
+  "schema": "R14_S6_RELEASE_V1",
+  "status": "REGISTRATION_COMPLETE",
+  "tests_passed": 8,
+  "files": {
+    "README.md": "88f828edd1ce6c9429812e06459bf5ca329b4353b2aaf33c27692bfd25129f9d",
+    "boundaries.py": "0ed5f8d74d4b5c9ca2714bd796f845ab7758b5d030b7835d6b62f7a3f1974878",
+    "evidence_ledger.json": "f3ad792feb8f1378d405fdbaf2fbc50c8e04deb578fd7ab77c2c13bab4e6bfd9",
+    "registration.json": "e92adee8a78f8cb2452d1911ed7ef40dfc8aaf83d783cd1db5be6d2f509b0c9d",
+    "tests/test_boundaries.py": "fa82f60043464ca90067387814e8e75bfa39b165fd903e49868665efeff4220e",
+    "validate.py": "fd51c0d4d9775c65147d9cf21c795fa1929d8d54b1c703c9548d2e0240abbca7"
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "amendments": [
+    "Replace old weather vector with ten physical coordinates; same vector for GAM location and AnEn.",
+    "AnEn squared distance averages within active physical groups then averages groups equally.",
+    "Retain 850-mb temperature and its surface contrast following D1 evidence and user clarification; treat as model thermal proxies, not guaranteed above-ground mixing measurements.",
+    "Use wind speed rather than direction until earth/grid vector orientation is audited.",
+    "GAM scale adds heating potential and mixing depth to product difference and revision.",
+    "Do not reselect S2 baselines; preserve earlier frozen artifacts."
+  ],
+  "anen": {
+    "all_zero_distances": "uniform among selected k; retain deterministic tie order",
+    "bandwidth_multiplier": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "center": "q05_local_retained_max",
+    "distance": "sqrt(mean_active_groups(mean_active_coordinates_in_group(standardized_difference**2)))",
+    "distance_concentration": "(kth-nearest)/max(kth,1e-12)",
+    "distance_quantile": "fraction of valid reference kth-distances <= query kth-distance; null if fewer than 40 valid reference queries",
+    "effective_sample_size": "1/sum(w_i^2)",
+    "features": [
+      "thermal_state",
+      "thermal_850",
+      "thermal_contrast",
+      "heating_potential",
+      "product_difference",
+      "forecast_revision",
+      "solar_energy",
+      "mixing_depth",
+      "dryness",
+      "wind_speed"
+    ],
+    "infeasible_k": "abstain; never shrink k",
+    "kernel_sigma_f": [
+      0.75,
+      1.25,
+      2.0,
+      3.0
+    ],
+    "kernel_weights": "h=max(kth_distance*bandwidth_multiplier,1e-12); logw=-0.5*(distance/h)^2; normalize using logsumexp",
+    "minimum_pool": 40,
+    "neighbor_order": [
+      "distance ascending",
+      "target_date ascending",
+      "issue_state_id ascending"
+    ],
+    "neighbors": [
+      15,
+      20,
+      30,
+      40,
+      60
+    ],
+    "one_neighbor_per_day": true,
+    "ood": "kth-distance > training-reference 95th percentile OR >25% active coordinates outside training min/max; diagnostic only",
+    "quantile_method": "linear empirical quantile q*(n-1)",
+    "residual_spread": "1.4826 * weighted median absolute deviation from weighted median residual",
+    "residual_translation": "query raw Q center + neighbor (y_audited_f - neighbor raw Q center)",
+    "scaler_scope": "complete eligible training vectors at exact issue minute; all seasons; never assessment",
+    "scaling": "median, IQR; if zero use 1.4826*MAD; if zero use population standard deviation; if zero drop coordinate; if all dropped abstain",
+    "seasonal_half_width_days": [
+      45,
+      60,
+      90
+    ],
+    "tie_order": [
+      "larger seasonal_half_width_days",
+      "larger neighbors",
+      "larger bandwidth_multiplier",
+      "larger kernel_sigma_f"
+    ],
+    "training_reference": "leave-one-day-out candidate neighborhoods within training only, same exact issue and seasonal window; scaler fixed from training; not a forecast validation set"
+  },
+  "authority": "User authorized S3 implementation and physically informed executive feature selection after inspecting baseline diagnostics.",
+  "baseline_release_sha256": "62d432d81b6dd3aa6d330d109a3a82b9b14b5e6236ad40db2a9a0b66f88d6d03",
+  "center": "q05_local_retained_max",
+  "clocks": [
+    "clock_issue_minutes_since_0200",
+    "clock_local_dst_flag",
+    "clock_target_doy_sin",
+    "clock_target_doy_cos",
+    "clock_wrfsfcf_cycle_age_minutes",
+    "clock_wrfsubhf_cycle_age_minutes"
+  ],
+  "evidence": "Baseline outer outcomes inspected; no fresh-blind claims for subsequent development on those periods.",
+  "exposure_sha256": "d18c2a47d6edc2276f033d9783fc62b00d79f8f314b9c144097c3f2a19b057c3",
+  "features": {
+    "dryness": [
+      "identity",
+      "derived_dewpoint_depression_future_first_k"
+    ],
+    "forecast_revision": [
+      "identity",
+      "revision_h16_remaining_max_abs"
+    ],
+    "heating_potential": [
+      "difference",
+      "q05_local_remaining_max",
+      "q05_local_asof_value"
+    ],
+    "mixing_depth": [
+      "identity",
+      "h24_local_remaining_max"
+    ],
+    "product_difference": [
+      "identity",
+      "derived_q05_minus_h16_common_remaining_mean_k"
+    ],
+    "solar_energy": [
+      "identity",
+      "derived_h31_remaining_trapezoid_mj_m2"
+    ],
+    "thermal_850": [
+      "identity",
+      "h07_local_future_first_value"
+    ],
+    "thermal_contrast": [
+      "identity",
+      "derived_t850_minus_t2m_future_first_k"
+    ],
+    "thermal_state": [
+      "identity",
+      "q05_local_asof_value"
+    ],
+    "wind_speed": [
+      "identity",
+      "derived_wind_speed_remaining_mean_m_s"
+    ]
+  },
+  "gam": {
+    "constant_scale_ablation": "eta_scale is intercept only; location unchanged",
+    "interaction": "NONE; deferred",
+    "lambda_mu": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "lambda_scale": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "location_issue_smooth": "clock_issue_minutes_since_0200",
+    "location_linear": [
+      "clock_wrfsfcf_cycle_age_minutes",
+      "clock_wrfsubhf_cycle_age_minutes",
+      "clock_local_dst_flag"
+    ],
+    "location_link": "mu=raw_Q+intercept+additive_terms",
+    "location_weather_smooths": [
+      "thermal_state",
+      "thermal_850",
+      "thermal_contrast",
+      "heating_potential",
+      "product_difference",
+      "forecast_revision",
+      "solar_energy",
+      "mixing_depth",
+      "dryness",
+      "wind_speed"
+    ],
+    "offset": "q05_local_retained_max converted to F",
+    "penalty": "lambda_mu*sum(location nonintercept beta^2)/2 + lambda_scale*sum(scale nonintercept gamma^2)/2; average day-weighted NLL; ridge on centered low-rank spline basis; intercepts unpenalized",
+    "required_features": [
+      "thermal_state",
+      "thermal_850",
+      "thermal_contrast",
+      "heating_potential",
+      "product_difference",
+      "forecast_revision",
+      "solar_energy",
+      "mixing_depth",
+      "dryness",
+      "wind_speed",
+      "clock_issue_minutes_since_0200",
+      "clock_local_dst_flag",
+      "clock_target_doy_sin",
+      "clock_target_doy_cos",
+      "clock_wrfsfcf_cycle_age_minutes",
+      "clock_wrfsubhf_cycle_age_minutes",
+      "q05_local_retained_max"
+    ],
+    "scale_bound_note": "smooth bounded log-scale link resolves numerical guardrails; deliberate refinement of unbounded log-scale sketch in plan; boundary-near frequency reported",
+    "scale_bounds_f": [
+      0.25,
+      20.0
+    ],
+    "scale_issue_smooth": "clock_issue_minutes_since_0200",
+    "scale_linear": [],
+    "scale_link": "log_sigma=log(0.25)+(log(20)-log(0.25))*expit(eta_scale)",
+    "scale_season": "same four Fourier harmonics",
+    "scale_weather_smooths": [
+      "heating_potential",
+      "mixing_depth",
+      "product_difference",
+      "forecast_revision"
+    ],
+    "season": "4 Fourier harmonics (8 columns), angle=atan2(clock_target_doy_sin,clock_target_doy_cos); shared additive cyclic term, no calendar split",
+    "solver": {
+      "acceptance": "finite objective and coefficients; solver success; infinity norm gradient <=1e-4; choose lowest penalized objective among valid starts, tie lowest start index",
+      "analytic_gradient_required": true,
+      "failure": "configuration invalid; all starts and reasons recorded; no solver change after outer results",
+      "ftol": 1e-12,
+      "gradient_verification": "central finite differences on synthetic fixtures; max scaled discrepancy <=1e-5",
+      "gtol": 1e-06,
+      "implementation_status": "specified for S3; not implemented or numerically validated in S0",
+      "initial_location": "weighted mean training residual intercept; all other coefficients zero",
+      "initial_scale": "inverse bounded-log-scale link for each start; other coefficients zero",
+      "library": "scipy.optimize.minimize",
+      "maxfun": 20000,
+      "maxiter": 2000,
+      "maxls": 50,
+      "method": "L-BFGS-B",
+      "starts_sigma_f": [
+        1.0,
+        3.0,
+        6.0
+      ]
+    },
+    "spline": {
+      "degree": 3,
+      "extrapolation": "clip weather inputs to training min/max for spline evaluation; flag out-of-range; linear cycle ages robust-scale then clip to training min/max; retain raw Q offset without clipping",
+      "identifiability": "center each basis column by training day-weighted mean, discard last column of each spline block; global intercept remains",
+      "issue_basis_count": 6,
+      "issue_knots": "fixed open clamped [0,0,0,0,280,560,840,840,840,840]",
+      "scaling": "scale retained centered design columns to training day-weighted RMS 1; constants dropped",
+      "weather_basis_count": 5,
+      "weather_knots": "open clamped endpoints at training min/max repeated four times; one internal weighted median; if duplicate endpoint or <5 distinct values use standardized linear term; constant input dropped"
+    },
+    "t_ablation": "Student t CDF with nu=5; sigma is t scale, standard deviation=sigma*sqrt(5/3)",
+    "tie_order": [
+      "larger lambda_mu",
+      "larger lambda_scale"
+    ]
+  },
+  "groups": [
+    [
+      "thermal_state",
+      "heating_potential"
+    ],
+    [
+      "thermal_850",
+      "thermal_contrast"
+    ],
+    [
+      "solar_energy"
+    ],
+    [
+      "mixing_depth",
+      "wind_speed"
+    ],
+    [
+      "dryness"
+    ],
+    [
+      "product_difference",
+      "forecast_revision"
+    ]
+  ],
+  "parent_s1_sha256": "cc514cd24a12e5506024c650a89072d744628b39c7efa9c5ff61f4eec9a13e1d",
+  "parent_s2_sha256": "834b8430faf542cfcad91638d59237ec317361d7d551e78a53c37f1f1374c7c1",
+  "probe": {
+    "anen_parameters": {
+      "bandwidth_multiplier": 1.0,
+      "kernel_sigma_f": 1.25,
+      "neighbors": 15,
+      "seasonal_half_width_days": 90
+    },
+    "assessment_dates": [
+      "2022-01-20",
+      "2022-02-20",
+      "2022-03-13"
+    ],
+    "assessment_labels": false,
+    "gam_parameters": {
+      "lambda_mu": 0.01,
+      "lambda_scale": 0.1
+    },
+    "inner": "INNER_02",
+    "outer": "OUTER_01",
+    "training_dates": "eligible 2021 days at calendar positions 0,3,6,...; label-free deterministic subsample"
+  },
+  "registry": "universal_issue_state/v1/registries/universal_feature_registry_v1.json",
+  "registry_sha256": "e41d78a122be15a01986f0b914518209843108062313d7d55f62e308d37aaf65",
+  "schema": "R14_S3_PHYSICAL_V1",
+  "scope": "S3 implementation and bounded fits only; S4 full nested orchestration remains a separate stage.",
+  "tuning": {
+    "ablation_tuning": "same procedure separately; descriptive only",
+    "block_inclusion": "feasibility-only; before reading losses; report excluded blocks including seasonally unsupported initial half-year",
+    "fail_policy": "INSUFFICIENT_TUNING_SUPPORT; no selected model; do not relax criteria",
+    "loss_weight": "equal target days over included inner blocks, equal scored issues per day",
+    "minimum_eligible_inner_blocks": 2,
+    "minimum_inner_block_day_count": 60,
+    "minimum_inner_block_expected_dayweighted_coverage": 0.5,
+    "objective": "negative_log_score",
+    "score_tie_tolerance_nats": 1e-10,
+    "selection_level": "one setting per model per outer vintage; pooled all exact issues; no per-season/per-issue hyperparameter search",
+    "settings_frozen_before_outer_scoring": true,
+    "support": "within each model family, intersection of target-free feasibility masks across every registered configuration; solver failure invalidates whole configuration rather than dropping cases",
+    "tie_policy": "all settings within tolerance of minimum; apply declared descending parameter order"
+  }
+}

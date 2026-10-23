@@ -1,0 +1,268 @@
+{
+  "schema_version": "KDEN_V375_PREFIT_P07_CONFIG_V1",
+  "contract_id": "KDEN_V375_RAFM_EXPERIMENT_V1",
+  "substrate_release_id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1",
+  "predecessor_p06_record_sha256": "9f420b8625b428a8663d190a332a0958bf72e5565c37c4543f5b78808a7f4b72",
+  "purpose": "Freeze fitting-ready folds, target-free adapters, and the initial RAFM experiment without fitting a model or opening final evaluation truth.",
+  "execution": {
+    "network_allowed": false,
+    "model_fitting_allowed": false,
+    "sealed_holdout_values_allowed": false,
+    "market_reads_allowed": false,
+    "madis_predictors_allowed": false,
+    "legacy_runtime_dependencies_allowed": false,
+    "owner_approval_hash_required": true,
+    "owner_run_required": true,
+    "pause_boundary": "between the authority, fold, adapter, and publication units"
+  },
+  "evidence_roles": {
+    "development": {
+      "start_date": "2021-01-01",
+      "end_date": "2025-09-06",
+      "expected_rows": 1710,
+      "expected_supervised_rows": 1707,
+      "unresolved_policy": "retain target-free states; exclude from supervised loss, calibration, tuning, and scoring"
+    },
+    "sealed_holdout": {
+      "start_date": "2025-09-07",
+      "end_date": "2026-09-06",
+      "expected_rows": 365,
+      "policy": "do not read or materialize outcome values before the weather model and evaluation code are frozen"
+    },
+    "post_holdout_tail": {
+      "start_date": "2026-09-07",
+      "end_date": "2026-09-11",
+      "expected_rows": 5,
+      "policy": "never use for feature selection, fitting, tuning, calibration, or promotion-rule design"
+    }
+  },
+  "seasons": {
+    "definition": "meteorological_northern_hemisphere",
+    "winter_months": [12, 1, 2],
+    "spring_months": [3, 4, 5],
+    "summer_months": [6, 7, 8],
+    "autumn_months": [9, 10, 11]
+  },
+  "folds": {
+    "group_key": "target_date",
+    "issue_rows_never_split_across_folds": true,
+    "outer": [
+      {
+        "outer_fold_id": "OUTER_01",
+        "train_start": "2021-01-01",
+        "train_end": "2022-12-31",
+        "assessment_start": "2023-01-01",
+        "assessment_end": "2023-12-31"
+      },
+      {
+        "outer_fold_id": "OUTER_02",
+        "train_start": "2021-01-01",
+        "train_end": "2023-12-31",
+        "assessment_start": "2024-01-01",
+        "assessment_end": "2024-12-31"
+      },
+      {
+        "outer_fold_id": "OUTER_03",
+        "train_start": "2021-01-01",
+        "train_end": "2024-12-31",
+        "assessment_start": "2025-01-01",
+        "assessment_end": "2025-09-06"
+      }
+    ],
+    "inner_assessment_blocks": [
+      {"inner_fold_id": "INNER_01", "train_start": "2021-01-01", "train_end": "2021-06-30", "assessment_start": "2021-07-01", "assessment_end": "2021-12-31"},
+      {"inner_fold_id": "INNER_02", "train_start": "2021-01-01", "train_end": "2021-12-31", "assessment_start": "2022-01-01", "assessment_end": "2022-06-30"},
+      {"inner_fold_id": "INNER_03", "train_start": "2021-01-01", "train_end": "2022-06-30", "assessment_start": "2022-07-01", "assessment_end": "2022-12-31"},
+      {"inner_fold_id": "INNER_04", "train_start": "2021-01-01", "train_end": "2022-12-31", "assessment_start": "2023-01-01", "assessment_end": "2023-06-30"},
+      {"inner_fold_id": "INNER_05", "train_start": "2021-01-01", "train_end": "2023-06-30", "assessment_start": "2023-07-01", "assessment_end": "2023-12-31"},
+      {"inner_fold_id": "INNER_06", "train_start": "2021-01-01", "train_end": "2023-12-31", "assessment_start": "2024-01-01", "assessment_end": "2024-06-30"},
+      {"inner_fold_id": "INNER_07", "train_start": "2021-01-01", "train_end": "2024-06-30", "assessment_start": "2024-07-01", "assessment_end": "2024-12-31"}
+    ],
+    "inner_inclusion_rule": "include an inner block only when its assessment_end is no later than the enclosing outer train_end",
+    "causal_rule": "every training target_date is strictly earlier than every assessment target_date"
+  },
+  "target_join": {
+    "join_key": "target_date",
+    "authoritative_column": "y_audited_f",
+    "eligibility_column": "label_available_for_supervised_use",
+    "predictor_exclusions": ["y_audited_f", "truth_qc_status", "truth_evidence_status", "truth_group", "source_artifact_path", "source_artifact_sha256", "exclusion_reason"],
+    "objective_weighting": "compute issue-row losses, average within target_date, then average target days equally",
+    "unresolved_truth_imputation_allowed": false
+  },
+  "pmf": {
+    "unit": "whole_degree_fahrenheit",
+    "support_min_f": -40,
+    "support_max_f": 120,
+    "support_step_f": 1,
+    "lower_tail": "accumulate_below_support_at_minus_40",
+    "upper_tail": "accumulate_above_support_at_120",
+    "probability_floor_for_log_score": 1e-6,
+    "renormalize_after_floor": true
+  },
+  "baselines": {
+    "H_BI": {
+      "center_feature": "h16_local_retained_max",
+      "center_conversion": "kelvin_to_fahrenheit",
+      "probabilistic_error_model": "fold_local_seasonal_exact_issue_time_empirical_residual_kernel",
+      "abstain_if_center_missing": true
+    },
+    "Q15_BI": {
+      "center_feature": "q05_local_retained_max",
+      "center_conversion": "kelvin_to_fahrenheit",
+      "probabilistic_error_model": "fold_local_seasonal_exact_issue_time_empirical_residual_kernel",
+      "abstain_if_center_missing": true
+    }
+  },
+  "analog": {
+    "default_time_match": "exact_local_minutes_since_0200",
+    "one_candidate_per_training_target_day": true,
+    "candidate_target_date_must_precede_query_target_date": true,
+    "scaling": {
+      "scope": "applicable_training_fold_only",
+      "method": "median_and_iqr",
+      "fallback_order": ["scaled_mad", "standard_deviation"],
+      "zero_scale_policy": "drop_feature_for_that_fit_and_record_diagnostic"
+    },
+    "distance": {
+      "metric": "euclidean",
+      "feature_weights": "equal_one_over_active_feature_count",
+      "missing_policy": "expert_abstains_when_any_required_similarity_feature_or_baseline_center_is_missing"
+    },
+    "seasonal_day_of_year_half_width_candidates": [45, 60, 90],
+    "seasonal_coordinate": "circular month-day mapped to leap reference year 2000",
+    "neighbor_count_candidates": [15, 20, 30, 40, 60],
+    "generalist_minimum_eligible_pool": 40,
+    "specialist_minimum_eligible_pool": 30,
+    "distance_bandwidth_multiplier_candidates": [0.5, 1.0, 2.0],
+    "residual_kernel_sigma_f_candidates": [0.75, 1.25, 2.0, 3.0],
+    "neighbor_weight_kernel": "exp_minus_half_squared_distance_over_kth_distance_times_bandwidth",
+    "tie_break_order": ["distance", "target_date", "issue_state_id"],
+    "hyperparameter_selection": "mean_inner_oof_target_day_log_score_with_simplest_setting_winning_exact_ties"
+  },
+  "neighboring_time_challenger": {
+    "experiment_id": "RAFMM_NEIGHBOR_Q15_V1",
+    "enabled_as_separate_ablation_only": true,
+    "allowed_offsets_minutes": [-15, 0, 15],
+    "one_candidate_per_training_target_day": true,
+    "candidate_selection": "smallest_absolute_offset_then_earlier_issue_time",
+    "may_replace_exact_time_default_without_new_contract": false
+  },
+  "experts": [
+    {
+      "expert_id": "GENERAL_THERMAL",
+      "baseline_center": "Q15_BI",
+      "distance_features": ["h16_local_asof_value", "h16_local_remaining_max", "q05_local_asof_value", "q05_local_remaining_max", "derived_q05_minus_h16_common_remaining_mean_k", "derived_t850_minus_t2m_future_first_k", "derived_t700_minus_t850_future_first_k", "revision_h16_remaining_max_abs"],
+      "eligibility": {"rule": "always_if_required_inputs_complete"}
+    },
+    {
+      "expert_id": "DRY_HEATING",
+      "baseline_center": "Q15_BI",
+      "distance_features": ["derived_dewpoint_depression_future_first_k", "derived_dewpoint_depression_remaining_mean_k", "derived_h31_remaining_trapezoid_mj_m2", "h24_local_remaining_max", "derived_wind_speed_remaining_mean_m_s", "h16_local_remaining_max"],
+      "eligibility": {"rule": "both_training_fold_percentiles_met", "conditions": [{"feature": "derived_h31_remaining_trapezoid_mj_m2", "percentile": 60, "direction": "at_or_above"}, {"feature": "derived_dewpoint_depression_remaining_mean_k", "percentile": 60, "direction": "at_or_above"}], "threshold_scope": "training_fold_exact_issue_time"}
+    },
+    {
+      "expert_id": "CLOUD_SOLAR",
+      "baseline_center": "Q15_BI",
+      "distance_features": ["h28_local_remaining_mean", "derived_h31_remaining_trapezoid_mj_m2", "h31_local_remaining_mean", "derived_h36_remaining_ge20_fraction", "h16_local_remaining_max", "h16_local_remaining_endpoint_slope_per_hour"],
+      "eligibility": {"rule": "either_training_fold_percentile_met", "conditions": [{"feature": "h28_local_remaining_mean", "percentile": 60, "direction": "at_or_above"}, {"feature": "derived_h31_remaining_trapezoid_mj_m2", "percentile": 40, "direction": "at_or_below"}], "threshold_scope": "training_fold_exact_issue_time"}
+    },
+    {
+      "expert_id": "CONVECTION_PRECIPITATION",
+      "baseline_center": "Q15_BI",
+      "distance_features": ["derived_h36_remaining_ge20_fraction", "h36_local_remaining_max", "h38_local_remaining_sum", "h38_local_remaining_wet_fraction", "h28_local_remaining_mean", "derived_dewpoint_depression_remaining_mean_k", "derived_wind_speed_remaining_max_m_s"],
+      "eligibility": {"rule": "any_positive", "features": ["derived_h36_remaining_ge20_fraction", "h38_local_remaining_wet_fraction"]}
+    },
+    {
+      "expert_id": "SNOW_SURFACE",
+      "baseline_center": "Q15_BI",
+      "distance_features": ["h26_local_asof_value", "h26_local_remaining_max", "derived_h26_remaining_positive_fraction", "derived_h31_remaining_trapezoid_mj_m2", "h16_local_asof_value", "h17_local_asof_value", "h24_local_remaining_max"],
+      "eligibility": {"rule": "any_positive", "features": ["h26_local_asof_value", "derived_h26_remaining_positive_fraction"]}
+    },
+    {
+      "expert_id": "MIXING_DOWNSLOPE",
+      "baseline_center": "Q15_BI",
+      "distance_features": ["h24_local_remaining_max", "h24_local_remaining_endpoint_slope_per_hour", "h18_local_future_first_value", "h19_local_future_first_value", "derived_wind_speed_remaining_max_m_s", "h07_local_future_first_value", "h02_local_future_first_value", "derived_t850_minus_t2m_future_first_k"],
+      "eligibility": {"rule": "both_training_fold_percentiles_met", "conditions": [{"feature": "h24_local_remaining_max", "percentile": 60, "direction": "at_or_above"}, {"feature": "derived_wind_speed_remaining_max_m_s", "percentile": 60, "direction": "at_or_above"}], "threshold_scope": "training_fold_exact_issue_time"}
+    }
+  ],
+  "specialist_behavior": {
+    "candidate_must_satisfy_same_specialist_rule_as_query": true,
+    "abstain_on_ineligible_query": true,
+    "abstain_below_minimum_pool": true,
+    "mixtures_renormalize_over_eligible_nonabstaining_experts": true,
+    "fallback_order": ["GENERAL_THERMAL", "Q15_BI", "H_BI"],
+    "no_available_fallback_policy": "emit_missing_forecast_and_diagnostic"
+  },
+  "diagnostics": ["nearest_neighbor_distance", "median_neighbor_distance", "kth_neighbor_distance", "eligible_pool_count", "retained_neighbor_count", "effective_sample_size", "robust_residual_spread_f", "distance_concentration", "out_of_training_range_fraction", "distance_training_quantile", "seasonal_compatibility", "issue_time_compatibility", "missing_input_indicator", "abstention_indicator", "pmf_entropy", "central_80_interval_width_f"],
+  "out_of_distribution": {
+    "flag_if_kth_distance_exceeds_training_percentile": 95,
+    "flag_if_out_of_training_range_fraction_exceeds": 0.25,
+    "action": "diagnostic_only; expert eligibility and fallback remain governed by the declared pool and missingness rules"
+  },
+  "mixtures": {
+    "members": ["GENERAL_THERMAL", "DRY_HEATING", "CLOUD_SOLAR", "CONVECTION_PRECIPITATION", "SNOW_SURFACE", "MIXING_DOWNSLOPE"],
+    "equal_weight": "equal_over_eligible_nonabstaining_members",
+    "constant_weight": {"objective": "inner_oof_target_day_equal_weight_negative_log_likelihood", "constraints": "nonnegative_simplex", "ridge_candidates": [0.0, 0.01, 0.1, 1.0], "initialization": "equal_eligible_weights", "tie_break": "larger_ridge_then_lexicographic_expert_order"},
+    "adaptive_gate": {
+      "family": "masked_multinomial_logistic_softmax",
+      "training_predictions": "nested_inner_out_of_fold_expert_pmfs_only",
+      "in_sample_expert_predictions_allowed": false,
+      "state_inputs": ["clock_issue_time_sin", "clock_issue_time_cos", "clock_target_doy_sin", "clock_target_doy_cos", "clock_local_dst_flag", "derived_t850_minus_t2m_future_first_k", "derived_dewpoint_depression_remaining_mean_k", "derived_wind_speed_remaining_max_m_s", "derived_h31_remaining_trapezoid_mj_m2", "derived_h36_remaining_ge20_fraction", "derived_h26_remaining_positive_fraction"],
+      "support_inputs": "all_declared_per_expert_support_diagnostics",
+      "disagreement_inputs": ["expert_mean_range_f", "expert_mean_standard_deviation_f", "mean_pairwise_jensen_shannon_divergence", "eligible_expert_count"],
+      "standardization": "applicable_gate_training_fold_only",
+      "objective": "target_day_equal_weight_negative_log_likelihood_of_observed_outcome_under_mixture_pmf",
+      "l2_penalty_candidates": [0.01, 0.1, 1.0, 10.0, 100.0],
+      "intercept_penalized": false,
+      "eligibility_mask_applied_before_softmax": true,
+      "initialization": "zero_coefficients_equal_eligible_weights",
+      "optimizer_requirements": {"deterministic": true, "gradient_tolerance": 1e-8, "maximum_iterations": 2000, "nonconvergence_policy": "candidate_invalid_and_reported"}
+    }
+  },
+  "calibration": {
+    "post_hoc_calibration_enabled": false,
+    "reason": "initial RAFM V1 evaluates the native residual-kernel and mixture PMFs; enabling a calibrator requires a successor experiment contract"
+  },
+  "evaluation": {
+    "primary_metric": "target_day_equal_weight_mean_log_score",
+    "secondary_metrics": ["ranked_probability_score", "discrete_crps", "threshold_brier_score", "five_degree_band_brier_score", "calibration", "central_interval_coverage", "sharpness", "mae", "bias", "exact_hit", "within_one_degree_accuracy"],
+    "fixed_thresholds_f": [32, 40, 50, 60, 70, 80, 90, 100],
+    "five_degree_bands_start_f": -40,
+    "five_degree_bands_end_f": 120,
+    "strata": ["outer_fold", "target_year", "season", "local_issue_time", "expert_eligibility_regime", "analog_support_quartile"],
+    "required_ablations": ["H_BI", "Q15_BI", "GENERAL_THERMAL", "EQUAL_WEIGHT_SPECIALISTS", "CONSTANT_WEIGHT_SPECIALISTS", "ADAPTIVE_RAFM", "RAFM_MINUS_EACH_SPECIALIST", "GATE_STATE_ONLY", "GATE_SUPPORT_ONLY", "GATE_STATE_SUPPORT_COMBINED", "NEIGHBOR_Q15_CHALLENGER"],
+    "uncertainty": {"method": "paired_target_day_moving_block_bootstrap", "block_length_days": 7, "replicates": 5000, "seed": 3750701, "confidence_level": 0.90}
+  },
+  "promotion": {
+    "reference": "CONSTANT_WEIGHT_SPECIALISTS",
+    "mean_log_score_improvement_required_nats": 0.01,
+    "paired_bootstrap_upper_bound_on_log_score_difference_must_be_below": 0.0,
+    "maximum_rps_degradation": 0.01,
+    "maximum_calibration_error_degradation": 0.01,
+    "minimum_outer_folds_with_positive_log_score_improvement": 2,
+    "maximum_worst_outer_fold_log_score_degradation": 0.03,
+    "maximum_season_or_regime_log_score_degradation_when_target_days_at_least_60": 0.05,
+    "failure_policy": "retain as research model; do not claim flagship promotion"
+  },
+  "selection_and_final_refit": {
+    "family_ladder": ["H_BI", "Q15_BI", "GENERAL_THERMAL", "CONSTANT_WEIGHT_SPECIALISTS", "ADAPTIVE_RAFM"],
+    "selection_rule": "select the highest member of the family ladder that passes its predeclared comparison; if adaptive RAFM fails, fall back to the highest lower member that passed rather than changing thresholds",
+    "final_hyperparameter_source": "pooled target-day-equal inner OOF performance across INNER_01 through INNER_07 inside OUTER_03, using the frozen simplest-setting tie rules",
+    "final_expert_refit_data": "all 1707 supervised development target days through 2025-09-06",
+    "final_gate_fit_data": "nested OOF expert PMFs from the seven OUTER_03 inner assessment blocks only",
+    "final_holdout_predictions": "commit all predictions before any sealed holdout outcome is opened"
+  },
+  "final_evaluation": {
+    "opening_preconditions": ["PREFIT_P07_PASS validates", "weather model code and hyperparameters are frozen", "evaluation code is frozen", "predictions for final dates are committed without truth access"],
+    "holdout_opening_rule": "apply the already-frozen Stage 5R.1 audit protocol without looking at predictions",
+    "model_changes_after_opening_allowed": false,
+    "required_reports": ["sealed_365_day_holdout", "holdout_plus_accepted_five_day_tail", "five_day_tail_only", "extended_excluding_followup_window_open_tail_rows"]
+  },
+  "outputs": {
+    "fold_root": "folds/kden_v375/v1",
+    "experiment_root": "modeling/experiments/rafm_v1",
+    "freeze_manifest": "modeling/experiments/rafm_v1/manifests/p07_experiment_freeze.json",
+    "modeling_boundary_pass": "state/KDEN_V375_MODELING_BOUNDARY_PASS.json",
+    "prefit_pass": "state/PREFIT_P07_PASS.json"
+  }
+}

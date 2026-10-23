@@ -1,0 +1,480 @@
+{
+  "records": [
+    {
+      "declared_cutoff": "2022-12-30",
+      "late_tuning_dates": [
+        "2022-12-31"
+      ],
+      "model": "B0_H",
+      "original": {
+        "candidate_id": "B0_H_6e6d3cc797c5",
+        "model_id": "B0_H",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      },
+      "outer": "OUTER_01",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "B0_H_6e6d3cc797c5",
+        "model_id": "B0_H",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      }
+    },
+    {
+      "declared_cutoff": "2022-12-30",
+      "late_tuning_dates": [
+        "2022-12-31"
+      ],
+      "model": "B0_Q",
+      "original": {
+        "candidate_id": "B0_Q_6e6d3cc797c5",
+        "model_id": "B0_Q",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      },
+      "outer": "OUTER_01",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "B0_Q_6e6d3cc797c5",
+        "model_id": "B0_Q",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      }
+    },
+    {
+      "declared_cutoff": "2022-12-30",
+      "late_tuning_dates": [
+        "2022-12-31"
+      ],
+      "model": "ANEN",
+      "original": {
+        "candidate_id": "ANEN_5043b4c40541",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 1.25,
+          "neighbors": 60,
+          "seasonal_half_width_days": 45
+        }
+      },
+      "outer": "OUTER_01",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "ANEN_5043b4c40541",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 1.25,
+          "neighbors": 60,
+          "seasonal_half_width_days": 45
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2022-12-30",
+      "late_tuning_dates": [
+        "2022-12-31"
+      ],
+      "model": "GAM_LS_NORMAL",
+      "original": {
+        "candidate_id": "GAM_LS_NORMAL_94160f97ede4",
+        "model_id": "GAM_LS_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      },
+      "outer": "OUTER_01",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LS_NORMAL_94160f97ede4",
+        "model_id": "GAM_LS_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2022-12-30",
+      "late_tuning_dates": [
+        "2022-12-31"
+      ],
+      "model": "GAM_LOCATION_NORMAL",
+      "original": {
+        "candidate_id": "GAM_LOCATION_NORMAL_a215749e2298",
+        "model_id": "GAM_LOCATION_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.01,
+          "lambda_scale": 0.0
+        }
+      },
+      "outer": "OUTER_01",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LOCATION_NORMAL_a215749e2298",
+        "model_id": "GAM_LOCATION_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.01,
+          "lambda_scale": 0.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2022-12-30",
+      "late_tuning_dates": [
+        "2022-12-31"
+      ],
+      "model": "GAM_LS_T5",
+      "original": {
+        "candidate_id": "GAM_LS_T5_e853be30750d",
+        "model_id": "GAM_LS_T5",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      },
+      "outer": "OUTER_01",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LS_T5_e853be30750d",
+        "model_id": "GAM_LS_T5",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2023-12-30",
+      "late_tuning_dates": [
+        "2023-12-31"
+      ],
+      "model": "B0_H",
+      "original": {
+        "candidate_id": "B0_H_6e6d3cc797c5",
+        "model_id": "B0_H",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      },
+      "outer": "OUTER_02",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "B0_H_6e6d3cc797c5",
+        "model_id": "B0_H",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      }
+    },
+    {
+      "declared_cutoff": "2023-12-30",
+      "late_tuning_dates": [
+        "2023-12-31"
+      ],
+      "model": "B0_Q",
+      "original": {
+        "candidate_id": "B0_Q_6e6d3cc797c5",
+        "model_id": "B0_Q",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      },
+      "outer": "OUTER_02",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "B0_Q_6e6d3cc797c5",
+        "model_id": "B0_Q",
+        "parameters": {
+          "kernel_sigma_f": 1.25,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      }
+    },
+    {
+      "declared_cutoff": "2023-12-30",
+      "late_tuning_dates": [
+        "2023-12-31"
+      ],
+      "model": "ANEN",
+      "original": {
+        "candidate_id": "ANEN_5043b4c40541",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 1.25,
+          "neighbors": 60,
+          "seasonal_half_width_days": 45
+        }
+      },
+      "outer": "OUTER_02",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "ANEN_5043b4c40541",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 1.25,
+          "neighbors": 60,
+          "seasonal_half_width_days": 45
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2023-12-30",
+      "late_tuning_dates": [
+        "2023-12-31"
+      ],
+      "model": "GAM_LS_NORMAL",
+      "original": {
+        "candidate_id": "GAM_LS_NORMAL_94160f97ede4",
+        "model_id": "GAM_LS_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      },
+      "outer": "OUTER_02",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LS_NORMAL_94160f97ede4",
+        "model_id": "GAM_LS_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2023-12-30",
+      "late_tuning_dates": [
+        "2023-12-31"
+      ],
+      "model": "GAM_LOCATION_NORMAL",
+      "original": {
+        "candidate_id": "GAM_LOCATION_NORMAL_a215749e2298",
+        "model_id": "GAM_LOCATION_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.01,
+          "lambda_scale": 0.0
+        }
+      },
+      "outer": "OUTER_02",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LOCATION_NORMAL_a215749e2298",
+        "model_id": "GAM_LOCATION_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.01,
+          "lambda_scale": 0.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2023-12-30",
+      "late_tuning_dates": [
+        "2023-12-31"
+      ],
+      "model": "GAM_LS_T5",
+      "original": {
+        "candidate_id": "GAM_LS_T5_e853be30750d",
+        "model_id": "GAM_LS_T5",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      },
+      "outer": "OUTER_02",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LS_T5_e853be30750d",
+        "model_id": "GAM_LS_T5",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2024-12-30",
+      "late_tuning_dates": [
+        "2024-12-31"
+      ],
+      "model": "B0_H",
+      "original": {
+        "candidate_id": "B0_H_78994b0b1bb8",
+        "model_id": "B0_H",
+        "parameters": {
+          "kernel_sigma_f": 0.75,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      },
+      "outer": "OUTER_03",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "B0_H_78994b0b1bb8",
+        "model_id": "B0_H",
+        "parameters": {
+          "kernel_sigma_f": 0.75,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      }
+    },
+    {
+      "declared_cutoff": "2024-12-30",
+      "late_tuning_dates": [
+        "2024-12-31"
+      ],
+      "model": "B0_Q",
+      "original": {
+        "candidate_id": "B0_Q_78994b0b1bb8",
+        "model_id": "B0_Q",
+        "parameters": {
+          "kernel_sigma_f": 0.75,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      },
+      "outer": "OUTER_03",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "B0_Q_78994b0b1bb8",
+        "model_id": "B0_Q",
+        "parameters": {
+          "kernel_sigma_f": 0.75,
+          "seasonal_half_width_days": 45
+        },
+        "role": "primary"
+      }
+    },
+    {
+      "declared_cutoff": "2024-12-30",
+      "late_tuning_dates": [
+        "2024-12-31"
+      ],
+      "model": "ANEN",
+      "original": {
+        "candidate_id": "ANEN_a2656798cf44",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 1.25,
+          "neighbors": 60,
+          "seasonal_half_width_days": 60
+        }
+      },
+      "outer": "OUTER_03",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "ANEN_a2656798cf44",
+        "model_id": "ANEN",
+        "parameters": {
+          "bandwidth_multiplier": 0.5,
+          "kernel_sigma_f": 1.25,
+          "neighbors": 60,
+          "seasonal_half_width_days": 60
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2024-12-30",
+      "late_tuning_dates": [
+        "2024-12-31"
+      ],
+      "model": "GAM_LS_NORMAL",
+      "original": {
+        "candidate_id": "GAM_LS_NORMAL_94160f97ede4",
+        "model_id": "GAM_LS_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      },
+      "outer": "OUTER_03",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LS_NORMAL_94160f97ede4",
+        "model_id": "GAM_LS_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2024-12-30",
+      "late_tuning_dates": [
+        "2024-12-31"
+      ],
+      "model": "GAM_LOCATION_NORMAL",
+      "original": {
+        "candidate_id": "GAM_LOCATION_NORMAL_a215749e2298",
+        "model_id": "GAM_LOCATION_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.01,
+          "lambda_scale": 0.0
+        }
+      },
+      "outer": "OUTER_03",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LOCATION_NORMAL_a215749e2298",
+        "model_id": "GAM_LOCATION_NORMAL",
+        "parameters": {
+          "lambda_mu": 0.01,
+          "lambda_scale": 0.0
+        }
+      }
+    },
+    {
+      "declared_cutoff": "2024-12-30",
+      "late_tuning_dates": [
+        "2024-12-31"
+      ],
+      "model": "GAM_LS_T5",
+      "original": {
+        "candidate_id": "GAM_LS_T5_e853be30750d",
+        "model_id": "GAM_LS_T5",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      },
+      "outer": "OUTER_03",
+      "selected_unchanged_after_exclusion": true,
+      "sensitivity_selection": {
+        "candidate_id": "GAM_LS_T5_e853be30750d",
+        "model_id": "GAM_LS_T5",
+        "parameters": {
+          "lambda_mu": 0.1,
+          "lambda_scale": 1.0
+        }
+      }
+    }
+  ],
+  "scope": "Historical diagnostics; no frozen selection or prediction modified. Training fits enforce the lag, but tuning included one too-recent outcome per vintage. Correct workflow before future fits.",
+  "status": "TIMING_NONCONFORMANCE"
+}

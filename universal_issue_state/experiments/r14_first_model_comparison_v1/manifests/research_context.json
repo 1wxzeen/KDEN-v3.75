@@ -1,0 +1,41 @@
+{
+  "path_base": "documentation-only Tmax parent; no runtime resolution or imports",
+  "references": [
+    {
+      "path_relative_to_Tmax": "KDEN_NBM/TRUTH_REPORT.md",
+      "reference_id": "NBM_TRUTH",
+      "role": "already_inspected_research_context_not_runtime_data",
+      "sha256": "de334a3e5cf8b4c799a53aa5b114d8cf326ca70912e968ff28a7f91a7af34d26",
+      "size_bytes": 5521
+    },
+    {
+      "path_relative_to_Tmax": "KDEN_NBM/FINAL_REPORT.md",
+      "reference_id": "NBM_REPORT",
+      "role": "already_inspected_research_context_not_runtime_data",
+      "sha256": "5eb9df5a69e7059adb74325ac021ceacb93f7c3c7bb24c30667bbf986b8be0a4",
+      "size_bytes": 9506
+    },
+    {
+      "path_relative_to_Tmax": "KDEN v3/layer4_static_kalshi_backtest/LAYER4_ITERATION_1_CONCLUSION.md",
+      "reference_id": "LAYER4",
+      "role": "already_inspected_research_context_not_runtime_data",
+      "sha256": "adab2ade8dd377b7bf589b4c51c2089a3ae2fdbf223f9f63eb4edb1ad6427dea",
+      "size_bytes": 22991
+    },
+    {
+      "path_relative_to_Tmax": "KDEN v3/1. research/direction /KDEN_Layer_1_Scientific_Record_v1.0.pdf",
+      "reference_id": "LAYER1",
+      "role": "already_inspected_research_context_not_runtime_data",
+      "sha256": "1e4881a67bf26d7750201e5f97c8625cae4533bcfd8c37a3ffd6222a603671e3",
+      "size_bytes": 1933409
+    },
+    {
+      "path_relative_to_Tmax": "KDEN v2/research/x. inhouse findings/D1--Historical Synthesis of the KDEN Dataset 1 Regression Study.pdf",
+      "reference_id": "DATASET1",
+      "role": "already_inspected_research_context_not_runtime_data",
+      "sha256": "8265efcd7f24b84fec6cd845c5db51dcaa5efe8ac83c962fd5392dfd960db51c",
+      "size_bytes": 17708066
+    }
+  ],
+  "schema_version": "R14_RESEARCH_CONTEXT_V1"
+}

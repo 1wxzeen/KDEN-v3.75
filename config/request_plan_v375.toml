@@ -1,0 +1,58 @@
+schema_version = "KDEN_V375_REQUEST_PLAN_POLICY_V1"
+
+[source]
+root = "https://noaa-hrrr-bdp-pds.s3.amazonaws.com"
+path_template = "hrrr.{cycle_date_utc}/conus/hrrr.t{cycle_hour_utc}z.{product}{forecast_hour_2d}.grib2"
+index_suffix = ".idx"
+
+[publication]
+compression = "zstd"
+batch_rows = 100000
+row_group_rows = 100000
+partition_key = "target_year"
+coalescence_policy_id = "EXACT_ADJACENT_REQUIRED_MESSAGES_V1"
+
+[projection_assumptions]
+# These are dry-run sizing assumptions only. Step 04 replaces them with
+# measured pilot values before either full-history acquisition is authorized.
+mean_message_bytes = 1227877
+coalesced_range_ratio_numerator = 2951121
+coalesced_range_ratio_denominator = 5061234
+plan_row_bytes = 160
+canonical_row_overhead_bytes = 192
+numeric_value_bytes = 8
+
+[fh00_selector_overrides.H38]
+product = "wrfsfcf"
+interval_semantics = "preceding_accumulation"
+decoded_step_type = "accum"
+interval_minutes = 0
+observed_index_time_descriptor = "0-0 day acc fcst"
+
+[fh00_selector_overrides.Q09]
+product = "wrfsubhf"
+interval_semantics = "preceding_average"
+decoded_step_type = "avg"
+interval_minutes = 0
+observed_index_time_descriptor = "0-0 day ave fcst"
+
+[fh00_selector_overrides.Q10]
+product = "wrfsubhf"
+interval_semantics = "preceding_average"
+decoded_step_type = "avg"
+interval_minutes = 0
+observed_index_time_descriptor = "0-0 day ave fcst"
+
+[fh00_selector_overrides.Q11]
+product = "wrfsubhf"
+interval_semantics = "preceding_average"
+decoded_step_type = "avg"
+interval_minutes = 0
+observed_index_time_descriptor = "0-0 day ave fcst"
+
+[fh00_selector_overrides.Q13]
+product = "wrfsubhf"
+interval_semantics = "preceding_accumulation"
+decoded_step_type = "accum"
+interval_minutes = 0
+observed_index_time_descriptor = "0-0 day acc fcst"

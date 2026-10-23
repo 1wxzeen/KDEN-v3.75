@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object",
+  "additionalProperties": false, "required": ["schema_version", "files", "scope", "holdout_hash_method"],
+  "properties": {
+    "schema_version": {"const": "R14_TABULAR_INPUT_INVENTORY_V1"}, "scope": {"type": "string"}, "holdout_hash_method": {"type": "string"},
+    "files": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["path", "kind", "sha256", "size_bytes", "hash_authority"], "properties": {
+      "path": {"type": "string"}, "kind": {"enum": ["file", "directory"]}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "size_bytes": {"type": ["integer", "null"], "description": "Directory bindings use null."}, "hash_authority": {"type": "string"}
+    }}}
+  }
+}

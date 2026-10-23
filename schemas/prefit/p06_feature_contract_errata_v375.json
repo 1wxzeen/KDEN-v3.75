@@ -1,0 +1,30 @@
+{
+  "$id": "KDEN_V375_P06_FEATURE_CONTRACT_ERRATA_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_P06_FEATURE_CONTRACT_ERRATA_V1"},
+    "errata_id": {"const": "KDEN_V375_P06_FEATURE_RANGE_ERRATA_V1"},
+    "registry_id": {"const": "KDEN_V375_UNIVERSAL_FEATURE_REGISTRY_V1"},
+    "registry_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "policy": {"type": "string"},
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "feature_name": {"type": "string"},
+          "declared_range": {"items": {"type": "number"}, "maxItems": 2, "minItems": 2, "type": "array"},
+          "accepted_range": {"items": {"type": "number"}, "maxItems": 2, "minItems": 2, "type": "array"},
+          "observed_range": {"items": {"type": "number"}, "maxItems": 2, "minItems": 2, "type": "array"},
+          "reason": {"type": "string"}
+        },
+        "required": ["feature_name", "declared_range", "accepted_range", "observed_range", "reason"],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": ["schema_version", "errata_id", "registry_id", "registry_sha256", "policy", "entries"],
+  "type": "object"
+}

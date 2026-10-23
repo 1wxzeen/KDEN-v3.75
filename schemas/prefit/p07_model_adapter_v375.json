@@ -1,0 +1,14 @@
+{
+  "schema_version": "KDEN_V375_P07_MODEL_ADAPTER_SCHEMA_V1",
+  "adapter_registry_id": "KDEN_V375_RAFM_ADAPTER_REGISTRY_V1",
+  "index_schema_id": "KDEN_V375_P07_ISSUE_MODEL_INDEX_V1",
+  "primary_key": ["issue_state_id"],
+  "row_count": 118536,
+  "columns": ["issue_state_id", "target_date", "statistical_group_id", "issue_time_utc", "issue_time_local", "local_minutes_since_0200", "exact_time_key", "issue_ordinal_in_target_day", "issue_count_for_target_day", "target_year", "feature_partition_path", "feature_row_ordinal", "feature_registry_id", "adapter_registry_id"],
+  "forbidden_content": ["target value", "truth outcome", "fold assignment", "market data", "fitted value", "learned scaling"],
+  "join_rules": {
+    "weather_features": "dereference feature_partition_path plus feature_row_ordinal and verify issue_state_id",
+    "folds": "join separately by target_date",
+    "truth": "join separately by target_date only inside an authorized training or scoring fold"
+  }
+}

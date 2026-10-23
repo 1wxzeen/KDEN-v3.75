@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_RUN_STATE_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "step_id", "scope", "status", "created_at_utc", "updated_at_utc"],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_RUN_STATE_V1"},
+    "run_id": {"type": "string"},
+    "step_id": {"type": "string", "pattern": "^STEP_0[0-8]$"},
+    "scope": {"enum": ["ordinary", "diagnostic", "owner-full", "validation", "synthetic"]},
+    "status": {"enum": ["INITIALIZED", "RUNNING", "PAUSE_REQUESTED", "PAUSED", "PASS", "FAILED"]},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "updated_at_utc": {"type": "string", "format": "date-time"},
+    "pid": {"type": ["integer", "null"]},
+    "message": {"type": ["string", "null"]}
+  }
+}
+

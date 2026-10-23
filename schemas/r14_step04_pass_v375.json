@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_R14_STEP04_PASS_V1",
+  "title": "KDEN v3.75 R14 Step 04 confirmation-pilot PASS",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "scope_id",
+    "status",
+    "completed_at_utc",
+    "run_id",
+    "predecessor_hashes",
+    "artifact_hashes",
+    "gate_evidence",
+    "record_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_R14_STEP04_PASS_V1"},
+    "record_id": {"const": "STEP_04_R14"},
+    "scope_id": {"const": "KDEN_V375_R14_V1"},
+    "status": {"const": "PASS"},
+    "completed_at_utc": {"type": "string", "format": "date-time"},
+    "run_id": {"type": "string"},
+    "predecessor_hashes": {"type": "object"},
+    "artifact_hashes": {"type": "object"},
+    "gate_evidence": {"type": "object"},
+    "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

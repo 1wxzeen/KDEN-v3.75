@@ -1,0 +1,24 @@
+{
+  "schema_version": "R14_TABULAR_T03_RECIPE_V1",
+  "arms": ["KDEN_TABICL_RAW", "KDEN_TABICL_T1", "KDEN_TABICL_TRANSITION", "KDEN_TABICL_T3", "KDEN_TABDPT_RAW", "KDEN_TABDPT_D0", "KDEN_TABDPT_D2_NATIVE"],
+  "label_delay_days_exclusive": 7,
+  "native_updates": "MONTHLY_BLOCK_START",
+  "correction_updates": "MONDAYS_AND_NATIVE_BLOCK_STARTS",
+  "half_life_days": 90,
+  "minimum_history_days": 90,
+  "minimum_minute_days": 60,
+  "location_shrinkage_days": 20,
+  "center_slope_penalty": 100,
+  "width_intercept_penalty": 20,
+  "width_slope_penalty": 100,
+  "width_optimizer": {"method": "L-BFGS-B", "maxiter": 300, "maxls": 50, "ftol": 1e-10, "gtol": 1e-5, "eta_guard_exclusive": 5},
+  "baseline": {"minimum_context_days": 180, "kernel_sigma_f": 1.25, "weights": "UNIFORM_ALL_EARLIER_SAME_MINUTE"},
+  "export_integer_low": -40,
+  "export_integer_high": 120,
+  "primary_law_floored": false,
+  "bounded_contexts": [
+    {"block_start": "2022-01-01", "query_dates": ["2022-01-01", "2022-01-02"], "minute": 600},
+    {"block_start": "2025-08-01", "query_dates": ["2025-08-01", "2025-08-02"], "minute": 600}
+  ],
+  "bounded_scope": "TECHNICAL_ACCEPTANCE_ONLY_NOT_DEVELOPMENT_SCORE_OR_RECIPE_LOCK"
+}

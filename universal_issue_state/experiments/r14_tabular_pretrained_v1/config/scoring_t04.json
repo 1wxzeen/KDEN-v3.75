@@ -1,0 +1,23 @@
+{
+  "schema_version": "R14_TABULAR_T04_SCORING_V1",
+  "windows": {"EARLY_DIAGNOSTIC_02_08": [120, 480], "PRIMARY_02_14": [120, 840], "FULL_02_16": [120, 960]},
+  "primary_window_name": "PRIMARY_02_14",
+  "primary_window_owner_confirmed": true,
+  "integer_bins": "[k-0.5,k+0.5)",
+  "modal_ties": "SMALLEST_INTEGER",
+  "point_rounding": "floor(mean+0.5)",
+  "probability_floor": null,
+  "day_weights": "EQUAL_TARGET_DAYS_AFTER_WITHIN_DAY_MEANS",
+  "complete_day_requires": "AUDITED_TRUTH_AND_ALL_SCHEDULED_SUPPORTED_ISSUES_IN_WINDOW",
+  "available_day_denominator": "ACTUAL_SUPPORTED_SCORED_ISSUES",
+  "interval_levels_percent": [50, 80, 90, 95],
+  "coverage_convention": "CONTINUOUS_QUANTILE_INTERVAL_CLOSED_ENDPOINTS",
+  "brier_categories": "DISPLAY_INTEGER_-40_TO_120_PLUS_TWO_OUTSIDE_TAIL_CATEGORIES",
+  "diagnostic_integer_bands": [[-40, -1], [0, 31], [32, 59], [60, 79], [80, 120]],
+  "reliability_bins": 10,
+  "regimes": {"snow": "snow_asof_fraction>0", "cloud": "cloud_remaining_fraction>=0.5", "convective": "reflectivity_ge20_fraction>0", "transition": "abs(h_revision_abs_f)>development_predictor_75th_percentile OR abs(trend_q14_f)>development_predictor_75th_percentile", "missing": "UNKNOWN_NOT_FALSE"},
+  "cycle_age_bins_minutes": [105, 165, 225, 345],
+  "comparison_family": [["KDEN_TABICL_T3", "Q_RESIDUAL"], ["KDEN_TABDPT_D2_NATIVE", "Q_RESIDUAL"]],
+  "bootstrap": {"draws": 5000, "calendar_block_days": [7, 14], "seed": 3751010, "percentiles": [1.25, 98.75], "scope": "T06_ONLY_PAIRED_TARGET_DAYS_ALL_ISSUES_TOGETHER"},
+  "holdout_values_permitted": false
+}

@@ -1,0 +1,20 @@
+{
+  "baseline_timing_disclosed": true,
+  "common_days": 980,
+  "common_rows": 55848,
+  "expected_rows": 55848,
+  "models": {
+    "NGB_NORMAL": {
+      "available_rows": 55848,
+      "days": 980,
+      "expected_rows": 55848,
+      "missing_raw_Q": 0
+    },
+    "XGB_QUANTILE": {
+      "available_rows": 55848,
+      "days": 980,
+      "expected_rows": 55848,
+      "missing_raw_Q": 0
+    }
+  }
+}

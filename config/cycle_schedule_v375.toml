@@ -1,0 +1,38 @@
+schema_version = "KDEN_V375_CYCLE_SCHEDULE_POLICY_V1"
+
+[target_dates]
+start = "2021-01-01"
+end = "2026-09-11"
+expected_count = 2080
+
+[cycle_envelope]
+timezone = "America/Denver"
+previous_local_day_hours = [23]
+target_local_day_first_hour = 0
+target_local_day_last_hour = 14
+enumeration_basis = "enumerate_native_utc_hours_then_filter_converted_local_time"
+expected_product_cycle_count = 33279
+
+[target_window]
+start_utc_hour = 7
+end_utc_hour = 7
+end_day_offset = 1
+retention_rule = "min(cycle_init_utc+native_max_forecast_hour,window_end_utc)"
+retain_fh00 = true
+endpoint_inclusive_when_native = true
+
+[availability]
+policy_id = "KDEN_HIST_COMPLETE_L105_V1"
+lag_minutes = 105
+rule = "cycle_init_utc+105m"
+
+[horizon.wrfsfcf]
+ordinary_max_forecast_hour = 18
+extended_max_forecast_hour = 48
+extended_cycle_hours_utc = [0, 6, 12, 18]
+evidence_id = "KDEN_V375_HRRR_HORIZON_DISCOVERY_V1"
+
+[horizon.wrfsubhf]
+ordinary_max_forecast_hour = 18
+extended_cycle_hours_utc = []
+evidence_id = "KDEN_V375_HRRR_HORIZON_DISCOVERY_V1"

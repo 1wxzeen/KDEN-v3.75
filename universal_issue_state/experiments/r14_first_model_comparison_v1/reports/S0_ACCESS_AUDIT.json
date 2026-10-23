@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "page_reads": [
+    {
+      "file": "date_roles.parquet",
+      "columns": [
+        "target_date",
+        "statistical_group_id",
+        "evidence_role",
+        "supervised_eligible"
+      ]
+    },
+    {
+      "file": "outer_folds.parquet",
+      "columns": [
+        "outer_fold_id",
+        "target_date",
+        "statistical_group_id",
+        "assignment",
+        "supervised_assignment"
+      ]
+    },
+    {
+      "file": "inner_folds.parquet",
+      "columns": [
+        "inner_fold_id",
+        "outer_fold_id",
+        "target_date",
+        "statistical_group_id",
+        "assignment",
+        "supervised_assignment"
+      ]
+    }
+  ],
+  "truth_data_page_reads": 0,
+  "weather_data_page_reads": 0,
+  "guard": "ParquetFile wrapper rejects non-allowlisted read calls and alternate page APIs"
+}

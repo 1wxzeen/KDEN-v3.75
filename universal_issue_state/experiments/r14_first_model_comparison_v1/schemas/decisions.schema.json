@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "const": {
+    "all_s0_design_decisions_closed": true,
+    "decisions": [
+      {
+        "decision": "two target-day lag, retrospectively audited labels; fixed-vintage boundary cutoff",
+        "id": "label_availability",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "explicit residual translation, Gaussian CDF kernels, exact issue matching, deterministic ties and no k shrinkage",
+        "id": "baseline_anen_formulas",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "eight thermal location smooths, issue smooth, four seasonal Fourier harmonics, cycle ages and DST; smaller scale equation; no interaction",
+        "id": "gam_feature_terms",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "local analytic distributional objective with SciPy L-BFGS-B; three deterministic starts; validation deferred to S3, not claimed complete",
+        "id": "gam_solver",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "include constant-scale normal and location-scale Student-t nu=5 as descriptive candidates",
+        "id": "model_ablations",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "strict required-input abstention; no operational fallback in milestone",
+        "id": "missingness_fallback",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "native PMFs; NLL-only floor; explicit integer/band/interval/PIT definitions",
+        "id": "metric_details",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "nine named forecast-state slices; training-only tertiles or positive indicator; null category; one season-by-issue interaction",
+        "id": "regime_definitions",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "five coverages, training OOF quantiles, all ties admitted, actual outer coverage reported",
+        "id": "selection_curves",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "five primary NLL contrasts, Bonferroni bootstrap intervals; no binary promotion claims",
+        "id": "statistical_claims",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "S0 read-only validator; separate environment specification; long-run surfaces required before S4",
+        "id": "runtime_policy",
+        "status": "RESOLVED"
+      },
+      {
+        "decision": "explicitly outside milestone; no date or automatic label access; separate registration required",
+        "id": "prospective_test",
+        "status": "RESOLVED_OUT_OF_SCOPE"
+      }
+    ],
+    "departures_from_P07": [
+      "new experiment with GAM and two diagnostic ablations; no RAFM specialists/mixtures",
+      "two-day training label lag and explicit retrospective truth qualification",
+      "native-confidence scorecards, two-integer partitions and extensive descriptive metrics",
+      "95% intervals and five familywise NLL contrasts, no imported RAFM promotion rule",
+      "explicit feasibility-based tuning support qualification; fixed fallback NONE"
+    ],
+    "plan_refinements": [
+      "smooth bounded log-scale GAM link between 0.25 and 20F replaces unbounded sketch",
+      "constant-scale and t5 ablations enabled; GAM interactions deferred",
+      "formal promotion disabled; estimate effects and uncertainty without invented commercial thresholds"
+    ],
+    "schema_version": "R14_DECISIONS_V1"
+  },
+  "title": "Frozen R14 S0 decisions revision 1",
+  "type": "object"
+}

@@ -1,0 +1,58 @@
+{
+  "assessment_labels_read": false,
+  "historical_run_complete": false,
+  "implementation_binding": {
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "numpy": "2.0.2",
+      "platform": "macOS-15.1.1-arm64-arm-64bit",
+      "pyarrow": "23.0.0",
+      "python": "3.12.12",
+      "scipy": "1.15.3"
+    },
+    "parents": {
+      "diagnostics/s2_baseline_review_v1/EXPOSURE.json": "d18c2a47d6edc2276f033d9783fc62b00d79f8f314b9c144097c3f2a19b057c3",
+      "implementations/s3_v1/RELEASE.json": "b082ab81ed8ae8843a43c2f868f5e9949336ab8419ed9d98689e5e1a0be5573d",
+      "implementations/s3_v1/candidates.json": "2690b71f9aa1f8423036776368a5c83419a3fd01b1c390332ece9985f22ad49a",
+      "runs/r14-s2-20260925T185129Z/BASELINE_RELEASE.json": "62d432d81b6dd3aa6d330d109a3a82b9b14b5e6236ad40db2a9a0b66f88d6d03"
+    },
+    "s4_release_sha256": "5483fe2b62c3bc5a23a1ddc7a93fd49666da68d2a8b365c3118a3a1b583a3263",
+    "schema": "R14_S4_RUN_V1"
+  },
+  "status": "PASS",
+  "units": [
+    {
+      "artifact_bytes": 9476225,
+      "model": "ANEN",
+      "query_rows": 167,
+      "seconds": 0.5165870829951018,
+      "status": "PREDICTIONS_FROZEN",
+      "training_days": 122
+    },
+    {
+      "artifact_bytes": 4595193,
+      "model": "GAM_LS_NORMAL",
+      "query_rows": 167,
+      "seconds": 1.2528677501250058,
+      "status": "PREDICTIONS_FROZEN",
+      "training_days": 122
+    },
+    {
+      "artifact_bytes": 4631179,
+      "model": "GAM_LOCATION_NORMAL",
+      "query_rows": 167,
+      "seconds": 0.7532325407955796,
+      "status": "PREDICTIONS_FROZEN",
+      "training_days": 122
+    },
+    {
+      "artifact_bytes": 4645968,
+      "model": "GAM_LS_T5",
+      "query_rows": 167,
+      "seconds": 4.987772041000426,
+      "status": "PREDICTIONS_FROZEN",
+      "training_days": 122
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "R14_TABULAR_EXPERIMENT_CONFIG_V1",
+  "experiment_id": "R14_TABULAR_PRETRAINED_V1",
+  "stage": "T01",
+  "study_start": "2021-01-01",
+  "study_end": "2026-09-11",
+  "initial_context_end": "2021-12-31",
+  "development_emissions_start": "2022-01-01",
+  "development_end": "2025-09-06",
+  "holdout_start": "2025-09-07",
+  "holdout_end": "2026-09-06",
+  "additional_trusted_start": "2026-09-07",
+  "label_embargo_calendar_days": 7,
+  "label_cutoff_operator": "STRICTLY_BEFORE",
+  "issue_timezone": "America/Denver",
+  "issue_grid_start_minutes": 120,
+  "issue_grid_end_minutes": 960,
+  "issue_grid_step_minutes": 15,
+  "climate_day_start_utc_hour": 7,
+  "hrrr_availability_lag_minutes": 105,
+  "holdout_access": "CLOSED_UNTIL_RECIPE_LOCK_AND_ROLLING_REPLAY",
+  "additional_truth_requires_maturity_wait": false,
+  "expected_counts": {"target_days": 2080, "issue_states": 118536, "holdout_days": 365, "development_days_including_initial": 1710, "development_labels": 1707, "development_unresolved": 3, "additional_trusted_days": 5, "development_blocks": 45, "holdout_blocks": 13},
+  "planning_proposals_not_locked": {"primary_issue_window": "02:00-08:00 inclusive", "modal_hit_rate_min": 0.30, "mean_mae_f_max": 1.15, "mean_rmse_f_max": 1.70, "integer_nll_nats_max": 1.85, "scored_holdout_days_min": 300, "supported_forecast_fraction_min": 0.95},
+  "trusted_record_pins": {
+    "state/PREFIT_P02_PASS.json": "40ff18bbac4c927ae600fd54026671493f4e68e5e0d65cdf07374965837cf607",
+    "state/PREFIT_P06_PASS.json": "9f420b8625b428a8663d190a332a0958bf72e5565c37c4543f5b78808a7f4b72",
+    "state/PREFIT_P07_PASS.json": "f2f46becfe219f13d3d1526786d80a29c491144b64b070470f07c92bfe1ba36e",
+    "state/KDEN_V375_MODELING_BOUNDARY_PASS.json": "47390c33f691c5fd6635c81c9b9e609d557a4557a4dc5566da54be450c00da11",
+    "universal_issue_state/v1/manifests/p06_substrate_freeze_manifest.json": "9043b5dcb69ccfb143217ab657022f85f1750a1460e4011269526ebb08b52af6"
+  }
+}

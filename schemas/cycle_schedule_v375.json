@@ -1,0 +1,38 @@
+{
+  "schema_version": "KDEN_V375_PARQUET_SCHEMA_V1",
+  "schema_id": "KDEN_V375_CYCLE_SCHEDULE_V1",
+  "format": "parquet",
+  "compression": "zstd",
+  "primary_key": ["target_day", "product", "cycle_init_utc"],
+  "sort_order": ["target_day", "product", "cycle_init_utc"],
+  "columns": [
+    {"name": "target_day", "arrow_type": "date32", "nullable": false},
+    {"name": "product", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "cycle_init_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "cycle_init_local", "arrow_type": "timestamp[us,America/Denver]", "nullable": false},
+    {"name": "local_calendar_date", "arrow_type": "date32", "nullable": false},
+    {"name": "local_cycle_hour", "arrow_type": "int8", "nullable": false},
+    {"name": "utc_offset_minutes", "arrow_type": "int16", "nullable": false},
+    {"name": "dst_flag", "arrow_type": "bool", "nullable": false},
+    {"name": "local_fold", "arrow_type": "int8", "nullable": false},
+    {"name": "hrrr_version", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "native_max_forecast_hour", "arrow_type": "int16", "nullable": false},
+    {"name": "horizon_class", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "window_start_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "window_end_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "retained_valid_start_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "retained_valid_end_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "availability_policy_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "emulated_complete_time_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "actual_first_seen_utc", "arrow_type": "timestamp[us,UTC]", "nullable": true},
+    {"name": "availability_basis", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "source_inventory_hash", "arrow_type": "fixed_size_binary[32]", "nullable": true},
+    {"name": "complete_flag", "arrow_type": "bool", "nullable": false},
+    {"name": "missing_or_quarantine_reason", "arrow_type": "string", "nullable": true},
+    {"name": "retrieval_run_id", "arrow_type": "string", "nullable": true}
+  ],
+  "row_rules": {
+    "utc_identity": "cycle_init_utc is the unique cycle identity; local_fold distinguishes repeated wall times",
+    "target_window": "window bounds are fixed at 07:00Z inclusive to next-day 07:00Z exclusive"
+  }
+}

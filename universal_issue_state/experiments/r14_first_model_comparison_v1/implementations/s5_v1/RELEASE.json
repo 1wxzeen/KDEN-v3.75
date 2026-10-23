@@ -1,0 +1,17 @@
+{
+  "files": {
+    "README.md": "f52704abd2c638053e53b2b07fa56553f1805fc9f14b5d305f1457fad5311369",
+    "S5 Launcher.command": "9c2415e9fab44e66e638a6a6ca379af90b16f8c0953a735f729f941e04904164",
+    "config.json": "bca29db1c741d933275591ffb01706bdbfbf519ad28d2ae1ae86951cddb37c94",
+    "core.py": "736c9f2de8344c44e77ce8ff1dbb4d2c1fb4f04333ac08d8c23403e54b55eff0",
+    "inputs.py": "ace5e6507903c4e269572fa227d17061862d58342350d57d22de8b5179b12386",
+    "plots.py": "ba12fdd78ef9657ada0be40cae5adf8a7209852a69ab813d17bf4c5033f455d4",
+    "report.py": "e8e551a07b11e585cedec409de2165f7ea4a5b0bbdbadce8102c5a8d3eefeadd",
+    "s5.py": "04b76715e7d543bbe047206c610c975c1ad57c0b5b0f1acaca48c2647f557578",
+    "seal.py": "a3f902345da2e474ad627f734ab2a3234f16641961e3adbf1def21a7c1556994",
+    "tests/test_s5.py": "fbdaad98342360beab3920c78019fdc06f42fd2f6afe088572f6a3d6334d50d8",
+    "workflow.py": "f0910aece7f0c81d0cce3e61a05030d7f1bb7bd997723147689a58764ad6680f"
+  },
+  "record_sha256": "0058cd061751c2a7cfd9e935adf3f284b48ccedd59e4c088f2e75985e05ee48f",
+  "schema": "R14_S5_IMPLEMENTATION_RELEASE_V1"
+}

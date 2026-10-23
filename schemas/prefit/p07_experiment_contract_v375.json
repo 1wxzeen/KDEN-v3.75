@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_PREFIT_P07_CONFIG_V1",
+  "title": "KDEN v3.75 RAFM V1 experiment contract",
+  "type": "object",
+  "required": ["schema_version", "contract_id", "substrate_release_id", "predecessor_p06_record_sha256", "execution", "evidence_roles", "folds", "target_join", "pmf", "baselines", "analog", "experts", "specialist_behavior", "diagnostics", "mixtures", "calibration", "evaluation", "promotion", "selection_and_final_refit", "final_evaluation", "outputs"],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_PREFIT_P07_CONFIG_V1"},
+    "contract_id": {"const": "KDEN_V375_RAFM_EXPERIMENT_V1"},
+    "substrate_release_id": {"const": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1"},
+    "predecessor_p06_record_sha256": {"const": "9f420b8625b428a8663d190a332a0958bf72e5565c37c4543f5b78808a7f4b72"},
+    "experts": {"type": "array", "minItems": 6, "maxItems": 6},
+    "execution": {"type": "object"},
+    "folds": {"type": "object"},
+    "pmf": {"type": "object"}
+  },
+  "additionalProperties": true
+}

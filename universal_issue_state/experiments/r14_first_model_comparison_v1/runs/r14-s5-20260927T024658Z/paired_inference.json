@@ -1,0 +1,297 @@
+{
+  "definition": "model minus reference NLL; negative favors model",
+  "method": {
+    "confidence_level": 0.95,
+    "fold_handling": "within each assessment fold sample starts uniformly from full consecutive calendar grid with complete L-day windows; concatenate blocks and truncate to original calendar length; preserve each sampled day all models/issues and missing slots; recompute estimand; pool folds with original target-day counts",
+    "formal_promotion": "DISABLED; effect estimates, uncertainty and conditional hypotheses only",
+    "method": "paired_non_circular_calendar_moving_block_bootstrap",
+    "primary_block_days": 7,
+    "primary_contrasts": [
+      [
+        "ANEN",
+        "B0_H"
+      ],
+      [
+        "ANEN",
+        "B0_Q"
+      ],
+      [
+        "GAM_LS_NORMAL",
+        "B0_H"
+      ],
+      [
+        "GAM_LS_NORMAL",
+        "B0_Q"
+      ],
+      [
+        "GAM_LS_NORMAL",
+        "ANEN"
+      ]
+    ],
+    "primary_metric": "negative_log_score",
+    "replicates": 5000,
+    "secondary": "unadjusted 2.5/97.5 percentile intervals; descriptive; no significance claims across slice search",
+    "seed": 3750925,
+    "sensitivity_block_days": 14,
+    "simultaneous_rule": "five Bonferroni-adjusted two-sided percentile intervals: bootstrap quantiles 0.005 and 0.995 for each contrast; report as nominal approximate familywise 95% coverage, not a finite-sample guarantee",
+    "undefined_replicates": "report fraction; interval null if <95% replicates finite; quantiles on finite draws otherwise"
+  },
+  "promotion_allowed": false,
+  "results": {
+    "14": [
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06470904095643035,
+        "familywise_interval": {
+          "lower": -0.08628295119827388,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.04375319794667275
+        },
+        "model": "ANEN",
+        "reference": "B0_H",
+        "unadjusted_interval": {
+          "lower": -0.08135570901277565,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.04849341725724759
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06579724546755449,
+        "familywise_interval": {
+          "lower": -0.08763878575186344,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.045018646583653385
+        },
+        "model": "ANEN",
+        "reference": "B0_Q",
+        "unadjusted_interval": {
+          "lower": -0.08243915440083012,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.04965975531068822
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06123601215489847,
+        "familywise_interval": {
+          "lower": -0.09630472990601982,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.03499977226272482
+        },
+        "model": "GAM_LS_NORMAL",
+        "reference": "B0_H",
+        "unadjusted_interval": {
+          "lower": -0.08757707211065059,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.04219757409293012
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06232421666602261,
+        "familywise_interval": {
+          "lower": -0.09716945145725749,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.03637526799434765
+        },
+        "model": "GAM_LS_NORMAL",
+        "reference": "B0_Q",
+        "unadjusted_interval": {
+          "lower": -0.08966463383957352,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.042870039098081125
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": 0.0034730288015318903,
+        "familywise_interval": {
+          "lower": -0.02442701234963956,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": 0.025515031267472885
+        },
+        "model": "GAM_LS_NORMAL",
+        "reference": "ANEN",
+        "unadjusted_interval": {
+          "lower": -0.019898287031308148,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": 0.018468639968296684
+        }
+      }
+    ],
+    "7": [
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06470904095643035,
+        "familywise_interval": {
+          "lower": -0.08398196218196712,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.045318854765571875
+        },
+        "model": "ANEN",
+        "reference": "B0_H",
+        "unadjusted_interval": {
+          "lower": -0.07949920446372834,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.04928199949949751
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06579724546755449,
+        "familywise_interval": {
+          "lower": -0.0852609261649551,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.04590060235176479
+        },
+        "model": "ANEN",
+        "reference": "B0_Q",
+        "unadjusted_interval": {
+          "lower": -0.08074659021050339,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.050174277118490596
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06123601215489847,
+        "familywise_interval": {
+          "lower": -0.0905595299082198,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.03575620457309053
+        },
+        "model": "GAM_LS_NORMAL",
+        "reference": "B0_H",
+        "unadjusted_interval": {
+          "lower": -0.08432556513802153,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.0421811405518631
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": -0.06232421666602261,
+        "familywise_interval": {
+          "lower": -0.0919578871422246,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.0369708962942447
+        },
+        "model": "GAM_LS_NORMAL",
+        "reference": "B0_Q",
+        "unadjusted_interval": {
+          "lower": -0.08584252207966055,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": -0.04307310177910057
+        }
+      },
+      {
+        "checkpoints": 55848,
+        "days": 980,
+        "difference": 0.0034730288015318903,
+        "familywise_interval": {
+          "lower": -0.022741407268188997,
+          "quantiles": [
+            0.005,
+            0.995
+          ],
+          "undefined_fraction": 0.0,
+          "upper": 0.026140867334781652
+        },
+        "model": "GAM_LS_NORMAL",
+        "reference": "ANEN",
+        "unadjusted_interval": {
+          "lower": -0.01696265397222365,
+          "quantiles": [
+            0.025,
+            0.975
+          ],
+          "undefined_fraction": 0.0,
+          "upper": 0.020194585544395155
+        }
+      }
+    ]
+  },
+  "timing_audit_status": "TIMING_NONCONFORMANCE"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "KDEN_V375_P06_FEATURE_CONTRACT_ERRATA_V1",
+  "errata_id": "KDEN_V375_P06_FEATURE_RANGE_ERRATA_V1",
+  "registry_id": "KDEN_V375_UNIVERSAL_FEATURE_REGISTRY_V1",
+  "registry_sha256": "e41d78a122be15a01986f0b914518209843108062313d7d55f62e308d37aaf65",
+  "policy": "P04 and P05 remain byte-immutable; P06 applies these acceptance-only bounds and freezes this overlay with the release",
+  "entries": [
+    {
+      "feature_name": "support_wrfsfcf_retained_start_offset_minutes",
+      "declared_range": [0, 1440],
+      "accepted_range": [-60, 1440],
+      "observed_range": [-60, 840],
+      "reason": "The frozen DST-safe R14 schedule can retain a selected current cycle beginning one hour before the fixed 07Z target-window start."
+    },
+    {
+      "feature_name": "support_wrfsubhf_retained_start_offset_minutes",
+      "declared_range": [0, 1440],
+      "accepted_range": [-60, 1440],
+      "observed_range": [-60, 840],
+      "reason": "The frozen DST-safe R14 schedule can retain a selected current cycle beginning one hour before the fixed 07Z target-window start."
+    },
+    {
+      "feature_name": "derived_dewpoint_depression_future_first_k",
+      "declared_range": [0.0, 100.0],
+      "accepted_range": [-0.05, 100.0],
+      "observed_range": [-0.022247314453125, 48.628129088571654],
+      "reason": "Independent spatial interpolation of temperature and dewpoint can produce a numerically tiny negative difference; raw values remain unchanged and the tolerance is bounded to 0.05 K."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "KDEN_V375_PREFIT_P06_CONFIG_V1",
+  "acceptance_id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_ACCEPTANCE_V1",
+  "substrate_release_id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1",
+  "predecessor_p05_record_sha256": "7e1366d32972aa492ae1064c354bfb0261401f59a16e16a26e12a65df96c4132",
+  "feature_contract_errata_path": "config/prefit/p06_feature_contract_errata_v375.json",
+  "study_start_date": "2021-01-01",
+  "study_end_date": "2026-09-11",
+  "expected_target_days": 2080,
+  "expected_issue_rows": 118536,
+  "expected_selection_rows": 237072,
+  "expected_feature_rows": 118536,
+  "expected_feature_count": 433,
+  "expected_dynamic_trajectory_rows": 8919597,
+  "expected_static_trajectory_rows": 1,
+  "expected_total_trajectory_rows": 8919598,
+  "expected_missing_trajectory_rows": 12,
+  "target_years": [2021, 2022, 2023, 2024, 2025, 2026],
+  "issue_grid": {
+    "contract_id": "KDEN_V375_ISSUE_GRID_0200_1600_MT_Q15_V1",
+    "local_timezone": "America/Denver",
+    "first_local_time": "02:00",
+    "last_local_time": "16:00",
+    "spacing_minutes": 15,
+    "ordinary_issue_count": 57,
+    "spring_forward_issue_count": 53,
+    "target_window": "[07:00Z_d,07:00Z_d_plus_1)"
+  },
+  "availability": {
+    "policy_id": "KDEN_HIST_COMPLETE_L105_V1",
+    "basis": "historical_cycle_init_plus_105_minutes",
+    "cycle_complete_lag_minutes": 105,
+    "future_complete_cycle_allowed": false
+  },
+  "coordinate_eras": [
+    {"start_date": "2021-01-01", "end_date": "2021-11-21", "era": "KDEN_COORD_20040105"},
+    {"start_date": "2021-11-22", "end_date": "2026-09-11", "era": "KDEN_COORD_20211122"}
+  ],
+  "anchor_cases": [
+    {"case_id": "ordinary", "target_date": "2023-07-15", "issue_local": "09:00"},
+    {"case_id": "dst_spring_forward", "target_date": "2023-03-12", "issue_local": "09:00"},
+    {"case_id": "confirmed_remote_missing", "target_date": "2022-02-26", "issue_local": "12:45"},
+    {"case_id": "snow", "target_date": "2024-01-15", "issue_local": "09:00"},
+    {"case_id": "convective", "target_date": "2023-06-22", "issue_local": "09:00"},
+    {"case_id": "dry_heating", "target_date": "2023-07-15", "issue_local": "09:00"},
+    {"case_id": "mixing_downslope", "target_date": "2024-12-15", "issue_local": "09:00"}
+  ],
+  "forbidden_predictor_tokens": [
+    "truth", "y_audited", "target_value", "market", "kalshi", "settlement",
+    "madis", "outcome", "label", "fold", "prediction"
+  ],
+  "execution": {
+    "network_allowed": false,
+    "truth_reads_allowed": false,
+    "market_reads_allowed": false,
+    "madis_reads_allowed": false,
+    "model_fitting_allowed": false,
+    "owner_run_required": true,
+    "pause_boundary": "between scan batches; an incomplete year is discarded and rescanned on resume",
+    "resume_revalidates_checkpoint_authorities": true
+  },
+  "freeze": {
+    "manifest_path": "universal_issue_state/v1/manifests/p06_substrate_freeze_manifest.json",
+    "final_pass_path": "state/KDEN_V375_UNIVERSAL_ISSUE_STATE_PASS.json",
+    "status_after_pass": "FROZEN_ACCEPTED"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "R14_TABULAR_T04_DECISION_V1",
+  "owner_confirmed": false,
+  "primary_window_minutes": [120, 840],
+  "modal_hit_rate_min": 0.30,
+  "mean_mae_f_max": 1.15,
+  "mean_rmse_f_max": 1.70,
+  "integer_nll_nats_max": 1.85,
+  "complete_holdout_days_min": 300,
+  "supported_forecast_fraction_min": 0.95,
+  "selected_operational_candidate": null,
+  "selection_rationale": "Complete development replay, inspect paired results/support/seasonality and cost, then explicitly choose one flagship. This is not approval or a recipe lock.",
+  "development_revision_exposure_note": "No recipe change; T04 extends accepted T03 mechanics across the full development schedule. Regime cutoffs use development predictors only."
+}

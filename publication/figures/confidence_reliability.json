@@ -1,0 +1,440 @@
+{
+  "schema_version": "KDEN_PUBLICATION_CONFIDENCE_RELIABILITY_V1",
+  "source_files": {
+    "selection.json": {
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/runs/r14-s5-20260927T024658Z/selection.json",
+      "sha256": "57a196b857ed5f7b233ae9f4370f519f7e385370c4842fc52b83d86f90c67251"
+    },
+    "population.json": {
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/runs/r14-s5-20260927T024658Z/population.json",
+      "sha256": "63a97b18003df21ab40311d2cf945e2b088b0fac855b59e8ba54e6e6a42292cb"
+    },
+    "scorecards.json": {
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/runs/r14-s5-20260927T024658Z/scorecards.json",
+      "sha256": "3c91f222ada6881e734e12e769086c9bca6e45cd4616f2b89f2b1aaf0dc912e9"
+    }
+  },
+  "assessment": {
+    "start": "2023-01-01",
+    "end": "2025-09-06",
+    "days": 980,
+    "rows_per_model": 55848,
+    "issue_window": "02:00–16:00",
+    "timezone": "America/Denver",
+    "periods": [
+      {
+        "fold_id": "OUTER_01",
+        "label": "2023",
+        "start": "2023-01-01",
+        "end": "2023-12-31"
+      },
+      {
+        "fold_id": "OUTER_02",
+        "label": "2024",
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      {
+        "fold_id": "OUTER_03",
+        "label": "2025*",
+        "start": "2025-01-01",
+        "end": "2025-09-06"
+      }
+    ]
+  },
+  "selection": {
+    "ranking": "integer",
+    "nominal_targets": [
+      1.0,
+      0.75,
+      0.5,
+      0.25,
+      0.1
+    ],
+    "strictest_target": 0.1,
+    "confidence": "Native maximum integer probability, without the log-score floor.",
+    "threshold_source": "Earlier selected inner forecasts; each vintage freezes its own threshold, all ties admitted.",
+    "model_specific_cases": true,
+    "coverage_definition": "Admitted sum of 1/expected legal issues that day, divided by eligible target-day count.",
+    "hit_definition": "Modal integer exactly equals audited Tmax; not a listed-market-band hit.",
+    "conditional_weighting": "Admitted checkpoints retain original 1/expected issues per day weights; normalize across admissions.",
+    "same_case_baseline": "B0_Q scored on the exact rows admitted by each model's own rule."
+  },
+  "uncertainty": {
+    "level": 0.95,
+    "block_days": 7,
+    "replicates": 5000,
+    "adjustment": "none",
+    "role": "Saved descriptive pointwise intervals for achieved hit rates, not paired model-baseline difference intervals or simultaneous curve bands."
+  },
+  "limitations": [
+    "Previously inspected historical development evidence, not a new blind test.",
+    "The disclosed selection-timing nonconformance still applies.",
+    "Different model selectors do not generally admit identical cases.",
+    "2025 is January 1–September 6, not a full year.",
+    "GAM strict selection in partial 2025 has 55 days, below the registered 60-day slice threshold.",
+    "No threshold was optimized for this publication figure; no new statistical or trading promotion."
+  ],
+  "models": [
+    {
+      "model_id": "ANEN",
+      "label": "AnEn",
+      "color": "#777777",
+      "pooled": [
+        {
+          "nominal_target": 1.0,
+          "retained_share": 1.0,
+          "observed_hit": 0.1813820264948085,
+          "predicted_hit": 0.1685082263462586,
+          "baseline_same_cases_hit": 0.17407805227354142,
+          "observed_hit_interval": {
+            "lower": 0.16714822771213728,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.19797977085571047
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 55848,
+          "days_with_admissions": 980,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.75,
+          "retained_share": 0.723754467030109,
+          "observed_hit": 0.1979028651726557,
+          "predicted_hit": 0.18609358822784763,
+          "baseline_same_cases_hit": 0.18927043173367883,
+          "observed_hit_interval": {
+            "lower": 0.1806715222262023,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.21817719102307678
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 40421,
+          "days_with_admissions": 978,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.5,
+          "retained_share": 0.47884806355511417,
+          "observed_hit": 0.21672281521484585,
+          "predicted_hit": 0.20192468828978946,
+          "baseline_same_cases_hit": 0.20375010228064727,
+          "observed_hit_interval": {
+            "lower": 0.1940858937195256,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.24298158480589216
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 26744,
+          "days_with_admissions": 906,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.25,
+          "retained_share": 0.2584642198488134,
+          "observed_hit": 0.2314062655187375,
+          "predicted_hit": 0.2179679899499055,
+          "baseline_same_cases_hit": 0.21325947067710077,
+          "observed_hit_interval": {
+            "lower": 0.20112162315726373,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.2663676807603618
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 14436,
+          "days_with_admissions": 712,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.1,
+          "retained_share": 0.10285721041147342,
+          "observed_hit": 0.2520187707090245,
+          "predicted_hit": 0.23460334385429374,
+          "baseline_same_cases_hit": 0.22678208441564845,
+          "observed_hit_interval": {
+            "lower": 0.20916988752172574,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.2989229808108297
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 5745,
+          "days_with_admissions": 479,
+          "sparse": false
+        }
+      ],
+      "strict_by_period": [
+        {
+          "fold_id": "OUTER_01",
+          "nominal_target": 0.1,
+          "retained_share": 0.14039894256188415,
+          "observed_hit": 0.21807600136939406,
+          "predicted_hit": 0.2352656778222697,
+          "baseline_same_cases_hit": 0.20712084902430675,
+          "observed_hit_interval": {
+            "lower": 0.1527401867574266,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.28622280016846335
+          },
+          "expected_rows": 20801,
+          "population_days": 365,
+          "admitted_rows": 2921,
+          "days_with_admissions": 184,
+          "sparse": false
+        },
+        {
+          "fold_id": "OUTER_02",
+          "nominal_target": 0.1,
+          "retained_share": 0.08798067444102572,
+          "observed_hit": 0.35195674297638757,
+          "predicted_hit": 0.23618564648721346,
+          "baseline_same_cases_hit": 0.2942053269462063,
+          "observed_hit_interval": {
+            "lower": 0.2837340437889141,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.4088566235640454
+          },
+          "expected_rows": 20858,
+          "population_days": 366,
+          "admitted_rows": 1835,
+          "days_with_admissions": 167,
+          "sparse": false
+        },
+        {
+          "fold_id": "OUTER_03",
+          "nominal_target": 0.1,
+          "retained_share": 0.06969287278209163,
+          "observed_hit": 0.1668097281831187,
+          "predicted_hit": 0.2297113509804345,
+          "baseline_same_cases_hit": 0.1597329518359561,
+          "observed_hit_interval": {
+            "lower": 0.09980009218530206,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.26711429444993834
+          },
+          "expected_rows": 14189,
+          "population_days": 249,
+          "admitted_rows": 989,
+          "days_with_admissions": 128,
+          "sparse": false
+        }
+      ]
+    },
+    {
+      "model_id": "GAM_LS_NORMAL",
+      "label": "Location–scale normal GAM",
+      "color": "#9774ad",
+      "pooled": [
+        {
+          "nominal_target": 1.0,
+          "retained_share": 1.0,
+          "observed_hit": 0.1867525957751522,
+          "predicted_hit": 0.16598778060387628,
+          "baseline_same_cases_hit": 0.17407805227354142,
+          "observed_hit_interval": {
+            "lower": 0.17164339419978505,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.20161161833154292
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 55848,
+          "days_with_admissions": 980,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.75,
+          "retained_share": 0.679759709246161,
+          "observed_hit": 0.20607627493002437,
+          "predicted_hit": 0.19244250864887258,
+          "baseline_same_cases_hit": 0.18851041226186802,
+          "observed_hit_interval": {
+            "lower": 0.18844293631975467,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.22466235532464807
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 37963,
+          "days_with_admissions": 883,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.5,
+          "retained_share": 0.41264245519459014,
+          "observed_hit": 0.22724307316023032,
+          "predicted_hit": 0.21752326049564688,
+          "baseline_same_cases_hit": 0.2070697190137039,
+          "observed_hit_interval": {
+            "lower": 0.20290446681650798,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.2519820063107744
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 23049,
+          "days_with_admissions": 685,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.25,
+          "retained_share": 0.1764411027568922,
+          "observed_hit": 0.24949269480519487,
+          "predicted_hit": 0.2518212030713702,
+          "baseline_same_cases_hit": 0.2340706168831171,
+          "observed_hit_interval": {
+            "lower": 0.215277340470193,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.2871094095874406
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 9856,
+          "days_with_admissions": 452,
+          "sparse": false
+        },
+        {
+          "nominal_target": 0.1,
+          "retained_share": 0.05878983172216254,
+          "observed_hit": 0.2774056029232644,
+          "predicted_hit": 0.28866940422317977,
+          "baseline_same_cases_hit": 0.2600487210718636,
+          "observed_hit_interval": {
+            "lower": 0.21661774389202562,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.3468645738360416
+          },
+          "expected_rows": 55848,
+          "population_days": 980,
+          "admitted_rows": 3284,
+          "days_with_admissions": 235,
+          "sparse": false
+        }
+      ],
+      "strict_by_period": [
+        {
+          "fold_id": "OUTER_01",
+          "nominal_target": 0.1,
+          "retained_share": 0.059937515020427774,
+          "observed_hit": 0.28067361668003216,
+          "predicted_hit": 0.2970979815132183,
+          "baseline_same_cases_hit": 0.25340817963111467,
+          "observed_hit_interval": {
+            "lower": 0.1585340048876438,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.3786381911410598
+          },
+          "expected_rows": 20801,
+          "population_days": 365,
+          "admitted_rows": 1247,
+          "days_with_admissions": 85,
+          "sparse": false
+        },
+        {
+          "fold_id": "OUTER_02",
+          "nominal_target": 0.1,
+          "retained_share": 0.06830601092896173,
+          "observed_hit": 0.32421052631578956,
+          "predicted_hit": 0.2846750177094918,
+          "baseline_same_cases_hit": 0.32280701754385965,
+          "observed_hit_interval": {
+            "lower": 0.23968762465097718,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.41096662164769415
+          },
+          "expected_rows": 20858,
+          "population_days": 366,
+          "admitted_rows": 1425,
+          "days_with_admissions": 95,
+          "sparse": false
+        },
+        {
+          "fold_id": "OUTER_03",
+          "nominal_target": 0.1,
+          "retained_share": 0.04311984781230184,
+          "observed_hit": 0.16176470588235292,
+          "predicted_hit": 0.2807961442580285,
+          "baseline_same_cases_hit": 0.12745098039215685,
+          "observed_hit_interval": {
+            "lower": 0.07383088803256348,
+            "quantiles": [
+              0.025,
+              0.975
+            ],
+            "undefined_fraction": 0.0,
+            "upper": 0.354808459696727
+          },
+          "expected_rows": 14189,
+          "population_days": 249,
+          "admitted_rows": 612,
+          "days_with_admissions": 55,
+          "sparse": true
+        }
+      ]
+    }
+  ]
+}

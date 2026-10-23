@@ -1,0 +1,18 @@
+{
+  "$id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_PASS_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_UNIVERSAL_ISSUE_STATE_PASS_V1"},
+    "release_id": {"const": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1"},
+    "status": {"const": "PASS"},
+    "accepted_at_utc": {"type": "string"},
+    "p05_record_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "freeze_manifest_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "acceptance_report_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "gate_evidence": {"type": "object"},
+    "record_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+  },
+  "required": ["schema_version", "release_id", "status", "accepted_at_utc", "p05_record_sha256", "freeze_manifest_sha256", "acceptance_report_sha256", "gate_evidence", "record_sha256"],
+  "type": "object"
+}

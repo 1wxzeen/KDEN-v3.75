@@ -1,0 +1,48 @@
+{
+  "assessment_labels_returned": 0,
+  "baseline_release_generated": false,
+  "completed_units": [
+    {
+      "candidate_id": "B0_H_6e6d3cc797c5",
+      "forecast_seconds": 10.747315250104293,
+      "rows": 10488,
+      "status_counts": {
+        "ABSTAIN": 9861,
+        "AVAILABLE": 627
+      },
+      "training_days": 179,
+      "unit_manifest_sha256": "98df5646a803eb3371b615d296857add268ba07b39a87399a6d1569cfc5c2f3a"
+    },
+    {
+      "candidate_id": "B0_H_78994b0b1bb8",
+      "forecast_seconds": 11.784444000106305,
+      "rows": 10488,
+      "status_counts": {
+        "ABSTAIN": 9861,
+        "AVAILABLE": 627
+      },
+      "training_days": 179,
+      "unit_manifest_sha256": "a46e2bccc5044eda6434c982bc29d812351226cd73c87e7810e8704e33765d70"
+    }
+  ],
+  "final_state": "PAUSED",
+  "first_unit_unchanged_on_resume": true,
+  "outer_predictions_generated": 0,
+  "purpose": "Pre-release bounded historical checkpoint rehearsal; not a complete baseline release",
+  "status": "PASS",
+  "support": {
+    "issue_ids_sha256": "47140e263d9e084c3f6390eeec6ac69f78a43dc34306179addc705233ebaca25",
+    "mask_sha256": "b701b5d2765d57831588de2170132fad1d90d22ece2d4b6b30c29233e2ca9b23",
+    "outcomes_used": false,
+    "summary": {
+      "available_rows": 627,
+      "dayweighted_coverage": 0.059782608695652176,
+      "eligible_days": 11,
+      "expected_days": 184,
+      "expected_rows": 10488,
+      "included": false,
+      "inner_fold_id": "INNER_01"
+    }
+  },
+  "temporary_run_binding_sha256": "2b4912368e43a7acdd0a1a28193438a3d5ff6503c1a0faebb409fb79571caeb6"
+}

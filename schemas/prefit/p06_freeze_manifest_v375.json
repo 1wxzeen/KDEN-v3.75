@@ -1,0 +1,19 @@
+{
+  "$id": "KDEN_V375_SUBSTRATE_FREEZE_MANIFEST_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_SUBSTRATE_FREEZE_MANIFEST_V1"},
+    "release_id": {"const": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1"},
+    "status": {"const": "FROZEN_ACCEPTED"},
+    "accepted_at_utc": {"type": "string"},
+    "p05_record_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "authorities": {"additionalProperties": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "type": "object"},
+    "frozen_files": {"additionalProperties": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "type": "object"},
+    "acceptance_checkpoint_digest": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "gate_evidence": {"type": "object"},
+    "record_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+  },
+  "required": ["schema_version", "release_id", "status", "accepted_at_utc", "p05_record_sha256", "authorities", "frozen_files", "acceptance_checkpoint_digest", "gate_evidence", "record_sha256"],
+  "type": "object"
+}

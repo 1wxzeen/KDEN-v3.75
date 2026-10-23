@@ -1,0 +1,9 @@
+numpy==2.0.2
+scipy==1.15.3
+pyarrow==23.0.0
+scikit-learn==1.6.1
+pandas==2.2.3
+joblib==1.4.2
+jsonschema==4.23.0
+xgboost==3.0.5
+ngboost==0.5.6

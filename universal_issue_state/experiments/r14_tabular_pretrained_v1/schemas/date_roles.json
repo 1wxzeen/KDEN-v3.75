@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "rows", "native_blocks", "weekly_update_dates"],
+  "properties": {
+    "schema_version": {"const": "R14_TABULAR_DATE_ROLES_V1"},
+    "rows": {"type": "array", "minItems": 2080, "maxItems": 2080, "items": {"type": "object", "required": ["target_date", "date_role", "expected_issue_count", "native_block_id", "included_in_primary_holdout_score"], "additionalProperties": false, "properties": {
+      "target_date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"}, "date_role": {"enum": ["INITIAL_CONTEXT", "DEVELOPMENT", "ROLLING_HOLDOUT", "ADDITIONAL_TRUSTED"]},
+      "expected_issue_count": {"enum": [53, 57]}, "native_block_id": {"type": ["string", "null"]}, "included_in_primary_holdout_score": {"type": "boolean"}
+    }}},
+    "native_blocks": {"type": "array", "minItems": 58, "maxItems": 58, "items": {"type": "object", "required": ["block_id", "role", "start_date", "end_date", "label_cutoff_exclusive"], "additionalProperties": false, "properties": {
+      "block_id": {"type": "string"}, "role": {"enum": ["DEVELOPMENT", "ROLLING_HOLDOUT"]}, "start_date": {"type": "string"}, "end_date": {"type": "string"}, "label_cutoff_exclusive": {"type": "string"}
+    }}},
+    "weekly_update_dates": {"type": "array", "items": {"type": "string"}}
+  }
+}

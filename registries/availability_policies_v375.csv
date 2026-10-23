@@ -1,0 +1,2 @@
+schema_version,availability_policy_id,products,lag_minutes,complete_rule,availability_basis,status
+KDEN_V375_AVAILABILITY_POLICY_V1,KDEN_HIST_COMPLETE_L105_V1,wrfsfcf;wrfsubhf,105,cycle_init_utc+105m,modeled_historical_cycle_availability,INITIAL_EMULATOR

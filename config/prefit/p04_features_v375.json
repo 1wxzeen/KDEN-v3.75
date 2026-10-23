@@ -1,0 +1,113 @@
+{
+  "schema_version": "KDEN_V375_PREFIT_P04_CONFIG_V1",
+  "registry_id": "KDEN_V375_UNIVERSAL_FEATURE_REGISTRY_V1",
+  "panel_schema_id": "KDEN_V375_DETERMINISTIC_FEATURE_PANEL_V1",
+  "derivation_id": "KDEN_V375_DETERMINISTIC_FEATURES_V1",
+  "substrate_release_id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1",
+  "source_scope_id": "KDEN_V375_R14_V1",
+  "predecessor_p03_record_sha256": "c1201500ecfd5ed6eac60d45889c4b7ecdd2620c76998c00a1769531c9479f3b",
+  "target_window": "[07:00Z_d,07:00Z_d_plus_1)",
+  "default_cross_product_alignment": "SAME_VALID_TIME_INDEPENDENT_LEGAL_CYCLES",
+  "windows": {
+    "ASOF": "latest retained snapshot with valid_time_utc <= issue_time_utc; for accumulations, latest interval with interval_end_utc <= issue_time_utc",
+    "FUTURE_FIRST": "earliest retained snapshot with valid_time_utc >= issue_time_utc",
+    "RETAINED": "all states retained for the one selected cycle inside the right-open target window",
+    "REMAINING": "snapshots with valid_time_utc >= issue_time_utc; accumulations only when interval_start_utc >= issue_time_utc",
+    "COMMON_REMAINING": "identical valid_time_utc support shared by explicitly named inputs and not earlier than issue_time_utc",
+    "REVISION_OVERLAP": "identical valid_time_utc support shared by current and immediately previous legal same-product cycles"
+  },
+  "aggregate_missingness": {
+    "primary_policy": "STRICT_COMPLETE_SUPPORT",
+    "partial_value_publication": false,
+    "coverage_fraction_is_always_published": true,
+    "missing_count_is_always_published": true,
+    "empty_support_value": null,
+    "silent_imputation_allowed": false
+  },
+  "alignment": {
+    "cycle_stitching_allowed": false,
+    "snapshot_interpolation_allowed": false,
+    "accumulation_interpolation_allowed": false,
+    "revision_requires_identical_valid_time": true,
+    "cross_product_requires_identical_valid_time": true,
+    "hourly_and_subhourly_cycles_selected_independently": true
+  },
+  "spatial": {
+    "regional_contract_id": "KDEN_V375_R14_REGIONAL_SPATIAL_V1",
+    "regional_support_count": 8,
+    "regional_support_order": [
+      "WEST_FOOTHILL_D030",
+      "WEST_FOOTHILL_D060",
+      "NNE_PLAINS_D030",
+      "NNE_PLAINS_D060",
+      "EAST_PLAINS_D030",
+      "EAST_PLAINS_D060",
+      "SSE_PALMER_D030",
+      "SSE_PALMER_D060"
+    ],
+    "regional_fields": ["H16", "H17", "H18", "H19", "H24", "H26", "H28", "H31", "H36", "H38", "Q05"],
+    "tile_fields": ["H02", "H07", "H28", "H31", "H36", "H38"],
+    "local_only_regional_fields": ["H02", "H07"],
+    "static_field": "H14",
+    "fail_closed_on_incomplete_support": true,
+    "terrain_lapse_rate_correction": "NONE"
+  },
+  "thresholds": {
+    "reflectivity_event_dbz": 20.0,
+    "precipitation_wet_interval_kg_m2": 0.0
+  },
+  "physical_ranges": {
+    "H02": [180.0, 340.0],
+    "H07": [180.0, 340.0],
+    "H14": [-500.0, 9000.0],
+    "H16": [180.0, 340.0],
+    "H17": [170.0, 330.0],
+    "H18": [-100.0, 100.0],
+    "H19": [-100.0, 100.0],
+    "H24": [0.0, 10000.0],
+    "H26": [0.0, 100.0],
+    "H28": [0.0, 100.0],
+    "H31": [0.0, 1600.0],
+    "H36": [-40.0, 100.0],
+    "H38": [0.0, 500.0],
+    "Q05": [180.0, 340.0]
+  },
+  "bounded_cases": [
+    {"case_id": "ordinary", "target_date": "2023-07-15", "issue_local": "09:00"},
+    {"case_id": "dst_spring_forward", "target_date": "2023-03-12", "issue_local": "09:00"},
+    {"case_id": "confirmed_remote_missing", "target_date": "2022-02-26", "issue_local": "12:45"},
+    {"case_id": "snow", "target_date": "2024-01-15", "issue_local": "09:00"},
+    {"case_id": "convective", "target_date": "2023-06-22", "issue_local": "09:00"},
+    {"case_id": "dry_heating", "target_date": "2023-07-15", "issue_local": "09:00"},
+    {"case_id": "mixing_downslope", "target_date": "2024-12-15", "issue_local": "09:00"}
+  ],
+  "prohibited_inputs": [
+    "truth",
+    "y_audited_f",
+    "truth_qc_status",
+    "market",
+    "kalshi",
+    "settlement",
+    "madis",
+    "fold",
+    "model_prediction",
+    "learned_scaling",
+    "learned_embedding",
+    "analog_weight",
+    "fitted_regime"
+  ],
+  "schema_evolution": {
+    "feature_names_are_immutable": true,
+    "semantic_change_requires_new_feature_name": true,
+    "removal_or_type_change_requires_new_panel_schema_id": true,
+    "additive_feature_requires_registry_successor": true,
+    "registry_order_is_panel_column_order": true
+  },
+  "execution": {
+    "network_allowed": false,
+    "truth_reads_allowed": false,
+    "full_history_materialization_allowed": false,
+    "model_fitting_allowed": false,
+    "bounded_archive_cases_only": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KDEN_V375_LOG_EVENT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "timestamp_utc", "run_id", "step_id", "severity", "event_code", "details"],
+  "properties": {
+    "schema_version": {"const": "KDEN_V375_LOG_EVENT_V1"},
+    "timestamp_utc": {"type": "string", "format": "date-time"},
+    "run_id": {"type": "string"},
+    "step_id": {"type": "string", "pattern": "^STEP_0[0-8]$"},
+    "severity": {"enum": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]},
+    "event_code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$"},
+    "target_day": {"type": ["string", "null"]},
+    "product": {"enum": ["wrfsfcf", "wrfsubhf", null]},
+    "source_object_identity": {"type": ["string", "null"]},
+    "details": {"type": "object"}
+  }
+}
+

@@ -1,0 +1,20 @@
+{
+  "status": "IMPLEMENTED_AND_HISTORICALLY_SCORED",
+  "tests_passed": 14,
+  "real_engineering_probe_fits": 6,
+  "historical_fits": 12,
+  "unfitted_reference_units": 4,
+  "rows_per_model": 35047,
+  "assessment_days": 615,
+  "readiness": "NEITHER_BASE_MEETS_ALL_REGISTERED_HURDLES",
+  "prospective_active": false,
+  "prior_stages_modified": false,
+  "artifacts": {
+    "implementations/cr1_v1/RELEASE.json": "73c0c0198a84f2afe0c6f405083d1137cf7028c6e2f2a71d4f3b6238a327d438",
+    "runs/r14-cr1-20260927T030821Z/PREDICTION_RELEASE.json": "66cf56c8c77cf7509b08a2a2a8a3d173a5e113debb647797fed6378180da71e7",
+    "runs/r14-cr1-20260927T030821Z/SCORE_RELEASE.json": "68df42c2f5669a6ea3aa4e647d8bef9413c2a995d3feb7ad9669646ff254980d",
+    "reports/cr1_v1/INTERPRETATION.md": "1833ecffb71109787d765dca0f00d178e1db4e36f746be715864f48db0c30ccf",
+    "diagnostics/cr1_engineering_probe_v1/PROBE.json": "d7c2b5ce0ef471c3c7b32c2cc691cbe8673c75aa92d54e9f3151398d2bf4e553",
+    "diagnostics/cr1_engineering_probe_v1/PROBE_IMPLEMENTATION_RELEASE.json": "f137ef9d29a6219f542dcd40caaf14b2e6d35f1f6a93c9ca4476d06a10b5e3a9"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "KDEN_V375_P07_FOLD_REGISTRY_SCHEMA_V1",
+  "contract_id": "KDEN_V375_RAFM_EXPERIMENT_V1",
+  "group_key": "target_date",
+  "target_values_allowed": false,
+  "tables": {
+    "date_roles.parquet": {
+      "primary_key": ["target_date"],
+      "schema_id": "KDEN_V375_P07_DATE_ROLES_V1",
+      "row_count": 2080,
+      "columns": ["target_date", "statistical_group_id", "evidence_role", "supervised_eligible", "final_scoring_eligible", "truth_evidence_status", "truth_qc_status", "source_followup_window_open_at_freeze", "season", "sealed_outcome_unopened"]
+    },
+    "outer_folds.parquet": {
+      "primary_key": ["outer_fold_id", "target_date"],
+      "schema_id": "KDEN_V375_P07_OUTER_FOLDS_V1",
+      "row_count": 6240,
+      "columns": ["outer_fold_id", "target_date", "statistical_group_id", "assignment", "supervised_assignment", "season"]
+    },
+    "inner_folds.parquet": {
+      "primary_key": ["outer_fold_id", "inner_fold_id", "target_date"],
+      "schema_id": "KDEN_V375_P07_INNER_FOLDS_V1",
+      "row_count": 31200,
+      "columns": ["outer_fold_id", "inner_fold_id", "target_date", "statistical_group_id", "assignment", "supervised_assignment", "season"]
+    }
+  },
+  "invariants": [
+    "every issue state from one target_date inherits the same fold assignment",
+    "all training dates precede all assessment dates",
+    "the 365-day holdout and five-day tail are FINAL_EVALUATION_LOCKED",
+    "unresolved development dates are retained but never assigned to supervised training or assessment",
+    "seasonal coverage is reported for every training and assessment block"
+  ]
+}

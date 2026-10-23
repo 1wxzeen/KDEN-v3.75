@@ -1,0 +1,95 @@
+{
+  "schema_version": "KDEN_V375_R14_ISSUE_VIEW_CONTRACT_V1",
+  "contract_id": "KDEN_V375_R14_ISSUE_VIEWS_V1",
+  "scope_id": "KDEN_V375_R14_V1",
+  "schedule_path": "hrrr_v4_local_archive/common/cycle_schedule_r14/cycle_schedule_r14_v375.parquet",
+  "archive_roots": {
+    "wrfsfcf": "hrrr_v4_local_archive/wrfsfcf/canonical/r14",
+    "wrfsubhf": "hrrr_v4_local_archive/wrfsubhf/canonical/r14"
+  },
+  "static_terrain_path": "hrrr_v4_local_archive/common/static_geometry/grid_geometry_id=HRRR_CONUS_NATIVE_LAMBERT_V4/field=H14/cycle=20210101T060000Z/field_state.parquet",
+  "availability": {
+    "policy_id": "KDEN_HIST_COMPLETE_L105_V1",
+    "selection_rule": "newest cycle whose emulated_complete_time_utc is not after issue_time_utc",
+    "lag_minutes": 105,
+    "actual_first_seen_is_not_reconstructed": true
+  },
+  "default_issue_grid": {
+    "timezone": "America/Denver",
+    "start_local": "02:00",
+    "end_local": "16:00",
+    "cadence_minutes": 15,
+    "end_inclusive": true,
+    "enumeration": "UTC timeline filtered by local calendar membership"
+  },
+  "product_fields": {
+    "wrfsfcf": [
+      "H02",
+      "H07",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H24",
+      "H26",
+      "H28",
+      "H31",
+      "H36",
+      "H38"
+    ],
+    "wrfsubhf": [
+      "Q05"
+    ]
+  },
+  "static_fields": [
+    "H14"
+  ],
+  "temperature_baselines": {
+    "wrfsfcf": {
+      "field_id": "H16",
+      "baseline_id": "H_BI",
+      "value_column": "bi_value",
+      "native_cadence_minutes": 60
+    },
+    "wrfsubhf": {
+      "field_id": "Q05",
+      "baseline_id": "Q15_BI",
+      "value_column": "bi_value",
+      "native_cadence_minutes": 15
+    }
+  },
+  "local_value_column_by_field": {
+    "H02": "bi_value",
+    "H07": "bi_value",
+    "H16": "bi_value",
+    "H17": "bi_value",
+    "H18": "bi_value",
+    "H19": "bi_value",
+    "H24": "bi_value",
+    "H26": "bi_value",
+    "H28": "bi_value",
+    "H31": "bi_value",
+    "H36": "bi_value",
+    "H38": "nn_value",
+    "Q05": "bi_value"
+  },
+  "cross_product_alignment_contracts": [
+    "separate_experts",
+    "same_cycle"
+  ],
+  "default_cross_product_alignment_contract": "separate_experts",
+  "forbidden_columns": [
+    "daily_tmax",
+    "observed_tmax",
+    "truth",
+    "kalshi_price",
+    "market_outcome",
+    "madis_temperature"
+  ],
+  "publication_policy": {
+    "reader_is_read_only": true,
+    "views_are_built_on_demand": true,
+    "no_cycle_stitching": true,
+    "source_cycle_identities_are_mandatory": true
+  }
+}

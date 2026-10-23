@@ -1,0 +1,42 @@
+{
+  "ANEN": {
+    "checks": {
+      "REL_DEV_2024/brier_direction": false,
+      "REL_DEV_2024/calibration": false,
+      "REL_DEV_2024/coverage": true,
+      "REL_DEV_2024/days": true,
+      "REL_DEV_2024/nll": false,
+      "REL_DEV_2024/same_case_lift": false,
+      "REL_DEV_2025_PARTIAL/brier_direction": true,
+      "REL_DEV_2025_PARTIAL/calibration": false,
+      "REL_DEV_2025_PARTIAL/coverage": false,
+      "REL_DEV_2025_PARTIAL/days": true,
+      "REL_DEV_2025_PARTIAL/nll": true,
+      "REL_DEV_2025_PARTIAL/same_case_lift": false,
+      "overall/nll": false,
+      "primary_adjusted_margin": false
+    },
+    "formal_blind_promotion": false,
+    "status": "DOES_NOT_MEET_ALL_HURDLES"
+  },
+  "GAM_LS_NORMAL": {
+    "checks": {
+      "REL_DEV_2024/brier_direction": true,
+      "REL_DEV_2024/calibration": false,
+      "REL_DEV_2024/coverage": true,
+      "REL_DEV_2024/days": true,
+      "REL_DEV_2024/nll": true,
+      "REL_DEV_2024/same_case_lift": false,
+      "REL_DEV_2025_PARTIAL/brier_direction": false,
+      "REL_DEV_2025_PARTIAL/calibration": true,
+      "REL_DEV_2025_PARTIAL/coverage": false,
+      "REL_DEV_2025_PARTIAL/days": true,
+      "REL_DEV_2025_PARTIAL/nll": true,
+      "REL_DEV_2025_PARTIAL/same_case_lift": true,
+      "overall/nll": true,
+      "primary_adjusted_margin": false
+    },
+    "formal_blind_promotion": false,
+    "status": "DOES_NOT_MEET_ALL_HURDLES"
+  }
+}

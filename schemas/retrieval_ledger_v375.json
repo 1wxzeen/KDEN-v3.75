@@ -1,0 +1,35 @@
+{
+  "schema_version": "KDEN_V375_PARQUET_SCHEMA_V1",
+  "schema_id": "KDEN_V375_RETRIEVAL_LEDGER_V1",
+  "format": "parquet",
+  "compression": "zstd",
+  "primary_key": ["request_id", "retrieval_run_id", "attempt_number"],
+  "sort_order": ["retrieval_run_id", "request_id", "attempt_number"],
+  "columns": [
+    {"name": "request_id", "arrow_type": "string", "nullable": false},
+    {"name": "retrieval_run_id", "arrow_type": "string", "nullable": false},
+    {"name": "attempt_number", "arrow_type": "int16", "nullable": false},
+    {"name": "product", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "cycle_init_utc", "arrow_type": "timestamp[us,UTC]", "nullable": false},
+    {"name": "source_object_identity", "arrow_type": "string", "nullable": false},
+    {"name": "index_object_identity", "arrow_type": "string", "nullable": false},
+    {"name": "field_registry_id", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "selector_identity", "arrow_type": "string", "nullable": false},
+    {"name": "http_status", "arrow_type": "int16", "nullable": true},
+    {"name": "retry_class", "arrow_type": "dictionary<string>", "nullable": true},
+    {"name": "byte_start", "arrow_type": "int64", "nullable": true},
+    {"name": "byte_end", "arrow_type": "int64", "nullable": true},
+    {"name": "requested_bytes", "arrow_type": "int64", "nullable": false},
+    {"name": "accepted_bytes", "arrow_type": "int64", "nullable": false},
+    {"name": "coalesced_group_id", "arrow_type": "string", "nullable": true},
+    {"name": "source_idx_hash", "arrow_type": "fixed_size_binary[32]", "nullable": true},
+    {"name": "payload_hash", "arrow_type": "fixed_size_binary[32]", "nullable": true},
+    {"name": "decoded_grib_identity", "arrow_type": "string", "nullable": true},
+    {"name": "publication_status", "arrow_type": "dictionary<string>", "nullable": false},
+    {"name": "terminal_disposition", "arrow_type": "dictionary<string>", "nullable": false}
+  ],
+  "row_rules": {
+    "accounting": "every planned request has exactly one terminal disposition and zero or more retry-attempt rows",
+    "byte_range": "byte_end is inclusive and accepted_bytes reconciles to successful unique source-group downloads"
+  }
+}

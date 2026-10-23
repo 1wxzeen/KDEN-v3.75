@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "holdout_access", "training_cutoff", "query_truth_requires_committed_forecast", "truth_imputation", "additional_five_days", "future_holdout_audit", "content_audit_deferred_until"],
+  "properties": {
+    "schema_version": {"const": "R14_TABULAR_TRUTH_ADAPTER_V1"}, "holdout_access": {"const": "CLOSED"},
+    "training_cutoff": {"const": "target_date < update_date - 7 calendar days"}, "query_truth_requires_committed_forecast": {"type": "boolean", "const": true},
+    "truth_imputation": {"type": "boolean", "const": false}, "additional_five_days": {"const": "TRUSTED_VERBATIM_NO_MATURITY_WAIT"},
+    "future_holdout_audit": {"const": "CLI_AND_CF6_UNANIMITY_OR_EXACT_FROZEN_GUARDED_EXCEPTION"}, "content_audit_deferred_until": {"const": "T04_RECIPE_LOCK_AND_OWNER_T05_REPLAY"}
+  }
+}

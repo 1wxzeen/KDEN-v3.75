@@ -1,0 +1,20 @@
+{
+  "artifact_hashes": {
+    "README_S2.md": "f864afc44863d60e692db01e53299af12e2adbca35972af69866d8dece649f2a",
+    "config/s2_baselines.json": "6bdb058b2514e98fdbd483426f459ba103df9dd6bc9a9984057135daee47d6bb",
+    "reports/S2_DATA_PROBE.json": "daf7293482dd90244211565bd67204466342830f15cd34999c30c11a04ad1e45",
+    "reports/S2_REHEARSAL.json": "ea8c6bacf64b40befbbcfc37770c77b05368afc7e82b19ee8220f494be4bbe78",
+    "reports/S2_REPORT.md": "b7b8bc123781ae908252b046bf15fc9f1234bcb3ddb4ac965ecb3b675b4787de",
+    "reports/S2_TESTS.txt": "cb6a25820c2a1bdf037c8057e85102fb7afeb4778f5bca056e0432f563c00be9",
+    "src/r14_s2/__init__.py": "716beac050b2b1b3cdcb3bf807ea5c94d573690607d59a844677f3f098a6a41e",
+    "src/r14_s2/model.py": "81d38a100530299fed12efbd07a773ddf66351be562935f341dd3c142eed234f",
+    "src/r14_s2/workflow.py": "5dc5c0d12ffaf294e97bc7af491d5db5393e956407db4e1b4c1937f92ca11e5c",
+    "src/s2.py": "1509095ef09d5df37fcabb59e5e427ff9c2281cc091440cfc286a959356e6faa",
+    "tests/test_s2.py": "7feb556552b7dfdbf331ea773408f8d4f96505586a0c02401bc9a354d6a8b8d0"
+  },
+  "baseline_prediction_release": null,
+  "parent_s1_release_sha256": "cc514cd24a12e5506024c650a89072d744628b39c7efa9c5ff61f4eec9a13e1d",
+  "record_sha256": "193160a7600c22aec52fcc6bcabd55fb120ce173ca7d643e1579b106904452f5",
+  "schema_version": "R14_S2_IMPLEMENTATION_RELEASE_V1",
+  "status": "IMPLEMENTED_FULL_BASELINE_RUN_PENDING"
+}

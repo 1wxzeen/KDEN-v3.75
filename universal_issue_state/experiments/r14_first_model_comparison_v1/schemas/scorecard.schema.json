@@ -1,0 +1,930 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "const": {
+    "band_decisions": "modal band, ties smallest lower endpoint; separately band containing modal integer",
+    "calibration": {
+      "ECE": "sum bin_weight*abs(bin_gap); diagnostic not promotion statistic",
+      "PIT_histogram_bins": 10,
+      "bins": "left-closed right-open except last includes 1; no data-adaptive binning",
+      "calibration_in_the_large": "weighted observed event rate minus weighted forecast event probability",
+      "calibration_regression": "not required; no calibrator fitted",
+      "events": [
+        "modal_integer_hit",
+        "modal_band_hit_by_partition",
+        "threshold_event_by_threshold"
+      ],
+      "gap": "weighted observed_frequency - weighted mean_probability",
+      "minimum_bin_days_for_interpretation": 30,
+      "probability_edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "randomized_PIT": "CDF(y-1)+u*p_y; u=(int(first16hex(SHA256(seed|issue_state_id)))+0.5)/2^64, identical u across models",
+      "sparse_bin": "retain count/point estimate; label sparse; no merge selected from outcomes"
+    },
+    "case_studies": {
+      "checkpoint": "10:00 local",
+      "interpretation": "ex-post hypotheses only",
+      "large_error_rank": "descending day-average median absolute error, ties earlier date",
+      "per_model_largest_error_days": 5,
+      "representative_hit_days": 5,
+      "representative_miss_days": 5,
+      "sample": "eligible days ordered by SHA256(seed|model_id|target_date); first five distinct dates per class; no replacement if fewer"
+    },
+    "day_aggregation": "average available row loss within date, then equal dates; count missing separately; pairwise contrasts use identical rows",
+    "diagnostics": [
+      "coverage",
+      "missingness_reasons",
+      "nonconvergence",
+      "support_counts",
+      "kth_distance",
+      "effective_sample_size",
+      "out_of_range_fraction",
+      "scale_near_bounds",
+      "native_endpoint_mass",
+      "score_floor_count_and_mass",
+      "mean_mode_revisions",
+      "Jensen_Shannon_adjacent_PMF",
+      "new_vs_same_selected_cycle",
+      "predict_runtime",
+      "fit_runtime",
+      "peak_memory",
+      "configuration_failures"
+    ],
+    "distribution_metrics": {
+      "band_brier": "sum bands (p_band-1[y in band])^2; partitions reported separately",
+      "discrete_crps_f": "sum over k=-40..119 (CDF(k)-1[y<=k])^2 * 1F",
+      "entropy": "-sum p*log(p); 0log0=0",
+      "multiclass_brier": "sum k=-40..120 (p_k-1[y==k])^2; not divided by category count",
+      "negative_log_score": "-log(max(p_y,1e-6)/sum(max(p_k,1e-6)))",
+      "normalized_rps": "discrete_crps_f/160",
+      "threshold_brier": "(sum k<=threshold p_k - 1[y<=threshold])^2"
+    },
+    "intervals": {
+      "coverage": "lower<=y<=upper; report integer discreteness; width=upper-lower",
+      "levels": [
+        0.5,
+        0.8,
+        0.9,
+        0.95
+      ]
+    },
+    "no_market_claims": true,
+    "orientation": "lower losses better; forecast-minus-truth signed errors",
+    "partitions": {
+      "five_degree": [
+        {
+          "lower": -40,
+          "upper": -36
+        },
+        {
+          "lower": -35,
+          "upper": -31
+        },
+        {
+          "lower": -30,
+          "upper": -26
+        },
+        {
+          "lower": -25,
+          "upper": -21
+        },
+        {
+          "lower": -20,
+          "upper": -16
+        },
+        {
+          "lower": -15,
+          "upper": -11
+        },
+        {
+          "lower": -10,
+          "upper": -6
+        },
+        {
+          "lower": -5,
+          "upper": -1
+        },
+        {
+          "lower": 0,
+          "upper": 4
+        },
+        {
+          "lower": 5,
+          "upper": 9
+        },
+        {
+          "lower": 10,
+          "upper": 14
+        },
+        {
+          "lower": 15,
+          "upper": 19
+        },
+        {
+          "lower": 20,
+          "upper": 24
+        },
+        {
+          "lower": 25,
+          "upper": 29
+        },
+        {
+          "lower": 30,
+          "upper": 34
+        },
+        {
+          "lower": 35,
+          "upper": 39
+        },
+        {
+          "lower": 40,
+          "upper": 44
+        },
+        {
+          "lower": 45,
+          "upper": 49
+        },
+        {
+          "lower": 50,
+          "upper": 54
+        },
+        {
+          "lower": 55,
+          "upper": 59
+        },
+        {
+          "lower": 60,
+          "upper": 64
+        },
+        {
+          "lower": 65,
+          "upper": 69
+        },
+        {
+          "lower": 70,
+          "upper": 74
+        },
+        {
+          "lower": 75,
+          "upper": 79
+        },
+        {
+          "lower": 80,
+          "upper": 84
+        },
+        {
+          "lower": 85,
+          "upper": 89
+        },
+        {
+          "lower": 90,
+          "upper": 94
+        },
+        {
+          "lower": 95,
+          "upper": 99
+        },
+        {
+          "lower": 100,
+          "upper": 104
+        },
+        {
+          "lower": 105,
+          "upper": 109
+        },
+        {
+          "lower": 110,
+          "upper": 114
+        },
+        {
+          "lower": 115,
+          "upper": 119
+        },
+        {
+          "lower": 120,
+          "upper": 120
+        }
+      ],
+      "pair_even": [
+        {
+          "lower": -40,
+          "upper": -39
+        },
+        {
+          "lower": -38,
+          "upper": -37
+        },
+        {
+          "lower": -36,
+          "upper": -35
+        },
+        {
+          "lower": -34,
+          "upper": -33
+        },
+        {
+          "lower": -32,
+          "upper": -31
+        },
+        {
+          "lower": -30,
+          "upper": -29
+        },
+        {
+          "lower": -28,
+          "upper": -27
+        },
+        {
+          "lower": -26,
+          "upper": -25
+        },
+        {
+          "lower": -24,
+          "upper": -23
+        },
+        {
+          "lower": -22,
+          "upper": -21
+        },
+        {
+          "lower": -20,
+          "upper": -19
+        },
+        {
+          "lower": -18,
+          "upper": -17
+        },
+        {
+          "lower": -16,
+          "upper": -15
+        },
+        {
+          "lower": -14,
+          "upper": -13
+        },
+        {
+          "lower": -12,
+          "upper": -11
+        },
+        {
+          "lower": -10,
+          "upper": -9
+        },
+        {
+          "lower": -8,
+          "upper": -7
+        },
+        {
+          "lower": -6,
+          "upper": -5
+        },
+        {
+          "lower": -4,
+          "upper": -3
+        },
+        {
+          "lower": -2,
+          "upper": -1
+        },
+        {
+          "lower": 0,
+          "upper": 1
+        },
+        {
+          "lower": 2,
+          "upper": 3
+        },
+        {
+          "lower": 4,
+          "upper": 5
+        },
+        {
+          "lower": 6,
+          "upper": 7
+        },
+        {
+          "lower": 8,
+          "upper": 9
+        },
+        {
+          "lower": 10,
+          "upper": 11
+        },
+        {
+          "lower": 12,
+          "upper": 13
+        },
+        {
+          "lower": 14,
+          "upper": 15
+        },
+        {
+          "lower": 16,
+          "upper": 17
+        },
+        {
+          "lower": 18,
+          "upper": 19
+        },
+        {
+          "lower": 20,
+          "upper": 21
+        },
+        {
+          "lower": 22,
+          "upper": 23
+        },
+        {
+          "lower": 24,
+          "upper": 25
+        },
+        {
+          "lower": 26,
+          "upper": 27
+        },
+        {
+          "lower": 28,
+          "upper": 29
+        },
+        {
+          "lower": 30,
+          "upper": 31
+        },
+        {
+          "lower": 32,
+          "upper": 33
+        },
+        {
+          "lower": 34,
+          "upper": 35
+        },
+        {
+          "lower": 36,
+          "upper": 37
+        },
+        {
+          "lower": 38,
+          "upper": 39
+        },
+        {
+          "lower": 40,
+          "upper": 41
+        },
+        {
+          "lower": 42,
+          "upper": 43
+        },
+        {
+          "lower": 44,
+          "upper": 45
+        },
+        {
+          "lower": 46,
+          "upper": 47
+        },
+        {
+          "lower": 48,
+          "upper": 49
+        },
+        {
+          "lower": 50,
+          "upper": 51
+        },
+        {
+          "lower": 52,
+          "upper": 53
+        },
+        {
+          "lower": 54,
+          "upper": 55
+        },
+        {
+          "lower": 56,
+          "upper": 57
+        },
+        {
+          "lower": 58,
+          "upper": 59
+        },
+        {
+          "lower": 60,
+          "upper": 61
+        },
+        {
+          "lower": 62,
+          "upper": 63
+        },
+        {
+          "lower": 64,
+          "upper": 65
+        },
+        {
+          "lower": 66,
+          "upper": 67
+        },
+        {
+          "lower": 68,
+          "upper": 69
+        },
+        {
+          "lower": 70,
+          "upper": 71
+        },
+        {
+          "lower": 72,
+          "upper": 73
+        },
+        {
+          "lower": 74,
+          "upper": 75
+        },
+        {
+          "lower": 76,
+          "upper": 77
+        },
+        {
+          "lower": 78,
+          "upper": 79
+        },
+        {
+          "lower": 80,
+          "upper": 81
+        },
+        {
+          "lower": 82,
+          "upper": 83
+        },
+        {
+          "lower": 84,
+          "upper": 85
+        },
+        {
+          "lower": 86,
+          "upper": 87
+        },
+        {
+          "lower": 88,
+          "upper": 89
+        },
+        {
+          "lower": 90,
+          "upper": 91
+        },
+        {
+          "lower": 92,
+          "upper": 93
+        },
+        {
+          "lower": 94,
+          "upper": 95
+        },
+        {
+          "lower": 96,
+          "upper": 97
+        },
+        {
+          "lower": 98,
+          "upper": 99
+        },
+        {
+          "lower": 100,
+          "upper": 101
+        },
+        {
+          "lower": 102,
+          "upper": 103
+        },
+        {
+          "lower": 104,
+          "upper": 105
+        },
+        {
+          "lower": 106,
+          "upper": 107
+        },
+        {
+          "lower": 108,
+          "upper": 109
+        },
+        {
+          "lower": 110,
+          "upper": 111
+        },
+        {
+          "lower": 112,
+          "upper": 113
+        },
+        {
+          "lower": 114,
+          "upper": 115
+        },
+        {
+          "lower": 116,
+          "upper": 117
+        },
+        {
+          "lower": 118,
+          "upper": 119
+        },
+        {
+          "lower": 120,
+          "upper": 120
+        }
+      ],
+      "pair_odd": [
+        {
+          "lower": -40,
+          "upper": -40
+        },
+        {
+          "lower": -39,
+          "upper": -38
+        },
+        {
+          "lower": -37,
+          "upper": -36
+        },
+        {
+          "lower": -35,
+          "upper": -34
+        },
+        {
+          "lower": -33,
+          "upper": -32
+        },
+        {
+          "lower": -31,
+          "upper": -30
+        },
+        {
+          "lower": -29,
+          "upper": -28
+        },
+        {
+          "lower": -27,
+          "upper": -26
+        },
+        {
+          "lower": -25,
+          "upper": -24
+        },
+        {
+          "lower": -23,
+          "upper": -22
+        },
+        {
+          "lower": -21,
+          "upper": -20
+        },
+        {
+          "lower": -19,
+          "upper": -18
+        },
+        {
+          "lower": -17,
+          "upper": -16
+        },
+        {
+          "lower": -15,
+          "upper": -14
+        },
+        {
+          "lower": -13,
+          "upper": -12
+        },
+        {
+          "lower": -11,
+          "upper": -10
+        },
+        {
+          "lower": -9,
+          "upper": -8
+        },
+        {
+          "lower": -7,
+          "upper": -6
+        },
+        {
+          "lower": -5,
+          "upper": -4
+        },
+        {
+          "lower": -3,
+          "upper": -2
+        },
+        {
+          "lower": -1,
+          "upper": 0
+        },
+        {
+          "lower": 1,
+          "upper": 2
+        },
+        {
+          "lower": 3,
+          "upper": 4
+        },
+        {
+          "lower": 5,
+          "upper": 6
+        },
+        {
+          "lower": 7,
+          "upper": 8
+        },
+        {
+          "lower": 9,
+          "upper": 10
+        },
+        {
+          "lower": 11,
+          "upper": 12
+        },
+        {
+          "lower": 13,
+          "upper": 14
+        },
+        {
+          "lower": 15,
+          "upper": 16
+        },
+        {
+          "lower": 17,
+          "upper": 18
+        },
+        {
+          "lower": 19,
+          "upper": 20
+        },
+        {
+          "lower": 21,
+          "upper": 22
+        },
+        {
+          "lower": 23,
+          "upper": 24
+        },
+        {
+          "lower": 25,
+          "upper": 26
+        },
+        {
+          "lower": 27,
+          "upper": 28
+        },
+        {
+          "lower": 29,
+          "upper": 30
+        },
+        {
+          "lower": 31,
+          "upper": 32
+        },
+        {
+          "lower": 33,
+          "upper": 34
+        },
+        {
+          "lower": 35,
+          "upper": 36
+        },
+        {
+          "lower": 37,
+          "upper": 38
+        },
+        {
+          "lower": 39,
+          "upper": 40
+        },
+        {
+          "lower": 41,
+          "upper": 42
+        },
+        {
+          "lower": 43,
+          "upper": 44
+        },
+        {
+          "lower": 45,
+          "upper": 46
+        },
+        {
+          "lower": 47,
+          "upper": 48
+        },
+        {
+          "lower": 49,
+          "upper": 50
+        },
+        {
+          "lower": 51,
+          "upper": 52
+        },
+        {
+          "lower": 53,
+          "upper": 54
+        },
+        {
+          "lower": 55,
+          "upper": 56
+        },
+        {
+          "lower": 57,
+          "upper": 58
+        },
+        {
+          "lower": 59,
+          "upper": 60
+        },
+        {
+          "lower": 61,
+          "upper": 62
+        },
+        {
+          "lower": 63,
+          "upper": 64
+        },
+        {
+          "lower": 65,
+          "upper": 66
+        },
+        {
+          "lower": 67,
+          "upper": 68
+        },
+        {
+          "lower": 69,
+          "upper": 70
+        },
+        {
+          "lower": 71,
+          "upper": 72
+        },
+        {
+          "lower": 73,
+          "upper": 74
+        },
+        {
+          "lower": 75,
+          "upper": 76
+        },
+        {
+          "lower": 77,
+          "upper": 78
+        },
+        {
+          "lower": 79,
+          "upper": 80
+        },
+        {
+          "lower": 81,
+          "upper": 82
+        },
+        {
+          "lower": 83,
+          "upper": 84
+        },
+        {
+          "lower": 85,
+          "upper": 86
+        },
+        {
+          "lower": 87,
+          "upper": 88
+        },
+        {
+          "lower": 89,
+          "upper": 90
+        },
+        {
+          "lower": 91,
+          "upper": 92
+        },
+        {
+          "lower": 93,
+          "upper": 94
+        },
+        {
+          "lower": 95,
+          "upper": 96
+        },
+        {
+          "lower": 97,
+          "upper": 98
+        },
+        {
+          "lower": 99,
+          "upper": 100
+        },
+        {
+          "lower": 101,
+          "upper": 102
+        },
+        {
+          "lower": 103,
+          "upper": 104
+        },
+        {
+          "lower": 105,
+          "upper": 106
+        },
+        {
+          "lower": 107,
+          "upper": 108
+        },
+        {
+          "lower": 109,
+          "upper": 110
+        },
+        {
+          "lower": 111,
+          "upper": 112
+        },
+        {
+          "lower": 113,
+          "upper": 114
+        },
+        {
+          "lower": 115,
+          "upper": 116
+        },
+        {
+          "lower": 117,
+          "upper": 118
+        },
+        {
+          "lower": 119,
+          "upper": 120
+        }
+      ]
+    },
+    "point_metrics": {
+      "bias": "PMF_mean-y",
+      "continuous_named_comparators": "also MAE/RMSE/bias for raw center, PMF_mean, PMF_median, and GAM mu separately; no metric mixing",
+      "mae": "abs(PMF_median-y)",
+      "modal_integer_hit": "PMF_mode==y",
+      "rmse": "sqrt(mean((PMF_mean-y)^2))",
+      "rounded_point_hit": "round(raw_center for B0; mu for GAM; PMF_mean for AnEn)==y",
+      "within_one": "abs(PMF_mode-y)<=1",
+      "within_two": "abs(PMF_mode-y)<=2"
+    },
+    "required_figures": [
+      "overall_paired_scorecard",
+      "fold_issue_heatmaps",
+      "exact_and_band_reliability",
+      "precision_coverage",
+      "selective_loss_coverage",
+      "interval_coverage_width",
+      "PIT",
+      "signed_and_tail_errors",
+      "analog_support_vs_error",
+      "GAM_effects_supported_ranges",
+      "intraday_case_paths"
+    ],
+    "scale_near_bounds": "sigma<=0.26 OR sigma>=19.9",
+    "schema_version": "R14_SCORECARD_V1",
+    "selection_aggregation": "row weights 1/expected_issue_count(date); restrict to admitted rows and normalize; secondary equal-admitted-day summary separately",
+    "tail_diagnostics": {
+      "absolute_error_quantiles": [
+        0.5,
+        0.9,
+        0.95,
+        0.99
+      ],
+      "absolute_error_thresholds_f": [
+        3,
+        5,
+        10
+      ],
+      "directions": [
+        "warm",
+        "cold"
+      ],
+      "point": "PMF_median primary; PMF_mean secondary",
+      "quantiles": "weighted inverse empirical CDF using day-normalized row weights",
+      "strictness": ">="
+    },
+    "thresholds_f": [
+      32,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100
+    ]
+  },
+  "title": "Frozen R14 S0 scorecard revision 1",
+  "type": "object"
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "KDEN_V375_TILE_SHAPE_REATTEST_CONFIG_V1",
+  "migration_id": "KDEN_V375_TILE_SHAPE_NULLABLE_LIST_REATTEST_V1",
+  "reason": "PyArrow 23 cannot reliably write and read nullable fixed-size lists with non-zero child length; tile_shape remains logically null, [3,3], or [9,9] but uses nullable list<int16> physical storage.",
+  "contract_change": {
+    "path": "schemas/hrrr_field_state_v375.json",
+    "column": "tile_shape",
+    "old_arrow_type": "fixed_size_list<int16,2>",
+    "new_arrow_type": "list<int16>",
+    "allowed_non_null_values": [[3, 3], [9, 9]],
+    "logical_semantics_changed": false
+  },
+  "new_artifact_sha256": {
+    "schemas/hrrr_field_state_v375.json": "f18074f76340c05d2f2eca95234e9c6038bd06dc1664ec254ae82abd416b9729",
+    "src/kden_v375/registries.py": "a1b9058371125897238adf3ecdd6b382fa2f4797c7f8d901b4301693f09fabc6"
+  },
+  "prior_attestations": {
+    "STEP_00": "34d81da2f2b7d70e12eda2de72e5ff9e73c6f3bfaa1f31cbfe3488a2bde2cd8c",
+    "STEP_01": "559dffd7f80bb6316632d0605cd6266ff3a82cd2271cadbc481cb0d64c39c0d5",
+    "STEP_02": "ecace35c0f1650f7b75b8464ec83187db93c8c03c68c4a82837a77a43e4464c1",
+    "STEP_03": "b7a2f2e4ac10b75638a151af005adac14571ea4840e488741cb4eda1092f3163",
+    "STEP_03_WRFSFCF": "09dff0b1d12a87b733c958baa95d0d7c8ec83b743474ce3fca6c7dde27bd31f3",
+    "STEP_03_WRFSUBHF": "b49a62b26f0fe9e4748350dec7e74a2edf0a242be25d2b04f90e2d3d955cc3b5"
+  },
+  "prior_dependencies": {
+    "registry_bundle_sha256": "3b8cb03e901b66f7847c08434cd1ed77048efbc35888b2bca8be88faf7ee238e",
+    "schedule_manifest_sha256": "e6578f4a3ccc7d97ef03ad611e99b6df3219192ac68ff037dc6357fdddd5515d",
+    "wrfsfcf_plan_sha256": "7f6ef6c2d7642c7e5f1fca377df0c50495bc566e36c297b7bb61e91df153c066",
+    "wrfsubhf_plan_sha256": "e82d2ecc14219ecda02c8fd5e1dda28cbbb9db65a2a7e7a6003eb8fd172e8074"
+  },
+  "immutable_payloads": {
+    "cycle_schedule_parquet_sha256": "15713595be6bfb0b83c2565b77d773096d2b468238dd4d44938350efbd3894e1",
+    "cycle_schedule_parquet_size_bytes": 1321810,
+    "wrfsfcf_plan_directory_sha256": "1d3c95bf45f4d675de8d221fd33464604352f555c74ca36d6af9efa1efae960e",
+    "wrfsubhf_plan_directory_sha256": "3ef30db001b94b673c0da980491c41075760c2e274930743d929ac859c991d5a"
+  },
+  "stable_manifest_body_sha256": {
+    "cycle_schedule": "e1e9e902c985c84f4628e6007b5ac2563f54729e739ac0c247bcecff30992973",
+    "wrfsfcf_plan": "c301b35703a33ff56f14c436570cc5e2e53ca98479d09ceecd37864d3847f156",
+    "wrfsubhf_plan": "7c95f6e6986a721fda34b961f0541002d2076ec1d15e4a52d98abdde996e488e"
+  },
+  "reattestation_runs": {
+    "STEP_01": {
+      "run_id": "kdenv375-s01-validation-20260913T090000Z-tile-shape-reattest",
+      "completed_at_utc": "2026-09-13T09:00:00.000000Z"
+    },
+    "STEP_02": {
+      "run_id": "kdenv375-s02-validation-20260913T090100Z-schedule-reattest",
+      "completed_at_utc": "2026-09-13T09:01:00.000000Z"
+    },
+    "STEP_03": {
+      "run_id": "kdenv375-s03-validation-20260913T090200Z-plan-reattest",
+      "completed_at_utc": "2026-09-13T09:02:00.000000Z"
+    }
+  }
+}

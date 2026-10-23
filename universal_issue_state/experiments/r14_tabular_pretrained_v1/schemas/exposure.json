@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "prior_exposure_source", "prior_exposure_source_sha256", "prior_exposure_disclosure", "t01_new_holdout_values_read", "claim", "checkpoint_historical_deployability_claimed"],
+  "properties": {
+    "schema_version": {"const": "R14_TABULAR_EXPOSURE_V1"}, "prior_exposure_source": {"type": "string"}, "prior_exposure_source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "prior_exposure_disclosure": {"type": "object"}, "t01_new_holdout_values_read": {"type": "boolean", "const": false},
+    "claim": {"type": "string"}, "checkpoint_historical_deployability_claimed": {"type": "boolean", "const": false}
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "KDEN_V375_REPRESENTATIVE_PILOT_DESIGN_V1",
+  "pilot_id": "KDEN_V375_REPRESENTATIVE_FOUR_WEEK_PILOT_V1",
+  "network_authority": "BOUNDED_SELECTED_REQUESTS_ONLY",
+  "lead_policy": "TARGET_WINDOW",
+  "weeks": [
+    {
+      "week_id": "WINTER_EARLY_MST_2021",
+      "season": "winter",
+      "archive_stratum": "early",
+      "start_date": "2021-01-10",
+      "end_date": "2021-01-16",
+      "coordinate_era": "KDEN_COORD_20040105",
+      "dst_regime": "MST"
+    },
+    {
+      "week_id": "FALL_EARLY_FALLBACK_2021",
+      "season": "fall",
+      "archive_stratum": "early",
+      "start_date": "2021-11-07",
+      "end_date": "2021-11-13",
+      "coordinate_era": "KDEN_COORD_20040105",
+      "dst_regime": "MST_MDT_TRANSITION",
+      "required_transition": "fall_back"
+    },
+    {
+      "week_id": "SPRING_MIDDLE_SPRINGFORWARD_2023",
+      "season": "spring",
+      "archive_stratum": "middle",
+      "start_date": "2023-03-12",
+      "end_date": "2023-03-18",
+      "coordinate_era": "KDEN_COORD_20211122",
+      "dst_regime": "MST_MDT_TRANSITION",
+      "required_transition": "spring_forward"
+    },
+    {
+      "week_id": "SUMMER_LATE_MDT_2025",
+      "season": "summer",
+      "archive_stratum": "late",
+      "start_date": "2025-07-13",
+      "end_date": "2025-07-19",
+      "coordinate_era": "KDEN_COORD_20211122",
+      "dst_regime": "MDT"
+    }
+  ],
+  "selection": {
+    "daily_cycle_roles": ["c23", "c00", "c14"],
+    "daily_lead_roles": ["first", "middle", "final"],
+    "select_all_fields_for_daily_state": true,
+    "q15_repeated_block_anchor": "first_day_of_each_week_c00_f01",
+    "q15_repeated_block_leads_min": [15, 30, 45, 60],
+    "parity_anchor": "first_day_of_each_week_c00",
+    "parity_leads_min": [0, 60, 360, 1080],
+    "parity_fields": {"wrfsfcf": "H16", "wrfsubhf": "Q05"},
+    "include_static_H14": true,
+    "cohort_rule": "stratified_alternation_by_product_and_week"
+  },
+  "runtime": {
+    "profiles": {
+      "four_worker": {
+        "wrfsfcf": "config/wrfsfcf_4w.toml",
+        "wrfsubhf": "config/wrfsubhf_4w.toml"
+      },
+      "eight_worker": {
+        "wrfsfcf": "config/wrfsfcf_8w.toml",
+        "wrfsubhf": "config/wrfsubhf_8w.toml"
+      }
+    },
+    "rebuild_workers": 8,
+    "cache_policy": "retain_for_hash_verified_pilot_rebuild",
+    "full_history_raw_retention_decision": "discard_after_verified_atomic_work_unit",
+    "parquet_compression": "zstd",
+    "parquet_row_group_rows": 10000
+  },
+  "gates": {
+    "float32_absolute_tolerance": 0.01,
+    "float32_relative_tolerance": 0.000001,
+    "h16_q05_absolute_tolerance": 0.00001,
+    "minimum_h16_q05_pairs": 8,
+    "minimum_eight_to_four_throughput_ratio": 0.75,
+    "disk_safety_margin_fraction": 0.25,
+    "selected_precision": "float64",
+    "selected_compression": "zstd"
+  },
+  "physical_ranges": {
+    "H01": [-1000.0, 20000.0], "H02": [170.0, 340.0], "H03": [150.0, 330.0],
+    "H04": [-150.0, 150.0], "H05": [-150.0, 150.0], "H06": [-1000.0, 20000.0],
+    "H07": [170.0, 340.0], "H08": [150.0, 330.0], "H09": [-150.0, 150.0],
+    "H10": [-150.0, 150.0], "H11": [0.0, 150.0], "H12": [70000.0, 115000.0],
+    "H13": [40000.0, 115000.0], "H14": [-1000.0, 10000.0], "H15": [170.0, 350.0],
+    "H16": [170.0, 340.0], "H17": [150.0, 330.0], "H18": [-150.0, 150.0],
+    "H19": [-150.0, 150.0], "H20": [0.0, 100.0], "H21": [-3000.0, 3000.0],
+    "H22": [-3000.0, 3000.0], "H23": [-3000.0, 3000.0], "H24": [0.0, 10000.0],
+    "H25": [0.0, 5000.0], "H26": [0.0, 100.0], "H27": [0.0, 20.0],
+    "H28": [0.0, 100.0], "H29": [0.0, 100.0], "H30": [0.0, 100.0],
+    "H31": [-50.0, 2000.0], "H32": [-50.0, 1000.0], "H33": [-50.0, 2000.0],
+    "H34": [-50.0, 1000.0], "H35": [-3000.0, 3000.0], "H36": [-50.0, 100.0],
+    "H37": [0.0, 1.0], "H38": [0.0, 500.0], "H39": [0.0, 100.0],
+    "H40": [0.0, 200000.0], "H41": [0.0, 20.0], "H42": [-1000.0, 30000.0],
+    "H43": [0.0, 15000.0], "H44": [-15000.0, 15000.0],
+    "Q01": [-50.0, 100.0], "Q02": [0.0, 200000.0], "Q03": [0.0, 150.0],
+    "Q04": [40000.0, 115000.0], "Q05": [170.0, 340.0], "Q06": [150.0, 330.0],
+    "Q07": [-150.0, 150.0], "Q08": [-150.0, 150.0], "Q09": [-150.0, 150.0],
+    "Q10": [-150.0, 150.0], "Q11": [-50.0, 2000.0], "Q12": [0.0, 1.0],
+    "Q13": [0.0, 500.0], "Q14": [-1000.0, 30000.0]
+  }
+}

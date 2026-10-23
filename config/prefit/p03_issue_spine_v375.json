@@ -1,0 +1,29 @@
+{
+  "availability_policy_id": "KDEN_HIST_COMPLETE_L105_V1",
+  "expected_issue_state_count": 118536,
+  "expected_selected_cycle_row_count": 237072,
+  "expected_target_day_count": 2080,
+  "issue_grid": {
+    "cadence_minutes": 15,
+    "end_inclusive": true,
+    "end_local": "16:00",
+    "enumeration": "UTC timeline filtered by local calendar membership",
+    "start_local": "02:00",
+    "timezone": "America/Denver"
+  },
+  "link_policy": {
+    "current_and_previous_trajectory_bundles_required": true,
+    "materialize_truth_values": false,
+    "materialize_weather_values": false,
+    "preserve_previous_legal_cycle": true
+  },
+  "products": [
+    "wrfsfcf",
+    "wrfsubhf"
+  ],
+  "schema_version": "KDEN_V375_PREFIT_P03_CONFIG_V1",
+  "selection_policy": "newest independently legal same-product cycle plus immediately previous legal cycle",
+  "start_date": "2021-01-01",
+  "end_date": "2026-09-11",
+  "substrate_release_id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1"
+}

@@ -1,0 +1,46 @@
+{
+  "$id": "KDEN_V375_TRUTH_ADOPTION_MANIFEST_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "absolute_source_paths_persisted": {"const": false},
+    "adopted_at_utc": {"type": "string"},
+    "copy_policy": {"const": "byte_identical_immutable_copy"},
+    "file_count": {"minimum": 1, "type": "integer"},
+    "files": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "destination_relative_path": {"type": "string"},
+          "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+          "size_bytes": {"minimum": 0, "type": "integer"},
+          "source_relative_path": {"type": "string"}
+        },
+        "required": [
+          "source_relative_path",
+          "destination_relative_path",
+          "size_bytes",
+          "sha256"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {"const": "KDEN_V375_TRUTH_ADOPTION_MANIFEST_V1"},
+    "source_package_id": {"const": "KDEN_STAGE5R1_TRUTH_PROTOCOL_1_0_0"},
+    "total_bytes": {"minimum": 0, "type": "integer"},
+    "truth_release_id": {"const": "KDEN_V375_TRUTH_EVIDENCE_V1"}
+  },
+  "required": [
+    "schema_version",
+    "truth_release_id",
+    "source_package_id",
+    "adopted_at_utc",
+    "copy_policy",
+    "absolute_source_paths_persisted",
+    "file_count",
+    "total_bytes",
+    "files"
+  ],
+  "type": "object"
+}

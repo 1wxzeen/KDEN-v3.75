@@ -1,0 +1,49 @@
+{
+  "acquisition": {
+    "backoff_seconds": 1.0,
+    "connect_timeout_seconds": 15.0,
+    "read_timeout_seconds": 120.0,
+    "retries": 3,
+    "user_agent": "KDEN-v3.75-P02-Truth/1.0 (+reproducible-research)"
+  },
+  "authorized_source_hashes": {
+    "configs/stage5r_truth_exceptions_v1.csv": "3a94910bdfe58a13dcbb7098e6bf13be0e4265a10b1458522414ce340ac665a5",
+    "configs/stage5r_truth_v1.toml": "0d60111957f79f25128e0dacdd400cb93ead9f75690449ba045c151dddf37ded",
+    "data/processed/stage5r/schema=1.0/stage=5R.1/protocol=1.0.0/kden_truth_events.parquet": "e73e976d0023edb4fbd1126b714111ca068d2b5713689842857074d9180840fb",
+    "data/processed/stage5r/schema=1.0/stage=5R.1/protocol=1.0.0/kden_truth_ledger.parquet": "8e720bc58c1b31f63ba207a26fa50b9e49b5582850b2304ea2c0df1d008634ca",
+    "data/processed/stage5r/schema=1.0/stage=5R.1/protocol=1.0.0/kden_truth_review_queue.parquet": "f75989560f3c2603c5729fba806770098147d2925b4a51600350e0b7cfb84a9e",
+    "data/sealed/stage5r/schema=1.0/stage=5R.1/protocol=1.0.0/kden_truth_mechanical_candidates.parquet": "3ae63561b432e302a304319ad87fbc3c302fab091469516b00279e6c6985dd36",
+    "manifests/stage5r/schema=1.0/stage=5R.1/protocol=1.0.0/run=stage5r1-build-20260911T081406Z-e1bd6f97f4/manifest.json": "2a61bc8a0d2b7160399d9138b7ef461ff2678a53d59fc6e791949b736ab37fe8"
+  },
+  "date_groups": {
+    "development": {
+      "audited_count": 1707,
+      "end_date": "2025-09-06",
+      "row_count": 1710,
+      "start_date": "2021-01-01",
+      "unresolved_count": 3
+    },
+    "post_holdout_tail": {
+      "end_date": "2026-09-11",
+      "pending_maturity_exclusion": false,
+      "row_count": 5,
+      "start_date": "2026-09-07",
+      "training_or_tuning_allowed": false
+    },
+    "sealed_final_holdout": {
+      "end_date": "2026-09-06",
+      "outcomes_must_remain_unread": true,
+      "row_count": 365,
+      "start_date": "2025-09-07"
+    }
+  },
+  "schema_version": "KDEN_V375_PREFIT_P02_CONFIG_V1",
+  "source": {
+    "afos_url_template": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?limit=9999&pil={pil}&fmt=zip&sdate={start}T00:00Z&edate={end}T00:00Z&order=asc",
+    "audit_url_template": "https://mesonet.agron.iastate.edu/json/cli_audit.py?station=KDEN&date={date}",
+    "cf6_pil": "CF6DEN",
+    "cli_pil": "CLIDEN",
+    "expected_timezone": "America/Denver"
+  },
+  "truth_release_id": "KDEN_V375_TRUTH_EVIDENCE_V1"
+}

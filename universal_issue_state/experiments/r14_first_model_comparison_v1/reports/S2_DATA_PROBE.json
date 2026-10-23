@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "purpose": "Bounded correctness and runtime probe, not tuning or evaluation",
+  "batches": [
+    {
+      "model": "B0_H",
+      "training_days": 89,
+      "assessment_rows": 167,
+      "abstentions": 0,
+      "pool_days_min": 62,
+      "pool_days_max": 84,
+      "forecast_seconds": 0.3143007920589298,
+      "max_reference_discrepancy_first_available_row": 2.7755575615628914e-17
+    },
+    {
+      "model": "B0_Q",
+      "training_days": 89,
+      "assessment_rows": 167,
+      "abstentions": 0,
+      "pool_days_min": 62,
+      "pool_days_max": 84,
+      "forecast_seconds": 0.08669320889748633,
+      "max_reference_discrepancy_first_available_row": 2.7755575615628914e-17
+    }
+  ],
+  "assessment_labels_returned": 0,
+  "outer_scores_computed": false,
+  "reserved_or_tail_outcomes_returned": false,
+  "source_decode_note": "source ledger includes 2017-2025 development-era rows in one group; Arrow may decode that group internally, but returns only requested authorized 2021-2025 dates; no reserved or tail outcomes in source"
+}

@@ -1,0 +1,11 @@
+{
+  "environment_id": "KDEN_V375_ENVIRONMENT_V1",
+  "python_implementation": "CPython",
+  "python_requires": ">=3.12,<3.13",
+  "runtime_lock": "environment/requirements.lock",
+  "build_lock": "environment/build-requirements.lock",
+  "dependency_policy": "exact_versions",
+  "install_policy": "fresh_virtual_environment",
+  "legacy_runtime_dependencies_allowed": false
+}
+

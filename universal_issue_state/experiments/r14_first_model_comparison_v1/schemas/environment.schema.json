@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "const": {
+    "documentation": [
+      "https://docs.scipy.org/doc/scipy-1.15.3/reference/optimize.minimize-lbfgsb.html",
+      "https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.interpolate.BSpline.html"
+    ],
+    "installation_status": "NOT_CREATED_S0; definition only",
+    "location": ".venv relative to experiment root",
+    "lock_scope": "exact direct pins; not a claim of installed wheel-hash or full platform lock",
+    "package_sources": "PyPI; capture actual installed distribution versions and wheel hashes when materializing before S3",
+    "packages": {
+      "numpy": "2.0.2",
+      "pyarrow": "23.0.0",
+      "scipy": "1.15.3"
+    },
+    "python": "3.12.x",
+    "s0_validation": "standard library plus existing project pyarrow 23.0.0; no package installation or modification of acquisition environment",
+    "schema_version": "R14_ENVIRONMENT_V1",
+    "solver_status": "specified; S3 must validate gradients and numerical behavior before fitting real models",
+    "threads": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "title": "Frozen R14 S0 environment specification",
+  "type": "object"
+}

@@ -1,0 +1,994 @@
+{
+  "checked_tabular_completion_locations": [
+    {
+      "exists_at_review": false,
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/manifests/T04_DEVELOPMENT_PASS.json"
+    },
+    {
+      "exists_at_review": false,
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/manifests/T04_DEVELOPMENT_VALIDATED.json"
+    },
+    {
+      "exists_at_review": false,
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/manifests/T04_RECIPE_LOCK.json"
+    }
+  ],
+  "checks": {
+    "absolute_user_paths_in_new_guides": 0,
+    "local_markdown_links_checked": 124,
+    "missing_links": 0,
+    "model_fits_performed": 0,
+    "network_requests_made": 0,
+    "processes_resumed": 0,
+    "raw_weather_or_truth_data_pages_read": 0,
+    "source_modifications_authorized": false,
+    "test_suites_executed": 0
+  },
+  "guide_files": [
+    "publication/RESEARCH_INDEX.md",
+    "publication/DECISION_EVIDENCE_MAP.md"
+  ],
+  "project_root_policy": "Paths relative to KDEN v3.75; no absolute user paths persisted",
+  "purpose": "Local publication navigation and source fingerprint snapshot; not a scientific acceptance or public release",
+  "review_date_local": "2026-10-23",
+  "review_limitations": [
+    "Document role summaries use previously inspected research sections and current selected Markdown/code/test references, not a complete new technical or layout review of every original",
+    "Saved status fields are reported from metadata; source hashing does not verify the underlying release or all referenced artifacts",
+    "No full archive, truth chronology, model outputs, or scorecards were independently revalidated",
+    "Source status/state files may change later; a changed snapshot does not by itself mean a frozen artifact was improperly modified",
+    "A source appearing here is not permission to redistribute it or proof its internal links/metadata/outcome disclosures are publication-ready"
+  ],
+  "review_timezone": "America/Chicago",
+  "schema_version": "KDEN_PUBLICATION_SOURCE_INVENTORY_V1",
+  "source_bytes_hashed": 3699289,
+  "source_count": 82,
+  "source_roles": {
+    "DESIGN_OR_INTERPRETATION_DOCUMENT": 16,
+    "HISTORICAL_RESEARCH_DOCUMENT": 6,
+    "IMPLEMENTATION_REFERENCE": 28,
+    "MACHINE_READABLE_CONTRACT": 3,
+    "SAVED_STATUS_METADATA": 7,
+    "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW": 22
+  },
+  "sources": [
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "1. research/direction /7-25-26KDEN_Probabilistic_MOS_Product_Direction_White_Paper_v2.0.docx",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "publication_review": [
+        "scope_and_supersession",
+        "reserved_outcomes",
+        "metadata_and_personal_information",
+        "third_party_rights_and_links"
+      ],
+      "role": "HISTORICAL_RESEARCH_DOCUMENT",
+      "sha256": "56f83d0bc3f8ba8289c2bb30375df1a62581d0657929c02c6a08a7da4c0adaff",
+      "size_bytes": 130050
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "1. research/direction /KDEN_Layer_1_Scientific_Record_v1.0.docx",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "publication_review": [
+        "scope_and_supersession",
+        "reserved_outcomes",
+        "metadata_and_personal_information",
+        "third_party_rights_and_links"
+      ],
+      "role": "HISTORICAL_RESEARCH_DOCUMENT",
+      "sha256": "f4be7b7c51500f7c04dad0f0e52af5a876e06bf1b47914bf396680dca3e05a2b",
+      "size_bytes": 1151924
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "1. research/direction /KDEN_Tmax_Truth_Layer_Weathercom_IEM_Coding_Handoff_v1.0.pdf",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "publication_review": [
+        "scope_and_supersession",
+        "reserved_outcomes",
+        "metadata_and_personal_information",
+        "third_party_rights_and_links"
+      ],
+      "role": "HISTORICAL_RESEARCH_DOCUMENT",
+      "sha256": "e3753a6e29a51bab5dd01860bf95a4a31289e6c366f0128fcdd7d2790d3667ab",
+      "size_bytes": 95105
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "1. research/direction /v2---stages/KDEN_Layer_1_Baseline_Forecast_Specification_v3.0.docx",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "publication_review": [
+        "scope_and_supersession",
+        "reserved_outcomes",
+        "metadata_and_personal_information",
+        "third_party_rights_and_links"
+      ],
+      "role": "HISTORICAL_RESEARCH_DOCUMENT",
+      "sha256": "873218fea795822f161499208d217efefc90148a508eea4ffbebffc988aceb84",
+      "size_bytes": 683371
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "1. research/direction /v2---x[d,t] acquistion/KDEN_Universal_Issue_Time_Feature_Panel_Implementation_Manual_v1.5.docx",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "publication_review": [
+        "scope_and_supersession",
+        "reserved_outcomes",
+        "metadata_and_personal_information",
+        "third_party_rights_and_links"
+      ],
+      "role": "HISTORICAL_RESEARCH_DOCUMENT",
+      "sha256": "c15fb27e36fb1426c31989efd59307849c4eb3407971ba5b9f949b9757f106db",
+      "size_bytes": 93932
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "1. research/direction /v2---x[d,t] acquistion/KDEN_Universal_Issue_Time_Feature_Panel_Scientific_Specification_v2.2.docx",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "publication_review": [
+        "scope_and_supersession",
+        "reserved_outcomes",
+        "metadata_and_personal_information",
+        "third_party_rights_and_links"
+      ],
+      "role": "HISTORICAL_RESEARCH_DOCUMENT",
+      "sha256": "02fed6f2381f346cc8ac9b68bcd7678a58ce55b972637f0f1a5e84f99f77e616",
+      "size_bytes": 96173
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "KDEN_HRRRv4_Local_Archive_Acquisition_Memo_v1.0.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "a2c134c8e856131ce82f61b30bc1ecd3f7d7cafcd24111858cdb9708958a36e9",
+      "size_bytes": 38713
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "PROJECT.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "b530e5f08017a0443c328723b331f12aff38e0cc802a6fbf9ca3785b51daeedc",
+      "size_bytes": 52219
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "RAFM_V375_UNIVERSAL_MODELING_PREFIT_PLAN.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "07de6086fc2de0f31b8cdcf9d999421229a8b5a9d3a59ee100d9a72ea1e8ed00",
+      "size_bytes": 32909
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "STEP_04_5_FEATURE_UNIVERSE_STUDY.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "bf5fe81c4c4f1bb25114142a146bd39ddba6ef223b95b32f386d99ad3c9db35e",
+      "size_bytes": 37385
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "config/r14_acquisition_v375.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "MACHINE_READABLE_CONTRACT",
+      "sha256": "ba7541759eeff770690afb08e0d8cbfe78a0db5226adb6a9e222da472a32bea1",
+      "size_bytes": 5697
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "config/r14_spatial_contract_v375.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "MACHINE_READABLE_CONTRACT",
+      "sha256": "e81b055026172bbea119c6dc5787a6950ad5b53fd0c92cb7cc8ed197fd8f7d1c",
+      "size_bytes": 3554
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "reports/STEP_04_5_R14_ACQUISITION_HANDOFF.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "ac4ed94744d3f2b108f0d1cd2c889d922a163f881b93bb89f8ce727f5394f1ea",
+      "size_bytes": 11654
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "reports/step_04_5_c32_reduction_meteorological_study.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "9f278831df9f2947b2618a6da1e2d199293df98e732cb5139999a7682d8c9548",
+      "size_bytes": 90221
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "reports/step_04_5_feature_universe_scientific_recommendation.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "da10e26ba87dfa3cf623630772ec6e27be216ccbedf9125f98375b159586c344",
+      "size_bytes": 103824
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/acquisition/source.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "9faa9a3d988a99ec970ca93faa9fa3446e3b02f5f0d0700566d89e3c8f11baf5",
+      "size_bytes": 31410
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/acquisition/workflow.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "fa7c52bd9ae119bcc569e209cc633b02aad40b4095b8ecf394bffd159bb27c5e",
+      "size_bytes": 46792
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/io/grib.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "5559d3e20cdca3125367e05499dbbe61816bdbbc86dd6b9fe2deb2cd232c2592",
+      "size_bytes": 38694
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/io/http_range.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "d16ad97e291e2b48ce66c6b831c35292b3de58ed98f2735f4c3558dc6b5ced95",
+      "size_bytes": 20556
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "src/kden_v375/prefit/p02_rules.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "8f173b82a9a297fba30b33ae32d17b91d26f6d508ce4b068b424bafc6f36c55f",
+      "size_bytes": 18475
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/prefit/p02_truth.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "3aeb3f5923c602aaacbdff50787486951ca7ba43716a5073d92832428b0314fc",
+      "size_bytes": 56827
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/prefit/p03_issue_spine.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "96cb6b288dba1112146bc36cad692fc4e013a32d40de24391439886497a00704",
+      "size_bytes": 58108
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/prefit/p04_features.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "cdc8da8908f64377ff1d772cd854c97d6b707dd027031dce6a407bf95696c813",
+      "size_bytes": 72654
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/prefit/p05_materialization.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "9bf88e0c8d9f37f435bed197d41d8e274050fb28c5afae313431fae3b92546fb",
+      "size_bytes": 68971
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/prefit/p06_acceptance.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "6a68f0156063fd5ce24ebff85370fa0ffc0e08e31ecb48041b014a8e8558c308",
+      "size_bytes": 89917
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/r14.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "3acff09d3bcf93c964106a945069bd2d0e6e0011c0bb9c4ae8bc24fa3b31865e",
+      "size_bytes": 22932
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/r14_request_plans.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "cedc64f4fb5a376c77f941aac24496b65ffaef03e09874dd567a570392c5644c",
+      "size_bytes": 52372
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "src/kden_v375/r14_schedule.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "1f4ec0c86c85c9be238a0e91c11116883af1bc0f5f20e70db169b614603ddecb",
+      "size_bytes": 23199
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "mutable_status_snapshot": false,
+      "path": "state/KDEN_V375_ACQUISITION_PASS.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "SAVED_STATUS_METADATA",
+      "saved_status_fields": {
+        "record_sha256": "66c58ff231b1382c0a00e4aae0ae32c93e3c48255ce8ab3aa8a444c20cc37c1a",
+        "run_id": "kdenv375-s08-validation-20260922T101708Z-final-acceptance",
+        "schema_version": "KDEN_V375_ACQUISITION_PASS_V1",
+        "status": "PASS"
+      },
+      "sha256": "a4c6daefe25658985aad14f8df5364fb7c44c900c09e9b189accd3423030ae4e",
+      "size_bytes": 2670,
+      "status_record_signature_independently_revalidated": false
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "mutable_status_snapshot": false,
+      "path": "state/KDEN_V375_UNIVERSAL_ISSUE_STATE_PASS.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "SAVED_STATUS_METADATA",
+      "saved_status_fields": {
+        "record_sha256": "45d226fe8e23fc4291bda55cac6736806f5a77b3308970eaa77d4b7a909f6dd5",
+        "release_id": "KDEN_V375_UNIVERSAL_ISSUE_STATE_V1",
+        "schema_version": "KDEN_V375_UNIVERSAL_ISSUE_STATE_PASS_V1",
+        "status": "PASS"
+      },
+      "sha256": "893ed0239bf3d870a155fd7d6baad90384b02208668980273befff8899cf58eb",
+      "size_bytes": 2248,
+      "status_record_signature_independently_revalidated": false
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "mutable_status_snapshot": false,
+      "path": "state/PREFIT_P02_PASS.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "SAVED_STATUS_METADATA",
+      "saved_status_fields": {
+        "record_sha256": "40ff18bbac4c927ae600fd54026671493f4e68e5e0d65cdf07374965837cf607",
+        "run_id": "kdenv375-p02-owner-full-20260923T222006Z-truth-adoption",
+        "schema_version": "KDEN_V375_PREFIT_PASS_V1",
+        "stage_id": "PREFIT_P02",
+        "status": "PASS"
+      },
+      "sha256": "589fbe9032e83a1ee3e1373c2368570d12e46b883dcb9dfdc374af5efdd32d22",
+      "size_bytes": 2453,
+      "status_record_signature_independently_revalidated": false
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "mutable_status_snapshot": false,
+      "path": "state/PREFIT_P03_PASS.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "SAVED_STATUS_METADATA",
+      "saved_status_fields": {
+        "record_sha256": "c1201500ecfd5ed6eac60d45889c4b7ecdd2620c76998c00a1769531c9479f3b",
+        "run_id": "kdenv375-p03-owner-full-20260923T225640Z-issue-spine",
+        "schema_version": "KDEN_V375_PREFIT_PASS_V1",
+        "stage_id": "PREFIT_P03",
+        "status": "PASS"
+      },
+      "sha256": "6e0421fe52022a434f00464cefa5ab6f0e979e50f62201c55e13f9ce34563321",
+      "size_bytes": 3350,
+      "status_record_signature_independently_revalidated": false
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "mutable_status_snapshot": false,
+      "path": "state/PREFIT_P06_PASS.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "SAVED_STATUS_METADATA",
+      "saved_status_fields": {
+        "record_sha256": "9f420b8625b428a8663d190a332a0958bf72e5565c37c4543f5b78808a7f4b72",
+        "run_id": "kdenv375-p06-owner-full-20260924T122614Z-substrate-acceptance",
+        "schema_version": "KDEN_V375_PREFIT_PASS_V1",
+        "stage_id": "PREFIT_P06",
+        "status": "PASS"
+      },
+      "sha256": "5654ace697aaadc6bdd32bbd4d66df4902f4a912f72f38f73d6188221520dbc3",
+      "size_bytes": 4701,
+      "status_record_signature_independently_revalidated": false
+    },
+    {
+      "linked_from": [
+        "RESEARCH_INDEX.md"
+      ],
+      "mutable_status_snapshot": false,
+      "path": "state/PREFIT_P07_PASS.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "SAVED_STATUS_METADATA",
+      "saved_status_fields": {
+        "record_sha256": "f2f46becfe219f13d3d1526786d80a29c491144b64b070470f07c92bfe1ba36e",
+        "run_id": "kdenv375-p07-owner-full-20260924T231631Z-rafm-experiment-freeze",
+        "schema_version": "KDEN_V375_PREFIT_PASS_V1",
+        "stage_id": "PREFIT_P07",
+        "status": "PASS"
+      },
+      "sha256": "0426861fa355ad5597277e7c8a9c338b1e95f70be0d929138423fa41a895ad23",
+      "size_bytes": 4586,
+      "status_record_signature_independently_revalidated": false
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_atomic.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "9f89acc755b56a8c60622a95db232d3c365dc561e838620980541c8acd8df936",
+      "size_bytes": 1278
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_grib_contracts.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "69b26f5795d12c878cb778fc92ddbd51176b88c3c059ed88622d7b029a498d90",
+      "size_bytes": 3590
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_http_range.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "1a332ea4c03970df1379e339a7664d2c35db067ec67fd44c6572b6c2aa56eef9",
+      "size_bytes": 1384
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "tests/unit/test_prefit_p02_truth.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "2e7b402627906df317daceecc768af00895a6f7e7b32c58c1df18d91c60d8edb",
+      "size_bytes": 7084
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_prefit_p03_issue_spine.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "0fbe548b876d8d548c0d56080193dd725089a17c29811bdd09bd9c41f8c6745c",
+      "size_bytes": 5544
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_prefit_p04_features.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "bbb33eba16ae4aab50878841dc3113ee9f7331ec1b2ad84100c39d286ce59286",
+      "size_bytes": 5761
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_prefit_p05_materialization.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "a77797a7775c66c419a46f117554274e1894b9803a15619ef96eb53a0a7207d9",
+      "size_bytes": 7678
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_prefit_p06_acceptance.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "938bb32bca77d925e17619b3dfa067ae9ef87771164ad9ac8ea5b6f767ce5aff",
+      "size_bytes": 12472
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_r14_acquisition.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "c635ce7430fc7aa7fd018bd66b68a04c8e09977b568496ade786322826afdc17",
+      "size_bytes": 9278
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_r14_request_plans.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "6ac8c4792251a2fb7993d0afd52ac5a96ec691c5ff861d75ee2561c1c69c32c9",
+      "size_bytes": 6583
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_r14_schedule.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "24fa41c0917157f13788bb74d6e383f6868adb2461aba420b1860837fd62b64f",
+      "size_bytes": 3067
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "tests/unit/test_r14_scope_contract.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "176477604b891c873fa19f94c894010f93d9cf9598f07c45cc0e81581335d237",
+      "size_bytes": 4178
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "truth/kden_tmax/v1/reports/P02_TRUTH_COVERAGE_QC.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "bf4761b00295fb263de4d1c0949c0cbfbfeeaa12ae0f138196f17ca94f23aa77",
+      "size_bytes": 813
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/R14_MODEL_COMPARISON_PLAN_V1.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "9539b2145e3c819bf6e864dcd699311d55aaf03f8164cd368b9b9a888bf73a13",
+      "size_bytes": 37542
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/README.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "173dd3e2c836b1945371a56f845d00394053e87150dde5e687a9722013d19812",
+      "size_bytes": 21953
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_boosted_comparison_v1/models.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "653df346da7b94db632bd8efa6b380d3d855af421bc262d817d54824d882ede8",
+      "size_bytes": 4924
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_boosted_comparison_v1/runs/r14-boost-20260927T093806Z/REPORT.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "7d0834ea247b37a4932b185e75cb535058083890b7eb5f7a712df2e2159a0c17",
+      "size_bytes": 2575
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_boosted_comparison_v1/tests/test_models.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "741644c1f884b69fcc50f84099452d84457e348e3232fa35530d04b2e88ca29e",
+      "size_bytes": 3421
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/cr1_v1/data.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "32516c0ede6c1a0b1b3285bad0dbf26f7585736ba0fd9a363fbe2f0fb1b0a1c9",
+      "size_bytes": 6476
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/cr1_v1/model.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "690234ba0b8c46c07ff71931efab95769dd90957360cf34f7fb589120dfa0419",
+      "size_bytes": 3743
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/cr1_v1/runner.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "e3451511603b3bef9de1f8783d1f720f64122a5a93d9891ddf5f8ffec74eddab",
+      "size_bytes": 7917
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/cr1_v1/tests/test_model.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "b114aaa6d718345e1caadbc80d7c2576540c3ff97390cccc805443888b093675",
+      "size_bytes": 3148
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/cr1_v1/tests/test_workflow.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "03dec5b1bd0bf8fba5400cc8b5274b3664f04048d872bd9784d438e344986e41",
+      "size_bytes": 3445
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s3_v1/DECISIONS.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "55783b798ba52464b6c8fd2742d256e30f2f0805555fc5644f2e90b8b148a608",
+      "size_bytes": 11580
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s3_v1/r14_s3/anen.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "dfb64a99d0f26eb9c49cb85c03b3688caba7e6a0fb323597039ff26b43e58485",
+      "size_bytes": 5051
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s3_v1/r14_s3/gam.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "983a583f66215787036f8d068fd2bb24493f0051b93363b5e705a2542ec98996",
+      "size_bytes": 4746
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s3_v1/tests/test_s3.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "60b712d0e72d19a49b39cb4b129809f32e8f768951161a0251ebd88b833eac18",
+      "size_bytes": 11805
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s4_v1/engine.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "d942cbfe7a57f418a2f3099f1c4a40a10607473813d7b7bac05ef031ae61779a",
+      "size_bytes": 28557
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s4_v1/tests/test_s4.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "c3f2f0f322adebf034de3300a63f6251c566fcd503754006eaa6b7fda391c607",
+      "size_bytes": 16841
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s5_v1/core.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "736c9f2de8344c44e77ce8ff1dbb4d2c1fb4f04333ac08d8c23403e54b55eff0",
+      "size_bytes": 7582
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s5_v1/plots.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "ba12fdd78ef9657ada0be40cae5adf8a7209852a69ab813d17bf4c5033f455d4",
+      "size_bytes": 10618
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s5_v1/tests/test_s5.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "fbdaad98342360beab3920c78019fdc06f42fd2f6afe088572f6a3d6334d50d8",
+      "size_bytes": 4411
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s6_v1/README.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "88f828edd1ce6c9429812e06459bf5ca329b4353b2aaf33c27692bfd25129f9d",
+      "size_bytes": 9849
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s6_v1/boundaries.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "0ed5f8d74d4b5c9ca2714bd796f845ab7758b5d030b7835d6b62f7a3f1974878",
+      "size_bytes": 1508
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/implementations/s6_v1/tests/test_boundaries.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "fa82f60043464ca90067387814e8e75bfa39b165fd903e49868665efeff4220e",
+      "size_bytes": 1773
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/reports/cr1_v1/INTERPRETATION.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "1833ecffb71109787d765dca0f00d178e1db4e36f746be715864f48db0c30ccf",
+      "size_bytes": 6558
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/reports/s5_v1/INTERPRETATION.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "3d942f3ed740b5d0b68aedf16168daf56fe64b3b09df12bc36823f0bab5d9343",
+      "size_bytes": 8639
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/src/r14_s1/data.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "020f0123f61656a6c274be592d1e4d74b9c1be34bb66a6fb9e620334794c4d78",
+      "size_bytes": 13689
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/src/r14_s1/probability.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "c32b4baea3b556b464ad55ff9625b5afbdbed34c03013c644f157f0c83192c04",
+      "size_bytes": 3763
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/src/r14_s2/workflow.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "5dc5c0d12ffaf294e97bc7af491d5db5393e956407db4e1b4c1937f92ca11e5c",
+      "size_bytes": 17105
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_first_model_comparison_v1/tests/test_s1_loader.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "afdc69fd999fd303cffca3771a458138e8d946646931ce4c48016fa8621f26b3",
+      "size_bytes": 8470
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/README.md",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "DESIGN_OR_INTERPRETATION_DOCUMENT",
+      "sha256": "5919371eadcd5657cf534bfa3868ac171f319194593ccd4268e6efd9ebb6f591",
+      "size_bytes": 40780
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/config/scoring_t04.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "MACHINE_READABLE_CONTRACT",
+      "sha256": "f31ac0d228fa0287f5e2ae0e1deea980d1c74957704bce830236b2dbf4338ec1",
+      "size_bytes": 1574
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md",
+        "RESEARCH_INDEX.md"
+      ],
+      "mutable_status_snapshot": true,
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/runs/kdenv375-t04-owner-full-development-v1/state.json",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "SAVED_STATUS_METADATA",
+      "saved_status_fields": {
+        "completed_issue_states": 12080,
+        "completed_native_contexts": 874,
+        "completed_score_days": 212,
+        "run_id": "kdenv375-t04-owner-full-development-v1",
+        "schema_version": "R14_TABULAR_T04_STATE_V1",
+        "status": "PAUSED",
+        "updated_at_utc": "2026-10-11T08:02:28.730437Z"
+      },
+      "sha256": "6884de545db58c565d6f31082c377eeea9303370dfeb53eeca4c78536c7e3994",
+      "size_bytes": 1777,
+      "status_record_signature_independently_revalidated": false
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/src/kden_r14_tabular/t02_runtime.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "d5978038fc8ba2011fee1473968635dc20bd4ce96e8841d2ce0cb48e79f025d5",
+      "size_bytes": 17349
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/src/kden_r14_tabular/t04_workflow.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "IMPLEMENTATION_REFERENCE",
+      "sha256": "07ad4f2be19bc96dc834497f6af98dd540a0d5badb8f3bdad319f5f065eb09e7",
+      "size_bytes": 19962
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/tests/test_t04.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "77f57d936719120881a83330196491d0fbb8d27c52808091a9c8a52b84f5b01d",
+      "size_bytes": 24844
+    },
+    {
+      "linked_from": [
+        "DECISION_EVIDENCE_MAP.md"
+      ],
+      "path": "universal_issue_state/experiments/r14_tabular_pretrained_v1/tests/test_t04_serialization_repair.py",
+      "publication_approval": "NOT_GRANTED_BY_INVENTORY",
+      "role": "TEST_SOURCE_NOT_EXECUTED_FOR_THIS_REVIEW",
+      "sha256": "b503a4f966b4ef7f81e1e26d3d717814f7cef6a7a8fd22cd188529196da893cb",
+      "size_bytes": 8958
+    }
+  ]
+}

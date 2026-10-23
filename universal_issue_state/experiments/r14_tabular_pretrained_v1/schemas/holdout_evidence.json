@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "status", "sealed_candidate_rows_from_footer", "audit_payloads", "archive_bundles", "missing_audit_dates", "content_audit_performed", "holdout_value_pages_read", "interpretation"],
+  "properties": {
+    "schema_version": {"const": "R14_TABULAR_HOLDOUT_EVIDENCE_V1"}, "status": {"enum": ["STRUCTURALLY_PRESENT", "EVIDENCE_GAPS"]},
+    "sealed_candidate_rows_from_footer": {"const": 365}, "audit_payloads": {"type": "array", "minItems": 365, "maxItems": 365, "items": {"type": "object", "required": ["target_date", "audit_path", "present", "size_bytes"]}},
+    "archive_bundles": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "required": ["pil", "year", "paths", "present"]}},
+    "missing_audit_dates": {"type": "array", "items": {"type": "string"}}, "content_audit_performed": {"type": "boolean", "const": false},
+    "holdout_value_pages_read": {"const": 0}, "interpretation": {"type": "string"}
+  }
+}

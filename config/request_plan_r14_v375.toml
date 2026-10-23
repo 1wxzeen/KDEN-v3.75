@@ -1,0 +1,50 @@
+schema_version = "KDEN_V375_R14_REQUEST_PLAN_POLICY_V1"
+scope_id = "KDEN_V375_R14_V1"
+
+[source]
+root = "https://noaa-hrrr-bdp-pds.s3.amazonaws.com"
+path_template = "hrrr.{cycle_date_utc}/conus/hrrr.t{cycle_hour_utc}z.{product}{forecast_hour_2d}.grib2"
+index_suffix = ".idx"
+
+[publication]
+compression = "zstd"
+batch_rows = 100000
+row_group_rows = 100000
+partition_key = "target_year"
+coalescence_policy_id = "EXACT_ADJACENT_REQUIRED_MESSAGES_V1"
+resume_granularity = "completed_target_year_partition"
+
+[projection_assumptions]
+# Planning assumptions only. The bounded R14 pilot replaces these estimates.
+mean_message_bytes = 1227877
+coalesced_range_ratio_numerator = 2951121
+coalesced_range_ratio_denominator = 5061234
+plan_row_bytes = 192
+canonical_row_overhead_bytes = 232
+numeric_value_bytes = 8
+
+[expected_counts.wrfsfcf]
+active_dynamic_field_count = 12
+active_static_field_count = 1
+native_valid_state_count = 563583
+request_row_count = 6762997
+
+[expected_counts.wrfsubhf]
+active_dynamic_field_count = 1
+active_static_field_count = 0
+native_valid_state_count = 2156601
+request_row_count = 2156601
+
+[fh00_selector_overrides.H38]
+product = "wrfsfcf"
+interval_semantics = "preceding_accumulation"
+decoded_step_type = "accum"
+interval_minutes = 0
+observed_index_time_descriptor = "0-0 day acc fcst"
+
+[regional_extraction]
+contract_id = "KDEN_V375_R14_REGIONAL_SPATIAL_V1"
+geometry_path = "registries/r14_spatial_geometry_v375.json"
+support_count = 8
+static_h14_full_grid_persisted = false
+static_h14_values = "KDEN_BI_PLUS_EIGHT_REGIONAL_SUPPORTS"
