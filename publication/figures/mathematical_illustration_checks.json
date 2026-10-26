@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "scope": "ILLUSTRATIVE_ALGEBRA_AND_RENDERING_ONLY_NOT_PROJECT_ACCEPTANCE",
+  "all_inputs_synthetic": true,
+  "project_data_files_read": 0,
+  "project_modules_imported": 0,
+  "model_fits_performed": 0,
+  "checks": [
+    "Integer PMF nonnegative and normalized",
+    "Endpoint bins absorb lower and upper tails",
+    "Mixture mean and variance agree with numerical integrals",
+    "Shape comparison has matched mean and variance",
+    "GAM scale link monotone within declared safeguards"
+  ],
+  "analog_illustration": {
+    "historical_anchors_f": [
+      71.0,
+      77.0,
+      74.0,
+      78.0
+    ],
+    "historical_outcomes_f": [
+      69.0,
+      76.0,
+      76.0,
+      82.0
+    ],
+    "residuals_f": [
+      -2.0,
+      -1.0,
+      2.0,
+      4.0
+    ],
+    "illustrative_weights": [
+      0.4,
+      0.25,
+      0.25,
+      0.1
+    ],
+    "current_anchor_f": 73.0,
+    "kernel_sigma_f": 0.8,
+    "continuous_mean_f": 72.85,
+    "continuous_variance_f_squared": 5.067500000000001,
+    "numerical_integral": 1.0,
+    "integer_probability_sum": 1.0,
+    "effective_sample_size": 3.3898305084745757
+  },
+  "shape_illustration": {
+    "shared_shape_comparison_mean_f": 73.0,
+    "shared_shape_comparison_variance_f_squared": 4.5625,
+    "mixture_centers_f": [
+      71.0,
+      75.0
+    ],
+    "mixture_weights": [
+      0.5,
+      0.5
+    ],
+    "mixture_component_sigma_f": 0.75
+  },
+  "scale_link_test_values_f": [
+    0.25000000000010253,
+    2.2360679774997894,
+    19.9999999999918
+  ]
+}

@@ -24,14 +24,22 @@ python3.12 -m venv .venv-public
 .venv-public/bin/python publication/figures/render_overall_scorecard.py --output-dir /tmp/kden-public-figures
 .venv-public/bin/python publication/figures/render_issue_time.py --output-dir /tmp/kden-public-figures
 .venv-public/bin/python publication/figures/render_confidence_reliability.py --output-dir /tmp/kden-public-figures
+.venv-public/bin/python publication/figures/render_mathematical_illustrations.py --output-dir /tmp/kden-public-figures
 ```
 
-The renderers use bundled aggregate scorecards/compact JSON; they do not fit,
+The empirical renderers use bundled aggregate scorecards/compact JSON; they do not fit,
 rescore individuals, or download anything. Output goes outside the accepted
 public evidence by default or to the explicit directory above. Matplotlib and
 font/platform versions can affect image bytes; matching inputs and numerical
 values is the important invariant. The committed PNG/SVG files are the reviewed
 publication images.
+
+The mathematical illustrations use only explicit synthetic parameters. They
+explain residual transfer and distribution shape; they are not KDEN forecasts
+or measured performance. Their renderer also writes a small algebra-check
+record and defaults to a temporary output directory. See the
+[mathematical companion](docs/MATHEMATICAL_SYSTEMS.md) and
+[illustration notes](publication/figures/README.md#mathematical-illustrations).
 
 `publication/figures/system_overview.svg` is the editable system diagram. Open
 it in an SVG-capable viewer; the committed PNG is the README preview. If

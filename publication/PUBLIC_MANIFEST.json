@@ -1,11 +1,11 @@
 {
   "schema_version": "KDEN_PUBLIC_SOURCE_EVIDENCE_RELEASE_V1",
-  "release_date": "2026-10-23",
+  "release_date": "2026-10-26",
   "repository": "https://github.com/1wxzeen/KDEN-v3.75",
   "manifest_excludes_itself": true,
   "original_sources_verified_unchanged": 508,
-  "file_count_excluding_manifest": 537,
-  "bytes_excluding_manifest": 21184261,
+  "file_count_excluding_manifest": 545,
+  "bytes_excluding_manifest": 21761145,
   "not_a_new_scientific_freeze_authority": true,
   "excluded_classes": [
     "raw weather and Parquet",
@@ -190,26 +190,28 @@
     },
     {
       "path": "README.md",
-      "bytes": 17598,
-      "public_sha256": "2267793b3fc6b669c378b36a8b06e10ddba6523bbcbda9228ef425b7f68decf8",
+      "bytes": 20641,
+      "public_sha256": "54b452195eac596e10bd9b986d1acc8b29f7665cdcd9a156d7e542f515415f50",
       "source_path": "publication/README.md",
       "source_sha256": "dff7ee7a9557f44bbfdcc8cd9a93a05cb40f88842b7b5f271c1564dc6c0ca560",
       "selection_reason": "Scientific contracts, provenance, dependency specification, or selected interpretation.",
       "changes": [
         "Links retargeted to bundled public paths or explicit data-availability notices.",
         "Public edition differs from original; source and public hashes are recorded separately.",
-        "Standalone publication scope, navigation, and reproduction instructions updated."
+        "Standalone publication scope, navigation, and reproduction instructions updated.",
+        "October 26, 2026: published the reviewed mathematical companion, synthetic illustrations, and reproduction links; empirical results unchanged."
       ]
     },
     {
       "path": "REPRODUCIBILITY.md",
-      "bytes": 3267,
-      "public_sha256": "a2dee55971c9e4b4df90e9fc632992617f340856fd155c0e0bf53722086dc006",
+      "bytes": 3825,
+      "public_sha256": "72f973398211add5c5f31dcb012f38f88359be01e340790b8e94193732861d77",
       "source_path": null,
       "source_sha256": null,
       "selection_reason": "Public documentation, integrity check, example, license, or figure renderer.",
       "changes": [
-        "Authored for the standalone public release."
+        "Authored for the standalone public release.",
+        "October 26, 2026: published the reviewed mathematical companion, synthetic illustrations, and reproduction links; empirical results unchanged."
       ]
     },
     {
@@ -445,6 +447,17 @@
       "source_sha256": "55476c16b7e98f3e963dcd7ccc0837f3bbd43cda876ac16c1e1f201b59b6e5e1",
       "selection_reason": "Scientific contracts, provenance, dependency specification, or selected interpretation.",
       "changes": []
+    },
+    {
+      "path": "docs/MATHEMATICAL_SYSTEMS.md",
+      "bytes": 26973,
+      "public_sha256": "0933ed86c68d97356e17393e0ea397f05668b44660fff6050215f6ea91cc4080",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
+      ]
     },
     {
       "path": "docs/TRUTH_AUDIT.md",
@@ -841,15 +854,38 @@
     },
     {
       "path": "publication/figures/README.md",
-      "bytes": 14849,
-      "public_sha256": "9c50b8b96d9e8f0718e4a9419b3922d7346e544cef1e3aa5e5b613d63f44f219",
+      "bytes": 16709,
+      "public_sha256": "1a17bacd711d9d58c122585d69c3d21c863733f4d2607edc87e2d7510009fd79",
       "source_path": "publication/figures/README.md",
       "source_sha256": "c9df1a708ed9e1ccfa6b5a3ccf9e2fa5ca817b886375b1633982735588d5e5f9",
       "selection_reason": "Compact figure evidence or its standalone reproduction.",
       "changes": [
         "Links retargeted to bundled public paths or explicit data-availability notices.",
         "Public edition differs from original; source and public hashes are recorded separately.",
-        "Standalone publication scope, navigation, and reproduction instructions updated."
+        "Standalone publication scope, navigation, and reproduction instructions updated.",
+        "October 26, 2026: published the reviewed mathematical companion, synthetic illustrations, and reproduction links; empirical results unchanged."
+      ]
+    },
+    {
+      "path": "publication/figures/analog_residual_transfer.png",
+      "bytes": 191253,
+      "public_sha256": "4950167524aa840bfa8165fce9a048958dca589a4e0f5980e09e9f96dc8113c4",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
+      ]
+    },
+    {
+      "path": "publication/figures/analog_residual_transfer.svg",
+      "bytes": 117152,
+      "public_sha256": "6b3ee6e07d94ebd881ea01076ba3693c1711e65d02bc61e9fdd225e48b298031",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
       ]
     },
     {
@@ -907,6 +943,39 @@
       "changes": []
     },
     {
+      "path": "publication/figures/location_spread_shape.png",
+      "bytes": 178535,
+      "public_sha256": "13bb3bf6e3db4f9b77df0e568a1e124e8b72d9c551498098938ab0697eb8b633",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
+      ]
+    },
+    {
+      "path": "publication/figures/location_spread_shape.svg",
+      "bytes": 40368,
+      "public_sha256": "0dd3eaa836d624231f3b67d93262f605990fac625a54273a8a493dce1ba6fd2a",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
+      ]
+    },
+    {
+      "path": "publication/figures/mathematical_illustration_checks.json",
+      "bytes": 1520,
+      "public_sha256": "f3f4382f6ba6805b8181d4a8e47644aa7b99268791544653f5b8dadf718c68f5",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
+      ]
+    },
+    {
       "path": "publication/figures/overall_scorecard.png",
       "bytes": 51096,
       "public_sha256": "affea6d72cdacdd0da74382c512ab93cf8c44ffe2e619dfd69f3412d26cd8958",
@@ -940,6 +1009,17 @@
       ]
     },
     {
+      "path": "publication/figures/render_mathematical_illustrations.py",
+      "bytes": 12109,
+      "public_sha256": "03aabde91b2dd8af1cd80af91bca84b0a7cf977d487e0f9934abdb7889868635",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
+      ]
+    },
+    {
       "path": "publication/figures/render_overall_scorecard.py",
       "bytes": 2555,
       "public_sha256": "1449068b263e615656307b490be62866b036a32e1e7ad3e524ee4e539a463946",
@@ -967,6 +1047,17 @@
       "source_sha256": "21af2af3e08d4e58e6f8152f0a84aac46a8b44cea787deda79fd1ac9635a4b5c",
       "selection_reason": "Compact figure evidence or its standalone reproduction.",
       "changes": []
+    },
+    {
+      "path": "publication/figures/test_mathematical_illustrations.py",
+      "bytes": 3513,
+      "public_sha256": "6e70a9e47b39e3e0549d0c3abb835df7b3ecb37da92c3dd8f5e1b5f504187eca",
+      "source_path": null,
+      "source_sha256": null,
+      "selection_reason": "Public mathematical explanation, explicitly synthetic figure, renderer, or bounded illustration check.",
+      "changes": [
+        "Authored for the October 26, 2026 mathematical documentation addition; no original scientific artifact modified."
+      ]
     },
     {
       "path": "publication/figures/test_render_confidence_reliability.py",
@@ -5090,5 +5181,7 @@
       "selection_reason": "Scientific contracts, provenance, dependency specification, or selected interpretation.",
       "changes": []
     }
-  ]
+  ],
+  "evidence_snapshot_date": "2026-10-23",
+  "previous_release_commit": "fd43a95237acf5bb39ecf2227d3519720a772299"
 }

@@ -93,6 +93,84 @@ intervals, seasonal/issue-time slices, and same-case baseline comparisons.
 Uncertainty estimates resample calendar blocks with whole days kept together.
 The selection-timing qualification below remains attached to the results.
 
+## The mathematical design
+
+The models share a physical starting point:
+
+$$
+\text{daily maximum temperature}
+=\text{HRRR forecast anchor}
++\text{conditional forecast error}.
+$$
+
+The anchor is the maximum of the retained HRRR temperature path. The task is
+to learn how its errors change with season, forecast issue time, and modeled
+weather—not to learn Denver's temperatures from scratch.
+
+### Comparable days, comparable errors
+
+The analog ensemble finds earlier days with similar forecast states at the
+same local issue time. Ten coordinates describe surface evolution, low-level
+thermal structure, solar forcing, mixing, moisture, and forecast consistency.
+Training-derived scales and equal total weight per physical group prevent a
+group from dominating simply because it has more coordinates.
+
+It then transfers the selected days' **forecast errors**, not their observed
+temperatures, onto the current HRRR anchor:
+
+$$
+F_{\mathrm{AnEn}}(y\mid x)=
+\sum_{i=1}^{K}a_i(x)\,
+\Phi\!\left(\frac{y-B^Q(x)-r_i}{s}\right).
+$$
+
+Here $B^Q(x)$ is the current subhourly anchor, $r_i$ is a historical error,
+and $a_i(x)$ gives more weight to closer analogs. The resulting distribution
+can represent disagreement among otherwise comparable days.
+
+![Synthetic demonstration of residual transfer and integer probabilities](publication/figures/analog_residual_transfer.png)
+
+*Illustrative calculation, not a fitted KDEN forecast or a performance result.*
+
+### Correct the center—and ask whether uncertainty changes too
+
+The location–scale GAM learns smooth adjustments around the same anchor:
+
+$$
+Y^*\mid X\sim\mathcal N(\mu(X),\sigma(X)^2),
+\qquad \mu(X)=B^Q(X)+A(X)^\top\beta.
+$$
+
+Its uncertainty width also depends on forecast context. It is fitted to the
+probability assigned to each observed integer outcome, with day-balanced
+weights and penalties on model flexibility. Constant-scale and Student-t
+variants test whether varying uncertainty and heavier tails are useful;
+boosted quantile and normal models test more flexible residual relationships.
+
+Every completed model is converted to the same integer probability interface:
+
+$$
+p(k)=F(k+0.5)-F(k-0.5)
+$$
+
+for interior bins, with tail mass collected in the declared endpoint bins.
+This makes point accuracy, exact-integer hits, and full-distribution scores
+comparable rather than conflating them.
+
+### Confidence is another claim that needs testing
+
+A sharp distribution can still be confidently wrong. A separate chronological
+study modeled the probability that an unchanged modal forecast would hit,
+then checked calibration and accuracy at the coverage actually achieved.
+The baseline was scored on the same selected cases to distinguish added
+information from simply choosing easier weather.
+
+That extra reliability layer did not meet the registered readiness
+requirements. The modest forecasting gains and the negative reliability
+result below are both part of the evidence.
+
+[Read the equations, intuitive explanations, implementation links, and limits](docs/MATHEMATICAL_SYSTEMS.md).
+
 ## Completed forecasting results
 
 The baseline/AnEn/GAM comparison covers **980 audited development days and

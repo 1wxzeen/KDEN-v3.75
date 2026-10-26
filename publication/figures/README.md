@@ -242,6 +242,39 @@ import project runtime packages. PNG and SVG were rendered with the existing
 Matplotlib 3.10.6 / NumPy 2.0.2 reporting environment. Original reports,
 selection summaries, and accepted releases remain unchanged.
 
+## Mathematical illustrations
+
+These two figures explain the [implemented forecasting mathematics](../../docs/MATHEMATICAL_SYSTEMS.md).
+They use explicit invented parameters, not KDEN outcomes, saved predictions,
+or newly fitted models. Their synthetic status is printed inside each image.
+
+- **Residual transfer:** [PNG](analog_residual_transfer.png) and
+  [SVG](analog_residual_transfer.svg). Historical forecast errors are moved
+  onto a current forecast anchor, mixed with supplied illustrative weights,
+  and integrated into integer probability bins. Panel numbers use explicit
+  “1.”, “2.”, and “3.” punctuation.
+- **Center, spread, and shape:** [PNG](location_spread_shape.png) and
+  [SVG](location_spread_shape.svg). Toy distributions isolate a location
+  correction, changing uncertainty width, and different shapes with the
+  same mean and variance. Narrower distributions are not automatically better.
+- **Reproduction:** [standalone renderer](render_mathematical_illustrations.py),
+  [calculation-check record](mathematical_illustration_checks.json), and
+  [bounded record/label tests](test_mathematical_illustrations.py).
+
+From the project root, using the public plotting dependencies:
+
+```sh
+python -B publication/figures/render_mathematical_illustrations.py --output-dir /tmp/kden-public-figures
+python -B -m unittest discover -s publication/figures -p test_mathematical_illustrations.py
+```
+
+The renderer defaults to a new temporary directory if none is supplied. It
+makes no network requests, reads no project data, and imports no model code.
+Its calculations check integer PMF normalization and endpoint mass, mixture
+moments, the matched-moment shape example, and the GAM scale-link safeguards.
+The JSON is an illustration check, not acceptance of a scientific release or
+evidence that any model achieved a particular accuracy.
+
 ## Scope of the source inventory
 
 The earlier [source inventory](../SOURCE_INVENTORY.json) fingerprints references
